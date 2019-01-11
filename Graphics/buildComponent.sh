@@ -1,35 +1,39 @@
+#!/bin/bash
 ###############################################################################
-### CSharp Functions
+### Ant Functions
 ###############################################################################
-cSharpClean()
+antClean()
 {
   echo "Cleaning $projectName project" 
-  rm -rf $PROJECTS/build/
+  ant clean
 }
 
 
-cSharpCompile()
+antCompile()
 {
-  echo "Compiling $PROJECT project" 
-  printOut "Compiling ------->"
-  mkdir $PROJECTS/build/
-  cd $PROJECTS/src/
-  mcs /optimize *.cs /out:$PROJECTS/build/$EXE
-  echo "Finished Compiling"
+  echo "Compiling $projectName project" 
+  ant compile
 }
 
 
-cSharpExe()
+antJar()
 {
-  echo "Running $projectName project" 
-  if [ ! -f "$PROJECTS/build/$EXE" ]; 
-  then
-	printOut "Exe File doesn't exist"
+  echo "Creating $projectName jar project" 
+  ant jar
+}
+
+
+runJar()
+{
+  echo "Running $projectName jar project" 
+  if [ ! -f "$HOUSE_ALARM/$project/dist/anagrams.jar" ]; then
+    echo
+    echo "Jar File doesn't exist"
   else
-    cd $PROJECTS/build
-	echo "Calling Exe"
-	./$EXE
-  fi  
+    cd $PROJECT/dist
+	echo "Calling Jar"
+	java -jar *.jar
+  fi   
 }
 ###############################################################################
 
@@ -48,7 +52,6 @@ then
 fi
 
 export PROJECT=$CPP/RocketSimulator/Graphics
-export EXE=Sockets.exe
 echo "## PROJECT is " $PROJECT
 
 export LOGS=$PROJECT/LOGS
@@ -61,6 +64,15 @@ fi
 cd $PROJECT
 echo "## Changing directory to $PROJECT"
 
-CSharpClean
-CSharpCompile
-CSharpExe
+clean
+compile
+antJar
+
+
+
+
+
+
+
+
+

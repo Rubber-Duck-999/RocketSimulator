@@ -1,0 +1,3 @@
+/mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build/CMakeFiles/testStudent.dir
+/mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build/CMakeFiles/edit_cache.dir

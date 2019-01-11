@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(Algorithm)
+project(Controller)
 
 #Bring the headers, such as Student.h into the project
 include_directories(include)
@@ -10,4 +10,4 @@ include_directories(include)
 #However, the file(GLOB...) allows for wildcard additions:
 file(GLOB SOURCES "src/*.cpp")
 
-add_executable(exeAlgorithm ${SOURCES})
+add_executable(exeController ${SOURCES})
