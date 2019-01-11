@@ -12,7 +12,7 @@ then
 	exit
 fi
 
-export PROJECT=$CPP/RocketSimulator/Controller
+export PROJECT=$CPP/RocketSimulator/Graphics
 echo "## PROJECT is " $PROJECT
 
 export LOGS=$PROJECT/LOGS
@@ -25,4 +25,4 @@ fi
 cd $PROJECT
 echo "## Changing directory to $PROJECT"
 
-python Controller.py
+python Graphics.py
