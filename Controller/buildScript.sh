@@ -27,6 +27,8 @@ echo "## Changing directory to $PROJECT"
 
 cd $PROJECT/build
 
+export LIB=$CPP/RocketSimulator/Algorithm
+
 cmake ..
 
 make

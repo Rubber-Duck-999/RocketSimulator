@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/src/Student.cpp" "/mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build/CMakeFiles/testStudent.dir/src/Student.cpp.o"
-  "/mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/src/mainapp.cpp" "/mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build/CMakeFiles/testStudent.dir/src/mainapp.cpp.o"
+  "/media/sf_Projects/c++/RocketSimulator/Algorithm/src/Sockets.cpp" "/media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles/libAlgorithm.dir/src/Sockets.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

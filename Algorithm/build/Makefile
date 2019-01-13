@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories
+CMAKE_SOURCE_DIR = /media/sf_Projects/c++/RocketSimulator/Algorithm
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build
+CMAKE_BINARY_DIR = /media/sf_Projects/c++/RocketSimulator/Algorithm/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build/CMakeFiles /mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles /media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,71 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named testStudent
+# Target rules for targets named libAlgorithm
 
 # Build rule for target.
-testStudent: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testStudent
-.PHONY : testStudent
+libAlgorithm: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 libAlgorithm
+.PHONY : libAlgorithm
 
 # fast build rule for target.
-testStudent/fast:
-	$(MAKE) -f CMakeFiles/testStudent.dir/build.make CMakeFiles/testStudent.dir/build
-.PHONY : testStudent/fast
+libAlgorithm/fast:
+	$(MAKE) -f CMakeFiles/libAlgorithm.dir/build.make CMakeFiles/libAlgorithm.dir/build
+.PHONY : libAlgorithm/fast
 
-src/Student.o: src/Student.cpp.o
+src/Sockets.o: src/Sockets.cpp.o
 
-.PHONY : src/Student.o
-
-# target to build an object file
-src/Student.cpp.o:
-	$(MAKE) -f CMakeFiles/testStudent.dir/build.make CMakeFiles/testStudent.dir/src/Student.cpp.o
-.PHONY : src/Student.cpp.o
-
-src/Student.i: src/Student.cpp.i
-
-.PHONY : src/Student.i
-
-# target to preprocess a source file
-src/Student.cpp.i:
-	$(MAKE) -f CMakeFiles/testStudent.dir/build.make CMakeFiles/testStudent.dir/src/Student.cpp.i
-.PHONY : src/Student.cpp.i
-
-src/Student.s: src/Student.cpp.s
-
-.PHONY : src/Student.s
-
-# target to generate assembly for a file
-src/Student.cpp.s:
-	$(MAKE) -f CMakeFiles/testStudent.dir/build.make CMakeFiles/testStudent.dir/src/Student.cpp.s
-.PHONY : src/Student.cpp.s
-
-src/mainapp.o: src/mainapp.cpp.o
-
-.PHONY : src/mainapp.o
+.PHONY : src/Sockets.o
 
 # target to build an object file
-src/mainapp.cpp.o:
-	$(MAKE) -f CMakeFiles/testStudent.dir/build.make CMakeFiles/testStudent.dir/src/mainapp.cpp.o
-.PHONY : src/mainapp.cpp.o
+src/Sockets.cpp.o:
+	$(MAKE) -f CMakeFiles/libAlgorithm.dir/build.make CMakeFiles/libAlgorithm.dir/src/Sockets.cpp.o
+.PHONY : src/Sockets.cpp.o
 
-src/mainapp.i: src/mainapp.cpp.i
+src/Sockets.i: src/Sockets.cpp.i
 
-.PHONY : src/mainapp.i
+.PHONY : src/Sockets.i
 
 # target to preprocess a source file
-src/mainapp.cpp.i:
-	$(MAKE) -f CMakeFiles/testStudent.dir/build.make CMakeFiles/testStudent.dir/src/mainapp.cpp.i
-.PHONY : src/mainapp.cpp.i
+src/Sockets.cpp.i:
+	$(MAKE) -f CMakeFiles/libAlgorithm.dir/build.make CMakeFiles/libAlgorithm.dir/src/Sockets.cpp.i
+.PHONY : src/Sockets.cpp.i
 
-src/mainapp.s: src/mainapp.cpp.s
+src/Sockets.s: src/Sockets.cpp.s
 
-.PHONY : src/mainapp.s
+.PHONY : src/Sockets.s
 
 # target to generate assembly for a file
-src/mainapp.cpp.s:
-	$(MAKE) -f CMakeFiles/testStudent.dir/build.make CMakeFiles/testStudent.dir/src/mainapp.cpp.s
-.PHONY : src/mainapp.cpp.s
+src/Sockets.cpp.s:
+	$(MAKE) -f CMakeFiles/libAlgorithm.dir/build.make CMakeFiles/libAlgorithm.dir/src/Sockets.cpp.s
+.PHONY : src/Sockets.cpp.s
 
 # Help Target
 help:
@@ -184,14 +157,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... testStudent"
+	@echo "... libAlgorithm"
 	@echo "... edit_cache"
-	@echo "... src/Student.o"
-	@echo "... src/Student.i"
-	@echo "... src/Student.s"
-	@echo "... src/mainapp.o"
-	@echo "... src/mainapp.i"
-	@echo "... src/mainapp.s"
+	@echo "... src/Sockets.o"
+	@echo "... src/Sockets.i"
+	@echo "... src/Sockets.s"
 .PHONY : help
 
 

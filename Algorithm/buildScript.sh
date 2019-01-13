@@ -30,5 +30,3 @@ cd $PROJECT/build
 cmake ..
 
 make
-
-. $PROJECT/build/exeAlgorithm

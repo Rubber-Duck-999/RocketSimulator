@@ -54,45 +54,45 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories
+CMAKE_SOURCE_DIR = /media/sf_Projects/c++/RocketSimulator/Algorithm
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build
+CMAKE_BINARY_DIR = /media/sf_Projects/c++/RocketSimulator/Algorithm/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/testStudent.dir
+# Target rules for target CMakeFiles/libAlgorithm.dir
 
 # All Build rule for target.
-CMakeFiles/testStudent.dir/all:
-	$(MAKE) -f CMakeFiles/testStudent.dir/build.make CMakeFiles/testStudent.dir/depend
-	$(MAKE) -f CMakeFiles/testStudent.dir/build.make CMakeFiles/testStudent.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build/CMakeFiles --progress-num=1,2,3 "Built target testStudent"
-.PHONY : CMakeFiles/testStudent.dir/all
+CMakeFiles/libAlgorithm.dir/all:
+	$(MAKE) -f CMakeFiles/libAlgorithm.dir/build.make CMakeFiles/libAlgorithm.dir/depend
+	$(MAKE) -f CMakeFiles/libAlgorithm.dir/build.make CMakeFiles/libAlgorithm.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles --progress-num=1,2 "Built target libAlgorithm"
+.PHONY : CMakeFiles/libAlgorithm.dir/all
 
 # Include target in all.
-all: CMakeFiles/testStudent.dir/all
+all: CMakeFiles/libAlgorithm.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/testStudent.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testStudent.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/simon/Documents/Projects/Cmake/02-subDirectories/build/CMakeFiles 0
-.PHONY : CMakeFiles/testStudent.dir/rule
+CMakeFiles/libAlgorithm.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/libAlgorithm.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles 0
+.PHONY : CMakeFiles/libAlgorithm.dir/rule
 
 # Convenience name for target.
-testStudent: CMakeFiles/testStudent.dir/rule
+libAlgorithm: CMakeFiles/libAlgorithm.dir/rule
 
-.PHONY : testStudent
-
-# clean rule for target.
-CMakeFiles/testStudent.dir/clean:
-	$(MAKE) -f CMakeFiles/testStudent.dir/build.make CMakeFiles/testStudent.dir/clean
-.PHONY : CMakeFiles/testStudent.dir/clean
+.PHONY : libAlgorithm
 
 # clean rule for target.
-clean: CMakeFiles/testStudent.dir/clean
+CMakeFiles/libAlgorithm.dir/clean:
+	$(MAKE) -f CMakeFiles/libAlgorithm.dir/build.make CMakeFiles/libAlgorithm.dir/clean
+.PHONY : CMakeFiles/libAlgorithm.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/libAlgorithm.dir/clean
 
 .PHONY : clean
 
