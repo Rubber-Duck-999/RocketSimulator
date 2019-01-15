@@ -3,7 +3,7 @@ echo "## Building of the project work ##"
 echo "## "
 
 echo "## Calling setEnv.sh"
-. $PROJECT/scripts/setEnv.sh
+. $PROJECTS/scripts/setEnv.sh
 
 if [ ! $setCorrectly ]; 
 then
@@ -12,14 +12,4 @@ then
 	exit
 fi
 
-export COMPONENT=$PROJECT/Algorithm
-echo "## PROJECT is " $COMPONENT
-
-cd $COMPONENT
-echo "## Changing directory to $PROJECT"
-
-cd $COMPONENT/build
-
-cmake ..
-
-make
+. $COMPONENT/build/exeTestControllerWrapper

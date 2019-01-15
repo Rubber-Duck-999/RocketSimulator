@@ -12,10 +12,10 @@ then
 	exit
 fi
 
-export COMPONENT=$PROJECT/Console
+export COMPONENT=$PROJECT/TestConsoleWrapper
 echo "## PROJECT is " $COMPONENT
 
 cd $COMPONENT
 echo "## Changing directory to $PROJECT"
 
-python Console.py
+python TestConsoleWrapper.py

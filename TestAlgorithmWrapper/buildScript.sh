@@ -12,7 +12,7 @@ then
 	exit
 fi
 
-export COMPONENT=$PROJECT/Algorithm
+export COMPONENT=$PROJECT/TestAlgorithmWrapper
 echo "## PROJECT is " $COMPONENT
 
 cd $COMPONENT

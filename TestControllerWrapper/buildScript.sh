@@ -12,7 +12,7 @@ then
 	exit
 fi
 
-export COMPONENT=$PROJECT/Algorithm
+export COMPONENT=$PROJECT/TestControllerWrapper
 echo "## PROJECT is " $COMPONENT
 
 cd $COMPONENT
@@ -20,6 +20,10 @@ echo "## Changing directory to $PROJECT"
 
 cd $COMPONENT/build
 
+export LIB=$CPP/RocketSimulator/Algorithm
+
 cmake ..
 
 make
+
+. $COMPONENT/build/exeController

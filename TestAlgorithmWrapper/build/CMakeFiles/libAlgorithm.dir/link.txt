@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,liblibAlgorithm.so -o liblibAlgorithm.so CMakeFiles/libAlgorithm.dir/src/Sockets.cpp.o 

@@ -30,7 +30,7 @@ runJar()
     echo
     echo "Jar File doesn't exist"
   else
-    cd $PROJECT/dist
+    cd $COMPONENT/dist
 	echo "Calling Jar"
 	java -jar *.jar
   fi   
@@ -38,11 +38,11 @@ runJar()
 ###############################################################################
 
 
-echo "## Building of the GCOV_CPPUNIT Project work ##"
+echo "## Building of the project work ##"
 echo "## "
 
 echo "## Calling setEnv.sh"
-. $PROJECTS/scripts/setEnv.sh
+. $PROJECT/scripts/setEnv.sh
 
 if [ ! $setCorrectly ]; 
 then
@@ -51,17 +51,10 @@ then
 	exit
 fi
 
-export PROJECT=$CPP/RocketSimulator/Graphics
-echo "## PROJECT is " $PROJECT
+export COMPONENT=$PROJECT/Graphics
+echo "## COMPONENT is " $COMPONENT
 
-export LOGS=$PROJECT/LOGS
-echo "## LOGS is " $LOGS
-if [ ! -e $LOGS ];
-then
-	mkdir $LOGS
-fi
-
-cd $PROJECT
+cd $COMPONENT
 echo "## Changing directory to $PROJECT"
 
 clean
