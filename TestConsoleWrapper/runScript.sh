@@ -18,4 +18,4 @@ echo "## PROJECT is " $COMPONENT
 cd $COMPONENT
 echo "## Changing directory to $PROJECT"
 
-python TestConsoleWrapper.py
+python main.py
