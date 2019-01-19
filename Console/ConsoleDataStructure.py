@@ -60,7 +60,7 @@ def sendData(dataStructure):
     Socket.close()
  
     
-sendData(dataStructureTerrain)   
-sendData(dataStructureLauncher)
-sendData(dataStructureState)
-sendData(dataStructureRocket)
+#sendData(dataStructureTerrain)   
+#sendData(dataStructureLauncher)
+#sendData(dataStructureState)
+#sendData(dataStructureRocket)
