@@ -1,7 +1,7 @@
 import socket
 import sys
+from _socket import SHUT_RDWR
 
-dataStructure = {  }
 
 class SocketSender:
     # Main Class
@@ -15,7 +15,10 @@ class SocketSender:
         self.listenTime = listenTime
         self.byteSize = 1024
         self.encoding = 'UTF-8'
-        self.IDvalid = False
+        self.minDataID = 101
+        self.maxDataID = 105
+        self.loopValueMain = True
+        self.acknowledged = False
         
     def sendAckMessages(self, sendDataID, sendDataPackage):
         if not self.acknowledged:
@@ -28,7 +31,7 @@ class SocketSender:
             self.sendData = self.sendDataString.encode()
             # The encoding default here is strict
             self.conn.send(self.sendData)
-        print("We sent: " + self.sendDataString)
+            print("We sent: " + self.sendDataString)
         # Fix message with M character prefix              
         self.data = self.conn.recv(self.byteSize)
         # Receive 1024 bytes
@@ -39,32 +42,28 @@ class SocketSender:
         if "ACK_" in self.line:
             print("We received: " + self.line)
             self.acknowledged = True
+            self.allowSend = False
+            self.loopValueMain = False
         else:
             print("Message has not been acknowledged")
-            self.acknowledged = True
+            self.acknowledged = False
             
-    def validateID(self, sendDataID):
-        if sendDataID in dataStructure.keys():
-            return True
-        else:
-            return False
-        
-    def validatePackage(self, sendDataPackage):
-        if sendDataPackage in dataStructure.keys():
-            return True
-        else:
-            return False   
-    
+
     def set_sendDataID(self, sendDataID):
-        if self.validateID(sendDataID):
-            self.sendDataID = sendDataID
+        self.sendDataID = sendDataID
 
     def set_sendDataPackage(self, sendDataPackage):
-        if self.validatePackage(sendDataPackage):
-            self.sendDataPackage = sendDataPackage 
+        self.sendDataPackage = sendDataPackage 
             
+    def validateData(self):
+        if self.minDataID <= self.sendDataID <= self.maxDataID:
+            print("ID is in the bounds, set currently at: " + str(self.sendDataID))
+            self.allowSend = True
+        else:
+            print("ID is out of the bounds, set currently at: " + str(self.sendDataID))
+            self.allowSend = False
+    
     def run(self):
-        self.loopValueMain = True
         # Variable for main loop
         print("Program Startup")
         while self.loopValueMain:
@@ -78,7 +77,7 @@ class SocketSender:
                 print('# Bind failed. ')
                 sys.exit()
             print('# Socket bind complete')
-            self.send = True
+            self.allowSend = True
             try:
                 self.s.listen(self.listenTime)
                 print('# Socket now listening')
@@ -86,17 +85,18 @@ class SocketSender:
             # Exception if socket.error occurs
             # Binding of the socket
             except BrokenPipeError:
-                self.send = False
+                self.allowSend = False
                 # If broken pipe error appears then exit the loop in this member function
                 print("Waiting for pipe reconnection")
             print('# Connected to Host' + self.addr[0] + ' On port:' + str(self.addr[1]))
             # Host and Port print out
-            while self.send:
+            self.validateData()
+            while self.allowSend:
                 self.sendAckMessages(self.sendDataID, self.sendDataPackage)
                 # Set up send of messages over Socket in a endless loop
         
     def close(self):
+        self.loopValueMain = False
         self.conn.close()
-        self.s.shutdown()
         self.s.close()
         # Shutdowns all socket activities

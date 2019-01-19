@@ -31,29 +31,32 @@ class TestSockets:
         while self.readLoopValue:
             try:
                print('# Socket bind complete')
-               if len(sendData) < 1:
+               # Fix message with M character prefix			  
+               self.data = self.s.recv(1024)
+               # Receive 1024 bytes
+               self.line = self.data.decode('UTF-8')   
+               # convert to string
+               self.replaceLine = self.line.replace("\n", "")
+               if "_101_" in self.line:
+                   print("We received ID 101: " + self.line)
+                   self.send = True
+               elif "_102_" in self.line:
+                   print("We received ID 102: " + self.line)
+                   self.send = True
+               elif "_103_" in self.line:
+                   print("We received ID 103: " + self.line)
+                   self.send = True
+               elif "_104_" in self.line:
+                   print("We received ID 104: " + self.line)
+                   self.send = True
+               if self.send:
+                   self.sendDataString = str(sendData)
+                   self.sendDataString = self.sendDataString + "\n"
+                   self.sendData = self.sendDataString.encode()
+                   self.s.send(self.sendData)
+                   print("We sent: " + self.sendDataString)
                    self.sendMessage = False
-               else:
-                   self.sendMessage = True              
-               while self.sendMessage:
-                   # Fix message with M character prefix			  
-                   self.data = self.s.recv(1024)
-                   # Receive 1024 bytes
-                   self.line = self.data.decode('UTF-8')   
-                   # convert to string
-                   self.replaceLine = self.line.replace("\n", "")
-                   if "_101_" in self.line:
-                       print("We received ID 101: " + self.line)
-                       self.send = True
-                   elif "_102_" in self.line:
-                       print("We received ID 102: " + self.line)
-                       self.send = True
-                   if self.send:
-                       self.sendDataString = str(sendData)
-                       self.sendDataString = self.sendDataString + "\n"
-                       self.sendData = self.sendDataString.encode()
-                       self.s.send(self.sendData)
-                       print("We sent: " + self.sendDataString)
+                   self.readLoopValue = False
             except BrokenPipeError:
                self.readLoopValue = False
                # If broken pipe error appears then exit the loop in this member function
@@ -73,7 +76,7 @@ class TestSockets:
         # Shutdowns all socket activities
 
        
-mySocket = TestSockets("localhost", 61377, 10)
+mySocket = TestSockets("localhost", 20000, 10)
 mySocket.run()
 mySocket.close()
 

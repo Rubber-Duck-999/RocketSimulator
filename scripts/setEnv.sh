@@ -38,4 +38,4 @@ then
 	mkdir $LOGS
 fi
 
-export SCRIPTS=$PROJECTS/scripts
+export SCRIPTS=$PROJECT/scripts
