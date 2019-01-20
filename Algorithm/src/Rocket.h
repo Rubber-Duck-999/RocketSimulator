@@ -19,28 +19,30 @@ class Rocket
 			   double thrust, double burnTime, double flowRate);
 
 		//Get functions for class member variables
-		double getmass();
-		double getdragAxisX();
-		double getdragAxisY();
-		double gethoriCrossSectArea();
-		double getvertCrossSectArea();
-		double getthrust();
-		double getburnTime();
-		double getflowRate();
-		double getdistX();
-		double getdistY();
+		const double getmass();
+		const double getdragAxisX();
+		const double getdragAxisY();
+		const double gethoriCrossSectArea();
+		const double getvertCrossSectArea();
+		const double getthrust();
+		const double getburnTime();
+		const double getflowRate();
+		const double getdistX();
+		const double getdistY();
+		const float  gettimeTaken();
 
 		//Set functions for class member variables
-		void setmass(double mass);
-		void setdragAxisX(double dragAxisX);
-		void setdragAxisY(double dragAxisY);
-		void sethoriCrossSectArea(double horiCrossSectArea);
-		void setvertCrossSectArea(double vertCrossSectArea);
-		void setthrust(double thrust);
-		void setburnTime(double burnTime);
-		void setflowRate(double flowRate);
-		void setdistX(double distX);
-		void setdistY(double distY);
+		void setmass(const double mass);
+		void setdragAxisX(const double dragAxisX);
+		void setdragAxisY(const double dragAxisY);
+		void sethoriCrossSectArea(const double horiCrossSectArea);
+		void setvertCrossSectArea(const double vertCrossSectArea);
+		void setthrust(const double thrust);
+		void setburnTime(const double burnTime);
+		void setflowRate(const double flowRate);
+		void setdistX(const double distX);
+		void setdistY(const double distY);
+		void settimeTaken(const float time);
 
 	private:
 		double _mass;
@@ -53,6 +55,7 @@ class Rocket
 		double _flowRate;
 		double _distX;
 		double _distY;
+		float  _time;
 };
 
 #endif	/* ROCKET_H */

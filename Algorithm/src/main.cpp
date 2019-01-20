@@ -27,10 +27,9 @@ int main(int argc, char** argv)
         equivalent to earth. */
     World world;
     // Creates array to handle output, first value is distance traveled on  x, then dist on y, then seconds of travel.
-    double* out;
     //runs thrust function passing it the rocket, the world it is in, and the angle of launch
-    out = thrust(rocket, world, 85);
-    printf("Time Taken: %f\n", out[2]);
+    thrust(rocket, world, 85);
+    printf("Time Taken: %f\n", rocket.gettimeTaken());
     //plots in GNUPlot
     //plot();
     return 0;

@@ -10,7 +10,6 @@
  *
  * Created on May 10, 2016, 4:00 PM
  */
-#include "Projectile.h"
 #include <stdio.h>
 #include "Rocket.h"
 #include "World.h"
@@ -23,10 +22,9 @@
 #ifndef THRUST_H
 #define THRUST_H
 
-double * coast(Rocket r, World b, double V /*Velocity*/,
+double coast(Rocket r, World b, double V /*Velocity*/,
         double Vt /*Direction in Degrees */, double h /*height*/);
-double * thrust(Rocket r, World b, double lt);
-void plot();
+void thrust(Rocket &r, World b, double lt);
 
 
 #endif /* THRUST_H */
