@@ -47,7 +47,7 @@ def pySimple():
         [sg.Text('Welcome to the Rocket Simulator Console', size=(35, 1), font=("Helvetica", 25))],
         [sg.Text('Please enter the data from the mission to begin')],
         [sg.Text('Pick which pilot to use:')],        
-        [sg.InputCombo((Pilots.FRED, 'Combobox 2'), key='combo', size=(20, 1))],
+        [sg.InputCombo(('FRED', 'RYAN', 'SARAH', 'GRACE'), key='combo', size=(20, 1))],
         [sg.Checkbox('Checkbox', key='cb1'), sg.Checkbox('My second checkbox!', key='cb2', default=True)],
         [sg.Radio('My first Radio!     ', "RADIO1", key='rad1', default=True),
          sg.Radio('My second Radio!', "RADIO1", key='rad2')],

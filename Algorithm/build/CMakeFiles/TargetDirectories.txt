@@ -1,3 +1,0 @@
-/media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles/rebuild_cache.dir
-/media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles/libAlgorithm.dir
-/media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles/edit_cache.dir

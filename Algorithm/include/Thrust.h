@@ -23,7 +23,7 @@
 #ifndef THRUST_H
 #define THRUST_H
 
-double * coast(Rocket r, World b, double V /*Velocity*/,
+double * coast(Projectile r, World b, double V /*Velocity*/,
         double Vt /*Direction in Degrees */, double h /*height*/);
 double * thrust(Rocket r, World b, double lt);
 void plot();

@@ -6,19 +6,26 @@
  */
 
 #include "World.h"
-#include "Rocket.h"
 
-World::World(double d /*Density of air*/, double g /*Gravitational acceleration*/) {
-    dens = d;
-    this->g = g;
+
+World::World(double density /*Density of air*/, double gravity /*Gravitational acceleration*/)
+{
+    _density = density;
+    _gravity = gravity;
 }
-World::World(){
-    dens = 1.223;
-    g = 9.8;
+
+World::World()
+{
+    _density = EARTH_DENSITY;
+    _gravity = EARTH_GRAVITY;
 }
-double World::getDensity(){
-    return dens;
+
+double World::getdensity()
+{
+    return _density;
 }
-double World::getGravity(){
-    return g;
+
+double World::getgravity()
+{
+    return _gravity;
 }
