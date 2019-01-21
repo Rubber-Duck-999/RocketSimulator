@@ -19,114 +19,116 @@ Rocket::Rocket(double mass, double dragAxisX, double dragAxisY,
     _thrust = thrust;
     _burnTime = burnTime;
     _flowRate = flowRate;
+    _distX = 0;
+    _distY = 0;
 }
 
-const double Rocket::getmass()
+double Rocket::getmass() const
 {
     return _mass;
 }
 
-const double Rocket::getdragAxisX()
+double Rocket::getdragAxisX() const
 {
     return _dragAxisX;
 }
 
-const double Rocket::getdragAxisY()
+double Rocket::getdragAxisY() const
 {
     return _dragAxisY;
 }
 
-const double Rocket::gethoriCrossSectArea()
+double Rocket::gethoriCrossSectArea() const
 {
     return _horiCrossSectArea;
 }
 
-const double Rocket::getvertCrossSectArea()
+double Rocket::getvertCrossSectArea() const
 {
     return _vertCrossSectArea;
 }
 
-const double Rocket::getthrust()
+double Rocket::getthrust() const
 {
     return _thrust;
 }
 
-const double Rocket::getburnTime()
+double Rocket::getburnTime() const
 {
     return _burnTime;
 }
 
-const double Rocket::getflowRate()
+double Rocket::getflowRate() const
 {
     return _flowRate;
 }
 
-const double Rocket::getdistX()
+double Rocket::getdistX() const
 {
     return _distX;
 }
 
-const double Rocket::getdistY()
+double Rocket::getdistY() const
 {
     return _distY;
 }
 
-const float Rocket::gettimeTaken()
+float Rocket::gettimeTaken() const
 {
 	return _time;
 }
 
-void Rocket::setmass(const double mass)
+void Rocket::setmass(const double &mass)
 {
 	_mass = mass;
 }
 
-void Rocket::setdragAxisX(const double dragAxisX)
+void Rocket::setdragAxisX(const double &dragAxisX)
 {
 	_dragAxisX = dragAxisX;
 }
 
-void Rocket::setdragAxisY(const double dragAxisY)
+void Rocket::setdragAxisY(const double &dragAxisY)
 {
 	_dragAxisY = dragAxisY;
 }
 
-void Rocket::sethoriCrossSectArea(const double horiCrossSectArea)
+void Rocket::sethoriCrossSectArea(const double &horiCrossSectArea)
 {
 	_horiCrossSectArea = horiCrossSectArea;
 }
 
-void Rocket::setvertCrossSectArea(const double vertCrossSectArea)
+void Rocket::setvertCrossSectArea(const double &vertCrossSectArea)
 {
 	_vertCrossSectArea = vertCrossSectArea;
 }
 
-void Rocket::setthrust(const double thrust)
+void Rocket::setthrust(const double &thrust)
 {
 	_thrust = thrust;
 }
 
-void Rocket::setburnTime(const double burnTime)
+void Rocket::setburnTime(const double &burnTime)
 {
 	_burnTime = burnTime;
 }
 
-void Rocket::setflowRate(const double flowRate)
+void Rocket::setflowRate(const double &flowRate)
 {
 	_flowRate = flowRate;
 }
 
-void Rocket::setdistX(const double distX)
+void Rocket::setdistX(const double &distX)
 {
 	_distX = distX;
 }
 
-void Rocket::setdistY(const double distY)
+void Rocket::setdistY(const double &distY)
 {
 	_distY = distY;
 }
 
-void Rocket::settimeTaken(const float time)
+void Rocket::settimeTaken(const float &time)
 {
 	_time = time;
 }

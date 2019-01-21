@@ -10,7 +10,7 @@
 
 double coast(Rocket &r, World b, double Vx /*Velocity On X*/, double Vy /*Velocity on Y*/)
 {
-    FILE *data = fopen("data.csv", "a");
+    FILE *data = fopen("data.dat", "a");
 
     double m = r.getmass();
     double cx = r.getdragAxisX();
@@ -47,7 +47,7 @@ double coast(Rocket &r, World b, double Vx /*Velocity On X*/, double Vy /*Veloci
         x = std::fmod (t, 1.0);
         if(x > 0.99)
         {
-        	fprintf(data, "%f %f %f %f %f\n", r.getdistX(), r.getdistY(), Vx, Vy, t);
+        	fprintf(data, "%f, %f, %f, %f, %f\n", r.getdistX(), r.getdistY(), Vx, Vy, t);
         }
         t += tstep;
         Vx = Vx2;
@@ -63,7 +63,7 @@ double coast(Rocket &r, World b, double Vx /*Velocity On X*/, double Vy /*Veloci
 
 void thrust(Rocket &r, World b, double lt)
 {
-    FILE *data = fopen("data.csv", "w");
+    FILE *data = fopen("data.dat", "w");
     
     lt = lt * PI / 180;
     int pointCount = 0;
@@ -81,9 +81,7 @@ void thrust(Rocket &r, World b, double lt)
     double Tx = T * cos(lt);
     double Vx = 0;
     double Vy = 0;
-    double ax, ay, Vx2, Vy2, Dx, Dy;
-    double distx = 0;
-    double disty = 0;
+    double Vx2, Vy2, Dx, Dy;
     double t = 0;
     double tstep = 0.01;
     double x;
@@ -95,17 +93,17 @@ void thrust(Rocket &r, World b, double lt)
         Dx = (cx * d * Ax * Vx * Vx) / 2;
         Dy = (cy * d * Ay * Vy * Vy) / 2;
         Vx2 = Vx - (Dx / m) * tstep;
-        Vy2 = Vy - (Dx / m) * tstep;
-        r.setdistX(r.gethoriCrossSectArea() + (Vx2 * tstep));
-        r.setdistY(r.getvertCrossSectArea() + (Vy2 * tstep));
+        Vy2 = Vy - (Dy / m) * tstep;
+        r.setdistX(r.getdistX() + (Vx2 * tstep));
+        r.setdistY(r.getdistY() + (Vy2 * tstep));
         Vx = Vx2;
         Vy = Vy2;
         t = t + tstep;
-        r.setmass(m + r.getflowRate() / tstep);
+        r.setmass(m - (r.getflowRate() * tstep));
         x = std::fmod (t, 1.0);
         if(x > 0.99)
         {
-        	fprintf(data, "%f %f %f %f %f\n", r.getdistX(), r.getdistY(), Vx, Vy, t);
+        	fprintf(data, "%f, %f, %f, %f, %f\n", r.getdistX(), r.getdistY(), Vx, Vy, t);
         }
         pointCount++;
     }
@@ -121,3 +119,8 @@ void thrust(Rocket &r, World b, double lt)
     std::cout << "Time I believe :" << outThrust << std::endl;
 }
 
+void plot(){
+    system("/usr/bin/gnuplot -persist -e \"set terminal x11; set size square; plot 'data.dat' smooth bezier \"  && rm data.dat" );
+    printf("To End Program Hit Enter\n");
+    std::cin.ignore();
+}

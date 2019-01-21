@@ -25,7 +25,7 @@
 double coast(Rocket r, World b, double V /*Velocity*/,
         double Vt /*Direction in Degrees */, double h /*height*/);
 void thrust(Rocket &r, World b, double lt);
-
+void plot();
 
 #endif /* THRUST_H */
 
