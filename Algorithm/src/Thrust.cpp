@@ -1,32 +1,44 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * To change this license heade_r, choose License Heade_rs in P_roject P_rope_rties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * and open the template in the edito_r.
  */
 
+#include "Rocket.h"
+#include "World.h"
 #include "Thrust.h"
+//Calculates how fa_r a p_rojectile will t_ravel without th_rust
 
-//Calculates how far a projectile will travel without thrust
+using r = Rocket;
 
-double coast(Rocket &r, World b, double Vx /*Velocity On X*/, double Vy /*Velocity on Y*/)
+Thrust::Thrust(const Rocket &r, const World &b, double launchAngle)
+{
+	_r = r;
+	_b = b;
+	Thrust::thrustFunction(launchAngle);
+}
+
+void Thrust::coastFunction(double Vx /*Velocity On X*/, double Vy /*Velocity on Y*/)
 {
     FILE *data = fopen("data.dat", "a");
 
-    double m = r.getmass();
-    double cx = r.getdragAxisX();
-    double cy = r.getdragAxisY();
-    double Ax = r.gethoriCrossSectArea();
-    double Ay = r.getvertCrossSectArea();
-    double d = b.getdensity();
-    double g = b.getgravity();
+    _r = Thrust::getrocketObject();
+    _b = Thrust::getworldObject();
+    double m = _r.getmass();
+    double cx = _r.getdragAxisX();
+    double cy = _r.getdragAxisY();
+    double Ax = _r.gethoriCrossSectArea();
+    double Ay = _r.getvertCrossSectArea();
+    double d = _b.getdensity();
+    double g = _b.getgravity();
     double accelerationYDirection = 0.0;
     double accelerationXDirection = 0.0;
     double angleOfElevation, Vx2, Vy2;
 	double forceAppliedXDirection, forceAppliedYDirection;
-    double t = 0;
+    double t = 0.0;
     double tstep = 0.01;
-    double x;
-    while (r.getdistY() >= 0)
+    int pointCount = 0;
+    while (_r.getdistY() >= 0)
     {
         angleOfElevation = atan(Vy / Vx) * (180 / PI);
         forceAppliedXDirection = (cx * d * Ax * Vx * Vx) / 2;
@@ -42,51 +54,48 @@ double coast(Rocket &r, World b, double Vx /*Velocity On X*/, double Vy /*Veloci
         }
         Vy2 = Vy + accelerationYDirection * tstep;
         Vx2 = Vx + accelerationXDirection * tstep;
-        r.setdistY(r.getdistY() + (Vy * tstep));
-        r.setdistX(r.getdistX() + (Vx * tstep));
-        x = std::fmod (t, 1.0);
-        if(x > 0.99)
-        {
-        	fprintf(data, "%f, %f, %f, %f, %f\n", r.getdistX(), r.getdistY(), Vx, Vy, t);
-        }
-        t += tstep;
+        _r.setdistY(_r.getdistY() + (Vy * tstep));
+        _r.setdistX(_r.getdistX() + (Vx * tstep));
+        fprintf(data, "%f, %f, %f, %f, %f\n", _r.getdistX(), _r.getdistY(), Vx, Vy, t);
+        t = t + tstep;
         Vx = Vx2;
         Vy = Vy2;
+        pointCount++;
     }
-    std::cout << "Mass Post Coast:" << r.getmass() << std::endl;
+    std::cout << "Mass Post Coast:" << _r.getmass() << std::endl;
     fflush(data);
     fclose(data);
-    return t;
+    double time = _r.gettimeTaken();
+    _r.settimeTaken(time + t);
+    std::cout << "Time Post Coast: " << _r.gettimeTaken() << std::endl;
 }
 
 //Calculates how far a rocket will travel under thrust
 
-void thrust(Rocket &r, World b, double lt)
+void Thrust::thrustFunction(double launchAngle)
 {
     FILE *data = fopen("data.dat", "w");
-    
-    lt = lt * PI / 180;
+    _r = Thrust::getrocketObject();
+    _b = Thrust::getworldObject();
+    launchAngle = launchAngle * PI / 180;
     int pointCount = 0;
-    double outThrust;
-    double outC = 0.0;
-    double m = r.getmass();
-    double cx = r.getdragAxisX();
-    double cy = r.getdragAxisY();
-    double Ax = r.gethoriCrossSectArea();
-    double Ay = r.getvertCrossSectArea();
-    double d = b.getdensity();
-    double g = b.getgravity();
-    double T = r.getthrust();
-    double Ty = T * sin(lt);
-    double Tx = T * cos(lt);
+    double m = _r.getmass();
+    double cx = _r.getdragAxisX();
+    double cy = _r.getdragAxisY();
+    double Ax = _r.gethoriCrossSectArea();
+    double Ay = _r.getvertCrossSectArea();
+    double d = _b.getdensity();
+    double g = _b.getgravity();
+    double T = _r.getthrust();
+    double Ty = T * sin(launchAngle);
+    double Tx = T * cos(launchAngle);
     double Vx = 0;
     double Vy = 0;
     double Vx2, Vy2, Dx, Dy;
     double t = 0;
     double tstep = 0.01;
-    double x;
-    std::cout << "Beginning Rocket Launch" << std::endl;
-    while (t <= r.getburnTime())
+    std::cout << "Beginning rocket Launch" << std::endl;
+    while (t <= _r.getburnTime())
     {
         Vx = Vx + ((Tx / m) * tstep);
         Vy = Vy + (((Ty + g) / m) * tstep);
@@ -94,33 +103,27 @@ void thrust(Rocket &r, World b, double lt)
         Dy = (cy * d * Ay * Vy * Vy) / 2;
         Vx2 = Vx - (Dx / m) * tstep;
         Vy2 = Vy - (Dy / m) * tstep;
-        r.setdistX(r.getdistX() + (Vx2 * tstep));
-        r.setdistY(r.getdistY() + (Vy2 * tstep));
+        _r.setdistX(_r.getdistX() + (Vx2 * tstep));
+        _r.setdistY(_r.getdistY() + (Vy2 * tstep));
         Vx = Vx2;
         Vy = Vy2;
         t = t + tstep;
-        r.setmass(m - (r.getflowRate() * tstep));
-        x = std::fmod (t, 1.0);
-        if(x > 0.99)
+        _r.setmass(m - (_r.getflowRate() * tstep));
+        int time = static_cast<int>(t);
+        if(time % 100)
         {
-        	fprintf(data, "%f, %f, %f, %f, %f\n", r.getdistX(), r.getdistY(), Vx, Vy, t);
+        	fprintf(data, "%f, %f, %f, %f, %d\n", _r.getdistX(), _r.getdistY(), Vx, Vy, time);
         }
         pointCount++;
     }
     fflush(data);
     fclose(data);
-    std::cout << "X axis Pre Coast :" << r.getdistX() << std::endl;
-    std::cout << "Y axis Pre Coast :" << r.getdistY() << std::endl;
-    std::cout << "Mass Pre Coast:" << r.getmass() << std::endl;
-    outC = coast(r, b, Vx, Vy);
-    outThrust = t + outC;
-    std::cout << "X axis Post Coast :" << r.getdistX() << std::endl;
-    std::cout << "Y axis Post Coast :" << r.getdistY() << std::endl;
-    std::cout << "Time I believe :" << outThrust << std::endl;
-}
-
-void plot(){
-    system("/usr/bin/gnuplot -persist -e \"set terminal x11; set size square; plot 'data.dat' smooth bezier \"  && rm data.dat" );
-    printf("To End Program Hit Enter\n");
-    std::cin.ignore();
+    _r.settimeTaken(t);
+    std::cout << "X axis Pre Coast :" << _r.getdistX() << std::endl;
+    std::cout << "Y axis Pre Coast :" << _r.getdistY() << std::endl;
+    std::cout << "Mass Pre Coast:" << _r.getmass() << std::endl;
+    std::cout << "Time Pre Coast:" << _r.gettimeTaken() << std::endl;
+    Thrust::coastFunction(Vx, Vy);
+    std::cout << "X axis Post Coast :" << _r.getdistX() << std::endl;
+    std::cout << "Y axis Post Coast :" << _r.getdistY() << std::endl;
 }

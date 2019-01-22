@@ -22,10 +22,28 @@
 #ifndef THRUST_H
 #define THRUST_H
 
-double coast(Rocket r, World b, double V /*Velocity*/,
-        double Vt /*Direction in Degrees */, double h /*height*/);
-void thrust(Rocket &r, World b, double lt);
-void plot();
+class Thrust
+{
+	public:
 
+		Thrust();
+
+		Thrust(const Rocket &r, const World &b, double launchAngle);
+
+		void coastFunction(double V, double Vt);
+		void thrustFunction(double launchAngle);
+		Rocket getrocketObject() const
+		{
+			return _r;
+		}
+		World getworldObject() const
+		{
+			return _b;
+		}
+	private:
+		Rocket _r;
+		World _b;
+		int _countPoint = 0;
+};
 #endif /* THRUST_H */
 

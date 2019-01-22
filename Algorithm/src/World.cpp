@@ -8,11 +8,11 @@
 #include "World.h"
 
 
-World::World(double density /*Density of air*/, double gravity /*Gravitational acceleration*/)
-{
-    _density = density;
-    _gravity = gravity;
-}
+//World::World(double density /*Density of air*/, double gravity /*Gravitational acceleration*/)
+//{
+//    _density = density;
+//    _gravity = gravity;
+//}
 
 World::World()
 {
@@ -20,12 +20,12 @@ World::World()
     _gravity = EARTH_GRAVITY;
 }
 
-double World::getdensity()
+double World::getdensity() const
 {
     return _density;
 }
 
-double World::getgravity()
+double World::getgravity() const
 {
     return _gravity;
 }

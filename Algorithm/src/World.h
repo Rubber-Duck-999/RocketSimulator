@@ -11,16 +11,16 @@
 class World
 {
 	public:
-		World(double density, double gravity);
+		//World(double density, double gravity);
 		World();
-		double getdensity();
-		double getgravity();
+		double getdensity() const;
+		double getgravity() const;
 	private:
-		double _density;
+		double _density = 0.0;
 		//accelerationDueToGravity class variable
-		double _gravity;
-		const double EARTH_DENSITY = 1.223;
-		const double EARTH_GRAVITY = 9.8;
+		double _gravity = 0.0;
+		double EARTH_DENSITY = 1.22;
+	    double EARTH_GRAVITY = 9.8;
 };
 
 #endif	/* WORLD_H */

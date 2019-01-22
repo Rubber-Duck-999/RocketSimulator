@@ -28,9 +28,7 @@ int main(int argc, char** argv)
     World world;
     // Creates array to handle output, first value is distance traveled on  x, then dist on y, then seconds of travel.
     //runs thrust function passing it the rocket, the world it is in, and the angle of launch
-    thrust(rocket, world, 85);
-    printf("Time Taken: %f\n", rocket.gettimeTaken());
-    //plots in GNUPlot
-    plot();
+    Thrust thrust(rocket, world, 85.0);
+    //printf("Time Taken: %f\n", rocket.gettimeTaken());
     return 0;
 }
