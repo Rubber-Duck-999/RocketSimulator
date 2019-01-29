@@ -6,7 +6,7 @@ set(CMAKE_BUILD_TYPE Release)
 include_directories(include)
 
 #However, the file(GLOB...) allows for wildcard additions:
-file(GLOB SOURCES "src/Sockets.cpp")
+file(GLOB SOURCES "src/main.cpp")
 
 #Generate the shared library from the sources
 add_library(libAlgorithm SHARED ${SOURCES})
