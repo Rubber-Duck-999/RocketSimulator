@@ -1,0 +1,28 @@
+﻿Console:
+
+
+Req - 001:
+If stateDataParameters.currentState is set to CONFIGURED
+Send terrainMissionParameters, launcherMissionParameters,
+rocketDataParameters and stateDataParameters to the controller
+
+
+Req - 002:
+If stateDataParameters.currentState is set to LAUNCH
+        Send stateDataParameters to the controller
+
+
+Req - 003:
+stateDataParameters.currentState cannot be moved from RETURN or SHUTDOWN unless stateDataParameters.currentState has been received and is of the state LAUNCH
+
+
+Algorithm:
+
+
+Req - 001:
+If stateDataParameters.currentState is set to LAUNCH
+Send algoData with update time based on timeToLaunch as basis.
+
+
+Req - 002:
+Time will not be calculated in outside time, it will based off systemTime and that all relies on timeToLaunch in stateDataParameters. This will be decided in the controller implementation
