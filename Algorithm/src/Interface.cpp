@@ -13,14 +13,10 @@
 #include "World.h"
 #include "Thrust.h"
 
-using namespace std;
 
-/*
- *
- */
-int main(int argc, char** argv)
+void Interface::createRocketSimulation()
 {
-	cout << "Welcome to the Algorithm" << endl;
+	std::cout << "Welcome to the Algorithm" << std::endl;
     //Rocket (mass, drag x, drag y, area x, area y, newtons of thrust , burn time , flow rate);
     Rocket rocket(80, .3, .3, 1, 1, 100, 50, 20);
     /*World ( density of air,  acceleration due to gravity) if this is left blank then it creates a world
@@ -28,9 +24,7 @@ int main(int argc, char** argv)
     World world;
     // Creates array to handle output, first value is distance traveled on  x, then dist on y, then seconds of travel.
     //runs thrust function passing it the rocket, the world it is in, and the angle of launch
-    thrust(rocket, world, 85);
-    printf("Time Taken: %f\n", rocket.gettimeTaken());
-    //plots in GNUPlot
-    plot();
+    Thrust thrust(rocket, world, 85.0);
+    //printf("Time Taken: %f\n", rocket.gettimeTaken());
     return 0;
 }
