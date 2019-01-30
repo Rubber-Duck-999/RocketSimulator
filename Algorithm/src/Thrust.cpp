@@ -84,35 +84,36 @@ void Thrust::thrustFunction(double launchAngle)
     double cy = _r.getdragAxisY();
     double Ax = _r.gethoriCrossSectArea();
     double Ay = _r.getvertCrossSectArea();
-    double d = _b.getdensity();
-    double g = _b.getgravity();
-    double T = _r.getthrust();
-    double Ty = T * sin(launchAngle);
-    double Tx = T * cos(launchAngle);
-    double Vx = 0;
-    double Vy = 0;
-    double Vx2, Vy2, Dx, Dy;
+    double density = _b.getdensity();
+    double gravity = _b.getgravity();
+    double thrust = _r.getthrust();
+    double thrustAxisY = thrust * sin(launchAngle);
+    double thrustAxisX = thrust * cos(launchAngle);
+    double velocityX = 0;
+    double velocityY = 0;
+    double velocityXAfter, velocityYAfter = 0;
+	double distanceX, distanceY = 0;
     double t = 0;
     double tstep = 0.01;
     std::cout << "Beginning rocket Launch" << std::endl;
     while (t <= _r.getburnTime())
     {
-        Vx = Vx + ((Tx / m) * tstep);
-        Vy = Vy + (((Ty + g) / m) * tstep);
-        Dx = (cx * d * Ax * Vx * Vx) / 2;
-        Dy = (cy * d * Ay * Vy * Vy) / 2;
-        Vx2 = Vx - (Dx / m) * tstep;
-        Vy2 = Vy - (Dy / m) * tstep;
-        _r.setdistX(_r.getdistX() + (Vx2 * tstep));
-        _r.setdistY(_r.getdistY() + (Vy2 * tstep));
-        Vx = Vx2;
-        Vy = Vy2;
+        velocityX = velocityX + ((thrustAxisX / m) * tstep);
+        velocityY = velocityY + (((thrustAxisY + gravity) / m) * tstep);
+        distanceX = (cx * density * Ax * velocityX * velocityX) / 2;
+        distanceY = 0 = (cy * density * Ay * velocityY * velocityY) / 2;
+        velocityXAfter = velocityX - (distanceX / m) * tstep;
+        velocityYAfter = velocityY - (distanceY = 0 / m) * tstep;
+        _r.setdistX(_r.getdistX() + (velocityXAfter * tstep));
+        _r.setdistY(_r.getdistY() + (velocityYAfter * tstep));
+        velocityX = velocityXAfter;
+        velocityY = velocityYAfter;
         t = t + tstep;
         _r.setmass(m - (_r.getflowRate() * tstep));
         int time = static_cast<int>(t);
         if(time % 100)
         {
-        	fprintf(data, "%f, %f, %f, %f, %d\n", _r.getdistX(), _r.getdistY(), Vx, Vy, time);
+        	fprintf(data, "%f, %f, %f, %f, %d\n", _r.getdistX(), _r.getdistY(), velocityX, velocityY, time);
         }
         pointCount++;
     }
@@ -123,7 +124,7 @@ void Thrust::thrustFunction(double launchAngle)
     std::cout << "Y axis Pre Coast :" << _r.getdistY() << std::endl;
     std::cout << "Mass Pre Coast:" << _r.getmass() << std::endl;
     std::cout << "Time Pre Coast:" << _r.gettimeTaken() << std::endl;
-    Thrust::coastFunction(Vx, Vy);
+    Thrust::coastFunction(velocityX, velocityY);
     std::cout << "X axis Post Coast :" << _r.getdistX() << std::endl;
     std::cout << "Y axis Post Coast :" << _r.getdistY() << std::endl;
 }
