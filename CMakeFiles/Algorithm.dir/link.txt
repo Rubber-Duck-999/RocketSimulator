@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libAlgorithm.so -o libAlgorithm.so CMakeFiles/Algorithm.dir/Algorithm/src/Interface.cpp.o 

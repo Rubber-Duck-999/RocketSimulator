@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+./Algorithm/include/Rocket.h
+
+./Algorithm/include/Thrust.h
+stdio.h
+-
+Rocket.h
+./Algorithm/include/Rocket.h
+World.h
+./Algorithm/include/World.h
+math.h
+-
+fstream
+-
+iostream
+-
+
+./Algorithm/include/World.h
+
+/mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/src/Interface.cpp
+cstdlib
+-
+stdio.h
+-
+math.h
+-
+Rocket.h
+-
+World.h
+/mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/src/World.h
+Thrust.h
+/mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/src/Thrust.h
+
