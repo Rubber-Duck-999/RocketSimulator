@@ -1,0 +1,3 @@
+cd Algorithm/
+
+./buildScript.sh
