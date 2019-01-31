@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm
+CMAKE_SOURCE_DIR = /mnt/c/Users/simon/Documents/Projects/RocketSimulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm
+CMAKE_BINARY_DIR = /mnt/c/Users/simon/Documents/Projects/RocketSimulator
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/CMakeFiles /mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/simon/Documents/Projects/RocketSimulator/CMakeFiles /mnt/c/Users/simon/Documents/Projects/RocketSimulator/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/simon/Documents/Projects/RocketSimulator/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,32 @@ Algorithm/fast:
 	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/build
 .PHONY : Algorithm/fast
 
-src/Interface.o: src/Interface.cpp.o
+Algorithm/src/Interface.o: Algorithm/src/Interface.cpp.o
 
-.PHONY : src/Interface.o
+.PHONY : Algorithm/src/Interface.o
 
 # target to build an object file
-src/Interface.cpp.o:
-	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/src/Interface.cpp.o
-.PHONY : src/Interface.cpp.o
+Algorithm/src/Interface.cpp.o:
+	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/Algorithm/src/Interface.cpp.o
+.PHONY : Algorithm/src/Interface.cpp.o
 
-src/Interface.i: src/Interface.cpp.i
+Algorithm/src/Interface.i: Algorithm/src/Interface.cpp.i
 
-.PHONY : src/Interface.i
+.PHONY : Algorithm/src/Interface.i
 
 # target to preprocess a source file
-src/Interface.cpp.i:
-	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/src/Interface.cpp.i
-.PHONY : src/Interface.cpp.i
+Algorithm/src/Interface.cpp.i:
+	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/Algorithm/src/Interface.cpp.i
+.PHONY : Algorithm/src/Interface.cpp.i
 
-src/Interface.s: src/Interface.cpp.s
+Algorithm/src/Interface.s: Algorithm/src/Interface.cpp.s
 
-.PHONY : src/Interface.s
+.PHONY : Algorithm/src/Interface.s
 
 # target to generate assembly for a file
-src/Interface.cpp.s:
-	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/src/Interface.cpp.s
-.PHONY : src/Interface.cpp.s
+Algorithm/src/Interface.cpp.s:
+	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/Algorithm/src/Interface.cpp.s
+.PHONY : Algorithm/src/Interface.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Algorithm"
 	@echo "... edit_cache"
-	@echo "... src/Interface.o"
-	@echo "... src/Interface.i"
-	@echo "... src/Interface.s"
+	@echo "... Algorithm/src/Interface.o"
+	@echo "... Algorithm/src/Interface.i"
+	@echo "... Algorithm/src/Interface.s"
 .PHONY : help
 
 

@@ -3,7 +3,8 @@ project(Algorithm)
 set(CMAKE_BUILD_TYPE Release)
 
 #Bring the headers, such as Student.h into the project
-include_directories("./Algorithm/include")
+include_directories("./Algorithm/include",
+                    "./common")
 
 #However, the file(GLOB...) allows for wildcard additions:
 file(GLOB SOURCES "./Algorithm/src/Interface.cpp")

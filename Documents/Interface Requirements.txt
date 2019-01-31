@@ -18,11 +18,21 @@ stateDataParameters.currentState cannot be moved from RETURN or SHUTDOWN unless 
 
 Algorithm:
 
-
 Req - 001:
-If stateDataParameters.currentState is set to LAUNCH
+Set currentState to NON_CONFIGURED upon startup
+
+Req - 002:
+If stateDataParameters.currentState is set to NON_CONFIGURED
+If for terrainMissionParameters,
+       rocketDataParameters
+are recieved with data then initialise state to CONFIGURED
+
+
+Req - 003:
+If stateDataParameters.currentState is set to LAUNCH and stateDataParameters.currentState
+was previously CONFIGURED
 Send algoData with update time based on timeToLaunch as basis.
 
 
-Req - 002:
+Req - 004:
 Time will not be calculated in outside time, it will based off systemTime and that all relies on timeToLaunch in stateDataParameters. This will be decided in the controller implementation

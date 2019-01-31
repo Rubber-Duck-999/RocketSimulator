@@ -9,12 +9,40 @@
 #include <cstdlib>
 #include <stdio.h>
 #include <math.h>
-#include <Rocket.h>
-#include "World.h"
-#include "Thrust.h"
+#include "Interface.h"
 
 
-void createRocketSimulation()
+void Interface::receive_rocketDataParameters(ROCKET_SIMULATOR::rocketDataParameters* rocketData)
+{
+	if(rocketData)
+	{
+		ROCKET_SIMULATOR::rocketDataParameters _rocketData = *rocketData;
+	}
+}
+
+void Interface::receive_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissionParameters* terrainData)
+{
+	if(terrainData)
+	{
+		ROCKET_SIMULATOR::terrainMissionParameters _terrainData = *terrainData;
+	}
+}
+
+void Interface::receive_stateDataParameters(ROCKET_SIMULATOR::stateDataParameters* stateData)
+{
+	if(stateData)
+	{
+		ROCKET_SIMULATOR::stateDataParameters _stateData = *stateData;
+	}
+
+}
+
+void Interface::send_algoData(ROCKET_SIMULATOR::algoData& algoData)
+{
+
+}
+
+void Interface::createRocketSimulation()
 {
     //Rocket (mass, drag x, drag y, area x, area y, newtons of thrust , burn time , flow rate);
     Rocket rocket(80, .3, .3, 1, 1, 100, 50, 20);
