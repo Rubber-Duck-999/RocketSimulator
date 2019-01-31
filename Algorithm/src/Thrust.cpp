@@ -4,12 +4,13 @@
  * and open the template in the edito_r.
  */
 
+#include "Thrust.h"
 #include "Rocket.h"
 #include "World.h"
-#include "Thrust.h"
+
 //Calculates how fa_r a p_rojectile will t_ravel without th_rust
 
-using r = Rocket;
+//using r = Rocket;
 
 Thrust::Thrust(const Rocket &r, const World &b, double launchAngle)
 {
