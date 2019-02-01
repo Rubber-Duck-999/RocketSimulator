@@ -37,9 +37,18 @@ void Interface::receive_stateDataParameters(ROCKET_SIMULATOR::stateDataParameter
 
 }
 
-void Interface::send_algoData(ROCKET_SIMULATOR::algoData& algoData)
+ROCKET_SIMULATOR::algoData Interface::send_algoData(ROCKET_SIMULATOR::algoData& _algoData)
 {
-
+	ROCKET_SIMULATOR::algoData* algoData = &_algoData;
+	if(algoData)
+	{
+		return _algoData;
+	}
+	else
+	{
+		ROCKET_SIMULATOR::algoData algoData;
+		return algoData;
+	}
 }
 
 void Interface::createRocketSimulation()

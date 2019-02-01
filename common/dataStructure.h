@@ -47,9 +47,9 @@ namespace ROCKET_SIMULATOR
 		double positionAxisX;
 		double positionAxisY;
 		double positionAxisZ;
-		unsigned short int timeMin;
-		unsigned short int timeSec;
-		unsigned short int timeMilliSec;
+		unsigned short int timeMin = 0.0;
+		unsigned short int timeSec = 0.0;
+		unsigned short int timeMilliSec = 0.0;
 	};
 
 

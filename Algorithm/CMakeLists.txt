@@ -3,10 +3,11 @@ project(Algorithm)
 set(CMAKE_BUILD_TYPE Release)
 
 #Bring the headers, such as Student.h into the project
-include_directories(include)
+include_directories("./include",
+                    "./../common")
 
 #However, the file(GLOB...) allows for wildcard additions:
-file(GLOB SOURCES "src/Interface.cpp")
+file(GLOB SOURCES "./src/Interface.cpp")
 
 #Generate the shared library from the sources
 add_library(Algorithm SHARED ${SOURCES})
