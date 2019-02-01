@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/sf_Projects/c++/RocketSimulator/Algorithm
+CMAKE_SOURCE_DIR = /mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/sf_Projects/c++/RocketSimulator/Algorithm/build
+CMAKE_BINARY_DIR = /mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles /media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/build/CMakeFiles /mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/sf_Projects/c++/RocketSimulator/Algorithm/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named libAlgorithm
+# Target rules for targets named exeTestAlgorithmWrapper
 
 # Build rule for target.
-libAlgorithm: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libAlgorithm
-.PHONY : libAlgorithm
+exeTestAlgorithmWrapper: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 exeTestAlgorithmWrapper
+.PHONY : exeTestAlgorithmWrapper
 
 # fast build rule for target.
-libAlgorithm/fast:
-	$(MAKE) -f CMakeFiles/libAlgorithm.dir/build.make CMakeFiles/libAlgorithm.dir/build
-.PHONY : libAlgorithm/fast
+exeTestAlgorithmWrapper/fast:
+	$(MAKE) -f CMakeFiles/exeTestAlgorithmWrapper.dir/build.make CMakeFiles/exeTestAlgorithmWrapper.dir/build
+.PHONY : exeTestAlgorithmWrapper/fast
 
-src/Sockets.o: src/Sockets.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : src/Sockets.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/Sockets.cpp.o:
-	$(MAKE) -f CMakeFiles/libAlgorithm.dir/build.make CMakeFiles/libAlgorithm.dir/src/Sockets.cpp.o
-.PHONY : src/Sockets.cpp.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/exeTestAlgorithmWrapper.dir/build.make CMakeFiles/exeTestAlgorithmWrapper.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/Sockets.i: src/Sockets.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : src/Sockets.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/Sockets.cpp.i:
-	$(MAKE) -f CMakeFiles/libAlgorithm.dir/build.make CMakeFiles/libAlgorithm.dir/src/Sockets.cpp.i
-.PHONY : src/Sockets.cpp.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/exeTestAlgorithmWrapper.dir/build.make CMakeFiles/exeTestAlgorithmWrapper.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/Sockets.s: src/Sockets.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : src/Sockets.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/Sockets.cpp.s:
-	$(MAKE) -f CMakeFiles/libAlgorithm.dir/build.make CMakeFiles/libAlgorithm.dir/src/Sockets.cpp.s
-.PHONY : src/Sockets.cpp.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/exeTestAlgorithmWrapper.dir/build.make CMakeFiles/exeTestAlgorithmWrapper.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -157,11 +157,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... libAlgorithm"
+	@echo "... exeTestAlgorithmWrapper"
 	@echo "... edit_cache"
-	@echo "... src/Sockets.o"
-	@echo "... src/Sockets.i"
-	@echo "... src/Sockets.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
