@@ -37,13 +37,13 @@ iostream
 .././../common/dataStructure.h
 
 /mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/src/main.cpp
-cstdlib
--
-stdio.h
--
-math.h
--
 iostream
+-
+string
+-
+sstream
+-
+cstdlib
 -
 dataStructure.h
 /mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/src/dataStructure.h

@@ -9,13 +9,15 @@
 
 class Interface
 {
-	Interface();
-public:
 	void receive_rocketDataParameters(ROCKET_SIMULATOR::rocketDataParameters* rocketData);
 	void receive_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissionParameters* terrainData);
 	void receive_stateDataParameters(ROCKET_SIMULATOR::stateDataParameters* stateData);
 	ROCKET_SIMULATOR::algoData send_algoData(ROCKET_SIMULATOR::algoData& algoData);
 	void createRocketSimulation();
+public:
+	Interface();
+
+
 };
 
 #endif

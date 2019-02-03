@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(TestAlgorithmWrapper)
 
 set ( PROJECT_LINK_LIBS libAlgorithm.so )
-link_directories( ./Algorithm/build )
+#link_directories( ./Algorithm/build )
 
 
 include_directories("./../common",
