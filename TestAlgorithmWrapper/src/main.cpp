@@ -1,9 +1,4 @@
-/* 
- * File:   main.cpp
- * Author: student
- *
- * Created on May 5, 2016, 10:51 AM
- */
+
 
 
 #include <iostream>
@@ -13,14 +8,11 @@
 #include "dataStructure.h"
 #include "Interface.h"
 
-
-//ROCKET_SIMULATOR::algoData send_algoData(ROCKET_SIMULATOR::algoData& algoData);
-
 void sendData()
 {
 	Interface rocketAlgoInterface;
 	Interface* ptrRocket;
-	ptrRocket = &rocketAlgoInterface;// = &rocketAlgoInterface;
+	ptrRocket = &rocketAlgoInterface;
 	//std::cout << ptrRocket << std::endl;
 	//ROCKET_SIMULATOR::rocketDataParameters* RocketData;
 	//ROCKET_SIMULATOR::terrainMissionParameters* TerrainData;
