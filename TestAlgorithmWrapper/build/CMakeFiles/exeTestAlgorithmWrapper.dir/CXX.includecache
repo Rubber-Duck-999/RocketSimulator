@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../../Algorithm/include/Interface.h
+../../Algorithm/include/Interface_set.h
 Rocket.h
 ../../Algorithm/include/Rocket.h
 World.h
@@ -34,9 +34,11 @@ iostream
 
 ../../Algorithm/include/World.h
 
-.././../common/dataStructure.h
+../../common/dataStructure.h
 
 /mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/src/main.cpp
+Interface_set.h
+/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/src/Interface_set.h
 iostream
 -
 string
@@ -47,6 +49,4 @@ cstdlib
 -
 dataStructure.h
 /mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/src/dataStructure.h
-Interface.h
-/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/src/Interface.h
 

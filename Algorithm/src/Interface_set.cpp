@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <stdio.h>
 #include <math.h>
-#include "Interface.h"
+#include "Interface_set.h"
 
 
 void Interface::receive_rocketDataParameters(ROCKET_SIMULATOR::rocketDataParameters* rocketData)

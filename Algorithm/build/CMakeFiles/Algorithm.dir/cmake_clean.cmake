@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Algorithm.dir/src/Interface.cpp.o"
+  "CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o"
   "libAlgorithm.pdb"
-  "libAlgorithm.so"
+  "libAlgorithm.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/../Algorithm/include -I/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/, -I/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/./../common -I/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/./include 
+CXX_INCLUDES = -I/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/../Algorithm/include -I/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/, -I/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/../common -I/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/include 
 

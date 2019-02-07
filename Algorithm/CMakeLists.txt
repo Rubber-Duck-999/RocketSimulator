@@ -7,7 +7,7 @@ include_directories("./include",
                     "./../common")
 
 #However, the file(GLOB...) allows for wildcard additions:
-file(GLOB SOURCES "./src/Interface.cpp")
+file(GLOB SOURCES "./src/Interface_set.cpp")
 
 #Generate the shared library from the sources
-add_library(Algorithm SHARED ${SOURCES})
+add_library(Algorithm STATIC ${SOURCES})

@@ -15,7 +15,7 @@ class Interface
 	ROCKET_SIMULATOR::algoData send_algoData(ROCKET_SIMULATOR::algoData& algoData);
 	void createRocketSimulation();
 public:
-	Interface();
+	Interface() {};
 
 
 };

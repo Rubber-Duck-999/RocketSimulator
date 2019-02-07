@@ -1,18 +1,16 @@
 
 
-
+#include "Interface_set.h"
 #include <iostream>
 #include <string>
 #include <sstream> // for std::stringstream
 #include <cstdlib> // for exit()
 #include "dataStructure.h"
-#include "Interface.h"
+
 
 void sendData()
 {
-	Interface rocketAlgoInterface;
-	Interface* ptrRocket;
-	ptrRocket = &rocketAlgoInterface;
+	Interface* ptrRocket = new Interface;
 	//std::cout << ptrRocket << std::endl;
 	//ROCKET_SIMULATOR::rocketDataParameters* RocketData;
 	//ROCKET_SIMULATOR::terrainMissionParameters* TerrainData;

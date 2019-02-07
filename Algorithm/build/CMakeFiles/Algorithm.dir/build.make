@@ -57,49 +57,50 @@ include CMakeFiles/Algorithm.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Algorithm.dir/flags.make
 
-CMakeFiles/Algorithm.dir/src/Interface.cpp.o: CMakeFiles/Algorithm.dir/flags.make
-CMakeFiles/Algorithm.dir/src/Interface.cpp.o: ../src/Interface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Algorithm.dir/src/Interface.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Algorithm.dir/src/Interface.cpp.o -c /mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/src/Interface.cpp
+CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o: CMakeFiles/Algorithm.dir/flags.make
+CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o: ../src/Interface_set.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o -c /mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/src/Interface_set.cpp
 
-CMakeFiles/Algorithm.dir/src/Interface.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Algorithm.dir/src/Interface.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/src/Interface.cpp > CMakeFiles/Algorithm.dir/src/Interface.cpp.i
+CMakeFiles/Algorithm.dir/src/Interface_set.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Algorithm.dir/src/Interface_set.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/src/Interface_set.cpp > CMakeFiles/Algorithm.dir/src/Interface_set.cpp.i
 
-CMakeFiles/Algorithm.dir/src/Interface.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Algorithm.dir/src/Interface.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/src/Interface.cpp -o CMakeFiles/Algorithm.dir/src/Interface.cpp.s
+CMakeFiles/Algorithm.dir/src/Interface_set.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Algorithm.dir/src/Interface_set.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/src/Interface_set.cpp -o CMakeFiles/Algorithm.dir/src/Interface_set.cpp.s
 
-CMakeFiles/Algorithm.dir/src/Interface.cpp.o.requires:
+CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o.requires:
 
-.PHONY : CMakeFiles/Algorithm.dir/src/Interface.cpp.o.requires
+.PHONY : CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o.requires
 
-CMakeFiles/Algorithm.dir/src/Interface.cpp.o.provides: CMakeFiles/Algorithm.dir/src/Interface.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/src/Interface.cpp.o.provides.build
-.PHONY : CMakeFiles/Algorithm.dir/src/Interface.cpp.o.provides
+CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o.provides: CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o.provides.build
+.PHONY : CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o.provides
 
-CMakeFiles/Algorithm.dir/src/Interface.cpp.o.provides.build: CMakeFiles/Algorithm.dir/src/Interface.cpp.o
+CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o.provides.build: CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o
 
 
 # Object files for target Algorithm
 Algorithm_OBJECTS = \
-"CMakeFiles/Algorithm.dir/src/Interface.cpp.o"
+"CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o"
 
 # External object files for target Algorithm
 Algorithm_EXTERNAL_OBJECTS =
 
-libAlgorithm.so: CMakeFiles/Algorithm.dir/src/Interface.cpp.o
-libAlgorithm.so: CMakeFiles/Algorithm.dir/build.make
-libAlgorithm.so: CMakeFiles/Algorithm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libAlgorithm.so"
+libAlgorithm.a: CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o
+libAlgorithm.a: CMakeFiles/Algorithm.dir/build.make
+libAlgorithm.a: CMakeFiles/Algorithm.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libAlgorithm.a"
+	$(CMAKE_COMMAND) -P CMakeFiles/Algorithm.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Algorithm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/Algorithm.dir/build: libAlgorithm.so
+CMakeFiles/Algorithm.dir/build: libAlgorithm.a
 
 .PHONY : CMakeFiles/Algorithm.dir/build
 
-CMakeFiles/Algorithm.dir/requires: CMakeFiles/Algorithm.dir/src/Interface.cpp.o.requires
+CMakeFiles/Algorithm.dir/requires: CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o.requires
 
 .PHONY : CMakeFiles/Algorithm.dir/requires
 

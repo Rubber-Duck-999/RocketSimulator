@@ -123,32 +123,32 @@ Algorithm/fast:
 	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/build
 .PHONY : Algorithm/fast
 
-src/Interface.o: src/Interface.cpp.o
+src/Interface_set.o: src/Interface_set.cpp.o
 
-.PHONY : src/Interface.o
+.PHONY : src/Interface_set.o
 
 # target to build an object file
-src/Interface.cpp.o:
-	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/src/Interface.cpp.o
-.PHONY : src/Interface.cpp.o
+src/Interface_set.cpp.o:
+	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o
+.PHONY : src/Interface_set.cpp.o
 
-src/Interface.i: src/Interface.cpp.i
+src/Interface_set.i: src/Interface_set.cpp.i
 
-.PHONY : src/Interface.i
+.PHONY : src/Interface_set.i
 
 # target to preprocess a source file
-src/Interface.cpp.i:
-	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/src/Interface.cpp.i
-.PHONY : src/Interface.cpp.i
+src/Interface_set.cpp.i:
+	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/src/Interface_set.cpp.i
+.PHONY : src/Interface_set.cpp.i
 
-src/Interface.s: src/Interface.cpp.s
+src/Interface_set.s: src/Interface_set.cpp.s
 
-.PHONY : src/Interface.s
+.PHONY : src/Interface_set.s
 
 # target to generate assembly for a file
-src/Interface.cpp.s:
-	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/src/Interface.cpp.s
-.PHONY : src/Interface.cpp.s
+src/Interface_set.cpp.s:
+	$(MAKE) -f CMakeFiles/Algorithm.dir/build.make CMakeFiles/Algorithm.dir/src/Interface_set.cpp.s
+.PHONY : src/Interface_set.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Algorithm"
 	@echo "... edit_cache"
-	@echo "... src/Interface.o"
-	@echo "... src/Interface.i"
-	@echo "... src/Interface.s"
+	@echo "... src/Interface_set.o"
+	@echo "... src/Interface_set.i"
+	@echo "... src/Interface_set.s"
 .PHONY : help
 
 

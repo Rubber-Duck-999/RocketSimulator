@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/exeTestAlgorithmWrapper.dir/src/main.cpp.o  -o exeTestAlgorithmWrapper 
+/usr/bin/c++     CMakeFiles/exeTestAlgorithmWrapper.dir/src/main.cpp.o  -o exeTestAlgorithmWrapper  -L/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/../Algorithm/build -Wl,-rpath,/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/../Algorithm/build -Wl,-Bstatic -lAlgorithm -Wl,-Bdynamic 
