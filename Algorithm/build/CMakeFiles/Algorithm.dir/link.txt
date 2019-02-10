@@ -1,2 +1,0 @@
-/usr/bin/ar qc libAlgorithm.a  CMakeFiles/Algorithm.dir/src/Interface_set.cpp.o
-/usr/bin/ranlib libAlgorithm.a

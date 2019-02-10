@@ -1,3 +1,0 @@
-/mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/build/CMakeFiles/Algorithm.dir
-/mnt/c/Users/simon/Documents/Projects/RocketSimulator/Algorithm/build/CMakeFiles/edit_cache.dir

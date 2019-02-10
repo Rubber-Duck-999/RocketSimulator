@@ -1,3 +1,0 @@
-/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/build/CMakeFiles/exeTestAlgorithmWrapper.dir
-/mnt/c/Users/simon/Documents/Projects/RocketSimulator/TestAlgorithmWrapper/build/CMakeFiles/edit_cache.dir
