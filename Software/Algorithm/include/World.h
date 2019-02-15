@@ -12,7 +12,11 @@ class World
 {
 	public:
 		//World(double density, double gravity);
-		World() {};
+		World()
+		{
+			_density = EARTH_DENSITY;
+			_gravity = EARTH_GRAVITY;
+		}
 		double getdensity() const;
 		double getgravity() const;
 	private:

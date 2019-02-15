@@ -102,7 +102,7 @@ void Thrust::thrustFunction(double launchAngle)
         velocityX = velocityX + ((thrustAxisX / m) * tstep);
         velocityY = velocityY + (((thrustAxisY + gravity) / m) * tstep);
         distanceX = (cx * density * Ax * velocityX * velocityX) / 2;
-        distanceY = 0 = (cy * density * Ay * velocityY * velocityY) / 2;
+        distanceY = (cy * density * Ay * velocityY * velocityY) / 2;
         velocityXAfter = velocityX - (distanceX / m) * tstep;
         velocityYAfter = velocityY - (distanceY = 0 / m) * tstep;
         _r.setdistX(_r.getdistX() + (velocityXAfter * tstep));

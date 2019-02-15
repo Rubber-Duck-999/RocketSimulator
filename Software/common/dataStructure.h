@@ -39,9 +39,8 @@ namespace ROCKET_SIMULATOR
 			LAUNCH,
 			RETURN,
 			SHUTDOWN
-		};
+		} state;
 	};
-	
 	struct algoData
 	{
 		double positionAxisX;
@@ -51,8 +50,6 @@ namespace ROCKET_SIMULATOR
 		unsigned short int timeSec = 0.0;
 		unsigned short int timeMilliSec = 0.0;
 	};
-
-
 
 }
 

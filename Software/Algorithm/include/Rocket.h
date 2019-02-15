@@ -28,7 +28,7 @@ class Rocket
 		//Constructor for class Rocket
 		Rocket(double mass, double dragAxisX, double dragAxisY,
 			   double horiCrossSectArea, double vertCrossSectArea,
-			   double thrust, double burnTime, double flowRate) {};
+			   double thrust, double burnTime, double flowRate);
 
 		//Get functions for class member variables
 		double getmass() const { return _mass; }

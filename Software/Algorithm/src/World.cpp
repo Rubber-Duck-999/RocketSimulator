@@ -14,12 +14,6 @@
 //    _gravity = gravity;
 //}
 
-World::World()
-{
-    _density = EARTH_DENSITY;
-    _gravity = EARTH_GRAVITY;
-}
-
 double World::getdensity() const
 {
     return _density;

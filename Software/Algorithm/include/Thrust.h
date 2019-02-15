@@ -28,7 +28,7 @@ class Thrust
 
 		Thrust() {};
 
-		Thrust(const Rocket &r, const World &b, double launchAngle) {};
+		Thrust(const Rocket &r, const World &b, double launchAngle);
 
 		void coastFunction(double V, double Vt);
 		void thrustFunction(double launchAngle);

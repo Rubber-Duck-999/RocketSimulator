@@ -35,27 +35,19 @@ void Interface::receive_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissio
 
 void Interface::receive_stateDataParameters(ROCKET_SIMULATOR::stateDataParameters& stateData)
 {
-	ROCKET_SIMULATOR::stateDataParameters* ptrState = &stateData;
-	if(ptrState)
-	{
-		enum stateData.currentState state = CONFIGURED;
-		std::cout << "State currently = " << std::endl;
-	}
-
+	readFromBuffer(stateData);
+	std::cout << "State currently = " << std::endl;
+	//stateData = ROCKET_SIMULATOR::stateDataParameters.NON_CONFIGURED;
 }
 
-ROCKET_SIMULATOR::algoData Interface::send_algoData(ROCKET_SIMULATOR::algoData& _algoData)
+void Interface::send_algoData(ROCKET_SIMULATOR::algoData& _algoData)
 {
-	ROCKET_SIMULATOR::algoData* algoData = &_algoData;
-	if(algoData)
-	{
-		return _algoData;
-	}
-	else
-	{
-		ROCKET_SIMULATOR::algoData algoData;
-		return algoData;
-	}
+	std::cout << "_algoData" << std::endl;
+	//ROCKET_SIMULATOR::algoData* algoData = *_algoData;
+	//if(algoData)
+	//{
+	//	_algoData = algoData;
+	//}
 }
 
 void Interface::createRocketSimulation()
