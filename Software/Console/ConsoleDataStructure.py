@@ -38,7 +38,7 @@ dataStructureLauncher = { 'ID' : 102,
 dataStructureState = { 'ID' : 103,
                        'currentState' : State.NON_CONFIGURED }
         
-dataStructureRocket = { 'ID' : 104,
+dataStructurRocket = { 'ID' : 104,
                         'mass' : 0.0,
                         'dragAxisX' : 0.0,
                         'dragAxisY' : 0.0,
@@ -49,6 +49,14 @@ dataStructureRocket = { 'ID' : 104,
                         'flowRate' : 0.0,
                         'angleOfLaunch' : 0.0}
 
+class dataStructureRocket():
+        
+    def _init_(self, ID, mass, dragAxisX, dragAxisY, 
+               horiCrossSectArea, vertCrossSectArea,
+               thrust, burnTime, flowRate, 
+               angleOfLaunch):
+        
+        
 
 def sendData(dataStructure):
     Socket = SocketSender("", 20000, 10)
@@ -60,7 +68,7 @@ def sendData(dataStructure):
     Socket.close()
  
     
-sendData(dataStructureTerrain)   
-sendData(dataStructureLauncher)
-sendData(dataStructureState)
-sendData(dataStructureRocket)
+#sendData(dataStructureTerrain)   
+#sendData(dataStructureLauncher)
+#sendData(dataStructureState)
+#sendData(dataStructureRocket)
