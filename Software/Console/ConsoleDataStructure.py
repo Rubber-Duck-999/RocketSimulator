@@ -8,6 +8,8 @@ from SocketSender import SocketSender
 from enum import Enum
 import enum
 
+Port = 6111
+
 
 class Pilots(Enum):
     FRED  = 1
@@ -24,51 +26,82 @@ class State(Enum):
     RETURN         = 4
     SHUTDOWN       = 5 
 
-
-dataStructureTerrain = { 'ID' : 101,
-                         'density' : 0.0,
-                         'accelerationDueToGravity' : 0.0 }
-
-
-dataStructureLauncher = { 'ID' : 102,
-                          'pilots' : Pilots.FRED,
-                          'timeToLaunchMin' : 0,
-                          'timeToLaunchSec' : 0 }
-
-dataStructureState = { 'ID' : 103,
-                       'currentState' : State.NON_CONFIGURED }
+class dataStructure:
+    def setID(self, ID):
+        self.ID = ID
         
-dataStructurRocket = { 'ID' : 104,
-                        'mass' : 0.0,
-                        'dragAxisX' : 0.0,
-                        'dragAxisY' : 0.0,
-                        'horiCrosSectArea' : 0.0,
-                        'vertCrossSectArea' : 0.0,
-                        'thrust' : 0.0,
-                        'burnTime' : 0.0,
-                        'flowRate' : 0.0,
-                        'angleOfLaunch' : 0.0}
+    def send(self):
+        return self.dataStructure
 
-class dataStructureRocket():
-        
-    def _init_(self, ID, mass, dragAxisX, dragAxisY, 
+
+class rocketDataParameters(dataStructure): 
+    def __init__(self, ID, mass, dragAxisX, dragAxisY, 
                horiCrossSectArea, vertCrossSectArea,
                thrust, burnTime, flowRate, 
                angleOfLaunch):
+        self.ID = ID
+        self.mass = mass
+        self.dragAxisX = dragAxisX
+        self.dragAxisY = dragAxisY
+        self.horiCrossSectArea = horiCrossSectArea
+        self.vertCrossSectArea = vertCrossSectArea
+        self.thrust = thrust
+        self.burnTime = burnTime
+        self.flowRate = flowRate
+        self.angleOfLaunch = angleOfLaunch
+        self.dataStructure = [ self.ID, self.mass, self.dragAxisX, self.dragAxisY,
+                               self.horiCrossSectArea, self.vertCrossSectArea,
+                               self.thrust, self.burnTime, self.flowRate,
+                               self.angleOfLaunch ]  
         
+class launcherMissionParameters(dataStructure):
+    def __init__(self, ID, pilot,
+                 timeToLaunchMin,
+                 timeToLaunchSec):
+        self.ID = ID
+        self.pilot = pilot 
+        self.timeToLaunchMin = timeToLaunchMin
+        self.timeToLaunchSec = timeToLaunchSec
+        self.dataStructure = [ self.ID, self.pilot,
+                               self.timeToLaunchMin,
+                               self.timeToLaunchSec ]
         
+class stateDataParameters(dataStructure):
+    def __init__(self, ID, currentState):
+        self.ID = "ID_" + ID
+        self.currentState = currentState
+        self.dataStructure = [ self.ID, self.currentState ]       
 
-def sendData(dataStructure):
-    Socket = SocketSender("", 20000, 10)
-    ID = dataStructure['ID'] 
-    print(str(ID))
-    Socket.set_sendDataID(ID)
-    Socket.set_sendDataPackage(dataStructure)
+class terrainDataParameters(dataStructure):
+    def __init__(self, ID, density, gravity):
+        self.ID = ID
+        self.density = density
+        self.gravity = gravity
+        self.dataStructure = [ self.ID, self.density, self.gravity ]
+
+
+def sendStateData(Data):
+    Socket = SocketSender("", Port, 10)
+    Socket.set_sendDataPackage(Data)
     Socket.run()
     Socket.close()
- 
+
+def sendAllData(state, terrain, launcher, rocket):
+    Socket = SocketSender("", Port, 10)
+    data = state+ terrain + launcher + rocket
+    Socket.set_sendDataPackage(data)
+    Socket.run()
+    Socket.close()
     
-#sendData(dataStructureTerrain)   
-#sendData(dataStructureLauncher)
-#sendData(dataStructureState)
-#sendData(dataStructureRocket)
+ID = 101
+terrain  = terrainDataParameters(ID, 9.87, 6.23)
+state    = stateDataParameters(ID, State.CONFIGURED)
+launcher = launcherMissionParameters(ID, Pilots.FRED, 5, 0)
+rocket   = rocketDataParameters(ID, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0)
+terrainData  = terrain.send()
+stateData    = state.send()
+launcherData = launcher.send()
+rocketData   = rocket.send()
+sendAllData(terrainData, stateData, launcherData, rocketData)
+
+

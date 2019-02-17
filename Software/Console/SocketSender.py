@@ -15,17 +15,13 @@ class SocketSender:
         self.listenTime = listenTime
         self.byteSize = 1024
         self.encoding = 'UTF-8'
-        self.minDataID = 101
-        self.maxDataID = 105
         self.loopValueMain = True
         self.acknowledged = False
         
-    def sendAckMessages(self, sendDataID, sendDataPackage):
+    def sendAckMessages(self, sendDataPackage):
         if not self.acknowledged:
-            self.sendData = str(sendDataID) + '_' + str(sendDataPackage)
+            self.sendDataString = str(sendDataPackage)
             # Add ID to the data being sent with package data
-            self.sendDataString = str(self.sendData)
-            # Convert value to string format
             self.sendDataString = "M_" + self.sendDataString + "\n";
             # Format for message type
             self.sendData = self.sendDataString.encode()
@@ -49,19 +45,8 @@ class SocketSender:
             self.acknowledged = False
             
 
-    def set_sendDataID(self, sendDataID):
-        self.sendDataID = sendDataID
-
     def set_sendDataPackage(self, sendDataPackage):
         self.sendDataPackage = sendDataPackage 
-            
-    def validateData(self):
-        if self.minDataID <= self.sendDataID <= self.maxDataID:
-            print("ID is in the bounds, set currently at: " + str(self.sendDataID))
-            self.allowSend = True
-        else:
-            print("ID is out of the bounds, set currently at: " + str(self.sendDataID))
-            self.allowSend = False
     
     def run(self):
         # Variable for main loop
@@ -90,9 +75,8 @@ class SocketSender:
                 print("Waiting for pipe reconnection")
             print('# Connected to Host' + self.addr[0] + ' On port:' + str(self.addr[1]))
             # Host and Port print out
-            self.validateData()
             while self.allowSend:
-                self.sendAckMessages(self.sendDataID, self.sendDataPackage)
+                self.sendAckMessages(self.sendDataPackage)
                 # Set up send of messages over Socket in a endless loop
         
     def close(self):
