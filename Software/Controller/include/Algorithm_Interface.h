@@ -7,14 +7,25 @@
 
 class Algorithm_Interface
 {
+	Interface algo;
 public:
-	Algorithm_Interface() {  };
-	void send_rocketDataParameters(ROCKET_SIMULATOR::rocketDataParameters& rocketData);
-	void send_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissionParameters& terrainData);
-	void send_stateDataParameters(ROCKET_SIMULATOR::stateDataParameters& stateData);
-	void receive_algoData(ROCKET_SIMULATOR::algoData& algoData);
+	Algorithm_Interface() { Interface algo; };
+	void send_rocketDataParameters(ROCKET_SIMULATOR::rocketDataParameters& rocketData)
+	{
+		algo.get_rocketDataParameters(rocketData);
+	}
+	void send_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissionParameters& terrainData)
+	{
+		algo.get_terrainMissionParameters(terrainData);
+	}
+	void send_stateDataParameters(ROCKET_SIMULATOR::stateDataParameters& stateData)
+	{
+		algo.get_stateDataParameters(stateData);
+	}
+	void receive_algoData(ROCKET_SIMULATOR::algoData& algoData)
+	{
+		algo.set_algoData(algoData);
+	}
 };
-
-
 
 #endif

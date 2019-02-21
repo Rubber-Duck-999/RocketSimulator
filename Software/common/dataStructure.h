@@ -7,7 +7,7 @@ namespace ROCKET_SIMULATOR
 	{
 		double mass;
 		double dragAxisX;
-		double dragYAxis;
+		double dragAxisY;
 		double horiCrossSectArea;
 		double vertCrossSectArea;
 		double thrust;

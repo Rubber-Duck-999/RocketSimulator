@@ -12,19 +12,21 @@
 #include "Algorithm.h"
 
 
-void Interface::receive_rocketDataParameters(ROCKET_SIMULATOR::rocketDataParameters& rocketData)
+void Interface::get_rocketDataParameters(ROCKET_SIMULATOR::rocketDataParameters& rocketData)
 {
 	ROCKET_SIMULATOR::rocketDataParameters* ptrRocket = &rocketData;
 	if(ptrRocket)
 	{
-		//ROCKET_SIMULATOR::rocketDataParameters _rocketData = *rocketData;
 		std::cout << "Before Change = " << rocketData.mass << std::endl;
-		rocketData.mass = 0.0;
-		std::cout << "After Change = " << rocketData.mass << std::endl;
+		Rocket tempRocket(rocketData.mass, rocketData.dragAxisX, rocketData.dragAxisY,
+				rocketData.horiCrossSectArea, rocketData.vertCrossSectArea,
+				rocketData.thrust, rocketData.burnTime, rocketData.flowRate);
+		_rocket = tempRocket;
+		std::cout << "After Change = " << _rocket.getmass() << std::endl;
 	}
 }
 
-void Interface::receive_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissionParameters& terrainData)
+void Interface::get_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissionParameters& terrainData)
 {
 	ROCKET_SIMULATOR::terrainMissionParameters* ptrTerrain = &terrainData;
 	if(ptrTerrain)
@@ -33,14 +35,14 @@ void Interface::receive_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissio
 	}
 }
 
-void Interface::receive_stateDataParameters(ROCKET_SIMULATOR::stateDataParameters& stateData)
+void Interface::get_stateDataParameters(ROCKET_SIMULATOR::stateDataParameters& stateData)
 {
-	readFromBuffer(stateData);
+	//readFromBuffer(stateData);
 	std::cout << "State currently = " << std::endl;
 	//stateData = ROCKET_SIMULATOR::stateDataParameters.NON_CONFIGURED;
 }
 
-void Interface::send_algoData(ROCKET_SIMULATOR::algoData& _algoData)
+void Interface::set_algoData(ROCKET_SIMULATOR::algoData& _algoData)
 {
 	std::cout << "_algoData" << std::endl;
 	//ROCKET_SIMULATOR::algoData* algoData = *_algoData;
