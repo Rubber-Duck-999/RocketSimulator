@@ -5,6 +5,6 @@ typedef unsigned int buffer_size;
 
 void readFromBuffer();
 
-void readFromBuffer(ROCKET_SIMULATOR::stateDataParameters& stateData) {};
+//void readFromBuffer(ROCKET_SIMULATOR::stateDataParameters& stateData) {};
 
 #endif
