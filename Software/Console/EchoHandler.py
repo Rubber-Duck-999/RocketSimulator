@@ -4,7 +4,7 @@ import sys
 # Create a UDP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-server_address = ('localhost', 20000)
+server_address = ('localhost', 8121)
 message = 'CONNECT 1'
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)	

@@ -17,9 +17,9 @@ from tkinter import *
 def pySimple():
     sg.ChangeLookAndFeel('Dark')
 
-    for x in range(1, 5):
-        sg.OneLineProgressMeter('Loading Console', x+1, 5, 'meter', 'Message')
-        time.sleep(1)
+    #for x in range(1, 5):
+     #   sg.OneLineProgressMeter('Loading Console', x+1, 5, 'meter', 'Message')
+      #  time.sleep(1)
 
     layout = [
         [sg.Text('Welcome to the Rocket Simulator Console (2D)', size=(40, 1), font=("Helvetica", 25))],
@@ -52,6 +52,9 @@ def pySimple():
 
     while True:
         event, values = window.ReadNonBlocking()
+        for name, value in values.items():
+            print(name)
+            print(value)
         sg.Popup(event, values)
         
         if event is 'SaveSettings':
@@ -67,6 +70,16 @@ def pySimple():
 
     # window.CloseNonBlocking()
 
-#tkinter()
-print("hello")
 pySimple()
+
+def doNotRun():
+    ID = 101
+    terrain  = terrainDataParameters(ID, 9.87, 6.23)
+    state    = stateDataParameters(ID, State.CONFIGURED)
+    launcher = launcherMissionParameters(ID, Pilots.FRED, 5, 0)
+    rocket   = rocketDataParameters(ID, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0)
+    terrainData  = terrain.send()
+    stateData    = state.send()
+    launcherData = launcher.send()
+    rocketData   = rocket.send()
+    sendAllData(terrainData, stateData, launcherData, rocketData)

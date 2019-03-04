@@ -68,7 +68,7 @@ class launcherMissionParameters(dataStructure):
         
 class stateDataParameters(dataStructure):
     def __init__(self, ID, currentState):
-        self.ID = "ID_" + ID
+        self.ID = ID
         self.currentState = currentState
         self.dataStructure = [ self.ID, self.currentState ]       
 
@@ -88,20 +88,11 @@ def sendStateData(Data):
 
 def sendAllData(state, terrain, launcher, rocket):
     Socket = SocketSender("", Port, 10)
-    data = state+ terrain + launcher + rocket
+    data = state + terrain + launcher + rocket
     Socket.set_sendDataPackage(data)
     Socket.run()
     Socket.close()
     
-ID = 101
-terrain  = terrainDataParameters(ID, 9.87, 6.23)
-state    = stateDataParameters(ID, State.CONFIGURED)
-launcher = launcherMissionParameters(ID, Pilots.FRED, 5, 0)
-rocket   = rocketDataParameters(ID, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0)
-terrainData  = terrain.send()
-stateData    = state.send()
-launcherData = launcher.send()
-rocketData   = rocket.send()
-sendAllData(terrainData, stateData, launcherData, rocketData)
+
 
 
