@@ -33,6 +33,9 @@ class GUI:
         self.messageID = 101 
         self.dataReady = False     
         self.State = State.NON_CONFIGURED
+        self.defaultTimeToLaunchMin = 0.00
+        self.defaultTimeToLaunchSec = 0.00
+        self.Socket = SocketSender("", Port, 10)
                       
     def Validate(self, value, MIN, MAX):
         if value < MIN or value > MAX:
@@ -109,6 +112,7 @@ class GUI:
                 print("Button Selected")
                 self.assignUIEntries(entries)
                 if self.ValidateEntries() == True:
+                    self.dataReady = True
                     self.State = State.CONFIGURED
                     self.sendData()
                     self.State = State.READY
@@ -149,7 +153,7 @@ class GUI:
         if self.dataReady is True:
             terrain      = terrainDataParameters(self.messageID, self.dataStructure[0], self.dataStructure[1])
             state        = stateDataParameters(self.messageID, self.State)
-            launcher     = launcherMissionParameters(self.messageID, self.Pilot, 
+            launcher     = launcherMissionParameters(self.messageID, self.defaultPilot, 
                                                      self.defaultTimeToLaunchMin, self.defaultTimeToLaunchSec)
             rocket       = rocketDataParameters(self.messageID, self.dataStructure[2], self.dataStructure[3], 
                                                 self.dataStructure[4], self.dataStructure[5], 
@@ -160,9 +164,15 @@ class GUI:
             stateData    = state.send()
             launcherData = launcher.send()
             rocketData   = rocket.send()
-            sendAllData(terrainData, stateData, launcherData, rocketData) 
+            data = stateData + terrainData + launcherData + rocketData
+            self.Socket.set_sendDataPackage(data)
+            if not self.Socket.acknowledged:
+                self.Socket.run(True)
             self.messageID = self.messageID + 1
             self.dataReady = False
+            
+    def closeConnection(self):
+        self.Socket.close()
             
 
 myGUI = GUI()

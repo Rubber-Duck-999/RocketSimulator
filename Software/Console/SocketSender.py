@@ -1,6 +1,5 @@
 import socket
 import sys
-from _socket import SHUT_RDWR
 
 
 class SocketSender:
@@ -48,10 +47,11 @@ class SocketSender:
     def set_sendDataPackage(self, sendDataPackage):
         self.sendDataPackage = sendDataPackage 
     
-    def run(self):
+    def run(self, outsideRun):
         # Variable for main loop
+        self.outsideRun = outsideRun
         print("Program Startup")
-        while self.loopValueMain:
+        if self.loopValueMain and self.outsideRun:
             # Loop Value Variable set to True at start up
             self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             # Create socket on port

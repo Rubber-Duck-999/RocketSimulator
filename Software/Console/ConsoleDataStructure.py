@@ -6,7 +6,6 @@ Created on 18 Jan 2019
 
 from SocketSender import SocketSender 
 from enum import Enum
-import enum
 
 Port = 6111
 
@@ -86,7 +85,7 @@ def sendStateData(Data):
     Socket.run()
     Socket.close()
 
-def sendAllData(state, terrain, launcher, rocket):
+def sendAllData(state, terrain, launcher, rocket, runSwitch):
     Socket = SocketSender("", Port, 10)
     data = state + terrain + launcher + rocket
     Socket.set_sendDataPackage(data)
