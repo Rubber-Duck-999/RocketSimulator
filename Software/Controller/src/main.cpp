@@ -24,7 +24,7 @@ void Socket::createSocket()
     WSAStartup(MAKEWORD(2,0), &WSAData);
     server = socket(AF_INET, SOCK_STREAM, 0);
 
-    addr.sin_addr.s_addr = inet_addr(networkIPAddress); // replace the ip with your futur server ip address. If server AND client are running on the same computer, you can use the local ip 127.0.0.1
+    addr.sin_addr.s_addr = networkIPAddress;
     addr.sin_family = AF_INET;
     addr.sin_port = htons(_port);
 }
