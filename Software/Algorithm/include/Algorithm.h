@@ -15,11 +15,10 @@ class Interface
 public:
 	Interface()
 	{
-		createRocketSimulation();
+		//createRocketSimulation();
 	};
 	void get_rocketDataParameters(ROCKET_SIMULATOR::rocketDataParameters& rocketData);
 	void get_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissionParameters& terrainData);
-	void get_stateDataParameters(ROCKET_SIMULATOR::stateDataParameters& stateData);
 	void set_algoData(ROCKET_SIMULATOR::algoData& algoData);
 };
 

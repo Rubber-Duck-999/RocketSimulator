@@ -18,10 +18,6 @@ public:
 	{
 		algo.get_terrainMissionParameters(terrainData);
 	}
-	void send_stateDataParameters(ROCKET_SIMULATOR::stateDataParameters& stateData)
-	{
-		algo.get_stateDataParameters(stateData);
-	}
 	void receive_algoData(ROCKET_SIMULATOR::algoData& algoData)
 	{
 		algo.set_algoData(algoData);

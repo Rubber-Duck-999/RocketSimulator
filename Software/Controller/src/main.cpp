@@ -1,6 +1,8 @@
 #include <iostream>
+#include <windows.h>
 #include "Algorithm_Interface.h"
 #include <winsock2.h>
+#include "dataStructure.h"
 
 using namespace std;
 
@@ -79,14 +81,59 @@ void Socket::sendToGraphics()
 }
 
 
+void startup(LPCTSTR lpApplicationName)
+{
+   // additional information
+   STARTUPINFO si;
+   PROCESS_INFORMATION pi;
+
+   // set the size of the structures
+   ZeroMemory( &si, sizeof(si) );
+   si.cb = sizeof(si);
+   ZeroMemory( &pi, sizeof(pi) );
+
+  // start the program up
+  CreateProcess( lpApplicationName,   // the path
+    "open",        // Command line
+    NULL,           // Process handle not inheritable
+    NULL,           // Thread handle not inheritable
+    false,          // Set handle inheritance to FALSE
+    0,              // No creation flags
+    NULL,           // Use parent's environment block
+    NULL,           // Use parent's starting directory
+    &si,            // Pointer to STARTUPINFO structure
+    &pi             // Pointer to PROCESS_INFORMATION structure (removed extra parentheses)
+  );
+
+  Sleep(5000);
+
+  // Close process and thread handles.
+  //CloseHandle( pi.hProcess );
+  //CloseHandle( pi.hThread );
+  std::cout << "Running main program" << std::endl;
+}
+
+
 int main()
 {
 	cout << "Starting Controller" << endl;
-    Socket consoleSocket(6111);
-    consoleSocket.createSocket();
-    string consoleData;
-    consoleSocket.receiveFromConsole(consoleData);
-    cout << consoleData << endl;
+    //Socket consoleSocket(6111);
+    //consoleSocket.createSocket();
+    //string consoleData;
+    //consoleSocket.receiveFromConsole(consoleData);
+    //cout << consoleData << endl;
     //consoleSocket.closeSocket();
+    //
+    Algorithm_Interface algoInt;
+    ROCKET_SIMULATOR::rocketDataParameters rocketData;
+    ROCKET_SIMULATOR::launcherMissionParameters launcherData;
+    ROCKET_SIMULATOR::terrainMissionParameters terrainData;
+    ROCKET_SIMULATOR::stateDataParameters stateData;
+    ROCKET_SIMULATOR::algoData algoData;
+    startup("C:\\Users\\simon\\Documents\\Graphics.exe");
+
+    //algoInt.send_rocketDataParameters(rocketData);
+    //algoInt.send_terrainMissionParameters(terrainData);
+    //algoInt.receive_algoData(algoData);
 	return 0;
 }

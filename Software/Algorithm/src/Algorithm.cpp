@@ -35,13 +35,6 @@ void Interface::get_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissionPar
 	}
 }
 
-void Interface::get_stateDataParameters(ROCKET_SIMULATOR::stateDataParameters& stateData)
-{
-	//readFromBuffer(stateData);
-	std::cout << "State currently = " << std::endl;
-	//stateData = ROCKET_SIMULATOR::stateDataParameters.NON_CONFIGURED;
-}
-
 void Interface::set_algoData(ROCKET_SIMULATOR::algoData& _algoData)
 {
 	std::cout << "_algoData" << std::endl;
