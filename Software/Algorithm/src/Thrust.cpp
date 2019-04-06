@@ -8,14 +8,15 @@
 #include "Rocket.h"
 #include "World.h"
 
-//Calculates how fa_r a p_rojectile will t_ravel without th_rust
+//Calculates how far a projectile will t_ravel without th_rust
 
 //using r = Rocket;
 
-Thrust::Thrust(const Rocket &r, const World &b, double launchAngle)
+Thrust::Thrust(Rocket &r, World &b, double launchAngle, ROCKET_SIMULATOR::algoData algoData)
 {
 	_r = r;
 	_b = b;
+	_algoData = algoData;
 	Thrust::thrustFunction(launchAngle);
 }
 
@@ -68,6 +69,7 @@ void Thrust::coastFunction(double Vx /*Velocity On X*/, double Vy /*Velocity on 
     fclose(data);
     double time = _r.gettimeTaken();
     _r.settimeTaken(time + t);
+    _algoData.positionAxisX = 0.0;
     std::cout << "Time Post Coast: " << _r.gettimeTaken() << std::endl;
 }
 

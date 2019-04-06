@@ -1,6 +1,6 @@
 #include <iostream>
 #include <windows.h>
-#include "Algorithm_Interface.h"
+#include "Algorithm.h"
 #include <winsock2.h>
 #include "dataStructure.h"
 
@@ -108,8 +108,8 @@ void startup(LPCTSTR lpApplicationName)
   Sleep(5000);
 
   // Close process and thread handles.
-  //CloseHandle( pi.hProcess );
-  //CloseHandle( pi.hThread );
+  CloseHandle( pi.hProcess );
+  CloseHandle( pi.hThread );
   std::cout << "Running main program" << std::endl;
 }
 
@@ -124,16 +124,18 @@ int main()
     //cout << consoleData << endl;
     //consoleSocket.closeSocket();
     //
-    Algorithm_Interface algoInt;
+    Algorithm algo;
     ROCKET_SIMULATOR::rocketDataParameters rocketData;
     ROCKET_SIMULATOR::launcherMissionParameters launcherData;
     ROCKET_SIMULATOR::terrainMissionParameters terrainData;
     ROCKET_SIMULATOR::stateDataParameters stateData;
     ROCKET_SIMULATOR::algoData algoData;
     startup("C:\\Users\\simon\\Documents\\Graphics.exe");
-
-    //algoInt.send_rocketDataParameters(rocketData);
-    //algoInt.send_terrainMissionParameters(terrainData);
-    //algoInt.receive_algoData(algoData);
+    algo.get_rocketDataParameters(rocketData);
+    algo.get_terrainMissionParameters(terrainData);
+    while(!algo.getAlgoFinished())
+    {
+    	algo.set_algoData(algoData);
+    }
 	return 0;
 }

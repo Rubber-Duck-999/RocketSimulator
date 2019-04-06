@@ -7,13 +7,6 @@
 
 #include "World.h"
 
-
-//World::World(double density /*Density of air*/, double gravity /*Gravitational acceleration*/)
-//{
-//    _density = density;
-//    _gravity = gravity;
-//}
-
 double World::getdensity() const
 {
     return _density;

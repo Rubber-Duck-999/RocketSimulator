@@ -14,10 +14,9 @@
 #include "Rocket.h"
 #include "World.h"
 #include <math.h>
+#include "dataStructure.h"
 #include <fstream>
 #include <iostream>
-
-#define PI 3.14159265
 
 #ifndef THRUST_H
 #define THRUST_H
@@ -25,10 +24,7 @@
 class Thrust
 {
 	public:
-
-		Thrust() {};
-
-		Thrust(const Rocket &r, const World &b, double launchAngle);
+		Thrust(Rocket &r, World &b, double launchAngle, ROCKET_SIMULATOR::algoData algoData);
 
 		void coastFunction(double V, double Vt);
 		void thrustFunction(double launchAngle);
@@ -42,7 +38,9 @@ class Thrust
 		}
 	private:
 		Rocket _r;
-		World _b;
+		World  _b;
+		ROCKET_SIMULATOR::algoData _algoData;
+		const double PI = 3.14159265;
 		int _countPoint = 0;
 };
 #endif /* THRUST_H */

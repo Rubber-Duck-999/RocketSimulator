@@ -4,15 +4,16 @@ Created on 19 Jan 2019
 @author: simon
 '''
 
-import sys
+import sys, queue, threading, time
 from ConsoleDataStructure import *
 from PySimpleGUI.PySimpleGUI import Popup
 if sys.version_info[0] >= 3:
     import PySimpleGUI as sg
 
 
-class GUI:
-    def __init__(self):
+class GUI(threading.Thread):
+    def __init__(self, queue):
+        threading.Thread.__init__(self)
         self.defaultPilot     = Pilots.FRED
         self.defaultGravity   = 9.87
         self.defaultDensity   = 0.00
@@ -35,7 +36,7 @@ class GUI:
         self.State = State.NON_CONFIGURED
         self.defaultTimeToLaunchMin = 0.00
         self.defaultTimeToLaunchSec = 0.00
-        self.Socket = SocketSender("", Port, 10)
+        self.queue = queue
                       
     def Validate(self, value, MIN, MAX):
         if value < MIN or value > MAX:
@@ -47,12 +48,12 @@ class GUI:
         MIN = 0.00
         output = True
         for name in self.dataStructure:
-            if self.Validate(name, MIN, 300.0) == False:
+            if not self.Validate(name, MIN, 300.0):
                 output = False
         return output  
     
     def assignUIEntries(self, entries):
-        self.defaultPilot     = entries.get('pilots')
+        self.defaultPilot = entries.get('pilots')
         i = 0
         print("Assigning UI Values")
         for name in self.dataStructure:
@@ -165,17 +166,23 @@ class GUI:
             launcherData = launcher.send()
             rocketData   = rocket.send()
             data = stateData + terrainData + launcherData + rocketData
-            self.Socket.set_sendDataPackage(data)
-            if not self.Socket.acknowledged:
-                self.Socket.run(True)
+            #self.Socket.set_sendDataPackage(data)
+            #if not self.Socket.acknowledged:
+            #    self.Socket.run(True)
             self.messageID = self.messageID + 1
             self.dataReady = False
             
     def closeConnection(self):
         self.Socket.close()
-            
+        
+    def run(self):
+        print ("Starting " + self.name)
+        self.MainUI()
+        self.SubUI()
+        print ("Exiting " + self.name + "\n")
+        
 
-myGUI = GUI()
-while True:
-    myGUI.MainUI()
-    myGUI.SubUI()
+# myGUI = GUI()
+# while True:
+#     myGUI.MainUI()
+#     myGUI.SubUI()

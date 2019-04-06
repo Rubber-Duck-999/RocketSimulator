@@ -1,18 +1,10 @@
-//============================================================================
-// Name        : AlgorithmTry.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C, Ansi-style
-//============================================================================
-
 #include <cstdlib>
 #include <stdio.h>
 #include <math.h>
 #include "Algorithm.h"
 
 
-void Interface::get_rocketDataParameters(ROCKET_SIMULATOR::rocketDataParameters& rocketData)
+void Algorithm::get_rocketDataParameters(ROCKET_SIMULATOR::rocketDataParameters& rocketData)
 {
 	ROCKET_SIMULATOR::rocketDataParameters* ptrRocket = &rocketData;
 	if(ptrRocket)
@@ -22,38 +14,37 @@ void Interface::get_rocketDataParameters(ROCKET_SIMULATOR::rocketDataParameters&
 				rocketData.horiCrossSectArea, rocketData.vertCrossSectArea,
 				rocketData.thrust, rocketData.burnTime, rocketData.flowRate);
 		_rocket = tempRocket;
+		_angleOfLaunch = rocketData.angleOfLaunch;
+		_rocketSet = true;
 		std::cout << "After Change = " << _rocket.getmass() << std::endl;
 	}
 }
 
-void Interface::get_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissionParameters& terrainData)
+void Algorithm::get_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissionParameters& terrainData)
 {
 	ROCKET_SIMULATOR::terrainMissionParameters* ptrTerrain = &terrainData;
 	if(ptrTerrain)
 	{
-		terrainData.density = 0.0;
+		World _world(terrainData.density, terrainData.accelerationDueToGravity);
+		_worldSet = true;
 	}
 }
 
-void Interface::set_algoData(ROCKET_SIMULATOR::algoData& _algoData)
+void Algorithm::set_algoData(ROCKET_SIMULATOR::algoData& algoData)
 {
 	std::cout << "_algoData" << std::endl;
-	//ROCKET_SIMULATOR::algoData* algoData = *_algoData;
-	//if(algoData)
-	//{
-	//	_algoData = algoData;
-	//}
+	ROCKET_SIMULATOR::algoData* ptrAlgo = &algoData;
+	if(ptrAlgo)
+	{
+		algoData = _algoData;
+	}
 }
 
-void Interface::createRocketSimulation()
+bool Algorithm::createRocketSimulation()
 {
-    //Rocket (mass, drag x, drag y, area x, area y, newtons of thrust , burn time , flow rate);
-    Rocket rocket(80, .3, .3, 1, 1, 100, 50, 20);
-    /*World ( density of air,  acceleration due to gravity) if this is left blank then it creates a world
-        equivalent to earth. */
-    World world;
-    // Creates array to handle output, first value is distance traveled on  x, then dist on y, then seconds of travel.
-    //runs thrust function passing it the rocket, the world it is in, and the angle of launch
-    Thrust thrust(rocket, world, 85.0);
-    //printf("Time Taken: %f\n", rocket.gettimeTaken());
+	if(_rocketSet && _worldSet)
+	{
+		Thrust thrust(_rocket, _world, _angleOfLaunch, _algoData);
+	}
+	return _algoFinished = true;
 }
