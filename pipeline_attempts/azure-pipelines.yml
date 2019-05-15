@@ -1,28 +1,15 @@
-# C/C++ with GCC
-# Build your C/C++ project with GCC using make.
-# Add steps that publish test results, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/apps/c-cpp/gcc
+image: gcc:7.3
 
-trigger:
-- master
+max-time: 3
 
-pool:
-  vmImage: 'Ubuntu-16.04'
-
-jobs: 
-- name: Python
-  steps:
-  - script: 
+pipelines:
+  default:
+    - step:
+        artifacts:
+          - output.txt
+        script: # Modify the commands below to build your repository.
       - pwd
       - ls -la 
       - cd ../Software/Console
-      - python3.6 
-- name: Cpp
-  steps:
-  - script: 
-      - pwd
-      - ls -la 
-      - cd ../Software/Console
-      - python3.6 
-  
+      - python 
 
