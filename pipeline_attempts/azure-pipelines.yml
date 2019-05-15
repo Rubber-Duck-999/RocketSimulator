@@ -10,14 +10,19 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 jobs: 
-- job:Python
+- name: Python
   steps:
   - script: 
       - pwd
       - ls -la 
       - cd ../Software/Console
       - python3.6 
-    displayName: 'make'
-  
+- name: Cpp
+  steps:
+  - script: 
+      - pwd
+      - ls -la 
+      - cd ../Software/Console
+      - python3.6 
   
 
