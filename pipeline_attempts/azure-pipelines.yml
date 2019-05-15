@@ -9,14 +9,15 @@ trigger:
 pool:
   vmImage: 'Ubuntu-16.04'
 
-job: Python
-steps:
-- script: 
-    - pwd
-    - ls -la 
-    - cd ../Software/Console
-    - python3.6 
-  displayName: 'make'
+jobs: 
+- job:Python
+  steps:
+  - script: 
+      - pwd
+      - ls -la 
+      - cd ../Software/Console
+      - python3.6 
+    displayName: 'make'
   
   
 
