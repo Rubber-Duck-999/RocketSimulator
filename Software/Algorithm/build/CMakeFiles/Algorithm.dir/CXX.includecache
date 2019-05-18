@@ -1,0 +1,70 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Algorithm.h
+Rocket.h
+../include/Rocket.h
+World.h
+../include/World.h
+Thrust.h
+../include/Thrust.h
+dataStructure.h
+../include/dataStructure.h
+
+../include/Rocket.h
+
+../include/Thrust.h
+stdio.h
+-
+Rocket.h
+../include/Rocket.h
+World.h
+../include/World.h
+math.h
+-
+dataStructure.h
+../include/dataStructure.h
+fstream
+-
+iostream
+-
+
+../include/World.h
+
+../src/../../common/dataStructure.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/Algorithm.cpp
+cstdlib
+-
+stdio.h
+-
+math.h
+-
+Algorithm.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/Algorithm.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/Rocket.cpp
+Rocket.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/Rocket.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/Thrust.cpp
+Thrust.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/Thrust.h
+Rocket.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/Rocket.h
+World.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/World.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/World.cpp
+World.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/World.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/main.cpp
+iostream
+-
+
