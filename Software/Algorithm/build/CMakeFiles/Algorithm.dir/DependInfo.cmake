@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/Rocket.cpp" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/build/CMakeFiles/Algorithm.dir/src/Rocket.cpp.o"
   "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/Thrust.cpp" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/build/CMakeFiles/Algorithm.dir/src/Thrust.cpp.o"
   "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/World.cpp" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/build/CMakeFiles/Algorithm.dir/src/World.cpp.o"
-  "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/main.cpp" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/build/CMakeFiles/Algorithm.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

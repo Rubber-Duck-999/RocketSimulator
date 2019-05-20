@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2019-05-18 21:19:33</td>
+            <td class="headerValue">2019-05-18 23:16:52</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -98,15 +98,18 @@
 <span class="lineNum">      36 </span>            :                 {
 <span class="lineNum">      37 </span><span class="lineNoCov">          0 :                         return _b;</span>
 <span class="lineNum">      38 </span>            :                 }
-<span class="lineNum">      39 </span>            :         private:
-<span class="lineNum">      40 </span>            :                 Rocket _r;
-<span class="lineNum">      41 </span>            :                 World  _b;
-<span class="lineNum">      42 </span>            :                 ROCKET_SIMULATOR::algoData _algoData;
-<span class="lineNum">      43 </span>            :                 const double PI = 3.14159265;
-<span class="lineNum">      44 </span>            :                 int _countPoint = 0;
-<span class="lineNum">      45 </span>            : };
-<span class="lineNum">      46 </span>            : #endif /* THRUST_H */
-<span class="lineNum">      47 </span>            : 
+<span class="lineNum">      39 </span>            :                 bool openFile();
+<span class="lineNum">      40 </span>            :         private:
+<span class="lineNum">      41 </span>            :                 Rocket _r;
+<span class="lineNum">      42 </span>            :                 World  _b;
+<span class="lineNum">      43 </span>            :                 FILE*  _dataFile;
+<span class="lineNum">      44 </span>            :                 const char* _fileName = &quot;data.dat&quot;;
+<span class="lineNum">      45 </span>            :                 ROCKET_SIMULATOR::algoData _algoData;
+<span class="lineNum">      46 </span>            :                 const double PI = 3.14159265;
+<span class="lineNum">      47 </span>            :                 int _countPoint = 0;
+<span class="lineNum">      48 </span>            : };
+<span class="lineNum">      49 </span>            : #endif /* THRUST_H */
+<span class="lineNum">      50 </span>            : 
 </pre>
       </td>
     </tr>

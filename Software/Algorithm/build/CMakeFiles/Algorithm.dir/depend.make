@@ -20,5 +20,3 @@ CMakeFiles/Algorithm.dir/src/Thrust.cpp.o: ../src/Thrust.cpp
 CMakeFiles/Algorithm.dir/src/World.cpp.o: ../include/World.h
 CMakeFiles/Algorithm.dir/src/World.cpp.o: ../src/World.cpp
 
-CMakeFiles/Algorithm.dir/src/main.cpp.o: ../src/main.cpp
-

@@ -1,1 +1,2 @@
-/usr/bin/c++   -std=c++11 -Wall -Werror -g -O0 --coverage -fprofile-arcs -ftest-coverage  -rdynamic CMakeFiles/Algorithm.dir/src/Rocket.cpp.o CMakeFiles/Algorithm.dir/src/Thrust.cpp.o CMakeFiles/Algorithm.dir/src/World.cpp.o CMakeFiles/Algorithm.dir/src/Algorithm.cpp.o CMakeFiles/Algorithm.dir/src/main.cpp.o  -o ../bin/Algorithm 
+/usr/bin/ar qc libAlgorithm.a  CMakeFiles/Algorithm.dir/src/Rocket.cpp.o CMakeFiles/Algorithm.dir/src/Thrust.cpp.o CMakeFiles/Algorithm.dir/src/World.cpp.o CMakeFiles/Algorithm.dir/src/Algorithm.cpp.o
+/usr/bin/ranlib libAlgorithm.a

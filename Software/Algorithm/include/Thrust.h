@@ -36,9 +36,12 @@ class Thrust
 		{
 			return _b;
 		}
+		bool openFile();
 	private:
 		Rocket _r;
 		World  _b;
+		FILE*  _dataFile;
+		const char* _fileName = "data.dat";
 		ROCKET_SIMULATOR::algoData _algoData;
 		const double PI = 3.14159265;
 		int _countPoint = 0;

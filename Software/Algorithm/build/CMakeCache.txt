@@ -17,6 +17,9 @@
 //Value Computed by CMake
 Algorithm_BINARY_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/build
 
+//Dependencies for target
+Algorithm_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 Algorithm_SOURCE_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm
 

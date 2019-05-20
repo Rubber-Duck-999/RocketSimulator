@@ -10,8 +10,6 @@
 
 //Calculates how far a projectile will t_ravel without th_rust
 
-//using r = Rocket;
-
 Thrust::Thrust(Rocket &r, World &b, double launchAngle, ROCKET_SIMULATOR::algoData algoData)
 {
 	_r = r;
@@ -20,57 +18,71 @@ Thrust::Thrust(Rocket &r, World &b, double launchAngle, ROCKET_SIMULATOR::algoDa
 	Thrust::thrustFunction(launchAngle);
 }
 
+bool Thrust::openFile()
+{
+	if(FILE* data = fopen(_fileName, "a"))
+	{
+		_dataFile = data;
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 void Thrust::coastFunction(double Vx /*Velocity On X*/, double Vy /*Velocity on Y*/)
 {
-    FILE *data = fopen("data.dat", "a");
-
-    _r = Thrust::getrocketObject();
-    _b = Thrust::getworldObject();
-    double m = _r.getmass();
-    double cx = _r.getdragAxisX();
-    double cy = _r.getdragAxisY();
-    double Ax = _r.gethoriCrossSectArea();
-    double Ay = _r.getvertCrossSectArea();
-    double d = _b.getdensity();
-    double g = _b.getgravity();
-    double accelerationYDirection = 0.0;
-    double accelerationXDirection = 0.0;
-    double angleOfElevation, Vx2, Vy2;
-	double forceAppliedXDirection, forceAppliedYDirection;
-    double t = 0.0;
-    double tstep = 0.01;
-    int pointCount = 0;
-    while (_r.getdistY() >= 0)
-    {
-        angleOfElevation = atan(Vy / Vx) * (180 / PI);
-        forceAppliedXDirection = (cx * d * Ax * Vx * Vx) / 2;
-        forceAppliedYDirection = (cy * d * Ay * Vy * Vy) / 2;
-        accelerationXDirection = -forceAppliedXDirection / m;
-        if ((angleOfElevation + 180) >= 180)
-        {
-            accelerationYDirection = -((forceAppliedYDirection / m) + g);
-        }
-        else if ((angleOfElevation + 180) < 180)
-        {
-            accelerationYDirection = ((forceAppliedYDirection / m) - g);
-        }
-        Vy2 = Vy + accelerationYDirection * tstep;
-        Vx2 = Vx + accelerationXDirection * tstep;
-        _r.setdistY(_r.getdistY() + (Vy * tstep));
-        _r.setdistX(_r.getdistX() + (Vx * tstep));
-        fprintf(data, "%f, %f, %f, %f, %f\n", _r.getdistX(), _r.getdistY(), Vx, Vy, t);
-        t = t + tstep;
-        Vx = Vx2;
-        Vy = Vy2;
-        pointCount++;
-    }
-    std::cout << "Mass Post Coast:" << _r.getmass() << std::endl;
-    fflush(data);
-    fclose(data);
-    double time = _r.gettimeTaken();
-    _r.settimeTaken(time + t);
-    _algoData.positionAxisX = 0.0;
-    std::cout << "Time Post Coast: " << _r.gettimeTaken() << std::endl;
+    if(openFile())
+	{
+		_r = Thrust::getrocketObject();
+		_b = Thrust::getworldObject();
+		double m = _r.getmass();
+		double cx = _r.getdragAxisX();
+		double cy = _r.getdragAxisY();
+		double Ax = _r.gethoriCrossSectArea();
+		double Ay = _r.getvertCrossSectArea();
+		double d = _b.getdensity();
+		double g = _b.getgravity();
+		double accelerationYDirection = 0.0;
+		double accelerationXDirection = 0.0;
+		double angleOfElevation, Vx2, Vy2;
+		double forceAppliedXDirection, forceAppliedYDirection;
+		double t = 0.0;
+		double tstep = 0.01;
+		int pointCount = 0;
+		while (_r.getdistY() >= 0)
+		{
+			angleOfElevation = atan(Vy / Vx) * (180 / PI);
+			forceAppliedXDirection = (cx * d * Ax * Vx * Vx) / 2;
+			forceAppliedYDirection = (cy * d * Ay * Vy * Vy) / 2;
+			accelerationXDirection = -forceAppliedXDirection / m;
+			if ((angleOfElevation + 180) >= 180)
+			{
+				accelerationYDirection = -((forceAppliedYDirection / m) + g);
+			}
+			else if ((angleOfElevation + 180) < 180)
+			{
+				accelerationYDirection = ((forceAppliedYDirection / m) - g);
+			}
+			Vy2 = Vy + accelerationYDirection * tstep;
+			Vx2 = Vx + accelerationXDirection * tstep;
+			_r.setdistY(_r.getdistY() + (Vy * tstep));
+			_r.setdistX(_r.getdistX() + (Vx * tstep));
+			fprintf(_dataFile, "%f, %f, %f, %f, %f\n", _r.getdistX(), _r.getdistY(), Vx, Vy, t);
+			t = t + tstep;
+			Vx = Vx2;
+			Vy = Vy2;
+			pointCount++;
+		}
+		std::cout << "Mass Post Coast:" << _r.getmass() << std::endl;
+		fflush(_dataFile);
+		fclose(_dataFile);
+		double time = _r.gettimeTaken();
+		_r.settimeTaken(time + t);
+		_algoData.positionAxisX = 0.0;
+		std::cout << "Time Post Coast: " << _r.gettimeTaken() << std::endl;
+	}
 }
 
 //Calculates how far a rocket will travel under thrust

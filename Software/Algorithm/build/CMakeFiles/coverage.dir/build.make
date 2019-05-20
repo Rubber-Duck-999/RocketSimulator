@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Sof
 # Include the progress variables for this target.
 include CMakeFiles/coverage.dir/progress.make
 
-CMakeFiles/coverage: ../bin/Algorithm
+CMakeFiles/coverage: libAlgorithm.a
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Resetting code coverage counters to zero."
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Processing code coverage counters and generating report."
 	/usr/bin/lcov --directory . --zerocounters

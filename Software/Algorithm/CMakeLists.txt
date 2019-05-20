@@ -26,14 +26,13 @@ set (SOURCE
     ${SRC_DIR}/Thrust.cpp
     ${SRC_DIR}/World.cpp
 	${SRC_DIR}/Algorithm.cpp
-	${SRC_DIR}/main.cpp
 )
 
 # Output folder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
 
 # Add the executable for the program
-add_executable(${PROJECT_NAME} ${SOURCE})
+add_library(${PROJECT_NAME} STATIC ${SOURCE})
 # Unit tests
 add_subdirectory(tests)
 
