@@ -20,8 +20,8 @@ steps:
     pwd
   displayName: 'Run a multi-line script'
 
-steps:
-- script: pwd
+- script: |
+    pwd
   displayName: 'Check location'
 
 - task: CMake@1
