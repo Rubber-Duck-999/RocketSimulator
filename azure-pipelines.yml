@@ -17,7 +17,12 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
     cd Software/Algorithm
+    pwd
   displayName: 'Run a multi-line script'
+
+steps:
+- script: pwd
+  displayName: 'Check location'
 
 - task: CMake@1
   inputs:
