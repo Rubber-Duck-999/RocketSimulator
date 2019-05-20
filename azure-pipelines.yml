@@ -10,20 +10,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  - script: |
+      echo Add other tasks to build, test, and deploy your project.
+      echo See https://aka.ms/yaml
+      cd Software/Algorithm
+      pwd
+    displayName: 'Run a multi-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-    cd Software/Algorithm
-    pwd
-  displayName: 'Run a multi-line script'
-
-- script: |
-    pwd
-  displayName: 'Check location'
-
-- task: CMake@1
-  inputs:
-    cmakeArgs: '-DCMAKE_BUILD_TYPE=Coverage ..'
+  - task: CMake@1
+    inputs:
+      cmakeArgs: '-DCMAKE_BUILD_TYPE=Coverage ..'
