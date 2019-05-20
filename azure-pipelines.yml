@@ -20,4 +20,9 @@ steps:
   - task: CMake@1
     inputs:
       workingDirectory: 'Software/Algorithm/build'
-      cmakeArgs: '..'
+      cmakeArgs: '.. -DCMAKE_BUILD_TYPE=Coverage'
+
+  - script: |
+      echo Making algorithm tests
+      cd Software/Algorithm/build
+      make
