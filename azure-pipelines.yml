@@ -28,4 +28,4 @@ steps:
       make
       ls ../bin
       cd ../bin
-      ./TestAlgorithm
+      ./testAlgorithm
