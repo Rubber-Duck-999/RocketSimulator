@@ -8,12 +8,18 @@
 #include "Algorithm.h"
 #include <gtest/gtest.h>
 
-TEST(SquareRootTest, TestAlgo)
+TEST(Tests, TestAlgo)
 {
 	Algorithm algo;
 	bool val = algo.createRocketSimulation();
     ASSERT_FALSE(!val);
 }
+
+TEST(Tests, TestAlgo2)
+{
+	ASSERT_TRUE(false);
+}
+
 
 int main(int argc, char **argv)
 {
