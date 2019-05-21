@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cpp
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/tests/src/TestControllerWrapper.cpp
+

@@ -4,7 +4,7 @@ Created on 31 Mar 2019
 @author: simon
 '''
 import time, threading, queue
-import GUI
+from CoreGUI import *
 exitFlag = 0
      
 # Fill the queue

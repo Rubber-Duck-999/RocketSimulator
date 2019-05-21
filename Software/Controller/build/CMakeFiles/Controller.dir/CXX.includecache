@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/../../common/dataStructure.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cpp
+windows.h
+-
+Algorithm.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Algorithm.h
+winsock2.h
+-
+dataStructure.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/dataStructure.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cpp
+

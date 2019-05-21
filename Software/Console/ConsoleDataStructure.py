@@ -29,7 +29,7 @@ class dataStructure:
     def setID(self, ID):
         self.ID = ID
         
-    def send(self):
+    def getDataStructure(self):
         return self.dataStructure
 
 

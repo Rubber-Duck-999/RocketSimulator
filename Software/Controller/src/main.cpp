@@ -1,4 +1,4 @@
-#include <iostream>
+/* #include <iostream>
 #include <windows.h>
 #include "Algorithm.h"
 #include <winsock2.h>
@@ -138,4 +138,11 @@ int main()
     	algo.set_algoData(algoData);
     }
 	return 0;
+}
+ */
+ 
+int main()
+{
+
+   return 0;
 }

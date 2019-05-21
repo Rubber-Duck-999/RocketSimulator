@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Graphics/src/Graphics.cpp
+stdio.h
+-
+GL/glut.h
+-
+math.h
+-
+
