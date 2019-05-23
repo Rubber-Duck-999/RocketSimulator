@@ -6,17 +6,63 @@
 
 #IncludeRegexTransform: 
 
-../src/../../common/dataStructure.h
-
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cpp
-windows.h
+../include/Logging.h
+string
 -
-Algorithm.h
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Algorithm.h
-winsock2.h
--
-dataStructure.h
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/dataStructure.h
+boost/log/trivial.hpp
+../include/boost/log/trivial.hpp
+boost/log/utility/setup.hpp
+../include/boost/log/utility/setup.hpp
 
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cpp
+../include/Socket.h
+arpa/inet.h
+-
+iostream
+-
+sstream
+-
+cstdlib
+-
+sys/socket.h
+-
+unistd.h
+-
+stdlib.h
+-
+string
+-
+sys/types.h
+-
+netinet/in.h
+-
+netdb.h
+-
+stdio.h
+-
+algorithm
+-
+Logging.h
+../include/Logging.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Config_Reader.cpp
+iostream
+-
+iomanip
+-
+cstdlib
+-
+vector
+-
+libconfig.h++
+-
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Main.cpp
+Logging.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Logging.h
+Socket.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Socket.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Socket.cpp
+Socket.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Socket.h
 

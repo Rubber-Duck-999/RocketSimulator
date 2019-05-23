@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Controller.dir/src/socket.cpp.o"
-  "CMakeFiles/Controller.dir/src/main.cpp.o"
+  "CMakeFiles/Controller.dir/src/Main.cpp.o"
+  "CMakeFiles/Controller.dir/src/Socket.cpp.o"
+  "CMakeFiles/Controller.dir/src/Config_Reader.cpp.o"
   "../bin/Controller.pdb"
   "../bin/Controller"
 )

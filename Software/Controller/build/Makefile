@@ -234,59 +234,86 @@ gtest/fast:
 	$(MAKE) -f googletest-build/googletest/CMakeFiles/gtest.dir/build.make googletest-build/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
-src/main.o: src/main.cpp.o
+src/Config_Reader.o: src/Config_Reader.cpp.o
 
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
-
-src/main.i: src/main.cpp.i
-
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
-
-src/socket.o: src/socket.cpp.o
-
-.PHONY : src/socket.o
+.PHONY : src/Config_Reader.o
 
 # target to build an object file
-src/socket.cpp.o:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/socket.cpp.o
-.PHONY : src/socket.cpp.o
+src/Config_Reader.cpp.o:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Config_Reader.cpp.o
+.PHONY : src/Config_Reader.cpp.o
 
-src/socket.i: src/socket.cpp.i
+src/Config_Reader.i: src/Config_Reader.cpp.i
 
-.PHONY : src/socket.i
+.PHONY : src/Config_Reader.i
 
 # target to preprocess a source file
-src/socket.cpp.i:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/socket.cpp.i
-.PHONY : src/socket.cpp.i
+src/Config_Reader.cpp.i:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Config_Reader.cpp.i
+.PHONY : src/Config_Reader.cpp.i
 
-src/socket.s: src/socket.cpp.s
+src/Config_Reader.s: src/Config_Reader.cpp.s
 
-.PHONY : src/socket.s
+.PHONY : src/Config_Reader.s
 
 # target to generate assembly for a file
-src/socket.cpp.s:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/socket.cpp.s
-.PHONY : src/socket.cpp.s
+src/Config_Reader.cpp.s:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Config_Reader.cpp.s
+.PHONY : src/Config_Reader.cpp.s
+
+src/Main.o: src/Main.cpp.o
+
+.PHONY : src/Main.o
+
+# target to build an object file
+src/Main.cpp.o:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Main.cpp.o
+.PHONY : src/Main.cpp.o
+
+src/Main.i: src/Main.cpp.i
+
+.PHONY : src/Main.i
+
+# target to preprocess a source file
+src/Main.cpp.i:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Main.cpp.i
+.PHONY : src/Main.cpp.i
+
+src/Main.s: src/Main.cpp.s
+
+.PHONY : src/Main.s
+
+# target to generate assembly for a file
+src/Main.cpp.s:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Main.cpp.s
+.PHONY : src/Main.cpp.s
+
+src/Socket.o: src/Socket.cpp.o
+
+.PHONY : src/Socket.o
+
+# target to build an object file
+src/Socket.cpp.o:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Socket.cpp.o
+.PHONY : src/Socket.cpp.o
+
+src/Socket.i: src/Socket.cpp.i
+
+.PHONY : src/Socket.i
+
+# target to preprocess a source file
+src/Socket.cpp.i:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Socket.cpp.i
+.PHONY : src/Socket.cpp.i
+
+src/Socket.s: src/Socket.cpp.s
+
+.PHONY : src/Socket.s
+
+# target to generate assembly for a file
+src/Socket.cpp.s:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Socket.cpp.s
+.PHONY : src/Socket.cpp.s
 
 # Help Target
 help:
@@ -306,12 +333,15 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/socket.o"
-	@echo "... src/socket.i"
-	@echo "... src/socket.s"
+	@echo "... src/Config_Reader.o"
+	@echo "... src/Config_Reader.i"
+	@echo "... src/Config_Reader.s"
+	@echo "... src/Main.o"
+	@echo "... src/Main.i"
+	@echo "... src/Main.s"
+	@echo "... src/Socket.o"
+	@echo "... src/Socket.i"
+	@echo "... src/Socket.s"
 .PHONY : help
 
 

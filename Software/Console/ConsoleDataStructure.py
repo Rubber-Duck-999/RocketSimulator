@@ -8,7 +8,7 @@ from SocketSender import SocketSender
 from enum import Enum
 
 Port = 6111
-
+Host = "127.0.0.1"
 
 class Pilots(Enum):
     FRED  = 1
@@ -26,8 +26,6 @@ class State(Enum):
     SHUTDOWN       = 5 
 
 class dataStructure:
-    def setID(self, ID):
-        self.ID = ID
         
     def getDataStructure(self):
         return self.dataStructure
@@ -78,18 +76,10 @@ class terrainDataParameters(dataStructure):
         self.gravity = gravity
         self.dataStructure = [ self.ID, self.density, self.gravity ]
 
-
-def sendStateData(Data):
-    Socket = SocketSender("", Port, 10)
-    Socket.set_sendDataPackage(Data)
-    Socket.run()
-    Socket.close()
-
-def sendAllData(state, terrain, launcher, rocket, runSwitch):
-    Socket = SocketSender("", Port, 10)
-    data = state + terrain + launcher + rocket
-    Socket.set_sendDataPackage(data)
-    Socket.run()
+def sendData(Data):
+    Socket = SocketSender(Host, Port)
+    Socket.setDataPackage(Data)
+    Socket.connect()
     Socket.close()
     
 

@@ -1,10 +1,15 @@
-cmake_minimum_required (VERSION 2.8)
+cmake_minimum_required (VERSION 3.0)
 
 # Change project name
 set (PROJECT_NAME Controller)
 set (PROJECT_TEST_NAME test${PROJECT_NAME})
 
 project (${PROJECT_NAME} C CXX)
+
+set(Boost_USE_STATIC_LIBS ON)
+# Boost::log required Boost version >= 1.54.0 
+find_package(Boost 1.54.0 REQUIRED COMPONENTS log)
+find_package(Threads)
 
 # Folder where the Coverage module is
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
@@ -16,21 +21,33 @@ set (SRC_DIR src)
 set (INCL_DIR include)
 
 # Compiler flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Werror")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
 include_directories(${SRC_DIR}/../../common ${PROJECT_SOURCE_DIR}/${INCL_DIR})
 
 # Important: Include all source files on this list
 set (SOURCE
-    ${SRC_DIR}/socket.cpp
-    ${SRC_DIR}/main.cpp
+    ${SRC_DIR}/Main.cpp
+    ${SRC_DIR}/Socket.cpp
+    ${SRC_DIR}/Config_Reader.cpp
 )
+include_directories(${Boost_INCLUDE_DIRS})
+link_directories(${Boost_LIBRARY_DIRS})
+
+link_directories(/usr/local/lib)
 
 # Output folder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
 
 # Add the executable for the program
 add_executable(${PROJECT_NAME} ${SOURCE})
+
+target_link_libraries(${PROJECT_NAME}
+                      config++
+                      ${Boost_LIBRARIES} 
+                      pthread
+                      Threads::Threads
+)
 # Unit tests
 add_subdirectory(tests)
 

@@ -14,6 +14,12 @@ if sys.version_info[0] >= 3:
 class GUI(threading.Thread):
     def __init__(self, queue):
         threading.Thread.__init__(self)
+        self.queue = queue
+        self.buttonBack = 'Reset Values to Default'
+        self.buttonNext = 'Next Page'
+        self.resetValues()
+        
+    def resetValues(self):    
         self.defaultPilot     = Pilots.FRED
         self.defaultGravity   = 9.87
         self.defaultDensity   = 0.00
@@ -36,7 +42,6 @@ class GUI(threading.Thread):
         self.State = State.NON_CONFIGURED
         self.defaultTimeToLaunchMin = 0.00
         self.defaultTimeToLaunchSec = 0.00
-        self.queue = queue
                       
     def Validate(self, value, MIN, MAX):
         if value < MIN or value > MAX:
@@ -77,7 +82,6 @@ class GUI(threading.Thread):
                      size=(35, 1)), sg.InputText(self.defaultGravity)],
             [sg.Text('Define the density of the planets atmosphere:', 
                      size=(35, 1)), sg.InputText(self.defaultDensity)],
-            
             [sg.Text('Enter the Rocket Details:', font=("Helvetica", 15))],
             [sg.Text('Mass (KG)', 
                      size=(35, 1)), sg.InputText(self.defaultMass)],
@@ -97,10 +101,9 @@ class GUI(threading.Thread):
                      size=(35, 1)), sg.InputText(self.defaultFlowRate)],
             [sg.Text('Angle of Launch (Degrees)', 
                      size=(35, 1)), sg.InputText(self.defaultAngle)],
-            
             [sg.Text('_' * 80)],
-            [sg.Button('Reset Values to Default', button_color=('white', 'blue')),
-             sg.ReadButton('Next Page')]
+            [sg.ReadButton(self.buttonBack, button_color=('white', 'blue')),
+             sg.ReadButton(self.buttonNext)]
         ]
 
         window = sg.Window('Rocket Simulator Console', default_element_size=(40, 1), grab_anywhere=False)
@@ -109,16 +112,22 @@ class GUI(threading.Thread):
         while self.State == State.NON_CONFIGURED or self.State == State.CONFIGURED:
             event, entries = window.ReadNonBlocking()
             
-            if event is 'Next Page':
-                print("Button Selected")
+            if event is self.buttonNext:
+                print("Next Selected")
                 self.assignUIEntries(entries)
                 if self.ValidateEntries() == True:
                     self.dataReady = True
                     self.State = State.CONFIGURED
                     self.sendData()
                     self.State = State.READY
+                    self.SubUI()
                 else:
                     Popup("Failure", "Please properly enter the Rocket details\n")
+                    
+            elif event is self.buttonBack:
+                print("Reset Selected")
+                self.resetValues()
+                
     
     def SubUI(self):
         print("Sub") 
@@ -129,13 +138,11 @@ class GUI(threading.Thread):
             [sg.Text('Please enter the data from the mission to begin')],
             [sg.Text('Pick which pilot to use:'),
              sg.InputCombo((Pilots.FRED, Pilots.RYAN, Pilots.SARAH, Pilots.GRACE), key='pilots', size=(20, 1))],
-            
             [sg.Text('Enter the Planet Terrain Details:', font=("Helvetica", 15))],
             [sg.Text('Acceleration due to Gravity (Max 10)', 
                      size=(35, 1)), sg.InputText(self.defaultGravity)],
             [sg.Text('Define the density of the planets atmosphere:', 
                      size=(35, 1)), sg.InputText(self.defaultDensity)],
-            
             [sg.Text('_' * 80)],
             [sg.Button('Reset Values to Default', button_color=('white', 'blue')),
              sg.ReadButton('Next Page')]
@@ -166,23 +173,13 @@ class GUI(threading.Thread):
             launcherData = launcher.getDataStructure()
             rocketData   = rocket.getDataStructure()
             data = stateData + terrainData + launcherData + rocketData
-            #self.Socket.set_sendDataPackage(data)
-            #if not self.Socket.acknowledged:
-            #    self.Socket.run(True)
+            sendData(data)
             self.messageID = self.messageID + 1
             self.dataReady = False
             
-    def closeConnection(self):
-        self.Socket.close()
         
     def run(self):
         print ("Starting " + self.name)
         self.MainUI()
-        self.SubUI()
         print ("Exiting " + self.name + "\n")
         
-
-# myGUI = GUI()
-# while True:
-#     myGUI.MainUI()
-#     myGUI.SubUI()

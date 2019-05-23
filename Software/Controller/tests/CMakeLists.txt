@@ -39,7 +39,7 @@ add_executable (${PROJECT_TEST_NAME} ${PROY_UT_SRC} ${MAIN_SOURCE})
 
 set_target_properties(${PROJECT_TEST_NAME}
                       PROPERTIES
-                      COMPILE_FLAGS "-std=c++11 -Wall -Werror"
+                      COMPILE_FLAGS "-std=c++11 -Wall"
 )
 # Link libraries
 target_link_libraries(${PROJECT_TEST_NAME}
