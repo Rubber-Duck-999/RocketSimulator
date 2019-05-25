@@ -57,90 +57,90 @@ include CMakeFiles/Controller.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Controller.dir/flags.make
 
-CMakeFiles/Controller.dir/src/Main.cpp.o: CMakeFiles/Controller.dir/flags.make
-CMakeFiles/Controller.dir/src/Main.cpp.o: ../src/Main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Controller.dir/src/Main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Controller.dir/src/Main.cpp.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Main.cpp"
+CMakeFiles/Controller.dir/src/main.cc.o: CMakeFiles/Controller.dir/flags.make
+CMakeFiles/Controller.dir/src/main.cc.o: ../src/main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Controller.dir/src/main.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Controller.dir/src/main.cc.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cc"
 
-CMakeFiles/Controller.dir/src/Main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Controller.dir/src/Main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Main.cpp" > CMakeFiles/Controller.dir/src/Main.cpp.i
+CMakeFiles/Controller.dir/src/main.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Controller.dir/src/main.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cc" > CMakeFiles/Controller.dir/src/main.cc.i
 
-CMakeFiles/Controller.dir/src/Main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Controller.dir/src/Main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Main.cpp" -o CMakeFiles/Controller.dir/src/Main.cpp.s
+CMakeFiles/Controller.dir/src/main.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Controller.dir/src/main.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cc" -o CMakeFiles/Controller.dir/src/main.cc.s
 
-CMakeFiles/Controller.dir/src/Main.cpp.o.requires:
+CMakeFiles/Controller.dir/src/main.cc.o.requires:
 
-.PHONY : CMakeFiles/Controller.dir/src/Main.cpp.o.requires
+.PHONY : CMakeFiles/Controller.dir/src/main.cc.o.requires
 
-CMakeFiles/Controller.dir/src/Main.cpp.o.provides: CMakeFiles/Controller.dir/src/Main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Main.cpp.o.provides.build
-.PHONY : CMakeFiles/Controller.dir/src/Main.cpp.o.provides
+CMakeFiles/Controller.dir/src/main.cc.o.provides: CMakeFiles/Controller.dir/src/main.cc.o.requires
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/main.cc.o.provides.build
+.PHONY : CMakeFiles/Controller.dir/src/main.cc.o.provides
 
-CMakeFiles/Controller.dir/src/Main.cpp.o.provides.build: CMakeFiles/Controller.dir/src/Main.cpp.o
-
-
-CMakeFiles/Controller.dir/src/Socket.cpp.o: CMakeFiles/Controller.dir/flags.make
-CMakeFiles/Controller.dir/src/Socket.cpp.o: ../src/Socket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Controller.dir/src/Socket.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Controller.dir/src/Socket.cpp.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Socket.cpp"
-
-CMakeFiles/Controller.dir/src/Socket.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Controller.dir/src/Socket.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Socket.cpp" > CMakeFiles/Controller.dir/src/Socket.cpp.i
-
-CMakeFiles/Controller.dir/src/Socket.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Controller.dir/src/Socket.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Socket.cpp" -o CMakeFiles/Controller.dir/src/Socket.cpp.s
-
-CMakeFiles/Controller.dir/src/Socket.cpp.o.requires:
-
-.PHONY : CMakeFiles/Controller.dir/src/Socket.cpp.o.requires
-
-CMakeFiles/Controller.dir/src/Socket.cpp.o.provides: CMakeFiles/Controller.dir/src/Socket.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Socket.cpp.o.provides.build
-.PHONY : CMakeFiles/Controller.dir/src/Socket.cpp.o.provides
-
-CMakeFiles/Controller.dir/src/Socket.cpp.o.provides.build: CMakeFiles/Controller.dir/src/Socket.cpp.o
+CMakeFiles/Controller.dir/src/main.cc.o.provides.build: CMakeFiles/Controller.dir/src/main.cc.o
 
 
-CMakeFiles/Controller.dir/src/Config_Reader.cpp.o: CMakeFiles/Controller.dir/flags.make
-CMakeFiles/Controller.dir/src/Config_Reader.cpp.o: ../src/Config_Reader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Controller.dir/src/Config_Reader.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Controller.dir/src/Config_Reader.cpp.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Config_Reader.cpp"
+CMakeFiles/Controller.dir/src/socket.cc.o: CMakeFiles/Controller.dir/flags.make
+CMakeFiles/Controller.dir/src/socket.cc.o: ../src/socket.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Controller.dir/src/socket.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Controller.dir/src/socket.cc.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc"
 
-CMakeFiles/Controller.dir/src/Config_Reader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Controller.dir/src/Config_Reader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Config_Reader.cpp" > CMakeFiles/Controller.dir/src/Config_Reader.cpp.i
+CMakeFiles/Controller.dir/src/socket.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Controller.dir/src/socket.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc" > CMakeFiles/Controller.dir/src/socket.cc.i
 
-CMakeFiles/Controller.dir/src/Config_Reader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Controller.dir/src/Config_Reader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Config_Reader.cpp" -o CMakeFiles/Controller.dir/src/Config_Reader.cpp.s
+CMakeFiles/Controller.dir/src/socket.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Controller.dir/src/socket.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc" -o CMakeFiles/Controller.dir/src/socket.cc.s
 
-CMakeFiles/Controller.dir/src/Config_Reader.cpp.o.requires:
+CMakeFiles/Controller.dir/src/socket.cc.o.requires:
 
-.PHONY : CMakeFiles/Controller.dir/src/Config_Reader.cpp.o.requires
+.PHONY : CMakeFiles/Controller.dir/src/socket.cc.o.requires
 
-CMakeFiles/Controller.dir/src/Config_Reader.cpp.o.provides: CMakeFiles/Controller.dir/src/Config_Reader.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Config_Reader.cpp.o.provides.build
-.PHONY : CMakeFiles/Controller.dir/src/Config_Reader.cpp.o.provides
+CMakeFiles/Controller.dir/src/socket.cc.o.provides: CMakeFiles/Controller.dir/src/socket.cc.o.requires
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/socket.cc.o.provides.build
+.PHONY : CMakeFiles/Controller.dir/src/socket.cc.o.provides
 
-CMakeFiles/Controller.dir/src/Config_Reader.cpp.o.provides.build: CMakeFiles/Controller.dir/src/Config_Reader.cpp.o
+CMakeFiles/Controller.dir/src/socket.cc.o.provides.build: CMakeFiles/Controller.dir/src/socket.cc.o
+
+
+CMakeFiles/Controller.dir/src/config_reader.cc.o: CMakeFiles/Controller.dir/flags.make
+CMakeFiles/Controller.dir/src/config_reader.cc.o: ../src/config_reader.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Controller.dir/src/config_reader.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Controller.dir/src/config_reader.cc.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.cc"
+
+CMakeFiles/Controller.dir/src/config_reader.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Controller.dir/src/config_reader.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.cc" > CMakeFiles/Controller.dir/src/config_reader.cc.i
+
+CMakeFiles/Controller.dir/src/config_reader.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Controller.dir/src/config_reader.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.cc" -o CMakeFiles/Controller.dir/src/config_reader.cc.s
+
+CMakeFiles/Controller.dir/src/config_reader.cc.o.requires:
+
+.PHONY : CMakeFiles/Controller.dir/src/config_reader.cc.o.requires
+
+CMakeFiles/Controller.dir/src/config_reader.cc.o.provides: CMakeFiles/Controller.dir/src/config_reader.cc.o.requires
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/config_reader.cc.o.provides.build
+.PHONY : CMakeFiles/Controller.dir/src/config_reader.cc.o.provides
+
+CMakeFiles/Controller.dir/src/config_reader.cc.o.provides.build: CMakeFiles/Controller.dir/src/config_reader.cc.o
 
 
 # Object files for target Controller
 Controller_OBJECTS = \
-"CMakeFiles/Controller.dir/src/Main.cpp.o" \
-"CMakeFiles/Controller.dir/src/Socket.cpp.o" \
-"CMakeFiles/Controller.dir/src/Config_Reader.cpp.o"
+"CMakeFiles/Controller.dir/src/main.cc.o" \
+"CMakeFiles/Controller.dir/src/socket.cc.o" \
+"CMakeFiles/Controller.dir/src/config_reader.cc.o"
 
 # External object files for target Controller
 Controller_EXTERNAL_OBJECTS =
 
-../bin/Controller: CMakeFiles/Controller.dir/src/Main.cpp.o
-../bin/Controller: CMakeFiles/Controller.dir/src/Socket.cpp.o
-../bin/Controller: CMakeFiles/Controller.dir/src/Config_Reader.cpp.o
+../bin/Controller: CMakeFiles/Controller.dir/src/main.cc.o
+../bin/Controller: CMakeFiles/Controller.dir/src/socket.cc.o
+../bin/Controller: CMakeFiles/Controller.dir/src/config_reader.cc.o
 ../bin/Controller: CMakeFiles/Controller.dir/build.make
 ../bin/Controller: /usr/lib/x86_64-linux-gnu/libboost_log.a
 ../bin/Controller: /usr/lib/x86_64-linux-gnu/libboost_date_time.a
@@ -161,9 +161,9 @@ CMakeFiles/Controller.dir/build: ../bin/Controller
 
 .PHONY : CMakeFiles/Controller.dir/build
 
-CMakeFiles/Controller.dir/requires: CMakeFiles/Controller.dir/src/Main.cpp.o.requires
-CMakeFiles/Controller.dir/requires: CMakeFiles/Controller.dir/src/Socket.cpp.o.requires
-CMakeFiles/Controller.dir/requires: CMakeFiles/Controller.dir/src/Config_Reader.cpp.o.requires
+CMakeFiles/Controller.dir/requires: CMakeFiles/Controller.dir/src/main.cc.o.requires
+CMakeFiles/Controller.dir/requires: CMakeFiles/Controller.dir/src/socket.cc.o.requires
+CMakeFiles/Controller.dir/requires: CMakeFiles/Controller.dir/src/config_reader.cc.o.requires
 
 .PHONY : CMakeFiles/Controller.dir/requires
 

@@ -11,40 +11,60 @@
 #include <netdb.h> 
 #include <stdio.h>
 #include <algorithm>
-#include "Logging.h"
+#include <memory>
+#include "logging.h"
 
-#ifndef Socket_h
-#define	Socket_h
+#ifndef SOCKET_h
+#define	SOCKET_h
 
 class Socket
 {
 public:
-	Socket() { };
+	Socket() 
+    { 
+        std::shared_ptr<std::string> my_message_ = std::make_shared<std::string>();
+    };
+    //
+    ~Socket() { };
 	//
+    void NetworkReceive();
+    void NetworkSend();
+    void NetworkSetup();
+    void NetworkShutdown();
+    void SetReceiveOn(bool mode)
+    {
+        receive_mode_ = mode;
+    }
+    //
 private:
-	//
     //Functions
-	void networkReceive();
-	void networkSend();
-	void networkSetup();
-	void networkShutdown();
+    void Split(std::string &message, std::string* subs);
 	//	
 	//Pointers for messages to be set
-	char* _messagePtr;
+	const char* message_ptr_ = "ACK_";
+    std::string state_configured_ = "State.CONFIGURED";
+    std::string state_ready_ = "State.READY";
+    std::string state_launch_ = "State.LAUNCH";
+    std::string state_return_ = "State.RETURN";
+    std::string state_shutdown_ = "State.SHUTDOWN";
 	//
-	bool _run = false;
+    std::vector<std::string> messages_;
+    //
+    bool receive_mode_ = false;
+	bool run_ = false;
+    //std::shared_ptr<std::string> my_message_ = new std::string;
 	//Ports for socket setup
-	int _port = 8120;//PORT;
+	const int kPort = 6111;
 	//
+    void SaveMessage(std::string message);
+    int SizeOfMessageList();
 	//Ports
-	int _networkSock;
+	int network_socket_;
 	//
     //Sockets server structure - 
 	//required for creating the setup	
-	struct sockaddr_in _networkServ;
-	socklen_t _networkLen;
-	//
-	
+	struct sockaddr_in network_serv_;
+	socklen_t network_len_;
 };
 
 #endif

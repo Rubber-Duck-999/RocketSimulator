@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Config_Reader.cpp" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/Controller.dir/src/Config_Reader.cpp.o"
-  "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Main.cpp" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/Controller.dir/src/Main.cpp.o"
-  "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/Socket.cpp" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/Controller.dir/src/Socket.cpp.o"
+  "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.cc" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/Controller.dir/src/config_reader.cc.o"
+  "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cc" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/Controller.dir/src/main.cc.o"
+  "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/Controller.dir/src/socket.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -56,51 +56,6 @@ CMAKE_BINARY_DIR = "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Sof
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -112,17 +67,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -169,151 +123,86 @@ Controller/fast:
 	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/build
 .PHONY : Controller/fast
 
-#=============================================================================
-# Target rules for targets named testController
+src/config_reader.o: src/config_reader.cc.o
 
-# Build rule for target.
-testController: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testController
-.PHONY : testController
-
-# fast build rule for target.
-testController/fast:
-	$(MAKE) -f tests/CMakeFiles/testController.dir/build.make tests/CMakeFiles/testController.dir/build
-.PHONY : testController/fast
-
-#=============================================================================
-# Target rules for targets named gmock_main
-
-# Build rule for target.
-gmock_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
-.PHONY : gmock_main
-
-# fast build rule for target.
-gmock_main/fast:
-	$(MAKE) -f googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-.PHONY : gmock_main/fast
-
-#=============================================================================
-# Target rules for targets named gmock
-
-# Build rule for target.
-gmock: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gmock
-.PHONY : gmock
-
-# fast build rule for target.
-gmock/fast:
-	$(MAKE) -f googletest-build/googlemock/CMakeFiles/gmock.dir/build.make googletest-build/googlemock/CMakeFiles/gmock.dir/build
-.PHONY : gmock/fast
-
-#=============================================================================
-# Target rules for targets named gtest_main
-
-# Build rule for target.
-gtest_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
-.PHONY : gtest_main
-
-# fast build rule for target.
-gtest_main/fast:
-	$(MAKE) -f googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-.PHONY : gtest_main/fast
-
-#=============================================================================
-# Target rules for targets named gtest
-
-# Build rule for target.
-gtest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gtest
-.PHONY : gtest
-
-# fast build rule for target.
-gtest/fast:
-	$(MAKE) -f googletest-build/googletest/CMakeFiles/gtest.dir/build.make googletest-build/googletest/CMakeFiles/gtest.dir/build
-.PHONY : gtest/fast
-
-src/Config_Reader.o: src/Config_Reader.cpp.o
-
-.PHONY : src/Config_Reader.o
+.PHONY : src/config_reader.o
 
 # target to build an object file
-src/Config_Reader.cpp.o:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Config_Reader.cpp.o
-.PHONY : src/Config_Reader.cpp.o
+src/config_reader.cc.o:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/config_reader.cc.o
+.PHONY : src/config_reader.cc.o
 
-src/Config_Reader.i: src/Config_Reader.cpp.i
+src/config_reader.i: src/config_reader.cc.i
 
-.PHONY : src/Config_Reader.i
+.PHONY : src/config_reader.i
 
 # target to preprocess a source file
-src/Config_Reader.cpp.i:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Config_Reader.cpp.i
-.PHONY : src/Config_Reader.cpp.i
+src/config_reader.cc.i:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/config_reader.cc.i
+.PHONY : src/config_reader.cc.i
 
-src/Config_Reader.s: src/Config_Reader.cpp.s
+src/config_reader.s: src/config_reader.cc.s
 
-.PHONY : src/Config_Reader.s
+.PHONY : src/config_reader.s
 
 # target to generate assembly for a file
-src/Config_Reader.cpp.s:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Config_Reader.cpp.s
-.PHONY : src/Config_Reader.cpp.s
+src/config_reader.cc.s:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/config_reader.cc.s
+.PHONY : src/config_reader.cc.s
 
-src/Main.o: src/Main.cpp.o
+src/main.o: src/main.cc.o
 
-.PHONY : src/Main.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/Main.cpp.o:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Main.cpp.o
-.PHONY : src/Main.cpp.o
+src/main.cc.o:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/main.cc.o
+.PHONY : src/main.cc.o
 
-src/Main.i: src/Main.cpp.i
+src/main.i: src/main.cc.i
 
-.PHONY : src/Main.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/Main.cpp.i:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Main.cpp.i
-.PHONY : src/Main.cpp.i
+src/main.cc.i:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/main.cc.i
+.PHONY : src/main.cc.i
 
-src/Main.s: src/Main.cpp.s
+src/main.s: src/main.cc.s
 
-.PHONY : src/Main.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/Main.cpp.s:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Main.cpp.s
-.PHONY : src/Main.cpp.s
+src/main.cc.s:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/main.cc.s
+.PHONY : src/main.cc.s
 
-src/Socket.o: src/Socket.cpp.o
+src/socket.o: src/socket.cc.o
 
-.PHONY : src/Socket.o
+.PHONY : src/socket.o
 
 # target to build an object file
-src/Socket.cpp.o:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Socket.cpp.o
-.PHONY : src/Socket.cpp.o
+src/socket.cc.o:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/socket.cc.o
+.PHONY : src/socket.cc.o
 
-src/Socket.i: src/Socket.cpp.i
+src/socket.i: src/socket.cc.i
 
-.PHONY : src/Socket.i
+.PHONY : src/socket.i
 
 # target to preprocess a source file
-src/Socket.cpp.i:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Socket.cpp.i
-.PHONY : src/Socket.cpp.i
+src/socket.cc.i:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/socket.cc.i
+.PHONY : src/socket.cc.i
 
-src/Socket.s: src/Socket.cpp.s
+src/socket.s: src/socket.cc.s
 
-.PHONY : src/Socket.s
+.PHONY : src/socket.s
 
 # target to generate assembly for a file
-src/Socket.cpp.s:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/Socket.cpp.s
-.PHONY : src/Socket.cpp.s
+src/socket.cc.s:
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/socket.cc.s
+.PHONY : src/socket.cc.s
 
 # Help Target
 help:
@@ -321,27 +210,18 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... edit_cache"
-	@echo "... Controller"
-	@echo "... list_install_components"
-	@echo "... install/local"
 	@echo "... rebuild_cache"
-	@echo "... install"
-	@echo "... testController"
-	@echo "... gmock_main"
-	@echo "... gmock"
-	@echo "... gtest_main"
-	@echo "... gtest"
-	@echo "... src/Config_Reader.o"
-	@echo "... src/Config_Reader.i"
-	@echo "... src/Config_Reader.s"
-	@echo "... src/Main.o"
-	@echo "... src/Main.i"
-	@echo "... src/Main.s"
-	@echo "... src/Socket.o"
-	@echo "... src/Socket.i"
-	@echo "... src/Socket.s"
+	@echo "... Controller"
+	@echo "... edit_cache"
+	@echo "... src/config_reader.o"
+	@echo "... src/config_reader.i"
+	@echo "... src/config_reader.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/socket.o"
+	@echo "... src/socket.i"
+	@echo "... src/socket.s"
 .PHONY : help
 
 

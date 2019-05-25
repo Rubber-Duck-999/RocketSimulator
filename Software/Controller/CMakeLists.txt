@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.0)
+cmake_minimum_required (VERSION 3.10)
 
 # Change project name
 set (PROJECT_NAME Controller)
@@ -7,6 +7,7 @@ set (PROJECT_TEST_NAME test${PROJECT_NAME})
 project (${PROJECT_NAME} C CXX)
 
 set(Boost_USE_STATIC_LIBS ON)
+#ADD_DEFINITIONS(-DBOOST_LOG_DYN_LINK)
 # Boost::log required Boost version >= 1.54.0 
 find_package(Boost 1.54.0 REQUIRED COMPONENTS log)
 find_package(Threads)
@@ -21,18 +22,16 @@ set (SRC_DIR src)
 set (INCL_DIR include)
 
 # Compiler flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall")
 
-include_directories(${SRC_DIR}/../../common ${PROJECT_SOURCE_DIR}/${INCL_DIR})
-
+include_directories(${Boost_INCLUDE_DIRS} ${SRC_DIR}/../../common ${PROJECT_SOURCE_DIR}/${INCL_DIR})
+link_directories(${Boost_LIBRARY_DIRS})
 # Important: Include all source files on this list
 set (SOURCE
-    ${SRC_DIR}/Main.cpp
-    ${SRC_DIR}/Socket.cpp
-    ${SRC_DIR}/Config_Reader.cpp
+    ${SRC_DIR}/main.cc
+    ${SRC_DIR}/socket.cc
+    ${SRC_DIR}/config_reader.cc
 )
-include_directories(${Boost_INCLUDE_DIRS})
-link_directories(${Boost_LIBRARY_DIRS})
 
 link_directories(/usr/local/lib)
 
@@ -43,13 +42,13 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
 add_executable(${PROJECT_NAME} ${SOURCE})
 
 target_link_libraries(${PROJECT_NAME}
-                      config++
-                      ${Boost_LIBRARIES} 
-                      pthread
-                      Threads::Threads
-)
+                       config++
+                       ${Boost_LIBRARIES} 
+                       pthread
+                       Threads::Threads
+ )
 # Unit tests
-add_subdirectory(tests)
+#add_subdirectory(tests)
 
 # Code coverage
 if (CMAKE_BUILD_TYPE STREQUAL "Coverage")

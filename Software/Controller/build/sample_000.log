@@ -1,0 +1,16 @@
+[2019-05-25 21:17:01.199600][debug]:  Start up of node
+[2019-05-25 21:17:01.201191][debug]:  Creating Communications
+[2019-05-25 21:17:01.201720][debug]:  6111
+[2019-05-25 21:17:01.202052][error]:  Your receive mode is: false
+[2019-05-25 21:17:01.202247][debug]:  Closing Network
+[2019-05-25 21:17:01.202493][debug]:  Config file is: /mnt/c/Users/simon/Documents/Config/use.conf
+[2019-05-25 21:17:01.203126][debug]:  A config file is available
+[2019-05-25 21:17:01.203406][debug]:  title: one title
+[2019-05-25 21:17:01.203648][debug]:  year: 2017
+[2019-05-25 21:17:01.203805][debug]:  song number 0: first song
+[2019-05-25 21:17:01.204013][debug]:  song number 1: first song
+[2019-05-25 21:17:01.204262][debug]:  title: another title
+[2019-05-25 21:17:01.204509][debug]:  year: 2015
+[2019-05-25 21:17:01.204725][debug]:  song number 0: second song
+[2019-05-25 21:17:01.204933][debug]:  song number 1: second song
+[2019-05-25 21:17:01.205163][debug]:  song number 2: second song
