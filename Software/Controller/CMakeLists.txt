@@ -24,8 +24,13 @@ set (INCL_DIR include)
 # Compiler flags
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall")
 
-include_directories(${Boost_INCLUDE_DIRS} ${SRC_DIR}/../../common ${PROJECT_SOURCE_DIR}/${INCL_DIR})
-link_directories(${Boost_LIBRARY_DIRS})
+include_directories(${Boost_INCLUDE_DIRS} 
+                    ${SRC_DIR}/../../common 
+                    ${PROJECT_SOURCE_DIR}/${INCL_DIR}
+                    "../Algorithm/include")
+                    
+link_directories(${Boost_LIBRARY_DIRS}
+                 "../Algorithm/build/")
 # Important: Include all source files on this list
 set (SOURCE
     ${SRC_DIR}/main.cc
@@ -43,6 +48,7 @@ add_executable(${PROJECT_NAME} ${SOURCE})
 
 target_link_libraries(${PROJECT_NAME}
                        config++
+                       Algorithm
                        ${Boost_LIBRARIES} 
                        pthread
                        Threads::Threads

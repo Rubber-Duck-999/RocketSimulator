@@ -1,31 +1,29 @@
-/* 
- * File:   World.h
- * Author: student
- *
- * Created on May 5, 2016, 11:24 AM
- */
+#include "logging.h"
 
-#ifndef WORLD_H
-#define	WORLD_H
+#ifndef WORLD_h
+#define	WORLD_h
+
+const double kEarthDensity = 1.22;
+const double kEarthGravity = 9.81;
 
 class World
 {
-	public:
-	   World() {};
-		//World(double density, double gravity);
-		World(double density, double gravity)
-		{
-			_density = density;
-			_gravity = gravity;
-		}
-		double getdensity() const;
-		double getgravity() const;
-	private:
-		double _density;
-		double _gravity;
-		double EARTH_DENSITY = 1.22;
-	    double EARTH_GRAVITY = 9.8;
+public:
+    World() {};
+    ~World() {};
+    //World(double density, double gravity);
+    World(double density, double gravity)
+    {
+        density_ = density;
+        gravity_ = gravity;
+    }
+    double GetDensity() const;
+    double GetGravity() const;
+private:
+    double density_;
+    double gravity_;
 };
 
-#endif	/* WORLD_H */
+#endif
+/* WORLD_h */
 

@@ -6,6 +6,50 @@
 
 #IncludeRegexTransform: 
 
+../../Algorithm/include/algorithm.h
+cstdlib
+-
+stdio.h
+-
+math.h
+-
+rocket.h
+../../Algorithm/include/rocket.h
+world.h
+../../Algorithm/include/world.h
+thrust.h
+../../Algorithm/include/thrust.h
+data_structure.h
+../../Algorithm/include/data_structure.h
+logging.h
+../../Algorithm/include/logging.h
+
+../../Algorithm/include/rocket.h
+logging.h
+../../Algorithm/include/logging.h
+
+../../Algorithm/include/thrust.h
+stdio.h
+-
+rocket.h
+../../Algorithm/include/rocket.h
+world.h
+../../Algorithm/include/world.h
+math.h
+-
+data_structure.h
+../../Algorithm/include/data_structure.h
+logging.h
+../../Algorithm/include/logging.h
+fstream
+-
+iostream
+-
+
+../../Algorithm/include/world.h
+logging.h
+../../Algorithm/include/logging.h
+
 ../include/config_reader.h
 iostream
 -
@@ -19,14 +63,6 @@ libconfig.h++
 -
 logging.h
 ../include/logging.h
-
-../include/logging.h
-string
--
-boost/log/trivial.hpp
-../include/boost/log/trivial.hpp
-boost/log/utility/setup.hpp
-../include/boost/log/utility/setup.hpp
 
 ../include/socket.h
 arpa/inet.h
@@ -60,6 +96,16 @@ memory
 logging.h
 ../include/logging.h
 
+../src/../../common/data_structure.h
+
+../src/../../common/logging.h
+string
+-
+boost/log/trivial.hpp
+../src/../../common/boost/log/trivial.hpp
+boost/log/utility/setup.hpp
+../src/../../common/boost/log/utility/setup.hpp
+
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.cc
 config_reader.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.h
@@ -71,6 +117,8 @@ socket.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.h
 config_reader.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.h
+algorithm.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/algorithm.h
 
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc
 socket.h

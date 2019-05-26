@@ -1,50 +1,47 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
- * File:   Thrust.h
- * Author: benwagley
- *
- * Created on May 10, 2016, 4:00 PM
+ * File:   thrust.h
+ * Author: Simon
  */
+ 
 #include <stdio.h>
-#include "Rocket.h"
-#include "World.h"
+#include "rocket.h"
+#include "world.h"
 #include <math.h>
-#include "dataStructure.h"
+#include "data_structure.h"
+#include "logging.h"
 #include <fstream>
 #include <iostream>
 
-#ifndef THRUST_H
-#define THRUST_H
+#ifndef THRUST_h
+#define THRUST_h
 
 class Thrust
 {
 	public:
-		Thrust(Rocket &r, World &b, double launchAngle, ROCKET_SIMULATOR::algoData algoData);
+		Thrust(Rocket &rocket_object, World &world_object, double launch_angle, rocket_simulator::AlgoData algo_data);
 
-		void coastFunction(double V, double Vt);
-		void thrustFunction(double launchAngle);
-		Rocket getrocketObject() const
+		void CoastFunction(double velocity_x_axis, double velocity_y_axis);
+		void ThrustFunction(double launch_angle);
+        
+		Rocket GetRocketObject() const
 		{
-			return _r;
+			return rocket_;
 		}
-		World getworldObject() const
+		World GetWorldObject() const
 		{
-			return _b;
+			return world_;
 		}
-		bool openFile();
+        
+		bool OpenFile();
 	private:
-		Rocket _r;
-		World  _b;
-		FILE*  _dataFile;
-		const char* _fileName = "data.dat";
-		ROCKET_SIMULATOR::algoData _algoData;
-		const double PI = 3.14159265;
-		int _countPoint = 0;
+		Rocket rocket_;
+		World  world_;
+		FILE*  data_file_;
+		const char* file_name_ = "data.dat";
+		rocket_simulator::AlgoData algo_data_;
+		const double kPI = 3.14159265;
+		int count_point_ = 0;
 };
-#endif /* THRUST_H */
+#endif 
+/* THRUST_h */
 

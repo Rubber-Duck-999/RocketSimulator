@@ -49,6 +49,7 @@ void Socket::NetworkReceive()
                     receive_mode_ = false;
                     BOOST_LOG_TRIVIAL(debug) << subs[i];
                 }
+                BOOST_LOG_TRIVIAL(debug) << "Message: " << subs[i];
             }
         }	
     }

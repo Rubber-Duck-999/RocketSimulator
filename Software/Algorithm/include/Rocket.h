@@ -1,92 +1,88 @@
-/* 
- * File:   Rocket.h
- * Author: student
- *
- * Created on May 5, 2016, 11:10 AM
- */
+#include "logging.h"
 
-#ifndef ROCKET_H
-#define	ROCKET_H
+#ifndef ROCKET_h
+#define	ROCKET_h
 
 class Rocket
 {
 	private:
-		double _mass;
-		double _dragAxisX;
-		double _dragAxisY;
-		double _horiCrossSectArea;
-		double _vertCrossSectArea;
-		double _thrust;
-		double _burnTime;
-		double _flowRate;
-		double _distX;
-		double _distY;
-		double _time;
+		double mass_;
+		double drag_axis_x_;
+		double drag_axis_y_;
+		double hori_cross_sect_area_;
+		double vert_cross_sect_area_;
+		double thurst_;
+		double burn_time_;
+		double flow_rate_;
+		double distance_x_;
+		double distance_y_;
+		double time_;
 	public:
 		Rocket() {};
 
 		//Constructor for class Rocket
-		Rocket(double mass, double dragAxisX, double dragAxisY,
-			   double horiCrossSectArea, double vertCrossSectArea,
-			   double thrust, double burnTime, double flowRate);
-
+		Rocket(double mass, double drag_axis_x, double drag_axis_y,
+			   double hori_cross_sect_area, double vert_cross_sect_area,
+			   double thrust, double burn_time, double flow_rate);
+        //
+        ~Rocket() {};
 		//Get functions for class member variables
-		double getmass() const { return _mass; }
-		double getdragAxisX() const { return _dragAxisX; }
-		double getdragAxisY() const { return _dragAxisY; }
-		double gethoriCrossSectArea() const { return _horiCrossSectArea; }
-		double getvertCrossSectArea() const { return _vertCrossSectArea; }
-		double getthrust() const { return _thrust; }
-		double getburnTime() const { return _burnTime; }
-		double getflowRate() const { return _flowRate; }
-		double getdistX() const { return _distX; }
-		double getdistY() const { return _distY; }
-		double gettimeTaken() const { return _time; }
+		double GetMass() const { return mass_; }
+		double GetDragAxisX() const { return drag_axis_x_; }
+		double GetDragAxisY() const { return drag_axis_y_; }
+		double GetHoriCrossSectArea() const { return hori_cross_sect_area_; }
+		double GetVertCrossSectArea() const { return vert_cross_sect_area_; }
+		double GetThrust() const { return thurst_; }
+		double GetBurnTime() const { return burn_time_; }
+		double GetFlowRate() const { return flow_rate_; }
+		double GetDistanceX() const { return distance_x_; }
+		double GetDistanceY() const { return distance_y_; }
+		double GetTimeTaken() const { return time_; }
 
 		//Set functions for class member variables
-		void setmass(const double &mass)
+		void SetMass(const double &mass)
 		{
-			_mass = mass;
+			mass_ = mass;
 		}
-		void setdragAxisX(const double &dragAxisX)
+		void SetDragAxisX(const double &drag_axis_x)
 		{
-			_dragAxisX = dragAxisX;
+			drag_axis_x_ = drag_axis_x;
 		}
-		void setdragAxisY(const double &dragAxisY)
+		void SetDragAxisY(const double &drag_axis_y)
 		{
-			_dragAxisY = dragAxisY;
+			drag_axis_y_ = drag_axis_y;
 		}
-		void sethoriCrossSectArea(const double &horiCrossSectArea)
+		void SetHoriCrossSectArea(const double &hori_cross_sect_area)
 		{
-			_horiCrossSectArea = horiCrossSectArea;
+			hori_cross_sect_area_ = hori_cross_sect_area;
 		}
-		void setvertCrossSectArea(const double &vertCrossSectArea)
+		void SetVertCrossSectArea(const double &vert_cross_sect_area)
 		{
-			_vertCrossSectArea = vertCrossSectArea;
+			vert_cross_sect_area_ = vert_cross_sect_area;
 		}
-		void setthrust(const double &thrust)
+		void SetThrust(const double &thrust)
 		{
-			_thrust = thrust;
+			thurst_ = thrust;
 		}
-		void setburnTime(const double &burnTime)
+		void SetBurnTime(const double &burn_time)
 		{
-			_burnTime = burnTime;
+			burn_time_ = burn_time;
 		}
-		void setflowRate(const double &flowRate)
+		void SetFlowRate(const double &flow_rate)
 		{
-			_flowRate = flowRate;
+			flow_rate_ = flow_rate;
 		}
-		void setdistX(const double &distX)
+		void SetDistanceX(const double &distance_x)
 		{
-			_distX = distX;
+			distance_x_ = distance_x;
 		}
-		void setdistY(const double &distY)
+		void SetDistanceY(const double &distance_y)
 		{
-			_distY = distY;
+			distance_y_ = distance_y;
 		}
-		void settimeTaken(const double &time)
+		void SetTimeTaken(const double &time)
 		{
-			_time = time;
+			time_ = time;
 		}
 
 };

@@ -3,14 +3,19 @@
 
 CMakeFiles/Controller.dir/src/config_reader.cc.o
  ../include/config_reader.h
- ../include/logging.h
+ ../src/../../common/logging.h
  /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.cc
 CMakeFiles/Controller.dir/src/main.cc.o
+ ../../Algorithm/include/algorithm.h
+ ../../Algorithm/include/rocket.h
+ ../../Algorithm/include/thrust.h
+ ../../Algorithm/include/world.h
  ../include/config_reader.h
- ../include/logging.h
  ../include/socket.h
+ ../src/../../common/data_structure.h
+ ../src/../../common/logging.h
  /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cc
 CMakeFiles/Controller.dir/src/socket.cc.o
- ../include/logging.h
  ../include/socket.h
+ ../src/../../common/logging.h
  /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc

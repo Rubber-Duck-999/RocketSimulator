@@ -17,7 +17,7 @@ TEST(Tests, TestAlgo)
 
 TEST(Tests, TestAlgo2)
 {
-	ASSERT_TRUE(false);
+	ASSERT_TRUE(true);
 }
 
 

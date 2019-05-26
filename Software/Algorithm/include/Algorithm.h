@@ -1,28 +1,32 @@
-#include "Rocket.h"
-#include "World.h"
-#include "Thrust.h"
-#include "dataStructure.h"
+#include <cstdlib>
+#include <stdio.h>
+#include <math.h>
+#include "rocket.h"
+#include "world.h"
+#include "thrust.h"
+#include "data_structure.h"
+#include "logging.h"
 
-#ifndef ALGORITHM_H
-#define	ALGORITHM_H
+#ifndef ALGORITHM_h
+#define	ALGORITHM_h
 
 
 class Algorithm
 {
-	Rocket _rocket;
-	World _world;
-	ROCKET_SIMULATOR::algoData _algoData;
-	double _angleOfLaunch;
-	bool _rocketSet = false;
-	bool _worldSet = false;
-	bool _algoFinished = false;
+	Rocket rocket_;
+	World world_;
+	rocket_simulator::AlgoData algo_data_;
+	double angle_of_launch_;
+	bool rocket_set_ = false;
+	bool world_set_ = false;
+	bool algo_finished_ = false;
 public:
 	Algorithm() {};
-	bool createRocketSimulation();
-	void get_rocketDataParameters(ROCKET_SIMULATOR::rocketDataParameters& rocketData);
-	void get_terrainMissionParameters(ROCKET_SIMULATOR::terrainMissionParameters& terrainData);
-	void set_algoData(ROCKET_SIMULATOR::algoData& algoData);
-	bool getAlgoFinished() { return _algoFinished; };
+	bool CreateRocketSimulation();
+	void GetRocketDataParameters(rocket_simulator::RocketDataParameters& rocket_data);
+	void GetTerrainMissionParameters(rocket_simulator::TerrainMissionParameters& terrain_data);
+	void SetAlgoData(rocket_simulator::AlgoData& algo_data);
+	bool GetAlgoFinished() { return algo_finished_; };
 };
 
 #endif
