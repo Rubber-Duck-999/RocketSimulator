@@ -11,8 +11,9 @@ int main()
     //
     Socket localsocket;
     localsocket.NetworkSetup();
+    localsocket.SetReceiveOn(true);
     localsocket.NetworkReceive();
-    //localsocket.NetworkSend();
+    localsocket.NetworkSend();
     localsocket.NetworkShutdown();
     //
     ConfigurationReader config;

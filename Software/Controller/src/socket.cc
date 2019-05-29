@@ -49,11 +49,19 @@ void Socket::NetworkReceive()
                     receive_mode_ = false;
                     BOOST_LOG_TRIVIAL(debug) << subs[i];
                 }
-                BOOST_LOG_TRIVIAL(debug) << "Message: " << subs[i];
+                if (subs[i].find(state_configured_) != std::string::npos)
+                {
+                    BOOST_LOG_TRIVIAL(debug) << "Message: " << subs[i];
+                }
+                if (subs[i].find(state_ready_) != std::string::npos)
+                {
+                    BOOST_LOG_TRIVIAL(debug) << "Message: " << subs[i];
+                }
             }
-        }	
+        }
     }
 }
+
 
 void Socket::NetworkSend()
 {

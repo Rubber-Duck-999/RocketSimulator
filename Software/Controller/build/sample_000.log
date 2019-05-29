@@ -1,27 +1,27 @@
-[2019-05-26 19:00:02.666862][debug]:  Start up of node
-[2019-05-26 19:00:02.667847][debug]:  Creating Communications
-[2019-05-26 19:00:02.668670][debug]:  6111
-[2019-05-26 19:00:02.669345][error]:  Your receive mode is: false
-[2019-05-26 19:00:02.669784][debug]:  Closing Network
-[2019-05-26 19:00:02.670739][debug]:  Config file is: /mnt/c/Users/simon/Documents/Config/use.conf
-[2019-05-26 19:00:02.672118][debug]:  A config file is available
-[2019-05-26 19:00:02.672467][debug]:  title: one title
-[2019-05-26 19:00:02.672927][debug]:  year: 2017
-[2019-05-26 19:00:02.673397][debug]:  song number 0: first song
-[2019-05-26 19:00:02.673847][debug]:  song number 1: first song
-[2019-05-26 19:00:02.674304][debug]:  title: another title
-[2019-05-26 19:00:02.674759][debug]:  year: 2015
-[2019-05-26 19:00:02.675287][debug]:  song number 0: second song
-[2019-05-26 19:00:02.675739][debug]:  song number 1: second song
-[2019-05-26 19:00:02.676209][debug]:  song number 2: second song
-[2019-05-26 19:00:02.676671][info]:  Getting rocket data
-[2019-05-26 19:00:02.680318][info]:  Rocket mass: 7
-[2019-05-26 19:00:02.680808][info]:  Creating rocket
-[2019-05-26 19:00:02.681317][info]:  After Change = 7
-[2019-05-26 19:00:02.681802][info]:  Getting terrain data
-[2019-05-26 19:00:02.682310][info]:  Rocket and terrain is set 
-[2019-05-26 19:00:02.682806][info]:  Calling algo 
-[2019-05-26 19:00:02.683262][info]:  Creating thrust 
-[2019-05-26 19:00:02.683749][info]:  Running thrust function 
-[2019-05-26 19:00:02.684663][info]:  Beginning Rocket Launch
-[2019-05-26 19:00:02.736188][info]:  Algo has finished 
+[2019-05-28 08:43:01.977899][debug]:  Start up of node
+[2019-05-28 08:43:01.979175][debug]:  Creating Communications
+[2019-05-28 08:43:01.979465][debug]:  6111
+[2019-05-28 08:43:01.980132][error]:  Your receive mode is: false
+[2019-05-28 08:43:01.980571][debug]:  Closing Network
+[2019-05-28 08:43:01.981491][debug]:  Config file is: /mnt/c/Users/simon/Documents/Config/use.conf
+[2019-05-28 08:43:01.982849][debug]:  A config file is available
+[2019-05-28 08:43:01.983228][debug]:  title: one title
+[2019-05-28 08:43:01.983745][debug]:  year: 2017
+[2019-05-28 08:43:01.984286][debug]:  song number 0: first song
+[2019-05-28 08:43:01.984811][debug]:  song number 1: first song
+[2019-05-28 08:43:01.985330][debug]:  title: another title
+[2019-05-28 08:43:01.985852][debug]:  year: 2015
+[2019-05-28 08:43:01.986413][debug]:  song number 0: second song
+[2019-05-28 08:43:01.986928][debug]:  song number 1: second song
+[2019-05-28 08:43:01.987455][debug]:  song number 2: second song
+[2019-05-28 08:43:01.987996][info]:  Getting rocket data
+[2019-05-28 08:43:01.988512][info]:  Rocket mass: 7
+[2019-05-28 08:43:01.989024][info]:  Creating rocket
+[2019-05-28 08:43:01.989552][info]:  After Change = 7
+[2019-05-28 08:43:01.990077][info]:  Getting terrain data
+[2019-05-28 08:43:01.990615][info]:  Rocket and terrain is set 
+[2019-05-28 08:43:01.991159][info]:  Calling algo 
+[2019-05-28 08:43:01.991790][info]:  Creating thrust 
+[2019-05-28 08:43:01.995860][info]:  Running thrust function 
+[2019-05-28 08:43:01.996613][info]:  Beginning Rocket Launch
+[2019-05-28 08:43:02.047362][info]:  Algo has finished 

@@ -35,6 +35,7 @@ public:
     {
         receive_mode_ = mode;
     }
+    void MessageSet(const char* message);
     //
 private:
     //Functions
