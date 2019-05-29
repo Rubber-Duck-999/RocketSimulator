@@ -119,6 +119,10 @@ config_reader.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.h
 algorithm.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/algorithm.h
+boost/lockfree/spsc_queue.hpp
+-
+thread
+-
 
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc
 socket.h

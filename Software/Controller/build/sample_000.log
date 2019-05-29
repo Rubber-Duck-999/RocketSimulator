@@ -1,27 +1,24 @@
-[2019-05-28 08:43:01.977899][debug]:  Start up of node
-[2019-05-28 08:43:01.979175][debug]:  Creating Communications
-[2019-05-28 08:43:01.979465][debug]:  6111
-[2019-05-28 08:43:01.980132][error]:  Your receive mode is: false
-[2019-05-28 08:43:01.980571][debug]:  Closing Network
-[2019-05-28 08:43:01.981491][debug]:  Config file is: /mnt/c/Users/simon/Documents/Config/use.conf
-[2019-05-28 08:43:01.982849][debug]:  A config file is available
-[2019-05-28 08:43:01.983228][debug]:  title: one title
-[2019-05-28 08:43:01.983745][debug]:  year: 2017
-[2019-05-28 08:43:01.984286][debug]:  song number 0: first song
-[2019-05-28 08:43:01.984811][debug]:  song number 1: first song
-[2019-05-28 08:43:01.985330][debug]:  title: another title
-[2019-05-28 08:43:01.985852][debug]:  year: 2015
-[2019-05-28 08:43:01.986413][debug]:  song number 0: second song
-[2019-05-28 08:43:01.986928][debug]:  song number 1: second song
-[2019-05-28 08:43:01.987455][debug]:  song number 2: second song
-[2019-05-28 08:43:01.987996][info]:  Getting rocket data
-[2019-05-28 08:43:01.988512][info]:  Rocket mass: 7
-[2019-05-28 08:43:01.989024][info]:  Creating rocket
-[2019-05-28 08:43:01.989552][info]:  After Change = 7
-[2019-05-28 08:43:01.990077][info]:  Getting terrain data
-[2019-05-28 08:43:01.990615][info]:  Rocket and terrain is set 
-[2019-05-28 08:43:01.991159][info]:  Calling algo 
-[2019-05-28 08:43:01.991790][info]:  Creating thrust 
-[2019-05-28 08:43:01.995860][info]:  Running thrust function 
-[2019-05-28 08:43:01.996613][info]:  Beginning Rocket Launch
-[2019-05-28 08:43:02.047362][info]:  Algo has finished 
+[2019-05-29 22:12:09.936778][debug]:  Start up of node
+[2019-05-29 22:12:09.937664][debug]:  Creating Communications
+[2019-05-29 22:12:09.937973][debug]:  6111
+[2019-05-29 22:12:09.938653][debug]:  Config file is: /mnt/c/Users/simon/Documents/Config/use.conf
+[2019-05-29 22:12:09.938608][error]:  Your receive mode is: true
+[2019-05-29 22:12:09.939266][debug]:  A config file is available
+[2019-05-29 22:12:09.939558][debug]:  title: one title
+[2019-05-29 22:12:09.939807][debug]:  year: 2017
+[2019-05-29 22:12:09.940054][debug]:  song number 0: first song
+[2019-05-29 22:12:09.940308][debug]:  song number 1: first song
+[2019-05-29 22:12:09.940558][debug]:  title: another title
+[2019-05-29 22:12:09.940800][debug]:  year: 2015
+[2019-05-29 22:12:09.941035][debug]:  song number 0: second song
+[2019-05-29 22:12:09.941240][debug]:  song number 1: second song
+[2019-05-29 22:12:09.941438][debug]:  song number 2: second song
+[2019-05-29 22:12:16.520968][debug]:  A message has been received
+[2019-05-29 22:12:16.521243][debug]:  M_[101, <State.CONFIGURED: 1>, 101, 9.87, 0.0, 101, 'Pilots.FRED', 0.0, 0.0, 101, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 90.0]
+êü!
+[2019-05-29 22:12:16.522649][debug]:  A correct message has been received: 0
+[2019-05-29 22:12:16.522898][debug]:  M_[101,
+[2019-05-29 22:12:16.523135][debug]:  Message: <State.CONFIGURED:
+[2019-05-29 22:12:16.523472][error]:  Your receive mode is: false
+[2019-05-29 22:12:16.523722][debug]:  We are sending a Ack Message
+[2019-05-29 22:12:16.523999][debug]:  Closing Network

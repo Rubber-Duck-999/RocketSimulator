@@ -2,6 +2,8 @@
 #include "socket.h"
 #include "config_reader.h"
 #include "algorithm.h"
+#include <boost/lockfree/spsc_queue.hpp>
+#include <thread>
 
 
 int main()
@@ -12,12 +14,19 @@ int main()
     Socket localsocket;
     localsocket.NetworkSetup();
     localsocket.SetReceiveOn(true);
+    ConfigurationReader config;
+    
+    std::thread t1{&Socket::NetworkReceive, &localsocket};
+    std::thread t2{&ConfigurationReader::SetConfigValues, &config};
+    t1.join();
+    t2.join();
+    
+    //
     localsocket.NetworkReceive();
     localsocket.NetworkSend();
     localsocket.NetworkShutdown();
     //
-    ConfigurationReader config;
-    config.SetConfigValues();
+    /*
     Algorithm algo;
     rocket_simulator::RocketDataParameters rocket_data;
     rocket_data.mass_ = 7.0;
@@ -35,6 +44,7 @@ int main()
     algo.GetRocketDataParameters(rocket_data);
     algo.GetTerrainMissionParameters(terrain_data);
     algo.CreateRocketSimulation();
+    */
     return 0;
 }
  
