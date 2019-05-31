@@ -33,6 +33,7 @@ link_directories(${Boost_LIBRARY_DIRS}
                  "../Algorithm/build/")
 # Important: Include all source files on this list
 set (SOURCE
+    ${SRC_DIR}/data_structure.cc
     ${SRC_DIR}/main.cc
     ${SRC_DIR}/socket.cc
     ${SRC_DIR}/config_reader.cc

@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <algorithm>
 #include <memory>
+#include "data_structure.h"
 #include "logging.h"
 
 #ifndef SOCKET_h
@@ -48,6 +49,11 @@ private:
     std::string state_launch_ = "State.LAUNCH";
     std::string state_return_ = "State.RETURN";
     std::string state_shutdown_ = "State.SHUTDOWN";
+    const int kConfigured = 1;
+    const int kReady = 2;
+    const int kLaunch = 3;
+    const int kReturn = 4;
+    const int kShutdown = 5;
 	//
     std::vector<std::string> messages_;
     //
@@ -58,6 +64,7 @@ private:
 	const int kPort = 6111;
 	//
     void SaveMessage(std::string message);
+    void SendState(unsigned int state);
     int SizeOfMessageList();
 	//Ports
 	int network_socket_;

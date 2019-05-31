@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Controller.dir/src/data_structure.cc.o"
   "CMakeFiles/Controller.dir/src/main.cc.o"
   "CMakeFiles/Controller.dir/src/socket.cc.o"
   "CMakeFiles/Controller.dir/src/config_reader.cc.o"

@@ -2,29 +2,26 @@
 #include "socket.h"
 #include "config_reader.h"
 #include "algorithm.h"
-#include <boost/lockfree/spsc_queue.hpp>
+#include "data_structure.h"
 #include <thread>
-
 
 int main()
 {
     init_log();
     BOOST_LOG_TRIVIAL(debug) << "Start up of node";
     //
-    Socket localsocket;
+    states localstates;
+    Socket localsocket(&localstates);
     localsocket.NetworkSetup();
     localsocket.SetReceiveOn(true);
-    ConfigurationReader config;
+    ConfigurationReader config(&localstates);
     
     std::thread t1{&Socket::NetworkReceive, &localsocket};
     std::thread t2{&ConfigurationReader::SetConfigValues, &config};
     t1.join();
     t2.join();
-    
-    //
-    localsocket.NetworkReceive();
-    localsocket.NetworkSend();
-    localsocket.NetworkShutdown();
+    localsocket.NetworkShutdown();  
+    config.SetConfigValues();
     //
     /*
     Algorithm algo;

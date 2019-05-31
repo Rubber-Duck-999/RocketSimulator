@@ -45,7 +45,6 @@ void ConfigurationReader::SetConfigValues()
               string mytitle;
               int myyear;
               vector<string> my_songs;
-
               album.lookupValue(config_title_, mytitle);
               BOOST_LOG_TRIVIAL(debug) << "title: " << mytitle;
               //cout << "title: " << mytitle << endl;
@@ -67,4 +66,15 @@ void ConfigurationReader::SetConfigValues()
         // Ignore.
         }
     }
+    /*
+    rocket_simulator::StateData i;
+    while(!rocket_simulator::statequeue.pop(i))
+    {
+        //BOOST_LOG_TRIVIAL(info) << "HI";
+    }
+    while(rocket_simulator::statequeue.pop(i))
+    {   
+        BOOST_LOG_TRIVIAL(fatal) << "Queue Data: " << i.state << std::endl;
+    }
+    */
 }

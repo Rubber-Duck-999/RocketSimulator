@@ -16,8 +16,45 @@ void Socket::Split(std::string &message, std::string* subs)
 
 void Socket::SaveMessage(std::string message)
 {
-    //BOOST_LOG_TRIVIAL(debug) << my_message_;
     messages_.push_back(message);
+}
+
+void Socket::SendState(unsigned int statedata)
+{
+    namespace data = rocket_simulator;
+    data::StateDataParameters sendingstate;
+    BOOST_LOG_TRIVIAL(debug) << "Switching to;";
+    switch(statedata)
+    { 
+        case 1:
+            sendingstate.state = data::kCONFIGURED;
+            BOOST_LOG_TRIVIAL(debug) << "State change is: " << sendingstate.state;
+            break;
+        case 2:
+            sendingstate.state = data::kREADY;
+            BOOST_LOG_TRIVIAL(debug) << "State change is: " << sendingstate.state;            
+            break;
+        case 3:
+            sendingstate.state = data::kLAUNCH;
+            BOOST_LOG_TRIVIAL(debug) << "State change is: " << sendingstate.state;            
+            break;
+        case 4:
+            sendingstate.state = data::kRETURN;
+            BOOST_LOG_TRIVIAL(debug) << "State change is: " << sendingstate.state;
+            break;
+        case 5:
+            sendingstate.state = data::kSHUTDOWN;
+            BOOST_LOG_TRIVIAL(debug) << "State change is: " << sendingstate.state;
+            break;
+        default:
+            sendingstate.state = data::kNON_CONFIGURED;
+            BOOST_LOG_TRIVIAL(debug) << "State is back to: " << sendingstate.state;
+    }
+    /*for(int i = 0; i < data::kMaxStateQueue; i++)
+    {
+        data::statequeue.push(sendingstate);
+    }
+    //BOOST_LOG_TRIVIAL(debug) << data::statequeue.size();
 }
 
 int Socket::SizeOfMessageList()
@@ -36,28 +73,48 @@ void Socket::NetworkReceive()
         std::string strbuffer = buffer;
         if (received > 0)
         {
-            BOOST_LOG_TRIVIAL(debug) << "A message has been received";
             std::string subs[25];
-            BOOST_LOG_TRIVIAL(debug) << strbuffer;
+            BOOST_LOG_TRIVIAL(error) << strbuffer;
             Split(strbuffer, subs);
-            for(int i = 0; i < 25; i++)
+            if (subs[0].find("M_") != std::string::npos) 
             {
-                if (subs[i].find("M_") != std::string::npos) 
+                for(int i = 1; i < 25; i++)
                 {
-                    BOOST_LOG_TRIVIAL(debug) << "A correct message has been received: " << i;
+                    BOOST_LOG_TRIVIAL(error) << "A correct message has been received: " << i;
                     SaveMessage(strbuffer);
-                    receive_mode_ = false;
-                    BOOST_LOG_TRIVIAL(debug) << subs[i];
-                }
-                if (subs[i].find(state_configured_) != std::string::npos)
-                {
-                    BOOST_LOG_TRIVIAL(debug) << "Message: " << subs[i];
-                }
-                if (subs[i].find(state_ready_) != std::string::npos)
-                {
-                    BOOST_LOG_TRIVIAL(debug) << "Message: " << subs[i];
+                    BOOST_LOG_TRIVIAL(info) << subs[i];
+                    if (subs[i].find(state_configured_) != std::string::npos)
+                    {
+                        BOOST_LOG_TRIVIAL(info) << "Message: " << subs[i];
+                        SendState(kConfigured);
+                        receive_mode_ = false;
+                    }
+                    else if (subs[i].find(state_ready_) != std::string::npos)
+                    {
+                        BOOST_LOG_TRIVIAL(info) << "Message: " << subs[i];
+                        SendState(kReady);
+                    }
+                    else if (subs[i].find(state_launch_) != std::string::npos)
+                    {
+                        BOOST_LOG_TRIVIAL(info) << "Message: " << subs[i];
+                        SendState(kLaunch);
+                    }
+                    else if (subs[i].find(state_return_) != std::string::npos)
+                    {
+                        BOOST_LOG_TRIVIAL(info) << "Message: " << subs[i];
+                        SendState(kReturn);
+                    }
+                    else if (subs[i].find(state_shutdown_) != std::string::npos)
+                    {
+                        BOOST_LOG_TRIVIAL(info) << "Message: " << subs[i];
+                        SendState(kShutdown);
+                    }                    
                 }
             }
+        }
+        else
+        {
+            BOOST_LOG_TRIVIAL(error) << "We have no messages at all";
         }
     }
 }

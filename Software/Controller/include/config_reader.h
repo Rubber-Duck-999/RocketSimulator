@@ -4,6 +4,7 @@
 #include <vector>
 #include <libconfig.h++>
 #include "logging.h"
+#include "data_structure.h"
 
 using namespace std;
 using namespace libconfig;

@@ -57,9 +57,33 @@ include CMakeFiles/Controller.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Controller.dir/flags.make
 
+CMakeFiles/Controller.dir/src/data_structure.cc.o: CMakeFiles/Controller.dir/flags.make
+CMakeFiles/Controller.dir/src/data_structure.cc.o: ../src/data_structure.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Controller.dir/src/data_structure.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Controller.dir/src/data_structure.cc.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/data_structure.cc"
+
+CMakeFiles/Controller.dir/src/data_structure.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Controller.dir/src/data_structure.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/data_structure.cc" > CMakeFiles/Controller.dir/src/data_structure.cc.i
+
+CMakeFiles/Controller.dir/src/data_structure.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Controller.dir/src/data_structure.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/data_structure.cc" -o CMakeFiles/Controller.dir/src/data_structure.cc.s
+
+CMakeFiles/Controller.dir/src/data_structure.cc.o.requires:
+
+.PHONY : CMakeFiles/Controller.dir/src/data_structure.cc.o.requires
+
+CMakeFiles/Controller.dir/src/data_structure.cc.o.provides: CMakeFiles/Controller.dir/src/data_structure.cc.o.requires
+	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/data_structure.cc.o.provides.build
+.PHONY : CMakeFiles/Controller.dir/src/data_structure.cc.o.provides
+
+CMakeFiles/Controller.dir/src/data_structure.cc.o.provides.build: CMakeFiles/Controller.dir/src/data_structure.cc.o
+
+
 CMakeFiles/Controller.dir/src/main.cc.o: CMakeFiles/Controller.dir/flags.make
 CMakeFiles/Controller.dir/src/main.cc.o: ../src/main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Controller.dir/src/main.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Controller.dir/src/main.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Controller.dir/src/main.cc.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cc"
 
 CMakeFiles/Controller.dir/src/main.cc.i: cmake_force
@@ -83,7 +107,7 @@ CMakeFiles/Controller.dir/src/main.cc.o.provides.build: CMakeFiles/Controller.di
 
 CMakeFiles/Controller.dir/src/socket.cc.o: CMakeFiles/Controller.dir/flags.make
 CMakeFiles/Controller.dir/src/socket.cc.o: ../src/socket.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Controller.dir/src/socket.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Controller.dir/src/socket.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Controller.dir/src/socket.cc.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc"
 
 CMakeFiles/Controller.dir/src/socket.cc.i: cmake_force
@@ -107,7 +131,7 @@ CMakeFiles/Controller.dir/src/socket.cc.o.provides.build: CMakeFiles/Controller.
 
 CMakeFiles/Controller.dir/src/config_reader.cc.o: CMakeFiles/Controller.dir/flags.make
 CMakeFiles/Controller.dir/src/config_reader.cc.o: ../src/config_reader.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Controller.dir/src/config_reader.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Controller.dir/src/config_reader.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Controller.dir/src/config_reader.cc.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.cc"
 
 CMakeFiles/Controller.dir/src/config_reader.cc.i: cmake_force
@@ -131,6 +155,7 @@ CMakeFiles/Controller.dir/src/config_reader.cc.o.provides.build: CMakeFiles/Cont
 
 # Object files for target Controller
 Controller_OBJECTS = \
+"CMakeFiles/Controller.dir/src/data_structure.cc.o" \
 "CMakeFiles/Controller.dir/src/main.cc.o" \
 "CMakeFiles/Controller.dir/src/socket.cc.o" \
 "CMakeFiles/Controller.dir/src/config_reader.cc.o"
@@ -138,6 +163,7 @@ Controller_OBJECTS = \
 # External object files for target Controller
 Controller_EXTERNAL_OBJECTS =
 
+../bin/Controller: CMakeFiles/Controller.dir/src/data_structure.cc.o
 ../bin/Controller: CMakeFiles/Controller.dir/src/main.cc.o
 ../bin/Controller: CMakeFiles/Controller.dir/src/socket.cc.o
 ../bin/Controller: CMakeFiles/Controller.dir/src/config_reader.cc.o
@@ -153,7 +179,7 @@ Controller_EXTERNAL_OBJECTS =
 ../bin/Controller: /usr/lib/x86_64-linux-gnu/libboost_atomic.a
 ../bin/Controller: /usr/lib/x86_64-linux-gnu/libpthread.so
 ../bin/Controller: CMakeFiles/Controller.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../bin/Controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../bin/Controller"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Controller.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -161,6 +187,7 @@ CMakeFiles/Controller.dir/build: ../bin/Controller
 
 .PHONY : CMakeFiles/Controller.dir/build
 
+CMakeFiles/Controller.dir/requires: CMakeFiles/Controller.dir/src/data_structure.cc.o.requires
 CMakeFiles/Controller.dir/requires: CMakeFiles/Controller.dir/src/main.cc.o.requires
 CMakeFiles/Controller.dir/requires: CMakeFiles/Controller.dir/src/socket.cc.o.requires
 CMakeFiles/Controller.dir/requires: CMakeFiles/Controller.dir/src/config_reader.cc.o.requires

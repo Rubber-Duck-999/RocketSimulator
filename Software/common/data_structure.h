@@ -1,5 +1,8 @@
-#ifndef DATASTRUCTURE_h
-#define DATASTRUCTURE_h
+#include <boost/lockfree/spsc_queue.hpp>
+#include <iostream>
+
+#ifndef DATA_STRUCTURE_h
+#define DATA_STRUCTURE_h
 
 namespace rocket_simulator
 {	
@@ -29,18 +32,12 @@ namespace rocket_simulator
 		unsigned short int time_to_launch_sec;
 	};
 	
-	struct StateDataParameters
+    typedef enum {kNON_CONFIGURED, kCONFIGURED, kREADY, kLAUNCH, kRETURN, kSHUTDOWN} STATE;
+    
+	typedef struct StateDataParameters
 	{
-		enum CurrentState
-		{
-			kNON_CONFIGURED,
-			kCONFIGURED,
-			kREADY,
-			kLAUNCH,
-			kRETURN,
-			kSHUTDOWN
-		} state;
-	};
+		STATE state;
+	}StateData;
     
 	struct AlgoData
 	{
@@ -51,6 +48,20 @@ namespace rocket_simulator
 		unsigned short int time_sec = 0.0;
 		unsigned short int time_milli_sec = 0.0;
 	};
+    
+    const int kMaxStateQueue = 50;    
+
+    class states
+    {
+    private:
+        boost::lockfree::spsc_queue<StateData> statequeue{kMaxStateQueue};
+    public:
+        states();
+        ~states();
+        void Add(StateDataParameters& sendingstate);
+        void Remove(StateDataParameters& i);
+    };
+
 }
 
 #endif

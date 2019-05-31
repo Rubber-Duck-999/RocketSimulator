@@ -63,6 +63,8 @@ libconfig.h++
 -
 logging.h
 ../include/logging.h
+data_structure.h
+../include/data_structure.h
 
 ../include/socket.h
 arpa/inet.h
@@ -93,10 +95,16 @@ algorithm
 -
 memory
 -
+data_structure.h
+../include/data_structure.h
 logging.h
 ../include/logging.h
 
 ../src/../../common/data_structure.h
+boost/lockfree/spsc_queue.hpp
+-
+iostream
+-
 
 ../src/../../common/logging.h
 string
@@ -110,6 +118,10 @@ boost/log/utility/setup.hpp
 config_reader.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.h
 
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/data_structure.cc
+data_structure.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/data_structure.h
+
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cc
 logging.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/logging.h
@@ -119,8 +131,8 @@ config_reader.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.h
 algorithm.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/algorithm.h
-boost/lockfree/spsc_queue.hpp
--
+data_structure.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/data_structure.h
 thread
 -
 
