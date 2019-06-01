@@ -86,7 +86,7 @@ void Socket::NetworkReceive()
             {
                 BOOST_LOG_TRIVIAL(info) << "Message: " << strbuffer;
                 SendState(kConfigured);
-                for(int i = 4; i < 15; i++)
+                for(auto i = 4; i < 15; i++)
                 {
                     if(i != 6)
                     {

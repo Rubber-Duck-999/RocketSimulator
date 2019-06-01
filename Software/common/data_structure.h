@@ -48,19 +48,11 @@ namespace rocket_simulator
     
     const int kMaxStateQueue = 50;    
 
-    /*
-    struct states
+    template<typename T, typename R>
+    static inline auto Compare(T x, R y) -> decltype(x + y) const
     {
-    public:
-        states();
-        static boost::lockfree::spsc_queue<StateData> statequeue;
-    };
-    
-    states::states()
-    {
-        
-    };
-    */
+        return x < y ? y : x;
+    }
 }
 
 #endif

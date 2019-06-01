@@ -17,15 +17,11 @@
 #ifndef SOCKET_h
 #define	SOCKET_h
 
-//boost::lockfree::spsc_queue<rocket_simulator::StateData> statequeue{rocket_simulator::kMaxStateQueue};
 
 class Socket
 {
 public:
-	Socket() 
-    { 
-        std::shared_ptr<std::string> my_message_ = std::make_shared<std::string>();
-    };
+	Socket() {};
     //
     ~Socket() { };
 	//
@@ -34,7 +30,7 @@ public:
     void NetworkSetup();
     void NetworkShutdown();
     void Loop();
-    rocket_simulator::StateDataParameters GetCurrentState() { return current_state_; };
+    rocket_simulator::StateDataParameters GetCurrentState()const { return current_state_; };
     void SetReceive(bool mode)
     {
         receive_mode_ = mode;

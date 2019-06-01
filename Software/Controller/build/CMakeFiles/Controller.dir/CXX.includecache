@@ -6,50 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../../Algorithm/include/algorithm.h
-cstdlib
--
-stdio.h
--
-math.h
--
-rocket.h
-../../Algorithm/include/rocket.h
-world.h
-../../Algorithm/include/world.h
-thrust.h
-../../Algorithm/include/thrust.h
-data_structure.h
-../../Algorithm/include/data_structure.h
-logging.h
-../../Algorithm/include/logging.h
-
-../../Algorithm/include/rocket.h
-logging.h
-../../Algorithm/include/logging.h
-
-../../Algorithm/include/thrust.h
-stdio.h
--
-rocket.h
-../../Algorithm/include/rocket.h
-world.h
-../../Algorithm/include/world.h
-math.h
--
-data_structure.h
-../../Algorithm/include/data_structure.h
-logging.h
-../../Algorithm/include/logging.h
-fstream
--
-iostream
--
-
-../../Algorithm/include/world.h
-logging.h
-../../Algorithm/include/logging.h
-
 ../include/config_reader.h
 iostream
 -
@@ -113,22 +69,12 @@ config_reader.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.h
 
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cc
-boost/lockfree/spsc_queue.hpp
+iostream
 -
 logging.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/logging.h
-socket.h
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.h
-config_reader.h
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.h
-algorithm.h
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/algorithm.h
 data_structure.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/data_structure.h
-thread
--
-ctime
--
 
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc
 socket.h

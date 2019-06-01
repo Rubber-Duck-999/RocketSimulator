@@ -1,15 +1,16 @@
-#include <boost/lockfree/spsc_queue.hpp>
+#include <iostream>
 #include "logging.h"
-#include "socket.h"
-#include "config_reader.h"
-#include "algorithm.h"
 #include "data_structure.h"
-#include <thread>
-#include <ctime>
 
 int main()
 {
+    
     init_log();
+    auto number7 = 107;
+    auto number8 = 107.894;
+    auto output4 = rocket_simulator::Compare(number7, number8);
+	std::cout << "My output is : " << output4 << std::endl;
+    /*
     BOOST_LOG_TRIVIAL(info) << "Start up of node";
     //
     Socket localsocket;
@@ -19,10 +20,10 @@ int main()
     ConfigurationReader config;
     std::vector<double> data;
     localsocket.GetAlgorithmData(data);
-    /*for(unsigned int x = 0; x < data.size(); x++)
+    for(unsigned int x = 0; x < data.size(); x++)
     {
         BOOST_LOG_TRIVIAL(info) << "Consume: " << data[x];
-    }*/
+    }
     localsocket.NetworkShutdown();  
     config.SetConfigValues();
     BOOST_LOG_TRIVIAL(info) << "After the thread the state is: " << localsocket.GetCurrentState().state;
@@ -51,7 +52,8 @@ int main()
     time_t nowLater = time(0);
     // convert now to string form
     char* dtLater = ctime(&nowLater);
-    BOOST_LOG_TRIVIAL(info) << "The local date and time is: " << dtLater << endl;    
+    BOOST_LOG_TRIVIAL(info) << "The local date and time is: " << dtLater << endl; 
+    */    
     return 0;
 }
  

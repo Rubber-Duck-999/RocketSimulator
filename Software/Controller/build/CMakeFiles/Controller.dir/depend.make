@@ -6,12 +6,6 @@ CMakeFiles/Controller.dir/src/config_reader.cc.o: ../src/../../common/data_struc
 CMakeFiles/Controller.dir/src/config_reader.cc.o: ../src/../../common/logging.h
 CMakeFiles/Controller.dir/src/config_reader.cc.o: ../src/config_reader.cc
 
-CMakeFiles/Controller.dir/src/main.cc.o: ../../Algorithm/include/algorithm.h
-CMakeFiles/Controller.dir/src/main.cc.o: ../../Algorithm/include/rocket.h
-CMakeFiles/Controller.dir/src/main.cc.o: ../../Algorithm/include/thrust.h
-CMakeFiles/Controller.dir/src/main.cc.o: ../../Algorithm/include/world.h
-CMakeFiles/Controller.dir/src/main.cc.o: ../include/config_reader.h
-CMakeFiles/Controller.dir/src/main.cc.o: ../include/socket.h
 CMakeFiles/Controller.dir/src/main.cc.o: ../src/../../common/data_structure.h
 CMakeFiles/Controller.dir/src/main.cc.o: ../src/../../common/logging.h
 CMakeFiles/Controller.dir/src/main.cc.o: ../src/main.cc
