@@ -69,8 +69,6 @@ data_structure.h
 ../include/socket.h
 arpa/inet.h
 -
-iostream
--
 sstream
 -
 cstdlib
@@ -101,10 +99,6 @@ logging.h
 ../include/logging.h
 
 ../src/../../common/data_structure.h
-boost/lockfree/spsc_queue.hpp
--
-iostream
--
 
 ../src/../../common/logging.h
 string
@@ -118,11 +112,9 @@ boost/log/utility/setup.hpp
 config_reader.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.h
 
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/data_structure.cc
-data_structure.h
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/data_structure.h
-
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cc
+boost/lockfree/spsc_queue.hpp
+-
 logging.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/logging.h
 socket.h
@@ -134,6 +126,8 @@ algorithm.h
 data_structure.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/data_structure.h
 thread
+-
+ctime
 -
 
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc

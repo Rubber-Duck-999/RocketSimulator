@@ -1,29 +1,36 @@
+#include <boost/lockfree/spsc_queue.hpp>
 #include "logging.h"
 #include "socket.h"
 #include "config_reader.h"
 #include "algorithm.h"
 #include "data_structure.h"
 #include <thread>
+#include <ctime>
 
 int main()
 {
     init_log();
-    BOOST_LOG_TRIVIAL(debug) << "Start up of node";
+    BOOST_LOG_TRIVIAL(info) << "Start up of node";
     //
-    states localstates;
-    Socket localsocket(&localstates);
+    Socket localsocket;
     localsocket.NetworkSetup();
-    localsocket.SetReceiveOn(true);
-    ConfigurationReader config(&localstates);
-    
-    std::thread t1{&Socket::NetworkReceive, &localsocket};
-    std::thread t2{&ConfigurationReader::SetConfigValues, &config};
-    t1.join();
-    t2.join();
+    localsocket.SetReceive(true);
+    localsocket.Loop();
+    ConfigurationReader config;
+    std::vector<double> data;
+    localsocket.GetAlgorithmData(data);
+    /*for(unsigned int x = 0; x < data.size(); x++)
+    {
+        BOOST_LOG_TRIVIAL(info) << "Consume: " << data[x];
+    }*/
     localsocket.NetworkShutdown();  
     config.SetConfigValues();
+    BOOST_LOG_TRIVIAL(info) << "After the thread the state is: " << localsocket.GetCurrentState().state;
     //
-    /*
+    time_t now = time(0);
+    // convert now to string form
+    char* dt = ctime(&now);
+    BOOST_LOG_TRIVIAL(info) << "The local date and time is: " << dt << endl;
     Algorithm algo;
     rocket_simulator::RocketDataParameters rocket_data;
     rocket_data.mass_ = 7.0;
@@ -41,7 +48,10 @@ int main()
     algo.GetRocketDataParameters(rocket_data);
     algo.GetTerrainMissionParameters(terrain_data);
     algo.CreateRocketSimulation();
-    */
+    time_t nowLater = time(0);
+    // convert now to string form
+    char* dtLater = ctime(&nowLater);
+    BOOST_LOG_TRIVIAL(info) << "The local date and time is: " << dtLater << endl;    
     return 0;
 }
  

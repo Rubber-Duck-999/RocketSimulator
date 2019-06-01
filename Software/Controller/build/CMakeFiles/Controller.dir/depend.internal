@@ -6,9 +6,6 @@ CMakeFiles/Controller.dir/src/config_reader.cc.o
  ../src/../../common/data_structure.h
  ../src/../../common/logging.h
  /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.cc
-CMakeFiles/Controller.dir/src/data_structure.cc.o
- ../src/../../common/data_structure.h
- /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/data_structure.cc
 CMakeFiles/Controller.dir/src/main.cc.o
  ../../Algorithm/include/algorithm.h
  ../../Algorithm/include/rocket.h

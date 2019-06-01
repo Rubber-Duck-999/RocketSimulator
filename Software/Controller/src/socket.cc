@@ -19,6 +19,7 @@ void Socket::SaveMessage(std::string message)
     messages_.push_back(message);
 }
 
+
 void Socket::SendState(unsigned int statedata)
 {
     namespace data = rocket_simulator;
@@ -50,72 +51,80 @@ void Socket::SendState(unsigned int statedata)
             sendingstate.state = data::kNON_CONFIGURED;
             BOOST_LOG_TRIVIAL(debug) << "State is back to: " << sendingstate.state;
     }
-    /*for(int i = 0; i < data::kMaxStateQueue; i++)
-    {
-        data::statequeue.push(sendingstate);
-    }
-    //BOOST_LOG_TRIVIAL(debug) << data::statequeue.size();
+    current_state_ = sendingstate;
 }
+
 
 int Socket::SizeOfMessageList()
 {
     BOOST_LOG_TRIVIAL(debug) << "The list of messages saved: " << messages_.size();
 }
 
+
 void Socket::NetworkReceive()
 {
 	char buffer[1024];
 	buffer[1024] = '\0';
-    BOOST_LOG_TRIVIAL(error) << "Your receive mode is: " << receive_mode_;
-    while(receive_mode_)
+    BOOST_LOG_TRIVIAL(trace) << "Your receive mode is: " << receive_mode_;
+    int received = recvfrom(network_socket_, buffer, 1024, 0, (struct sockaddr*)&network_serv_, (socklen_t *)&network_len_);
+    std::string strbuffer = buffer;
+    if (received > 0)
     {
-        int received = recvfrom(network_socket_, buffer, 1024, 0, (struct sockaddr*)&network_serv_, (socklen_t *)&network_len_);
-        std::string strbuffer = buffer;
-        if (received > 0)
+        std::string subs[25];
+        BOOST_LOG_TRIVIAL(error) << strbuffer;
+        Split(strbuffer, subs);
+        if (subs[0].find("M_") != std::string::npos) 
         {
-            std::string subs[25];
-            BOOST_LOG_TRIVIAL(error) << strbuffer;
-            Split(strbuffer, subs);
-            if (subs[0].find("M_") != std::string::npos) 
+            std::string expected = std::to_string(expected_id_);
+            if (subs[0].find(expected) == std::string::npos)
             {
-                for(int i = 1; i < 25; i++)
-                {
-                    BOOST_LOG_TRIVIAL(error) << "A correct message has been received: " << i;
-                    SaveMessage(strbuffer);
-                    BOOST_LOG_TRIVIAL(info) << subs[i];
-                    if (subs[i].find(state_configured_) != std::string::npos)
-                    {
-                        BOOST_LOG_TRIVIAL(info) << "Message: " << subs[i];
-                        SendState(kConfigured);
-                        receive_mode_ = false;
-                    }
-                    else if (subs[i].find(state_ready_) != std::string::npos)
-                    {
-                        BOOST_LOG_TRIVIAL(info) << "Message: " << subs[i];
-                        SendState(kReady);
-                    }
-                    else if (subs[i].find(state_launch_) != std::string::npos)
-                    {
-                        BOOST_LOG_TRIVIAL(info) << "Message: " << subs[i];
-                        SendState(kLaunch);
-                    }
-                    else if (subs[i].find(state_return_) != std::string::npos)
-                    {
-                        BOOST_LOG_TRIVIAL(info) << "Message: " << subs[i];
-                        SendState(kReturn);
-                    }
-                    else if (subs[i].find(state_shutdown_) != std::string::npos)
-                    {
-                        BOOST_LOG_TRIVIAL(info) << "Message: " << subs[i];
-                        SendState(kShutdown);
-                    }                    
-                }
+                BOOST_LOG_TRIVIAL(error) << "We may have missed a message";
             }
+            BOOST_LOG_TRIVIAL(trace) << "A correct message has been received";
+            SaveMessage(strbuffer);
+            if (subs[1].find(state_configured_) != std::string::npos)
+            {
+                BOOST_LOG_TRIVIAL(info) << "Message: " << strbuffer;
+                SendState(kConfigured);
+                for(int i = 4; i < 15; i++)
+                {
+                    if(i != 6)
+                    {
+                        subs[i].erase(std::remove(subs[i].begin(), subs[i].end(), ','), subs[i].end());
+                        int number = std::atoi (subs[i].c_str());
+                        algorithm_data_.push_back(number);
+                        BOOST_LOG_TRIVIAL(trace) << "Configured Algo data size now: " << algorithm_data_.size();
+                    }
+                }
+                receive_mode_ = false;
+                expected_id_++;
+            }
+            else if (subs[1].find(state_ready_) != std::string::npos)
+            {
+                BOOST_LOG_TRIVIAL(info) << "Message: " << subs[1];
+                SendState(kReady);
+            }
+            else if (subs[1].find(state_launch_) != std::string::npos)
+            {
+                BOOST_LOG_TRIVIAL(info) << "Message: " << subs[1];
+                SendState(kLaunch);
+
+            }
+            else if (subs[1].find(state_return_) != std::string::npos)
+            {
+                BOOST_LOG_TRIVIAL(info) << "Message: " << subs[1];
+                SendState(kReturn);
+            }
+            else if (subs[1].find(state_shutdown_) != std::string::npos)
+            {
+                BOOST_LOG_TRIVIAL(info) << "Message: " << subs[1];
+                SendState(kShutdown);
+            }                    
         }
-        else
-        {
-            BOOST_LOG_TRIVIAL(error) << "We have no messages at all";
-        }
+    }
+    else
+    {
+        BOOST_LOG_TRIVIAL(error) << "We have no messages at all";
     }
 }
 
@@ -129,6 +138,28 @@ void Socket::NetworkSend()
 	{
 		BOOST_LOG_TRIVIAL(error) << "A severe error has occured on the simulator send";
 	}
+}
+
+void Socket::Loop()
+{
+    while(receive_mode_)
+    {
+        NetworkReceive();
+        rocket_simulator::StateDataParameters now = GetCurrentState();
+        BOOST_LOG_TRIVIAL(info) << "Current state: " << now.state;
+    }
+}
+
+void Socket::GetAlgorithmData(std::vector<double>& data)
+{
+    BOOST_LOG_TRIVIAL(debug) << "Passing algo data";
+    BOOST_LOG_TRIVIAL(debug) << "Size: " << algorithm_data_.size();
+    for(int i = 0; i < algorithm_data_.size(); i++)
+    {
+        BOOST_LOG_TRIVIAL(debug) << "Data value: " << algorithm_data_[i]; 
+        data.push_back(algorithm_data_[i]);  
+        algorithm_data_[i] = 0.0;
+    }
 }
 
 

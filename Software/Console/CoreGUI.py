@@ -119,7 +119,7 @@ class GUI(threading.Thread):
                     self.dataReady = True
                     self.State = State.CONFIGURED
                     self.sendData()
-                    self.State = State.READY
+                    #self.State = State.READY
                     self.SubUI()
                 else:
                     Popup("Failure", "Please properly enter the Rocket details\n")
@@ -161,8 +161,8 @@ class GUI(threading.Thread):
         if self.dataReady is True:
             terrain      = terrainDataParameters(self.messageID, self.dataStructure[0], self.dataStructure[1])
             state        = stateDataParameters(self.messageID, self.State)
-            launcher     = launcherMissionParameters(self.messageID, self.defaultPilot, 
-                                                     self.defaultTimeToLaunchMin, self.defaultTimeToLaunchSec)
+            #launcher     = launcherMissionParameters(self.messageID, self.defaultPilot, 
+            #                                         self.defaultTimeToLaunchMin, self.defaultTimeToLaunchSec)
             rocket       = rocketDataParameters(self.messageID, self.dataStructure[2], self.dataStructure[3], 
                                                 self.dataStructure[4], self.dataStructure[5], 
                                                 self.dataStructure[6], self.dataStructure[7], 
@@ -170,9 +170,9 @@ class GUI(threading.Thread):
                                                 self.dataStructure[10])
             terrainData  = terrain.getDataStructure()
             stateData    = state.getDataStructure()
-            launcherData = launcher.getDataStructure()
+            #launcherData = launcher.getDataStructure()
             rocketData   = rocket.getDataStructure()
-            data = stateData + terrainData + launcherData + rocketData
+            data = stateData + terrainData + rocketData##launcherData + rocketData
             sendData(data)
             self.messageID = self.messageID + 1
             self.dataReady = False

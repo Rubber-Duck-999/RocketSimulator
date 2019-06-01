@@ -150,33 +150,6 @@ src/config_reader.cc.s:
 	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/config_reader.cc.s
 .PHONY : src/config_reader.cc.s
 
-src/data_structure.o: src/data_structure.cc.o
-
-.PHONY : src/data_structure.o
-
-# target to build an object file
-src/data_structure.cc.o:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/data_structure.cc.o
-.PHONY : src/data_structure.cc.o
-
-src/data_structure.i: src/data_structure.cc.i
-
-.PHONY : src/data_structure.i
-
-# target to preprocess a source file
-src/data_structure.cc.i:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/data_structure.cc.i
-.PHONY : src/data_structure.cc.i
-
-src/data_structure.s: src/data_structure.cc.s
-
-.PHONY : src/data_structure.s
-
-# target to generate assembly for a file
-src/data_structure.cc.s:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/src/data_structure.cc.s
-.PHONY : src/data_structure.cc.s
-
 src/main.o: src/main.cc.o
 
 .PHONY : src/main.o
@@ -243,9 +216,6 @@ help:
 	@echo "... src/config_reader.o"
 	@echo "... src/config_reader.i"
 	@echo "... src/config_reader.s"
-	@echo "... src/data_structure.o"
-	@echo "... src/data_structure.i"
-	@echo "... src/data_structure.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

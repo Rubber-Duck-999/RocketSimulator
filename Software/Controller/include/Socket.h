@@ -1,5 +1,4 @@
 #include <arpa/inet.h>
-#include <iostream>
 #include <sstream>
 #include <cstdlib>
 #include <sys/socket.h>
@@ -18,6 +17,8 @@
 #ifndef SOCKET_h
 #define	SOCKET_h
 
+//boost::lockfree::spsc_queue<rocket_simulator::StateData> statequeue{rocket_simulator::kMaxStateQueue};
+
 class Socket
 {
 public:
@@ -32,12 +33,15 @@ public:
     void NetworkSend();
     void NetworkSetup();
     void NetworkShutdown();
-    void SetReceiveOn(bool mode)
+    void Loop();
+    rocket_simulator::StateDataParameters GetCurrentState() { return current_state_; };
+    void SetReceive(bool mode)
     {
         receive_mode_ = mode;
     }
     void MessageSet(const char* message);
     //
+    void GetAlgorithmData(std::vector<double>& data);
 private:
     //Functions
     void Split(std::string &message, std::string* subs);
@@ -54,8 +58,10 @@ private:
     const int kLaunch = 3;
     const int kReturn = 4;
     const int kShutdown = 5;
+    int expected_id_ = 101;
 	//
     std::vector<std::string> messages_;
+    std::vector<double> algorithm_data_;
     //
     bool receive_mode_ = false;
 	bool run_ = false;
@@ -63,6 +69,7 @@ private:
 	//Ports for socket setup
 	const int kPort = 6111;
 	//
+    rocket_simulator::StateDataParameters current_state_;
     void SaveMessage(std::string message);
     void SendState(unsigned int state);
     int SizeOfMessageList();

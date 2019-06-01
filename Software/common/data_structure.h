@@ -1,6 +1,3 @@
-#include <boost/lockfree/spsc_queue.hpp>
-#include <iostream>
-
 #ifndef DATA_STRUCTURE_h
 #define DATA_STRUCTURE_h
 
@@ -51,17 +48,19 @@ namespace rocket_simulator
     
     const int kMaxStateQueue = 50;    
 
-    class states
+    /*
+    struct states
     {
-    private:
-        boost::lockfree::spsc_queue<StateData> statequeue{kMaxStateQueue};
     public:
         states();
-        ~states();
-        void Add(StateDataParameters& sendingstate);
-        void Remove(StateDataParameters& i);
+        static boost::lockfree::spsc_queue<StateData> statequeue;
     };
-
+    
+    states::states()
+    {
+        
+    };
+    */
 }
 
 #endif

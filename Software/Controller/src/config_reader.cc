@@ -66,15 +66,4 @@ void ConfigurationReader::SetConfigValues()
         // Ignore.
         }
     }
-    /*
-    rocket_simulator::StateData i;
-    while(!rocket_simulator::statequeue.pop(i))
-    {
-        //BOOST_LOG_TRIVIAL(info) << "HI";
-    }
-    while(rocket_simulator::statequeue.pop(i))
-    {   
-        BOOST_LOG_TRIVIAL(fatal) << "Queue Data: " << i.state << std::endl;
-    }
-    */
 }

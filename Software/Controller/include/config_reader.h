@@ -32,6 +32,8 @@ private:
     
     void ReadConfig();
     
+    //rocket_simulator::states states_;
+    
     const char* config_file_ = "/mnt/c/Users/simon/Documents/Config/use.conf";
     
     std::string config_title_ = "title";
