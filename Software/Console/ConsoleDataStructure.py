@@ -46,7 +46,7 @@ class rocketDataParameters(dataStructure):
         self.burnTime = burnTime
         self.flowRate = flowRate
         self.angleOfLaunch = angleOfLaunch
-        self.dataStructure = [ self.ID, self.mass, self.dragAxisX, self.dragAxisY,
+        self.dataStructure = [ self.mass, self.dragAxisX, self.dragAxisY,
                                self.horiCrossSectArea, self.vertCrossSectArea,
                                self.thrust, self.burnTime, self.flowRate,
                                self.angleOfLaunch ]  
@@ -59,7 +59,7 @@ class launcherMissionParameters(dataStructure):
         self.pilot = pilot 
         self.timeToLaunchMin = timeToLaunchMin
         self.timeToLaunchSec = timeToLaunchSec
-        self.dataStructure = [ self.ID, self.pilot,
+        self.dataStructure = [ self.pilot,
                                self.timeToLaunchMin,
                                self.timeToLaunchSec ]
         
@@ -74,7 +74,7 @@ class terrainDataParameters(dataStructure):
         self.ID = ID
         self.density = density
         self.gravity = gravity
-        self.dataStructure = [ self.ID, self.density, self.gravity ]
+        self.dataStructure = [ self.density, self.gravity ]
 
 def sendData(Data):
     Socket = SocketSender(Host, Port)

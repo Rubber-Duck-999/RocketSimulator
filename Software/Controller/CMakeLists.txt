@@ -1,8 +1,8 @@
 cmake_minimum_required (VERSION 3.10)
 
 # Change project name
-set (PROJECT_NAME Controller)
-set (PROJECT_TEST_NAME test${PROJECT_NAME})
+set (PROJECT_NAME exeController)
+set (PROJECT_TEST_NAME exeTestController)
 
 project (${PROJECT_NAME} C CXX)
 

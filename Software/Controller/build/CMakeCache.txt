@@ -199,7 +199,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Controller
+CMAKE_PROJECT_NAME:STATIC=exeController
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -255,6 +255,12 @@ Controller_BINARY_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimu
 
 //Value Computed by CMake
 Controller_SOURCE_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller
+
+//Value Computed by CMake
+exeController_BINARY_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build
+
+//Value Computed by CMake
+exeController_SOURCE_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller
 
 
 ########################

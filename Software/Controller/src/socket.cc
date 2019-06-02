@@ -70,7 +70,7 @@ void Socket::NetworkReceive()
     std::string strbuffer = buffer;
     if (received > 0)
     {
-        std::string subs[25];
+        std::string subs[30];
         BOOST_LOG_TRIVIAL(error) << strbuffer;
         Split(strbuffer, subs);
         if (subs[0].find("M_") != std::string::npos) 
@@ -86,15 +86,13 @@ void Socket::NetworkReceive()
             {
                 BOOST_LOG_TRIVIAL(info) << "Message: " << strbuffer;
                 SendState(kConfigured);
-                for(auto i = 4; i < 15; i++)
+                for(auto i = 3; i < 13; i++)
                 {
-                    if(i != 6)
-                    {
-                        subs[i].erase(std::remove(subs[i].begin(), subs[i].end(), ','), subs[i].end());
-                        int number = std::atoi (subs[i].c_str());
-                        algorithm_data_.push_back(number);
-                        BOOST_LOG_TRIVIAL(trace) << "Configured Algo data size now: " << algorithm_data_.size();
-                    }
+                    subs[i].erase(std::remove(subs[i].begin(), subs[i].end(), ','), subs[i].end());
+                    subs[i].erase(std::remove(subs[i].begin(), subs[i].end(), ']'), subs[i].end());
+                    double number = std::atoi (subs[i].c_str());
+                    algorithm_data_.push_back(number);
+                    BOOST_LOG_TRIVIAL(trace) << "Configured Algo data size now: " << algorithm_data_.size();
                 }
                 receive_mode_ = false;
                 expected_id_++;
@@ -108,7 +106,6 @@ void Socket::NetworkReceive()
             {
                 BOOST_LOG_TRIVIAL(info) << "Message: " << subs[1];
                 SendState(kLaunch);
-
             }
             else if (subs[1].find(state_return_) != std::string::npos)
             {
@@ -177,7 +174,7 @@ void Socket::NetworkSetup()
 	}
 	if(bind(network_socket_,(struct sockaddr*)&network_serv_, sizeof(network_serv_)) == -1 )
  	{
- 		std::cout << "Failed to Bind" << std::endl;
+ 		BOOST_LOG_TRIVIAL(error) << "Failed to Bind";
  	}
 	network_len_ = sizeof(network_serv_);
 }

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-set (PROJECT_TEST_NAME test${PROJECT_NAME})
+set (PROJECT_TEST_NAME exeTest${PROJECT_NAME})
 
 enable_testing()
 

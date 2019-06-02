@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Sof
 CMAKE_BINARY_DIR = "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build"
 
 #=============================================================================
-# Target rules for target CMakeFiles/Controller.dir
+# Target rules for target CMakeFiles/exeController.dir
 
 # All Build rule for target.
-CMakeFiles/Controller.dir/all:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/depend
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=1,2,3,4 "Built target Controller"
-.PHONY : CMakeFiles/Controller.dir/all
+CMakeFiles/exeController.dir/all:
+	$(MAKE) -f CMakeFiles/exeController.dir/build.make CMakeFiles/exeController.dir/depend
+	$(MAKE) -f CMakeFiles/exeController.dir/build.make CMakeFiles/exeController.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=1,2,3,4 "Built target exeController"
+.PHONY : CMakeFiles/exeController.dir/all
 
 # Include target in all.
-all: CMakeFiles/Controller.dir/all
+all: CMakeFiles/exeController.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Controller.dir/rule: cmake_check_build_system
+CMakeFiles/exeController.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Controller.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/exeController.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" 0
-.PHONY : CMakeFiles/Controller.dir/rule
+.PHONY : CMakeFiles/exeController.dir/rule
 
 # Convenience name for target.
-Controller: CMakeFiles/Controller.dir/rule
+exeController: CMakeFiles/exeController.dir/rule
 
-.PHONY : Controller
-
-# clean rule for target.
-CMakeFiles/Controller.dir/clean:
-	$(MAKE) -f CMakeFiles/Controller.dir/build.make CMakeFiles/Controller.dir/clean
-.PHONY : CMakeFiles/Controller.dir/clean
+.PHONY : exeController
 
 # clean rule for target.
-clean: CMakeFiles/Controller.dir/clean
+CMakeFiles/exeController.dir/clean:
+	$(MAKE) -f CMakeFiles/exeController.dir/build.make CMakeFiles/exeController.dir/clean
+.PHONY : CMakeFiles/exeController.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/exeController.dir/clean
 
 .PHONY : clean
 
