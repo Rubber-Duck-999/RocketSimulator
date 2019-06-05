@@ -1,8 +1,25 @@
+#include <string>
+
 #ifndef DATA_STRUCTURE_h
 #define DATA_STRUCTURE_h
 
 namespace rocket_simulator
 {	
+    const int kConfigured = 1;
+    const int kReady = 2;
+    const int kLaunch = 3;
+    const int kReturn = 4;
+    const int kShutdown = 5;
+    
+    //Ports for socket setup
+	const int kPort = 6111;
+    
+    const std::string state_configured_ = "State.CONFIGURED";
+    const std::string state_ready_ = "State.READY";
+    const std::string state_launch_ = "State.LAUNCH";
+    const std::string state_return_ = "State.RETURN";
+    const std::string state_shutdown_ = "State.SHUTDOWN";
+    
 	struct RocketDataParameters
 	{
 		double mass_;

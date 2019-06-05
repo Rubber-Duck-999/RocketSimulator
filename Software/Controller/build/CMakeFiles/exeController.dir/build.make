@@ -81,33 +81,57 @@ CMakeFiles/exeController.dir/src/main.cc.o.provides: CMakeFiles/exeController.di
 CMakeFiles/exeController.dir/src/main.cc.o.provides.build: CMakeFiles/exeController.dir/src/main.cc.o
 
 
-CMakeFiles/exeController.dir/src/socket.cc.o: CMakeFiles/exeController.dir/flags.make
-CMakeFiles/exeController.dir/src/socket.cc.o: ../src/socket.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/exeController.dir/src/socket.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exeController.dir/src/socket.cc.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc"
+CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o: CMakeFiles/exeController.dir/flags.make
+CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o: /mnt/c/Users/simon/Google\ Drive/Projects/RocketSimulator/Software/common/src/socket.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/src/socket.cc"
 
-CMakeFiles/exeController.dir/src/socket.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/exeController.dir/src/socket.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc" > CMakeFiles/exeController.dir/src/socket.cc.i
+CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/src/socket.cc" > CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.i
 
-CMakeFiles/exeController.dir/src/socket.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/exeController.dir/src/socket.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc" -o CMakeFiles/exeController.dir/src/socket.cc.s
+CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/src/socket.cc" -o CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.s
 
-CMakeFiles/exeController.dir/src/socket.cc.o.requires:
+CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o.requires:
 
-.PHONY : CMakeFiles/exeController.dir/src/socket.cc.o.requires
+.PHONY : CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o.requires
 
-CMakeFiles/exeController.dir/src/socket.cc.o.provides: CMakeFiles/exeController.dir/src/socket.cc.o.requires
-	$(MAKE) -f CMakeFiles/exeController.dir/build.make CMakeFiles/exeController.dir/src/socket.cc.o.provides.build
-.PHONY : CMakeFiles/exeController.dir/src/socket.cc.o.provides
+CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o.provides: CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o.requires
+	$(MAKE) -f CMakeFiles/exeController.dir/build.make CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o.provides.build
+.PHONY : CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o.provides
 
-CMakeFiles/exeController.dir/src/socket.cc.o.provides.build: CMakeFiles/exeController.dir/src/socket.cc.o
+CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o.provides.build: CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o
+
+
+CMakeFiles/exeController.dir/src/interface.cc.o: CMakeFiles/exeController.dir/flags.make
+CMakeFiles/exeController.dir/src/interface.cc.o: ../src/interface.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/exeController.dir/src/interface.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exeController.dir/src/interface.cc.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/interface.cc"
+
+CMakeFiles/exeController.dir/src/interface.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/exeController.dir/src/interface.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/interface.cc" > CMakeFiles/exeController.dir/src/interface.cc.i
+
+CMakeFiles/exeController.dir/src/interface.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/exeController.dir/src/interface.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/interface.cc" -o CMakeFiles/exeController.dir/src/interface.cc.s
+
+CMakeFiles/exeController.dir/src/interface.cc.o.requires:
+
+.PHONY : CMakeFiles/exeController.dir/src/interface.cc.o.requires
+
+CMakeFiles/exeController.dir/src/interface.cc.o.provides: CMakeFiles/exeController.dir/src/interface.cc.o.requires
+	$(MAKE) -f CMakeFiles/exeController.dir/build.make CMakeFiles/exeController.dir/src/interface.cc.o.provides.build
+.PHONY : CMakeFiles/exeController.dir/src/interface.cc.o.provides
+
+CMakeFiles/exeController.dir/src/interface.cc.o.provides.build: CMakeFiles/exeController.dir/src/interface.cc.o
 
 
 CMakeFiles/exeController.dir/src/config_reader.cc.o: CMakeFiles/exeController.dir/flags.make
 CMakeFiles/exeController.dir/src/config_reader.cc.o: ../src/config_reader.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/exeController.dir/src/config_reader.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/exeController.dir/src/config_reader.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/exeController.dir/src/config_reader.cc.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.cc"
 
 CMakeFiles/exeController.dir/src/config_reader.cc.i: cmake_force
@@ -132,14 +156,16 @@ CMakeFiles/exeController.dir/src/config_reader.cc.o.provides.build: CMakeFiles/e
 # Object files for target exeController
 exeController_OBJECTS = \
 "CMakeFiles/exeController.dir/src/main.cc.o" \
-"CMakeFiles/exeController.dir/src/socket.cc.o" \
+"CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o" \
+"CMakeFiles/exeController.dir/src/interface.cc.o" \
 "CMakeFiles/exeController.dir/src/config_reader.cc.o"
 
 # External object files for target exeController
 exeController_EXTERNAL_OBJECTS =
 
 ../bin/exeController: CMakeFiles/exeController.dir/src/main.cc.o
-../bin/exeController: CMakeFiles/exeController.dir/src/socket.cc.o
+../bin/exeController: CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o
+../bin/exeController: CMakeFiles/exeController.dir/src/interface.cc.o
 ../bin/exeController: CMakeFiles/exeController.dir/src/config_reader.cc.o
 ../bin/exeController: CMakeFiles/exeController.dir/build.make
 ../bin/exeController: /usr/lib/x86_64-linux-gnu/libboost_log.a
@@ -153,7 +179,7 @@ exeController_EXTERNAL_OBJECTS =
 ../bin/exeController: /usr/lib/x86_64-linux-gnu/libboost_atomic.a
 ../bin/exeController: /usr/lib/x86_64-linux-gnu/libpthread.so
 ../bin/exeController: CMakeFiles/exeController.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../bin/exeController"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../bin/exeController"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/exeController.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -162,7 +188,8 @@ CMakeFiles/exeController.dir/build: ../bin/exeController
 .PHONY : CMakeFiles/exeController.dir/build
 
 CMakeFiles/exeController.dir/requires: CMakeFiles/exeController.dir/src/main.cc.o.requires
-CMakeFiles/exeController.dir/requires: CMakeFiles/exeController.dir/src/socket.cc.o.requires
+CMakeFiles/exeController.dir/requires: CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o.requires
+CMakeFiles/exeController.dir/requires: CMakeFiles/exeController.dir/src/interface.cc.o.requires
 CMakeFiles/exeController.dir/requires: CMakeFiles/exeController.dir/src/config_reader.cc.o.requires
 
 .PHONY : CMakeFiles/exeController.dir/requires

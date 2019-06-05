@@ -173,9 +173,9 @@ class GUI(threading.Thread):
             #launcherData = launcher.getDataStructure()
             rocketData   = rocket.getDataStructure()
             data = stateData + terrainData + rocketData##launcherData + rocketData
-            sendData(data)
-            self.messageID = self.messageID + 1
-            self.dataReady = False
+            if sendData(data):
+                self.messageID = self.messageID + 1
+                self.dataReady = False
             
         
     def run(self):

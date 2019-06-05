@@ -4,15 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/src/socket.cc" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o"
   "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.cc" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/exeController.dir/src/config_reader.cc.o"
+  "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/interface.cc" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/exeController.dir/src/interface.cc.o"
   "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cc" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/exeController.dir/src/main.cc.o"
-  "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/socket.cc" "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/exeController.dir/src/socket.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src/../../common"
+  "../src/../../common/include"
   "../include"
   "../../Algorithm/include"
   )

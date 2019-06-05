@@ -1,15 +1,20 @@
 #include <iostream>
 #include "logging.h"
 #include "data_structure.h"
+#include "interface.h"
 
 int main()
 {
-    
     init_log();
+    /*
     auto number7 = 107;
     auto number8 = 107.894;
     auto output4 = rocket_simulator::Compare(number7, number8);
 	std::cout << "My output is : " << output4 << std::endl;
+    */
+    Interface out;
+    out.Receive();
+    out.shutdown();
     /*
     BOOST_LOG_TRIVIAL(info) << "Start up of node";
     //

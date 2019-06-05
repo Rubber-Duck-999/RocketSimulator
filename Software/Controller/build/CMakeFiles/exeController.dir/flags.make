@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++17 -O3 -Wall
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/../../common" -I"/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/include" -I"/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/../Algorithm/include" 
+CXX_INCLUDES = -I"/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/../../common/include" -I"/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/include" -I"/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/../Algorithm/include" 
 

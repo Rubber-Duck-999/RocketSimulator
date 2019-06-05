@@ -25,7 +25,7 @@ set (INCL_DIR include)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O3 -Wall")
 
 include_directories(${Boost_INCLUDE_DIRS} 
-                    ${SRC_DIR}/../../common 
+                    "${SRC_DIR}/../../common/include" 
                     ${PROJECT_SOURCE_DIR}/${INCL_DIR}
                     "../Algorithm/include")
                     
@@ -34,7 +34,8 @@ link_directories(${Boost_LIBRARY_DIRS}
 # Important: Include all source files on this list
 set (SOURCE
     ${SRC_DIR}/main.cc
-    ${SRC_DIR}/socket.cc
+    ${SRC_DIR}/../../common/src/socket.cc
+    ${SRC_DIR}/interface.cc
     ${SRC_DIR}/config_reader.cc
 )
 

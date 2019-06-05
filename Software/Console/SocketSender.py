@@ -22,10 +22,10 @@ class SocketSender:
             self.timeout = timeout
 
     def setDataPackage(self, dataPackage):
-        MAX_LENGTH = 100
+        MAX_LENGTH = 200
         MIN_LENGTH = 2
         length = len(dataPackage)
-        if isinstance(dataPackage, list):
+        if isinstance(dataPackage, str):
             length = len(dataPackage)
             if length >= MIN_LENGTH and length <= MAX_LENGTH:
                 self.dataPackage   = dataPackage
@@ -39,7 +39,7 @@ class SocketSender:
         if not self.acknowledged:
             self.sendDataString = str(self.dataPackage)
             # Add ID to the data being sent with package data
-            self.sendDataString = "M_" + self.sendDataString + "\n";
+            self.sendDataString = self.sendDataString + "\n";
             # Format for message type 
             self.sendData = self.sendDataString.encode()
             # The encoding default here is strict
