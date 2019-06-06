@@ -39,7 +39,7 @@ set (SOURCE
     ${SRC_DIR}/config_reader.cc
 )
 
-link_directories(/usr/local/lib)
+link_directories(/usr/local/lib "../Algorithm/build/")
 
 # Output folder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")

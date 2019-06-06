@@ -3,6 +3,7 @@
 
 CMakeFiles/exeController.dir/mnt/c/Users/simon/Google_Drive/Projects/RocketSimulator/Software/common/src/socket.cc.o
  ../src/../../common/include/data_structure.h
+ ../src/../../common/include/logging.h
  ../src/../../common/include/socket.h
  /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/src/socket.cc
 CMakeFiles/exeController.dir/src/config_reader.cc.o

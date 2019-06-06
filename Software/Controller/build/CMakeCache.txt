@@ -251,12 +251,6 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-Controller_BINARY_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build
-
-//Value Computed by CMake
-Controller_SOURCE_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller
-
-//Value Computed by CMake
 exeController_BINARY_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build
 
 //Value Computed by CMake

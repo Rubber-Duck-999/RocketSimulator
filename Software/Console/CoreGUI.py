@@ -22,15 +22,15 @@ class GUI(threading.Thread):
     def resetValues(self):    
         self.defaultPilot     = Pilots.FRED
         self.defaultGravity   = 9.87
-        self.defaultDensity   = 0.00
-        self.defaultMass      = 0.00
-        self.defaultThrust    = 0.00
-        self.defaultDragAxisX = 0.00
-        self.defaultDragAxisY = 0.00
-        self.defaultHoriCross = 0.00
-        self.defaultVertCross = 0.00
-        self.defaultBurnTime  = 0.00
-        self.defaultFlowRate  = 0.00
+        self.defaultDensity   = 1.22
+        self.defaultMass      = 200.00
+        self.defaultThrust    = 45.00
+        self.defaultDragAxisX = 23.00
+        self.defaultDragAxisY = 33.00
+        self.defaultHoriCross = 20.00
+        self.defaultVertCross = 30.00
+        self.defaultBurnTime  = 250.00
+        self.defaultFlowRate  = 30.00
         self.defaultAngle     = 90.00
         self.dataStructure    = [ self.defaultGravity, self.defaultDensity, self.defaultMass,      
                                   self.defaultThrust, self.defaultDragAxisX, self.defaultDragAxisY, 

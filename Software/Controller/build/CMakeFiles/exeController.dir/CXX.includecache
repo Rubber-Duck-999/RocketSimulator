@@ -43,8 +43,6 @@ logging.h
 ../../Algorithm/include/logging.h
 fstream
 -
-iostream
--
 
 ../../Algorithm/include/world.h
 logging.h
@@ -127,6 +125,8 @@ memory
 -
 data_structure.h
 ../src/../../common/include/data_structure.h
+logging.h
+../src/../../common/include/logging.h
 
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.cc
 config_reader.h

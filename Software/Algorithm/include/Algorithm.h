@@ -13,10 +13,10 @@
 
 class Algorithm
 {
+private:
 	Rocket rocket_;
 	World world_;
 	rocket_simulator::AlgoData algo_data_;
-	double angle_of_launch_;
 	bool rocket_set_ = false;
 	bool world_set_ = false;
 	bool algo_finished_ = false;

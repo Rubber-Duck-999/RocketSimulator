@@ -13,7 +13,7 @@
 #include <algorithm>
 #include <memory>
 #include "data_structure.h"
-//#include "logging.h"
+#include "logging.h"
 
 #ifndef SOCKET_h
 #define	SOCKET_h
@@ -25,6 +25,7 @@ public:
 	Socket() 
     {
         receive_mode_ = false;
+        init_log();
     };
     //
     ~Socket() { };

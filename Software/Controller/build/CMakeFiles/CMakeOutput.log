@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/mnt/c/Users/simon/Google Driv
 Determining if the C compiler works passed with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_888e2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_888e2.dir/build.make CMakeFiles/cmTC_888e2.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_042a1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_042a1.dir/build.make CMakeFiles/cmTC_042a1.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_888e2.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_888e2.dir/testCCompiler.c.o   -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp/testCCompiler.c"
-Linking C executable cmTC_888e2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_888e2.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_888e2.dir/testCCompiler.c.o  -o cmTC_888e2 
+Building C object CMakeFiles/cmTC_042a1.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_042a1.dir/testCCompiler.c.o   -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp/testCCompiler.c"
+Linking C executable cmTC_042a1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_042a1.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_042a1.dir/testCCompiler.c.o  -o cmTC_042a1 
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7ffd7/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7ffd7.dir/build.make CMakeFiles/cmTC_7ffd7.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_2d21b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2d21b.dir/build.make CMakeFiles/cmTC_2d21b.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7ffd7.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_7ffd7.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_7ffd7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ffd7.dir/link.txt --verbose=1
-/usr/bin/cc     -v CMakeFiles/cmTC_7ffd7.dir/CMakeCCompilerABI.c.o  -o cmTC_7ffd7 
+Building C object CMakeFiles/cmTC_2d21b.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2d21b.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_2d21b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d21b.dir/link.txt --verbose=1
+/usr/bin/cc     -v CMakeFiles/cmTC_2d21b.dir/CMakeCCompilerABI.c.o  -o cmTC_2d21b 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -61,9 +61,9 @@ Thread model: posix
 gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7ffd7' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccC9eanM.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_7ffd7 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_7ffd7.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7ffd7' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2d21b' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAFASoK.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2d21b /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_2d21b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2d21b' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 
@@ -71,14 +71,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_7ffd7/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_7ffd7.dir/build.make CMakeFiles/cmTC_7ffd7.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_2d21b/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_2d21b.dir/build.make CMakeFiles/cmTC_2d21b.dir/build]
   ignore line: [make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_7ffd7.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_7ffd7.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_7ffd7]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ffd7.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_7ffd7.dir/CMakeCCompilerABI.c.o  -o cmTC_7ffd7 ]
+  ignore line: [Building C object CMakeFiles/cmTC_2d21b.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_2d21b.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_2d21b]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d21b.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v CMakeFiles/cmTC_2d21b.dir/CMakeCCompilerABI.c.o  -o cmTC_2d21b ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -90,13 +90,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7ffd7' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccC9eanM.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_7ffd7 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_7ffd7.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2d21b' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAFASoK.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2d21b /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_2d21b.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccC9eanM.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccAFASoK.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -115,7 +115,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_7ffd7] ==> ignore
+    arg [cmTC_2d21b] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -129,7 +129,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_7ffd7.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_2d21b.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -163,14 +163,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5f3d5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5f3d5.dir/build.make CMakeFiles/cmTC_5f3d5.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_bcebd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bcebd.dir/build.make CMakeFiles/cmTC_bcebd.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5f3d5.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_5f3d5.dir/feature_tests.c.o   -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.c"
-Linking C executable cmTC_5f3d5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f3d5.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_5f3d5.dir/feature_tests.c.o  -o cmTC_5f3d5 
+Building C object CMakeFiles/cmTC_bcebd.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_bcebd.dir/feature_tests.c.o   -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_bcebd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bcebd.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_bcebd.dir/feature_tests.c.o  -o cmTC_bcebd 
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 
@@ -183,14 +183,14 @@ make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimul
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1666f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1666f.dir/build.make CMakeFiles/cmTC_1666f.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_679c1/fast"
+/usr/bin/make -f CMakeFiles/cmTC_679c1.dir/build.make CMakeFiles/cmTC_679c1.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1666f.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_1666f.dir/feature_tests.c.o   -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.c"
-Linking C executable cmTC_1666f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1666f.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_1666f.dir/feature_tests.c.o  -o cmTC_1666f 
+Building C object CMakeFiles/cmTC_679c1.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_679c1.dir/feature_tests.c.o   -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_679c1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_679c1.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_679c1.dir/feature_tests.c.o  -o cmTC_679c1 
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 
@@ -203,14 +203,14 @@ make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimul
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_001ba/fast"
-/usr/bin/make -f CMakeFiles/cmTC_001ba.dir/build.make CMakeFiles/cmTC_001ba.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_b2836/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b2836.dir/build.make CMakeFiles/cmTC_b2836.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_001ba.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_001ba.dir/feature_tests.c.o   -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.c"
-Linking C executable cmTC_001ba
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_001ba.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_001ba.dir/feature_tests.c.o  -o cmTC_001ba 
+Building C object CMakeFiles/cmTC_b2836.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_b2836.dir/feature_tests.c.o   -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.c"
+Linking C executable cmTC_b2836
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2836.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_b2836.dir/feature_tests.c.o  -o cmTC_b2836 
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 
@@ -221,28 +221,28 @@ make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimul
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e8202/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e8202.dir/build.make CMakeFiles/cmTC_e8202.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_0456c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0456c.dir/build.make CMakeFiles/cmTC_0456c.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_e8202.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_e8202.dir/testCXXCompiler.cxx.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
-Linking CXX executable cmTC_e8202
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e8202.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_e8202.dir/testCXXCompiler.cxx.o  -o cmTC_e8202 
+Building CXX object CMakeFiles/cmTC_0456c.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_0456c.dir/testCXXCompiler.cxx.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx"
+Linking CXX executable cmTC_0456c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0456c.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_0456c.dir/testCXXCompiler.cxx.o  -o cmTC_0456c 
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fb7d8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_fb7d8.dir/build.make CMakeFiles/cmTC_fb7d8.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_9f6ad/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9f6ad.dir/build.make CMakeFiles/cmTC_9f6ad.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_fb7d8.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_fb7d8.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_fb7d8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb7d8.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTC_fb7d8.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_fb7d8 
+Building CXX object CMakeFiles/cmTC_9f6ad.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_9f6ad.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_9f6ad
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f6ad.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTC_9f6ad.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_9f6ad 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -254,9 +254,9 @@ Thread model: posix
 gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fb7d8' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccyAboHh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_fb7d8 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_fb7d8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fb7d8' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9f6ad' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWCgI40.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9f6ad /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_9f6ad.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9f6ad' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 
@@ -264,14 +264,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_fb7d8/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_fb7d8.dir/build.make CMakeFiles/cmTC_fb7d8.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_9f6ad/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_9f6ad.dir/build.make CMakeFiles/cmTC_9f6ad.dir/build]
   ignore line: [make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_fb7d8.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_fb7d8.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_fb7d8]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb7d8.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_fb7d8.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_fb7d8 ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_9f6ad.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_9f6ad.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_9f6ad]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f6ad.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_9f6ad.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_9f6ad ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -283,13 +283,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fb7d8' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccyAboHh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_fb7d8 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_fb7d8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9f6ad' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWCgI40.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9f6ad /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_9f6ad.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccyAboHh.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccWCgI40.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -308,7 +308,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_fb7d8] ==> ignore
+    arg [cmTC_9f6ad] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib/../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -322,7 +322,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../../../x86_64-linux-gnu/lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_fb7d8.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_9f6ad.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -352,14 +352,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_24e26/fast"
-/usr/bin/make -f CMakeFiles/cmTC_24e26.dir/build.make CMakeFiles/cmTC_24e26.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_33024/fast"
+/usr/bin/make -f CMakeFiles/cmTC_33024.dir/build.make CMakeFiles/cmTC_33024.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_24e26.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_24e26.dir/feature_tests.cxx.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTC_24e26
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24e26.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_24e26.dir/feature_tests.cxx.o  -o cmTC_24e26 
+Building CXX object CMakeFiles/cmTC_33024.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_33024.dir/feature_tests.cxx.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_33024
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33024.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_33024.dir/feature_tests.cxx.o  -o cmTC_33024 
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 
@@ -425,14 +425,14 @@ make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimul
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_abeab/fast"
-/usr/bin/make -f CMakeFiles/cmTC_abeab.dir/build.make CMakeFiles/cmTC_abeab.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_fb5e7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fb5e7.dir/build.make CMakeFiles/cmTC_fb5e7.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_abeab.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_abeab.dir/feature_tests.cxx.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTC_abeab
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_abeab.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_abeab.dir/feature_tests.cxx.o  -o cmTC_abeab 
+Building CXX object CMakeFiles/cmTC_fb5e7.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_fb5e7.dir/feature_tests.cxx.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_fb5e7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb5e7.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_fb5e7.dir/feature_tests.cxx.o  -o cmTC_fb5e7 
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 
@@ -498,14 +498,14 @@ make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimul
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ae226/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ae226.dir/build.make CMakeFiles/cmTC_ae226.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_e6c9e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e6c9e.dir/build.make CMakeFiles/cmTC_e6c9e.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ae226.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_ae226.dir/feature_tests.cxx.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTC_ae226
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae226.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_ae226.dir/feature_tests.cxx.o  -o cmTC_ae226 
+Building CXX object CMakeFiles/cmTC_e6c9e.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_e6c9e.dir/feature_tests.cxx.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_e6c9e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6c9e.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_e6c9e.dir/feature_tests.cxx.o  -o cmTC_e6c9e 
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 
@@ -571,14 +571,14 @@ make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimul
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_50792/fast"
-/usr/bin/make -f CMakeFiles/cmTC_50792.dir/build.make CMakeFiles/cmTC_50792.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_7f6de/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7f6de.dir/build.make CMakeFiles/cmTC_7f6de.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_50792.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_50792.dir/feature_tests.cxx.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.cxx"
-Linking CXX executable cmTC_50792
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50792.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_50792.dir/feature_tests.cxx.o  -o cmTC_50792 
+Building CXX object CMakeFiles/cmTC_7f6de.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_7f6de.dir/feature_tests.cxx.o -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/feature_tests.cxx"
+Linking CXX executable cmTC_7f6de
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f6de.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_7f6de.dir/feature_tests.cxx.o  -o cmTC_7f6de 
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 
@@ -642,28 +642,28 @@ make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimul
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0c094/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0c094.dir/build.make CMakeFiles/cmTC_0c094.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_ef9b8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ef9b8.dir/build.make CMakeFiles/cmTC_ef9b8.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0c094.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_0c094.dir/CheckIncludeFile.c.o   -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
-Linking C executable cmTC_0c094
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c094.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_0c094.dir/CheckIncludeFile.c.o  -o cmTC_0c094 
+Building C object CMakeFiles/cmTC_ef9b8.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_ef9b8.dir/CheckIncludeFile.c.o   -c "/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c"
+Linking C executable cmTC_ef9b8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ef9b8.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_ef9b8.dir/CheckIncludeFile.c.o  -o cmTC_ef9b8 
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5ac7c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5ac7c.dir/build.make CMakeFiles/cmTC_5ac7c.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_818fb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_818fb.dir/build.make CMakeFiles/cmTC_818fb.dir/build
 make[1]: Entering directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5ac7c.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_5ac7c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_5ac7c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ac7c.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_5ac7c.dir/CheckFunctionExists.c.o  -o cmTC_5ac7c -lpthread 
+Building C object CMakeFiles/cmTC_818fb.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_818fb.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_818fb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_818fb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_818fb.dir/CheckFunctionExists.c.o  -o cmTC_818fb -lpthread 
 make[1]: Leaving directory '/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/build/CMakeFiles/CMakeTmp'
 
 

@@ -19,7 +19,7 @@ std::string Socket::NetworkReceive()
 {
     char buffer[1024];
     buffer[1024] = '\0';
-   //BOOST_LOG_TRIVIAL(trace) << "Your receive mode is: " << receive_mode_;
+    BOOST_LOG_TRIVIAL(trace) << "Your receive mode is: " << receive_mode_;
     int received = recvfrom(network_socket_, buffer, 1024, 0, (struct sockaddr*)&network_serv_, (socklen_t *)&network_len_);
     if (received > 0)
     {
