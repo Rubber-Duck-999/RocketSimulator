@@ -22,6 +22,8 @@ private:
 	bool algo_finished_ = false;
 public:
 	Algorithm() {};
+    bool IsRocketSet() const { return rocket_set_; };
+    bool IsWorldSet() const { return world_set_; };
 	bool CreateRocketSimulation();
 	void GetRocketDataParameters(rocket_simulator::RocketDataParameters& rocket_data);
 	void GetTerrainMissionParameters(rocket_simulator::TerrainMissionParameters& terrain_data);

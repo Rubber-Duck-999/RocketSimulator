@@ -25,16 +25,15 @@ set (INCL_DIR include)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O3 -Wall")
 
 include_directories(${Boost_INCLUDE_DIRS} 
-                    "${SRC_DIR}/../../common/include" 
+                    "${SRC_DIR}/../../common" 
                     ${PROJECT_SOURCE_DIR}/${INCL_DIR}
                     "../Algorithm/include")
                     
-link_directories(${Boost_LIBRARY_DIRS}
-                 "../Algorithm/build/")
+link_directories(${Boost_LIBRARY_DIRS})
 # Important: Include all source files on this list
 set (SOURCE
     ${SRC_DIR}/main.cc
-    ${SRC_DIR}/../../common/src/socket.cc
+    ${SRC_DIR}/../../common/socket.cc
     ${SRC_DIR}/interface.cc
     ${SRC_DIR}/config_reader.cc
 )
@@ -42,7 +41,7 @@ set (SOURCE
 link_directories(/usr/local/lib "../Algorithm/build/")
 
 # Output folder
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
 
 # Add the executable for the program
 add_executable(${PROJECT_NAME} ${SOURCE})
@@ -52,10 +51,9 @@ target_link_libraries(${PROJECT_NAME}
                        Algorithm
                        ${Boost_LIBRARIES} 
                        pthread
-                       Threads::Threads
- )
+                       Threads::Threads)
 # Unit tests
-#add_subdirectory(tests)
+add_subdirectory(tests)
 
 # Code coverage
 if (CMAKE_BUILD_TYPE STREQUAL "Coverage")

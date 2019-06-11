@@ -1,6 +1,5 @@
 #include "algorithm.h"
 
-
 void Algorithm::GetRocketDataParameters(rocket_simulator::RocketDataParameters& rocket_data)
 {
 	rocket_simulator::RocketDataParameters* ptr_rocket = &rocket_data;
@@ -46,7 +45,13 @@ bool Algorithm::CreateRocketSimulation()
         BOOST_LOG_TRIVIAL(info) << "Rocket and terrain is set ";
         BOOST_LOG_TRIVIAL(info) << "Calling algo ";
 		Thrust thrust(rocket_, world_, algo_data_);
+        BOOST_LOG_TRIVIAL(info) << "Algo has finished ";
+	    algo_finished_ = true;
+        return algo_finished_;
 	}
-    BOOST_LOG_TRIVIAL(info) << "Algo has finished ";
-	return algo_finished_ = true;
+    else
+    {
+        algo_finished_ = false;
+        return false;
+    }
 }

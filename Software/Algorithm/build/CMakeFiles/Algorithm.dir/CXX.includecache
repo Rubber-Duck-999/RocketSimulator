@@ -48,17 +48,17 @@ fstream
 logging.h
 ../include/logging.h
 
-../src/../../common/include/data_structure.h
+../src/../../common/data_structure.h
 string
 -
 
-../src/../../common/include/logging.h
+../src/../../common/logging.h
 string
 -
 boost/log/trivial.hpp
-../src/../../common/include/boost/log/trivial.hpp
+../src/../../common/boost/log/trivial.hpp
 boost/log/utility/setup.hpp
-../src/../../common/include/boost/log/utility/setup.hpp
+../src/../../common/boost/log/utility/setup.hpp
 
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/src/algorithm.cc
 algorithm.h

@@ -29,9 +29,9 @@ void Thrust::CoastFunction(double velocity_x_axis, double velocity_y_axis)
     double angle_of_elevation, velocity_x_axis_post, velocity_y_axis_post, force_x_direction, force_y_direction;
     double t_start = 0.0;
     double t_step = 0.01;
-    int point_count = 0;
     while (rocket_.GetDistanceY() >= 0)
     {
+        BOOST_LOG_TRIVIAL(debug) << "Inside coast";
         angle_of_elevation = atan(velocity_y_axis / velocity_x_axis) * (180 / kPI);
         force_x_direction = (drag_axis_x * density * hori_cross_sect_area * velocity_x_axis * velocity_x_axis) / 2;
         force_y_direction = (drag_axis_y * density * vert_cross_sect_area * velocity_y_axis * velocity_y_axis) / 2;
@@ -48,15 +48,14 @@ void Thrust::CoastFunction(double velocity_x_axis, double velocity_y_axis)
         velocity_x_axis_post = velocity_x_axis + acceleration_x_direction * t_step;
         rocket_.SetDistanceY(rocket_.GetDistanceY() + (velocity_y_axis * t_step));
         rocket_.SetDistanceX(rocket_.GetDistanceX() + (velocity_x_axis * t_step));
-        //fprintf(data_file_, "%f, %f, %f, %f, %f\n", rocket_.GetDistanceX(), rocket_.GetDistanceY(), velocity_x_axis, velocity_y_axis, t_start);
+        fprintf(data_file_, "%f, %f, %f, %f, %f\n", rocket_.GetDistanceX(), rocket_.GetDistanceY(), velocity_x_axis, velocity_y_axis, t_start);
         t_start = t_start + t_step;
         velocity_x_axis = velocity_x_axis_post;
         velocity_y_axis = velocity_y_axis_post;
-        point_count++;
     }
     BOOST_LOG_TRIVIAL(info) << "Mass Post Coast:" << rocket_.GetMass();
-    //fflush(data_file_);
-    //fclose(data_file_);
+    fflush(data_file_);
+    fclose(data_file_);
     double time = rocket_.GetTimeTaken();
     rocket_.SetTimeTaken(time + t_start);
     algo_data_.position_axis_x = 0.0;
@@ -68,11 +67,10 @@ void Thrust::CoastFunction(double velocity_x_axis, double velocity_y_axis)
 void Thrust::ThrustFunction()
 {
     BOOST_LOG_TRIVIAL(info) << "Running thrust function ";
-    //FILE* data_file_ = fopen(file_name_, "w");
+    FILE* data_file_ = fopen(file_name_, "w");
     rocket_ = Thrust::GetRocketObject();
     world_ = Thrust::GetWorldObject();
     double launch_angle = rocket_.GetLaunchAngle() * kPI / 180;
-    int point_count = 0;
     double m = rocket_.GetMass();
     double drag_axis_x = rocket_.GetDragAxisX();
     double drag_axis_y = rocket_.GetDragAxisY();
@@ -83,10 +81,10 @@ void Thrust::ThrustFunction()
     double thrust = rocket_.GetThrust();
     double thrust_axis_y = thrust * sin(launch_angle);
     double thrust_axis_x = thrust * cos(launch_angle);
-    double velocity_x = 0;
-    double velocity_y = 0;
-    double velocity_x_after, velocity_y_after = 0;
-	double distance_x, distance_y = 0;
+    double velocity_x = 0.0;
+    double velocity_y = 0.0;
+    double velocity_x_after, velocity_y_after = 0.0;
+	double distance_x, distance_y = 0.0;
     double t_start = 0.0;
     double t_step = 0.01;
     BOOST_LOG_TRIVIAL(info) << "Beginning Rocket Launch";
@@ -104,12 +102,7 @@ void Thrust::ThrustFunction()
         velocity_y = velocity_y_after;
         t_start = t_start + t_step;
         rocket_.SetMass(m - (rocket_.GetFlowRate() * t_step));
-        int time = static_cast<int>(t_start);
-        /*if(time % 100)
-        {
-            fprintf(data_file_, "%f, %f, %f, %f, %d \n", rocket_.GetDistanceX(), rocket_.GetDistanceY(), velocity_x, velocity_y, time);
-        }*/
-        point_count++;
+        fprintf(data_file_, "%f, %f, %f, %f, %d \n", rocket_.GetDistanceX(), rocket_.GetDistanceY(), velocity_x, velocity_y, t_start);
     }
     //fflush(data_file_);
     //fclose(data_file_);
@@ -118,7 +111,7 @@ void Thrust::ThrustFunction()
     BOOST_LOG_TRIVIAL(info) << "Y axis Pre Coast :" << rocket_.GetDistanceY();
     BOOST_LOG_TRIVIAL(info) << "Mass Pre Coast:" << rocket_.GetMass();
     BOOST_LOG_TRIVIAL(info) << "Time Pre Coast:" << rocket_.GetTimeTaken();
-    //Thrust::CoastFunction(velocity_x, velocity_y);
+    CoastFunction(velocity_x, velocity_y);
     BOOST_LOG_TRIVIAL(info) << "X axis Post Coast :" << rocket_.GetDistanceX();
     BOOST_LOG_TRIVIAL(info) << "Y axis Post Coast :" << rocket_.GetDistanceY();
 }

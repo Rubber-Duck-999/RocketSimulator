@@ -5,22 +5,22 @@ CMakeFiles/Algorithm.dir/src/algorithm.cc.o: ../include/algorithm.h
 CMakeFiles/Algorithm.dir/src/algorithm.cc.o: ../include/rocket.h
 CMakeFiles/Algorithm.dir/src/algorithm.cc.o: ../include/thrust.h
 CMakeFiles/Algorithm.dir/src/algorithm.cc.o: ../include/world.h
-CMakeFiles/Algorithm.dir/src/algorithm.cc.o: ../src/../../common/include/data_structure.h
-CMakeFiles/Algorithm.dir/src/algorithm.cc.o: ../src/../../common/include/logging.h
+CMakeFiles/Algorithm.dir/src/algorithm.cc.o: ../src/../../common/data_structure.h
+CMakeFiles/Algorithm.dir/src/algorithm.cc.o: ../src/../../common/logging.h
 CMakeFiles/Algorithm.dir/src/algorithm.cc.o: ../src/algorithm.cc
 
 CMakeFiles/Algorithm.dir/src/rocket.cc.o: ../include/rocket.h
-CMakeFiles/Algorithm.dir/src/rocket.cc.o: ../src/../../common/include/logging.h
+CMakeFiles/Algorithm.dir/src/rocket.cc.o: ../src/../../common/logging.h
 CMakeFiles/Algorithm.dir/src/rocket.cc.o: ../src/rocket.cc
 
 CMakeFiles/Algorithm.dir/src/thrust.cc.o: ../include/rocket.h
 CMakeFiles/Algorithm.dir/src/thrust.cc.o: ../include/thrust.h
 CMakeFiles/Algorithm.dir/src/thrust.cc.o: ../include/world.h
-CMakeFiles/Algorithm.dir/src/thrust.cc.o: ../src/../../common/include/data_structure.h
-CMakeFiles/Algorithm.dir/src/thrust.cc.o: ../src/../../common/include/logging.h
+CMakeFiles/Algorithm.dir/src/thrust.cc.o: ../src/../../common/data_structure.h
+CMakeFiles/Algorithm.dir/src/thrust.cc.o: ../src/../../common/logging.h
 CMakeFiles/Algorithm.dir/src/thrust.cc.o: ../src/thrust.cc
 
 CMakeFiles/Algorithm.dir/src/world.cc.o: ../include/world.h
-CMakeFiles/Algorithm.dir/src/world.cc.o: ../src/../../common/include/logging.h
+CMakeFiles/Algorithm.dir/src/world.cc.o: ../src/../../common/logging.h
 CMakeFiles/Algorithm.dir/src/world.cc.o: ../src/world.cc
 
