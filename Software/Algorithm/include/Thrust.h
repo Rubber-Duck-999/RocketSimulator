@@ -17,7 +17,7 @@
 class Thrust
 {
 public:
-    Thrust(Rocket &rocket_object, World &world_object, rocket_simulator::AlgoData algo_data);
+    Thrust(Rocket &rocket_object, World &world_object, std::vector<rocket_simulator::AlgoData> &algo_data);
 
     void CoastFunction(double velocity_x_axis, double velocity_y_axis);
     void ThrustFunction();
@@ -33,9 +33,7 @@ public:
 private:
     Rocket rocket_;
     World  world_;
-    FILE*  data_file_;
-    const char* file_name_ = "data.dat";
-    rocket_simulator::AlgoData algo_data_;
+    std::vector<rocket_simulator::AlgoData> algo_data_;
     const double kPI = 3.14159265;
     int count_point_ = 0;
 };

@@ -60,8 +60,8 @@ namespace rocket_simulator
         double acceleration_due_to_gravity_;
         TerrainMissionParameters()
         {
-            density_ = 0.0;
-            acceleration_due_to_gravity_ = 0.0;
+            density_ = 1.22;
+            acceleration_due_to_gravity_ = 9.8;
         };
     };
     
@@ -81,12 +81,25 @@ namespace rocket_simulator
     
     struct AlgoData
     {
-        double position_axis_x;
-        double position_axis_y;
-        double position_axis_z;
-        unsigned short int time_min = 0.0;
-        unsigned short int time_sec = 0.0;
-        unsigned short int time_milli_sec = 0.0;
+        double position_axis_x_;
+        double position_axis_y_;
+        double velocity_x_;
+        double velocity_y_;
+        double time_milli_sec_;
+        AlgoData(double position_axis_x, double position_axis_y,
+                 double velocity_x, double velocity_y, 
+                 double time_milli_sec): position_axis_x_(position_axis_x), 
+                 position_axis_y_(position_axis_y), velocity_x_(velocity_x),
+                 velocity_y_(velocity_y), time_milli_sec_(time_milli_sec) { };
+                 
+        AlgoData()
+        {
+            position_axis_x_ = 0.0;
+            position_axis_y_ = 0.0;
+            velocity_x_ = 0.0;
+            velocity_y_ = 0.0;
+            time_milli_sec_ = 0.0;            
+        }
     };
     
 
