@@ -20,6 +20,7 @@ private:
     bool rocket_set_ = false;
     bool world_set_ = false;
     bool algo_finished_ = false;
+    bool WriteToFile();
 public:
     Algorithm() {};
     bool IsRocketSet() const { return rocket_set_; };
@@ -29,7 +30,6 @@ public:
     void GetTerrainMissionParameters(rocket_simulator::TerrainMissionParameters& terrain_data);
     bool GetAlgoFinished() { return algo_finished_; };
     std::vector<rocket_simulator::AlgoData> algo_data_;
-    bool WriteToFile();
 };
 
 #endif

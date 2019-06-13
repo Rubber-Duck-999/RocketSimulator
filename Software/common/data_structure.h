@@ -61,7 +61,7 @@ namespace rocket_simulator
         TerrainMissionParameters()
         {
             density_ = 1.22;
-            acceleration_due_to_gravity_ = 9.8;
+            acceleration_due_to_gravity_ = 9.81;
         };
     };
     

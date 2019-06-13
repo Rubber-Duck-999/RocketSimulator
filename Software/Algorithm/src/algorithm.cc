@@ -22,8 +22,13 @@ void Algorithm::GetTerrainMissionParameters(rocket_simulator::TerrainMissionPara
     if(ptr_terrain)
     {
         BOOST_LOG_TRIVIAL(info) << "Getting terrain data";
-        World world_(terrain_data.density_, terrain_data.acceleration_due_to_gravity_);
-        world_set_ = true;
+        BOOST_LOG_TRIVIAL(info) << "Density: " << terrain_data.density_;
+        World temp_world_(terrain_data.density_, terrain_data.acceleration_due_to_gravity_);
+        world_ = temp_world_;
+        if(temp_world_.GetDensity() == world_.GetDensity())
+        {
+            world_set_ = true;
+        }
     }
 }
 
@@ -54,7 +59,9 @@ bool Algorithm::WriteToFile()
     myfile << "a,b,c,\n";
     for(int i = 0; i < algo_data_.size(); i++)
     {
-        myfile << algo_data_[i].position_axis_x_ << "," << algo_data_[i].position_axis_y_ << "\n";
+        myfile << algo_data_[i].position_axis_x_ << "," << algo_data_[i].position_axis_y_ << "," <<
+                  algo_data_[i].velocity_x_ << "," << algo_data_[i].velocity_y_ 
+                  << "," << algo_data_[i].time_milli_sec_ << "\n";
     }
     myfile.close();  
     return true;

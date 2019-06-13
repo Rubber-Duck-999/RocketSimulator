@@ -1,0 +1,46 @@
+[2019-06-13 20:41:34.929982][debug]:  Function called - Setup
+[2019-06-13 20:41:34.930697][error]:  ID: 101
+[2019-06-13 20:41:34.930939][error]:  Current State is: 0
+[2019-06-13 20:41:34.931163][debug]:  Switching to:
+[2019-06-13 20:41:34.931362][debug]:  State change is: 1
+[2019-06-13 20:41:34.931549][error]:  Density: 9.87
+[2019-06-13 20:41:34.931736][error]:  Gravity: 1.22
+[2019-06-13 20:41:34.931804][error]:  Mass: 80
+[2019-06-13 20:41:34.931872][error]:  Drag X Axis: 0.3
+[2019-06-13 20:41:34.931939][error]:  Drag Y Axis: 0.3
+[2019-06-13 20:41:34.932007][error]:  Horizontal: 1
+[2019-06-13 20:41:34.932073][error]:  Vertical: 1
+[2019-06-13 20:41:34.932140][error]:  Thrust: 100
+[2019-06-13 20:41:34.932207][error]:  Burn Time: 50
+[2019-06-13 20:41:34.932274][error]:  Flowrate: 20
+[2019-06-13 20:41:34.932341][error]:  Launch angle: 20
+[2019-06-13 20:41:34.932409][debug]:  Starting call of Algo
+[2019-06-13 20:41:34.932477][info]:  Getting rocket data
+[2019-06-13 20:41:34.932542][info]:  Rocket mass: 80
+[2019-06-13 20:41:34.932612][info]:  Creating rocket
+[2019-06-13 20:41:34.932679][info]:  After Change = 80
+[2019-06-13 20:41:34.932746][info]:  Getting terrain data
+[2019-06-13 20:41:34.932811][info]:  Density: 9.87
+[2019-06-13 20:41:34.932881][debug]:  Density in world: 9.87
+[2019-06-13 20:41:34.932948][info]:  Rocket and terrain is set 
+[2019-06-13 20:41:34.933013][info]:  Calling algo 
+[2019-06-13 20:41:34.933082][info]:  Creating thrust 
+[2019-06-13 20:41:34.933149][trace]:  Running thrust function 
+[2019-06-13 20:41:34.933249][trace]:  Beginning Rocket Launch
+[2019-06-13 20:41:34.934292][info]:  X axis Pre Coast :360.526
+[2019-06-13 20:41:34.934371][info]:  Y axis Pre Coast :553.801
+[2019-06-13 20:41:34.934439][trace]:  Mass Pre Coast:79.8
+[2019-06-13 20:41:34.934506][trace]:  Time Pre Coast:50.01
+[2019-06-13 20:41:34.934573][debug]:  Density: 9.87
+[2019-06-13 20:41:34.934640][debug]:  Density: 1.22
+[2019-06-13 20:41:34.934706][trace]:  Beginning Coast Function
+[2019-06-13 20:41:34.934771][trace]:  Velocity x axis pre coast: 7.95514
+[2019-06-13 20:41:34.934838][trace]:  Velocity y axis pre coast: 22.1432
+[2019-06-13 20:41:34.936646][trace]:  Mass Post Coast:79.8
+[2019-06-13 20:41:34.941025][trace]:  Time Post Coast: 138.11
+[2019-06-13 20:41:34.941184][trace]:  Total record amount: 13811
+[2019-06-13 20:41:34.941327][trace]:  X axis Post Coast :502.761
+[2019-06-13 20:41:34.941474][trace]:  Y axis Post Coast :-0.0576972
+[2019-06-13 20:41:34.942213][info]:  Algo has finished 
+[2019-06-13 20:41:34.942423][debug]:  Passing algo data
+[2019-06-13 20:41:34.942509][debug]:  Size: 13811

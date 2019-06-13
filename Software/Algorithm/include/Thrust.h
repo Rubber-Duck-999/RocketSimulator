@@ -16,26 +16,16 @@
 
 class Thrust
 {
-public:
-    Thrust(Rocket &rocket_object, World &world_object, std::vector<rocket_simulator::AlgoData> &algo_data);
-
-    void CoastFunction(double velocity_x_axis, double velocity_y_axis);
-    void ThrustFunction();
-    
-    Rocket GetRocketObject() const
-    {
-        return rocket_;
-    }
-    World GetWorldObject() const
-    {
-        return world_;
-    }
 private:
     Rocket rocket_;
-    World  world_;
+    World world_;
     std::vector<rocket_simulator::AlgoData> algo_data_;
     const double kPI = 3.14159265;
     int count_point_ = 0;
+public:
+    Thrust(Rocket &rocket_object, World &world_object, std::vector<rocket_simulator::AlgoData> &algo_data);
+    void CoastFunction(double velocity_x_axis, double velocity_y_axis);
+    void ThrustFunction();
 };
 #endif 
 /* THRUST_h */

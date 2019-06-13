@@ -11,7 +11,8 @@ TEST(Tests, Initiate)
 {
     Interface Controller;
     Controller.Receive();
-    ASSERT_TRUE(true);    
+    rocket_simulator::StateDataParameters current = Controller.GetCurrentState();
+    ASSERT_EQ(current.state, rocket_simulator::kREADY);    
 }
 
 

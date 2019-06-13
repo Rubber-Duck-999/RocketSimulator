@@ -5,17 +5,15 @@
 Thrust::Thrust(Rocket &rocket_object, World &world_object, std::vector<rocket_simulator::AlgoData> &algo_data)
 {
     BOOST_LOG_TRIVIAL(info) << "Creating thrust ";
-	rocket_ = rocket_object;
-	world_ = world_object;
-	algo_data_ = algo_data;
-	Thrust::ThrustFunction();
+    rocket_ = rocket_object;
+    world_ = world_object;
+    Thrust::ThrustFunction();
+    algo_data = algo_data_;
 }
 
 
 void Thrust::CoastFunction(double velocity_x_axis, double velocity_y_axis)
 {
-    rocket_ = Thrust::GetRocketObject();
-    world_ = Thrust::GetWorldObject();
     double mass = rocket_.GetMass();
     double drag_axis_x = rocket_.GetDragAxisX();
     double drag_axis_y = rocket_.GetDragAxisY();
@@ -23,16 +21,17 @@ void Thrust::CoastFunction(double velocity_x_axis, double velocity_y_axis)
     double vert_cross_sect_area = rocket_.GetVertCrossSectArea();
     double density = world_.GetDensity();
     double gravity = world_.GetGravity();
+    BOOST_LOG_TRIVIAL(debug) << "Density: " << density;
+    BOOST_LOG_TRIVIAL(debug) << "Density: " << gravity;
     double acceleration_y_direction = 0.0;
     double acceleration_x_direction = 0.0;
     double angle_of_elevation, velocity_x_axis_post, velocity_y_axis_post, force_x_direction, force_y_direction;
     double t_start = 0.0;
     double t_step = 0.01;
-    BOOST_LOG_TRIVIAL(info) << "Beginning Coast Function";
-    BOOST_LOG_TRIVIAL(info) << "Velocity x axis pre coast: " << velocity_x_axis;
-    BOOST_LOG_TRIVIAL(info) << "Velocity y axis pre coast: " << velocity_y_axis;
-    int point = 0;
-    while (point < 100)
+    BOOST_LOG_TRIVIAL(trace) << "Beginning Coast Function";
+    BOOST_LOG_TRIVIAL(trace) << "Velocity x axis pre coast: " << velocity_x_axis;
+    BOOST_LOG_TRIVIAL(trace) << "Velocity y axis pre coast: " << velocity_y_axis;
+    while (rocket_.GetDistanceY() > 0.0)
     {
         angle_of_elevation = atan(velocity_y_axis / velocity_x_axis) * (180 / kPI);
         force_x_direction = (drag_axis_x * density * hori_cross_sect_area * velocity_x_axis * velocity_x_axis) / 2;
@@ -56,31 +55,28 @@ void Thrust::CoastFunction(double velocity_x_axis, double velocity_y_axis)
         t_start = t_start + t_step;
         velocity_x_axis = velocity_x_axis_post;
         velocity_y_axis = velocity_y_axis_post;
-        point++;
     }
-    BOOST_LOG_TRIVIAL(info) << "Mass Post Coast:" << rocket_.GetMass();
+    BOOST_LOG_TRIVIAL(trace) << "Mass Post Coast:" << rocket_.GetMass();
     double time = rocket_.GetTimeTaken();
     rocket_.SetTimeTaken(time + t_start);
-    BOOST_LOG_TRIVIAL(info) << "Time Post Coast: " << rocket_.GetTimeTaken();
-    BOOST_LOG_TRIVIAL(info) << "Vector size is: " << algo_data_.size();
+    BOOST_LOG_TRIVIAL(trace) << "Time Post Coast: " << rocket_.GetTimeTaken();
+    BOOST_LOG_TRIVIAL(trace) << "Total record amount: " << algo_data_.size();
 }
 
 //Calculates how far a rocket will travel under thrust
 
 void Thrust::ThrustFunction()
 {
-    BOOST_LOG_TRIVIAL(info) << "Running thrust function ";
-    rocket_ = Thrust::GetRocketObject();
-    world_ = Thrust::GetWorldObject();
-    double launch_angle = rocket_.GetLaunchAngle() * kPI / 180;
+    BOOST_LOG_TRIVIAL(trace) << "Running thrust function ";
+    const double launch_angle = rocket_.GetLaunchAngle() * kPI / 180;
     double m = rocket_.GetMass();
-    double drag_axis_x = rocket_.GetDragAxisX();
-    double drag_axis_y = rocket_.GetDragAxisY();
-    double hori_cross_sect_area = rocket_.GetHoriCrossSectArea();
-    double vert_cross_sect_area = rocket_.GetVertCrossSectArea();
-    double density = world_.GetDensity();
-    double gravity = world_.GetGravity();
-    double thrust = rocket_.GetThrust();
+    const double drag_axis_x = rocket_.GetDragAxisX();
+    const double drag_axis_y = rocket_.GetDragAxisY();
+    const double hori_cross_sect_area = rocket_.GetHoriCrossSectArea();
+    const double vert_cross_sect_area = rocket_.GetVertCrossSectArea();
+    const double density = world_.GetDensity();
+    const double gravity = world_.GetGravity();
+    const double thrust = rocket_.GetThrust();
     double thrust_axis_y = thrust * sin(launch_angle);
     double thrust_axis_x = thrust * cos(launch_angle);
     double velocity_x = 0.0;
@@ -89,8 +85,7 @@ void Thrust::ThrustFunction()
 	double distance_x, distance_y = 0.0;
     double t_start = 0.0;
     double t_step = 0.01;
-    BOOST_LOG_TRIVIAL(info) << "Beginning Rocket Launch";
-    BOOST_LOG_TRIVIAL(info) << rocket_.GetBurnTime();
+    BOOST_LOG_TRIVIAL(trace) << "Beginning Rocket Launch";
     while (t_start <= rocket_.GetBurnTime())
     {
         velocity_x = velocity_x + ((thrust_axis_x / m) * t_step);
@@ -112,12 +107,9 @@ void Thrust::ThrustFunction()
     rocket_.SetTimeTaken(t_start);
     BOOST_LOG_TRIVIAL(info) << "X axis Pre Coast :" << rocket_.GetDistanceX();
     BOOST_LOG_TRIVIAL(info) << "Y axis Pre Coast :" << rocket_.GetDistanceY();
-    BOOST_LOG_TRIVIAL(info) << "Mass Pre Coast:" << rocket_.GetMass();
-    BOOST_LOG_TRIVIAL(info) << "Time Pre Coast:" << rocket_.GetTimeTaken();
-    if(velocity_x && velocity_y > 0.0)
-    {
-        Thrust::CoastFunction(velocity_x, velocity_y);
-    }
-    BOOST_LOG_TRIVIAL(info) << "X axis Post Coast :" << rocket_.GetDistanceX();
-    BOOST_LOG_TRIVIAL(info) << "Y axis Post Coast :" << rocket_.GetDistanceY();
+    BOOST_LOG_TRIVIAL(trace) << "Mass Pre Coast:" << rocket_.GetMass();
+    BOOST_LOG_TRIVIAL(trace) << "Time Pre Coast:" << rocket_.GetTimeTaken();
+    Thrust::CoastFunction(velocity_x, velocity_y);
+    BOOST_LOG_TRIVIAL(trace) << "X axis Post Coast :" << rocket_.GetDistanceX();
+    BOOST_LOG_TRIVIAL(trace) << "Y axis Post Coast :" << rocket_.GetDistanceY();
 }

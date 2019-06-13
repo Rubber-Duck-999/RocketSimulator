@@ -20,24 +20,25 @@ Interface::Interface()
 
 bool Interface::RunAlgo()
 {
+    BOOST_LOG_TRIVIAL(debug) << "Starting call of Algo";
     algo.GetRocketDataParameters(rocket);
     algo.GetTerrainMissionParameters(world);
-    algo.CreateRocketSimulation();
-    return false;
+    if(algo.CreateRocketSimulation())
+    {
+        GetAlgorithmData(algo_data_);
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
-
-
-void Interface::SaveMessage(std::string message)
-{
-    //messages_.push_back(message);
-}
-
 
 void Interface::SendState(unsigned int statedata)
 {
     namespace data = rocket_simulator;
     data::StateDataParameters sendingstate;
-    BOOST_LOG_TRIVIAL(debug) << "Switching to;";
+    BOOST_LOG_TRIVIAL(debug) << "Switching to:";
     switch(statedata)
     { 
         case 1:
@@ -91,8 +92,6 @@ void Interface::Receive()
                 vect[i].erase(start,kState.length());
                 unsigned int val = std::atoi(vect[i].c_str());
                 SendState(val);
-                BOOST_LOG_TRIVIAL(error) << "State: " << vect[i];
-                BOOST_LOG_TRIVIAL(error) << "Current State is: " << current_state_.state;
             }
             else if(vect[i].find(kDensity) != std::string::npos) 
             {
@@ -178,23 +177,16 @@ void Interface::Receive()
         BOOST_LOG_TRIVIAL(error) << "We have no messages at all";
     }
     
-    if(current_state_.state == rocket_simulator::kCONFIGURED)
+    if(current_state_.state == rocket_simulator::kREADY)
     {
         RunAlgo();
     }
 }
 
 
-void Interface::GetAlgorithmData(std::vector<double>& data)
+void Interface::GetAlgorithmData(std::vector<rocket_simulator::AlgoData>& data)
 {
-    /*
     BOOST_LOG_TRIVIAL(debug) << "Passing algo data";
-    BOOST_LOG_TRIVIAL(debug) << "Size: " << algorithm_data_.size();
-    for(int i = 0; i < algorithm_data_.size(); i++)
-    {
-        BOOST_LOG_TRIVIAL(debug) << "Data value: " << algorithm_data_[i]; 
-        data.push_back(algorithm_data_[i]);  
-        algorithm_data_[i] = 0.0;
-    }
-    */
+    BOOST_LOG_TRIVIAL(debug) << "Size: " << algo.algo_data_.size();
+    data = algo.algo_data_;
 }

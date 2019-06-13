@@ -37,11 +37,7 @@ public:
     double GetBurnTime() const { return burn_time_; }
     double GetFlowRate() const { return flow_rate_; }
     double GetLaunchAngle() const { return launch_angle_; }
-    double GetDistanceX() const 
-    { 
-        BOOST_LOG_TRIVIAL(info) << distance_x_;
-        return distance_x_; 
-    }
+    double GetDistanceX() const { return distance_x_; }
     double GetDistanceY() const { return distance_y_; }
     double GetTimeTaken() const { return time_; }
 
