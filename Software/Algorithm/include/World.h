@@ -16,6 +16,7 @@ public:
     {
         density_ = density;
         gravity_ = gravity;
+        BOOST_LOG_TRIVIAL(debug) << "Density in world: " << density_;
     }
     double GetDensity() const;
     double GetGravity() const;

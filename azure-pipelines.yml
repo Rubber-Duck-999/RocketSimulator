@@ -26,6 +26,4 @@ steps:
       echo Making algorithm tests
       cd Software/Algorithm/build
       make
-      ls ../bin
-      cd ../bin
-      ./testAlgorithm
+      ./exeAlgorithm-Test

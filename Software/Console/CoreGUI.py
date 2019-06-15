@@ -20,17 +20,17 @@ class GUI(threading.Thread):
         self.resetValues()
         
     def resetValues(self):    
-        self.defaultPilot     = Pilots.FRED
+        self.defaultPilot     = Pilots.BOB
         self.defaultGravity   = 9.87
-        self.defaultDensity   = 0.00
-        self.defaultMass      = 0.00
-        self.defaultThrust    = 0.00
-        self.defaultDragAxisX = 0.00
-        self.defaultDragAxisY = 0.00
-        self.defaultHoriCross = 0.00
-        self.defaultVertCross = 0.00
-        self.defaultBurnTime  = 0.00
-        self.defaultFlowRate  = 0.00
+        self.defaultDensity   = 1.22
+        self.defaultMass      = 200.00
+        self.defaultThrust    = 45.00
+        self.defaultDragAxisX = 23.00
+        self.defaultDragAxisY = 33.00
+        self.defaultHoriCross = 20.00
+        self.defaultVertCross = 30.00
+        self.defaultBurnTime  = 250.00
+        self.defaultFlowRate  = 30.00
         self.defaultAngle     = 90.00
         self.dataStructure    = [ self.defaultGravity, self.defaultDensity, self.defaultMass,      
                                   self.defaultThrust, self.defaultDragAxisX, self.defaultDragAxisY, 
@@ -74,9 +74,6 @@ class GUI(threading.Thread):
         layout = [
             [sg.Text('Welcome to the Rocket Simulator Console (2D)', size=(40, 1), font=("Helvetica", 25))],
             [sg.Text('Please enter the data from the mission to begin')],
-            [sg.Text('Pick which pilot to use:'),
-             sg.InputCombo((Pilots.FRED, Pilots.RYAN, Pilots.SARAH, Pilots.GRACE), key='pilots', size=(20, 1))],
-            
             [sg.Text('Enter the Planet Terrain Details:', font=("Helvetica", 15))],
             [sg.Text('Acceleration due to Gravity (Max 10)', 
                      size=(35, 1)), sg.InputText(self.defaultGravity)],
@@ -161,8 +158,7 @@ class GUI(threading.Thread):
         if self.dataReady is True:
             terrain      = terrainDataParameters(self.messageID, self.dataStructure[0], self.dataStructure[1])
             state        = stateDataParameters(self.messageID, self.State)
-            #launcher     = launcherMissionParameters(self.messageID, self.defaultPilot, 
-            #                                         self.defaultTimeToLaunchMin, self.defaultTimeToLaunchSec)
+            #launcher     = launcherMissionParameters(self.messageID, self.defaultPilot, self.defaultTimeToLaunchSec)
             rocket       = rocketDataParameters(self.messageID, self.dataStructure[2], self.dataStructure[3], 
                                                 self.dataStructure[4], self.dataStructure[5], 
                                                 self.dataStructure[6], self.dataStructure[7], 
@@ -173,9 +169,9 @@ class GUI(threading.Thread):
             #launcherData = launcher.getDataStructure()
             rocketData   = rocket.getDataStructure()
             data = stateData + terrainData + rocketData##launcherData + rocketData
-            sendData(data)
-            self.messageID = self.messageID + 1
-            self.dataReady = False
+            if sendData(data):
+                self.messageID = self.messageID + 1
+                self.dataReady = False
             
         
     def run(self):

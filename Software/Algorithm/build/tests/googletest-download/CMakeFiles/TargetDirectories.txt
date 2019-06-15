@@ -1,3 +1,0 @@
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/build/tests/googletest-download/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/build/tests/googletest-download/CMakeFiles/googletest.dir
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Algorithm/build/tests/googletest-download/CMakeFiles/edit_cache.dir

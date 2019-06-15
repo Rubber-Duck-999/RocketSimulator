@@ -11,6 +11,7 @@ Port = 6111
 Host = "127.0.0.1"
 
 class Pilots(Enum):
+    BOB   = 0
     FRED  = 1
     RYAN  = 2
     SARAH = 3
@@ -46,41 +47,42 @@ class rocketDataParameters(dataStructure):
         self.burnTime = burnTime
         self.flowRate = flowRate
         self.angleOfLaunch = angleOfLaunch
-        self.dataStructure = [ self.mass, self.dragAxisX, self.dragAxisY,
-                               self.horiCrossSectArea, self.vertCrossSectArea,
-                               self.thrust, self.burnTime, self.flowRate,
-                               self.angleOfLaunch ]  
+        self.dataStructure =  ('-Mass:' + str(self.mass) + '-DragX:' + str(self.dragAxisX) + '-DragY:' + str(self.dragAxisY) +
+                               '-Hori:' + str(self.horiCrossSectArea) + '-Vert:' + str(self.vertCrossSectArea) +
+                               '-Thrust:' + str(self.thrust) + '-BurnTime:' + str(self.burnTime) + 
+                               '-Flowrate:' + str(self.flowRate) + '-LaunchAngle:' + str(self.angleOfLaunch))
         
 class launcherMissionParameters(dataStructure):
     def __init__(self, ID, pilot,
-                 timeToLaunchMin,
                  timeToLaunchSec):
         self.ID = ID
         self.pilot = pilot 
-        self.timeToLaunchMin = timeToLaunchMin
         self.timeToLaunchSec = timeToLaunchSec
-        self.dataStructure = [ self.pilot,
-                               self.timeToLaunchMin,
-                               self.timeToLaunchSec ]
+        self.dataStructure =  ('-Pilot:' + str(self.pilot) +
+                               '-Sec:' + str(self.timeToLaunchSec))
         
 class stateDataParameters(dataStructure):
     def __init__(self, ID, currentState):
         self.ID = ID
         self.currentState = currentState
-        self.dataStructure = [ self.ID, self.currentState ]       
+        self.dataStructure = ('ID:' + str(self.ID) + '-State:' + str(self.currentState.value))
 
 class terrainDataParameters(dataStructure):
     def __init__(self, ID, density, gravity):
         self.ID = ID
         self.density = density
         self.gravity = gravity
-        self.dataStructure = [ self.density, self.gravity ]
+        self.dataStructure = ('-Density:' + str(self.density) + '-Gravity:' + str(self.gravity))
 
 def sendData(Data):
     Socket = SocketSender(Host, Port)
     Socket.setDataPackage(Data)
-    Socket.connect()
-    Socket.close()
+    if Socket.connect():
+        print("Socket could not be connected")
+        Socket.close()
+        return True
+    else:
+        return False
     
 
 

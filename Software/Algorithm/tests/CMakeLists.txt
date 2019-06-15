@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-set (PROJECT_TEST_NAME exeTest${PROJECT_NAME})
+set (PROJECT_TEST_NAME ${PROJECT_TEST_NAME})
 
 enable_testing()
 
@@ -32,20 +32,22 @@ set (MAIN_SRC_DIR ../src)
 include_directories (${PROJECT_SOURCE_DIR}/${INCL_DIR})
 # Include all project source files here
 set (MAIN_SOURCE
-    ${MAIN_SRC_DIR}/Rocket.cpp
-    ${MAIN_SRC_DIR}/Thrust.cpp
-    ${MAIN_SRC_DIR}/World.cpp
-    ${MAIN_SRC_DIR}/Algorithm.cpp
+    ${MAIN_SRC_DIR}/rocket.cc
+    ${MAIN_SRC_DIR}/thrust.cc
+    ${MAIN_SRC_DIR}/world.cc
+    ${MAIN_SRC_DIR}/algorithm.cc
 )
 
 add_executable (${PROJECT_TEST_NAME} ${PROY_UT_SRC} ${MAIN_SOURCE})
 
 set_target_properties(${PROJECT_TEST_NAME}
                       PROPERTIES
-                      COMPILE_FLAGS "-std=c++11 -Wall -Werror"
+                      COMPILE_FLAGS "-std=c++17 -Wall"
 )
 # Link libraries
 target_link_libraries(${PROJECT_TEST_NAME}
                       gtest
                       gmock_main
-)
+                      ${Boost_LIBRARIES} 
+                      pthread
+                      Threads::Threads)

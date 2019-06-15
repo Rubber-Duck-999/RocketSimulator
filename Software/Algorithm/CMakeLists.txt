@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 2.8)
 
 # Change project name
 set (PROJECT_NAME Algorithm)
-set (PROJECT_TEST_NAME exeTest${PROJECT_NAME})
+set (PROJECT_TEST_NAME exe${PROJECT_NAME}-Test)
 
 project (${PROJECT_NAME} C CXX)
 
@@ -26,7 +26,7 @@ set (INCL_DIR include)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall")
 
 include_directories(${Boost_INCLUDE_DIRS}
-                    ${SRC_DIR}/../../common 
+                    ${SRC_DIR}/../../common
                     ${PROJECT_SOURCE_DIR}/${INCL_DIR})
 
 link_directories(${Boost_LIBRARY_DIRS})
@@ -40,12 +40,12 @@ set (SOURCE
 )
 
 # Output folder
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
 
 # Add the executable for the program
 add_library(${PROJECT_NAME} STATIC ${SOURCE})
 # Unit tests
-#add_subdirectory(tests)
+add_subdirectory(tests)
 
 # Code coverage
 if (CMAKE_BUILD_TYPE STREQUAL "Coverage")
