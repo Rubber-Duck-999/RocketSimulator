@@ -11,6 +11,7 @@ Port = 6111
 Host = "127.0.0.1"
 
 class Pilots(Enum):
+    BOB   = 0
     FRED  = 1
     RYAN  = 2
     SARAH = 3
@@ -53,14 +54,11 @@ class rocketDataParameters(dataStructure):
         
 class launcherMissionParameters(dataStructure):
     def __init__(self, ID, pilot,
-                 timeToLaunchMin,
                  timeToLaunchSec):
         self.ID = ID
         self.pilot = pilot 
-        self.timeToLaunchMin = timeToLaunchMin
         self.timeToLaunchSec = timeToLaunchSec
         self.dataStructure =  ('-Pilot:' + str(self.pilot) +
-                               '-Min:' + str(self.timeToLaunchMin) +
                                '-Sec:' + str(self.timeToLaunchSec))
         
 class stateDataParameters(dataStructure):

@@ -37,7 +37,7 @@ std::string Socket::NetworkReceive()
 
 void Socket::NetworkSend(std::string message)
 {
-    //BOOST_LOG_TRIVIAL(debug) << "We are sending a Ack Message";
+    BOOST_LOG_TRIVIAL(debug) << "We are sending a Ack Message";
     int send = 0;
     char message_send[message.length() + 1];
     strcpy(message_send, message.c_str());

@@ -4,14 +4,10 @@
 #define DATA_STRUCTURE_h
 
 namespace rocket_simulator
-{	
-    const int kConfigured = 1;
-    const int kReady = 2;
-    const int kLaunch = 3;
-    const int kReturn = 4;
-    const int kShutdown = 5;
-    
-    //Ports for socket setup
+{
+    /////////////////////////////////////////////
+    // Constants
+    /////////////////////////////////////////////    
     const int kPort = 6111;
     
     const std::string kID = "ID:";
@@ -27,7 +23,14 @@ namespace rocket_simulator
     const std::string kBurnTime = "BurnTime:";
     const std::string kFlowrate = "Flowrate:";
     const std::string kLaunchAngle = "LaunchAngle:";
+    const std::string kPilots = "Pilot:";
+    const std::string kSec = "Sec:";
+    /////////////////////////////////////////////
     
+    
+    /////////////////////////////////////////////
+    // Rocket Data
+    /////////////////////////////////////////////
     struct RocketDataParameters
     {
         double mass_;
@@ -53,7 +56,12 @@ namespace rocket_simulator
             angle_of_launch_ = 0.0;
         };
     };    
+    /////////////////////////////////////////////
     
+    
+    /////////////////////////////////////////////
+    // Terrain Data
+    /////////////////////////////////////////////
     struct TerrainMissionParameters
     {
         double density_;
@@ -64,21 +72,37 @@ namespace rocket_simulator
             acceleration_due_to_gravity_ = 9.81;
         };
     };
+    /////////////////////////////////////////////
+    
+    
+    /////////////////////////////////////////////
+    // Launcher Data
+    /////////////////////////////////////////////
+    typedef enum {kBOB, kFRED, kRYAN, kSARAH, kGRACE} PILOTS;
     
     struct LauncherMissionParameters
     {
-        unsigned short int pilots_;
-        unsigned short int time_to_launch_min;
-        unsigned short int time_to_launch_sec;
+        PILOTS pilots_;
+        unsigned short int time_to_launch_sec_;
     };
+    /////////////////////////////////////////////
     
+    
+    /////////////////////////////////////////////
+    // State Data
+    /////////////////////////////////////////////
     typedef enum {kNON_CONFIGURED, kCONFIGURED, kREADY, kLAUNCH, kRETURN, kSHUTDOWN} STATE;
     
     typedef struct StateDataParameters
     {
-        STATE state;
+        STATE state_;
     }StateData;
+    /////////////////////////////////////////////
     
+    
+    /////////////////////////////////////////////
+    // Algo Data
+    /////////////////////////////////////////////
     struct AlgoData
     {
         double position_axis_x_;
@@ -101,8 +125,9 @@ namespace rocket_simulator
             time_milli_sec_ = 0.0;            
         }
     };
+    /////////////////////////////////////////////
     
-
+    
     template<typename T, typename R>
     static inline auto Compare(T x, R y) -> decltype(x + y) const
     {

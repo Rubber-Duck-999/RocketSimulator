@@ -6,8 +6,8 @@
 int main()
 {
     Interface out;
-    out.Receive();
-    out.shutdown();
+    out.Loop();
+    out.Shutdown();
     time_t nowLater = time(0);
     // convert now to string form
     char* dtLater = ctime(&nowLater);
