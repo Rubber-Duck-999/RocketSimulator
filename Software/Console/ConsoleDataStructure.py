@@ -4,30 +4,16 @@ Created on 18 Jan 2019
 @author: simon
 '''
 
-from SocketSender import SocketSender 
 from enum import Enum
-
-Port = 6111
-Host = "127.0.0.1"
 
 class Pilots(Enum):
     BOB   = 0
     FRED  = 1
     RYAN  = 2
     SARAH = 3
-    GRACE = 4
-
-
-class State(Enum):
-    NON_CONFIGURED = 0
-    CONFIGURED     = 1
-    READY          = 2
-    LAUNCH         = 3
-    RETURN         = 4
-    SHUTDOWN       = 5 
+    GRACE = 4 
 
 class dataStructure:
-        
     def getDataStructure(self):
         return self.dataStructure
 
@@ -60,12 +46,6 @@ class launcherMissionParameters(dataStructure):
         self.timeToLaunchSec = timeToLaunchSec
         self.dataStructure =  ('-Pilot:' + str(self.pilot) +
                                '-Sec:' + str(self.timeToLaunchSec))
-        
-class stateDataParameters(dataStructure):
-    def __init__(self, ID, currentState):
-        self.ID = ID
-        self.currentState = currentState
-        self.dataStructure = ('ID:' + str(self.ID) + '-State:' + str(self.currentState.value))
 
 class terrainDataParameters(dataStructure):
     def __init__(self, ID, density, gravity):
@@ -73,16 +53,6 @@ class terrainDataParameters(dataStructure):
         self.density = density
         self.gravity = gravity
         self.dataStructure = ('-Density:' + str(self.density) + '-Gravity:' + str(self.gravity))
-
-def sendData(Data):
-    Socket = SocketSender(Host, Port)
-    Socket.setDataPackage(Data)
-    if Socket.connect():
-        print("Socket could not be connected")
-        Socket.close()
-        return True
-    else:
-        return False
     
 
 

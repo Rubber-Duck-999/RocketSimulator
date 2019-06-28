@@ -57,25 +57,25 @@ target_link_libraries(${PROJECT_NAME}
 add_subdirectory(tests)
 
 # Code coverage
-if (CMAKE_BUILD_TYPE STREQUAL "Coverage")
-    include(CodeCoverage)
-    set(COVERAGE_EXCLUDES
-		'/usr/*'
-		'${PROJECT_SOURCE_DIR}/tests/*'
-		'${CMAKE_BINARY_DIR}/googletest-src/googletest/include/gtest/*'
-		'${CMAKE_BINARY_DIR}/googletest-src/googletest/src/*'
-		'${CMAKE_BINARY_DIR}/googletest-src/googlemock/include/gmock/*'
-		'${CMAKE_BINARY_DIR}/googletest-src/googlemock/src/*'
-    )
-    SETUP_TARGET_FOR_COVERAGE(
-		NAME coverage
-		EXECUTABLE ${PROJECT_TEST_NAME}
-		DEPENDENCIES ${PROJECT_NAME}
-    )
-	set_target_properties(${PROJECT_NAME}
-        PROPERTIES
-        COMPILE_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage"
-    )
-endif() #CMAKE_BUILD_TYPE STREQUAL "Coverage"
+# if (CMAKE_BUILD_TYPE STREQUAL "Coverage")
+    # include(CodeCoverage)
+    # set(COVERAGE_EXCLUDES
+		# '/usr/*'
+		# '${PROJECT_SOURCE_DIR}/tests/*'
+		# '${CMAKE_BINARY_DIR}/googletest-src/googletest/include/gtest/*'
+		# '${CMAKE_BINARY_DIR}/googletest-src/googletest/src/*'
+		# '${CMAKE_BINARY_DIR}/googletest-src/googlemock/include/gmock/*'
+		# '${CMAKE_BINARY_DIR}/googletest-src/googlemock/src/*'
+    # )
+    # SETUP_TARGET_FOR_COVERAGE(
+		# NAME coverage
+		# EXECUTABLE ${PROJECT_TEST_NAME}
+		# DEPENDENCIES ${PROJECT_NAME}
+    # )
+	# set_target_properties(${PROJECT_NAME}
+        # PROPERTIES
+        # COMPILE_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage"
+    # )
+# endif() #CMAKE_BUILD_TYPE STREQUAL "Coverage"
 
 

@@ -6,7 +6,7 @@
 //============================================================================
 #include "interface.h"
 #include <gtest/gtest.h>
-/*
+
 TEST(Tests, ID)
 {
     Interface Controller;
@@ -22,15 +22,24 @@ TEST(Tests, Initiate)
     rocket_simulator::StateDataParameters current = Controller.GetCurrentState();
     Controller.Shutdown();
     ASSERT_EQ(current.state_, rocket_simulator::kREADY);    
-}*/
+}
 
 TEST(Tests, GetStateLaunch)
 {
     Interface Controller;
-    Controller.Receive("ID:101-State:3");
+    Controller.Receive("ID:101");
     rocket_simulator::StateDataParameters current = Controller.GetCurrentState();
     Controller.Shutdown();
     ASSERT_EQ(current.state_, rocket_simulator::kLAUNCH);
+}
+
+TEST(Tests, RunAlgoPartialFail)
+{
+    Interface Controller;
+    Controller.Receive("ID:101-Density:0.0-Gravity:0.0-Mass:0.0-DragX:0.0");
+    rocket_simulator::StateDataParameters current = Controller.GetCurrentState();
+    Controller.Shutdown();
+    ASSERT_EQ(current.state_, rocket_simulator::kCONFIGURED);
 }
 
 

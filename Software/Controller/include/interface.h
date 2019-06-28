@@ -31,6 +31,8 @@ public:
     //
 private:
     //
+    bool pilot_set_;
+    //
     bool RunSimulation();
     //
     bool SetCorrect(int number);

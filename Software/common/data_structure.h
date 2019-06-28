@@ -11,7 +11,6 @@ namespace rocket_simulator
     const int kPort = 6111;
     
     const std::string kID = "ID:";
-    const std::string kState = "State:";
     const std::string kDensity = "Density:";
     const std::string kGravity = "Gravity:";
     const std::string kMass = "Mass:";
