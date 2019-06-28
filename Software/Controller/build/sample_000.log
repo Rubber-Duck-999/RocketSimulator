@@ -1,72 +1,63 @@
-[2019-06-28 14:55:24.399793][debug]:  Creating Communications
-[2019-06-28 14:55:24.401984][debug]:  6111
-[2019-06-28 14:55:24.402423][trace]:  Your receive mode is: true
-[2019-06-28 14:55:26.379059][debug]:  Message received is: -Density:9.87-Gravity:1.22-Mass:80.0-DragX:10.0-DragY:0.3-Hori:0.3-Vert:1.0-Thrust:1.0-BurnTime:50.0-Flowrate:20.0-LaunchAngle:90.0
+[2019-06-28 20:52:11.019895][debug]:  Creating Communications
+[2019-06-28 20:52:11.021100][debug]:  6111
+[2019-06-28 20:52:11.021745][trace]:  Your receive mode is: true
+[2019-06-28 20:52:13.482418][debug]:  Message received is: -Density:9.87-Gravity:1.22-Mass:80.0-DragX:10.0-DragY:0.3-Hori:0.3-Vert:1.0-Thrust:1.0-BurnTime:50.0-Flowrate:20.0-LaunchAngle:90.0
 
-[2019-06-28 14:55:26.381000][error]:  Density: 9.87
-[2019-06-28 14:55:26.381359][error]:  Gravity: 1.22
-[2019-06-28 14:55:26.381774][error]:  Mass: 80
-[2019-06-28 14:55:26.382183][error]:  Drag X Axis: 10
-[2019-06-28 14:55:26.382616][error]:  Drag Y Axis: 0.3
-[2019-06-28 14:55:26.383002][error]:  Horizontal: 0.3
-[2019-06-28 14:55:26.383404][error]:  Vertical: 1
-[2019-06-28 14:55:26.383825][error]:  Thrust: 1
-[2019-06-28 14:55:26.384229][error]:  Burn Time: 50
-[2019-06-28 14:55:26.384764][error]:  Flowrate: 20
-[2019-06-28 14:55:26.385132][error]:  Launch angle: 90
-[2019-06-28 14:55:26.385553][debug]:  Switching to:
-[2019-06-28 14:55:26.386022][debug]:  State change is: 1
-[2019-06-28 14:55:26.386502][debug]:  Starting call of Algo
-[2019-06-28 14:55:26.387001][info]:  Getting rocket data
-[2019-06-28 14:55:26.387488][info]:  Rocket mass: 80
-[2019-06-28 14:55:26.388763][info]:  Creating rocket
-[2019-06-28 14:55:26.392502][info]:  After Change = 80
-[2019-06-28 14:55:26.399401][info]:  Getting terrain data
-[2019-06-28 14:55:26.399963][info]:  Density: 9.87
-[2019-06-28 14:55:26.400499][debug]:  Density in world: 9.87
-[2019-06-28 14:55:26.402229][info]:  Rocket and terrain is set 
-[2019-06-28 14:55:26.402809][info]:  Calling algo 
-[2019-06-28 14:55:26.403378][info]:  Creating thrust 
-[2019-06-28 14:55:26.403960][trace]:  Running thrust function 
-[2019-06-28 14:55:26.404588][trace]:  Beginning Rocket Launch
-[2019-06-28 14:55:26.406073][info]:  X axis Pre Coast :2.80621e-08
-[2019-06-28 14:55:26.406309][info]:  Y axis Pre Coast :34.7083
-[2019-06-28 14:55:26.406870][trace]:  Mass Pre Coast:79.8
-[2019-06-28 14:55:26.407431][trace]:  Time Pre Coast:50.01
-[2019-06-28 14:55:26.408017][debug]:  Density: 9.87
-[2019-06-28 14:55:26.408656][debug]:  Density: 1.22
-[2019-06-28 14:55:26.409315][trace]:  Beginning Coast Function
-[2019-06-28 14:55:26.409940][trace]:  Velocity x axis pre coast: 1.12203e-09
-[2019-06-28 14:55:26.410625][trace]:  Velocity y axis pre coast: 1.38778
-[2019-06-28 14:55:26.414878][trace]:  Mass Post Coast:79.8
-[2019-06-28 14:55:26.415283][trace]:  Time Post Coast: 59.63
-[2019-06-28 14:55:26.415789][trace]:  Total record amount: 5963
-[2019-06-28 14:55:26.416336][trace]:  X axis Post Coast :3.88561e-08
-[2019-06-28 14:55:26.416864][trace]:  Y axis Post Coast :-0.0286971
-[2019-06-28 14:55:26.417929][info]:  Algo has finished 
-[2019-06-28 14:55:26.418271][debug]:  Passing algo data
-[2019-06-28 14:55:26.418720][debug]:  Size: 5963
-[2019-06-28 14:55:26.419389][debug]:  We are sending a Ack Message
-[2019-06-28 14:55:26.419734][debug]:  Sent: ID:101-State:2
-[2019-06-28 14:55:26.420274][trace]:  Your receive mode is: true
-[2019-06-28 14:55:30.552706][debug]:  Message received is: -Pilot:None-Sec:50.0
+[2019-06-28 20:52:13.483580][error]:  Density: 9.87
+[2019-06-28 20:52:13.483732][error]:  Gravity: 1.22
+[2019-06-28 20:52:13.483821][error]:  Mass: 80
+[2019-06-28 20:52:13.483907][error]:  Drag X Axis: 10
+[2019-06-28 20:52:13.483998][error]:  Drag Y Axis: 0.3
+[2019-06-28 20:52:13.484083][error]:  Horizontal: 0.3
+[2019-06-28 20:52:13.484184][error]:  Vertical: 1
+[2019-06-28 20:52:13.484716][error]:  Thrust: 1
+[2019-06-28 20:52:13.484820][error]:  Burn Time: 50
+[2019-06-28 20:52:13.484933][error]:  Flowrate: 20
+[2019-06-28 20:52:13.485151][error]:  Launch angle: 90
+[2019-06-28 20:52:13.485276][debug]:  Switching to:
+[2019-06-28 20:52:13.485370][debug]:  State change is: 1
+[2019-06-28 20:52:13.485468][debug]:  Starting call of Algo
+[2019-06-28 20:52:13.485564][info]:  Getting rocket data
+[2019-06-28 20:52:13.485651][info]:  Rocket mass: 80
+[2019-06-28 20:52:13.485749][info]:  Creating rocket
+[2019-06-28 20:52:13.485871][info]:  After Change = 80
+[2019-06-28 20:52:13.486165][info]:  Getting terrain data
+[2019-06-28 20:52:13.486571][info]:  Density: 9.87
+[2019-06-28 20:52:13.486714][debug]:  Density in world: 9.87
+[2019-06-28 20:52:13.486832][info]:  Rocket and terrain is set 
+[2019-06-28 20:52:13.486951][info]:  Calling algo 
+[2019-06-28 20:52:13.487069][info]:  Creating thrust 
+[2019-06-28 20:52:13.487146][trace]:  Running thrust function 
+[2019-06-28 20:52:13.487291][trace]:  Beginning Rocket Launch
+[2019-06-28 20:52:13.489340][info]:  X axis Pre Coast :2.80621e-08
+[2019-06-28 20:52:13.489607][info]:  Y axis Pre Coast :34.7083
+[2019-06-28 20:52:13.489719][trace]:  Mass Pre Coast:79.8
+[2019-06-28 20:52:13.489858][trace]:  Time Pre Coast:50.01
+[2019-06-28 20:52:13.489969][debug]:  Density: 9.87
+[2019-06-28 20:52:13.490078][debug]:  Density: 1.22
+[2019-06-28 20:52:13.490149][trace]:  Beginning Coast Function
+[2019-06-28 20:52:13.490258][trace]:  Velocity x axis pre coast: 1.12203e-09
+[2019-06-28 20:52:13.490444][trace]:  Velocity y axis pre coast: 1.38778
+[2019-06-28 20:52:13.490890][trace]:  Mass Post Coast:79.8
+[2019-06-28 20:52:13.491037][trace]:  Time Post Coast: 59.63
+[2019-06-28 20:52:13.491158][trace]:  Total record amount: 5963
+[2019-06-28 20:52:13.491323][trace]:  X axis Post Coast :3.88561e-08
+[2019-06-28 20:52:13.491417][trace]:  Y axis Post Coast :-0.0286971
+[2019-06-28 20:52:13.491907][info]:  Algo has finished 
+[2019-06-28 20:52:13.492103][debug]:  Passing algo data
+[2019-06-28 20:52:13.492221][debug]:  Size: 5963
+[2019-06-28 20:52:13.496373][debug]:  We are sending a Ack Message
+[2019-06-28 20:52:13.496465][debug]:  Sent: ID:101-State:2
+[2019-06-28 20:52:13.496599][trace]:  Your receive mode is: true
+[2019-06-28 20:52:15.887370][debug]:  Message received is: -Pilot:None-Sec:50.0
 
-[2019-06-28 14:55:30.553560][debug]:  Switching to this pilot:
-[2019-06-28 14:55:30.553972][debug]:  Pilot is: 0
-[2019-06-28 14:55:30.554383][error]:  Pilot: 0
-[2019-06-28 14:55:30.554800][error]:  Time to Launch Seconds: 50
-[2019-06-28 14:55:30.555209][debug]:  Switching to:
-[2019-06-28 14:55:30.555623][debug]:  State change is: 3
-[2019-06-28 14:55:30.556030][debug]:  We are sending a Ack Message
-[2019-06-28 14:55:30.556475][debug]:  Sent: ID:101-State:3
-[2019-06-28 14:55:30.556925][debug]:  Starting run of Graphical Simulation
-[2019-06-28 14:55:30.557309][debug]:  Switching to:
-[2019-06-28 14:55:30.557722][debug]:  State change is: 5
-[2019-06-28 14:55:30.558138][debug]:  We are sending a Ack Message
-[2019-06-28 14:55:30.558551][debug]:  Sent: ID:101-State:5
-[2019-06-28 14:55:30.559002][debug]:  We are sending a Ack Message
-[2019-06-28 14:55:30.559360][debug]:  Sent: ID:101-State:5
-[2019-06-28 14:55:30.559940][debug]:  Closing Network
-[2019-06-28 14:55:30.560384][info]:  The local date and time is: Fri Jun 28 14:55:30 2019
-
-
+[2019-06-28 20:52:15.887764][debug]:  Switching to this pilot:
+[2019-06-28 20:52:15.887855][debug]:  Pilot is: 0
+[2019-06-28 20:52:15.887927][error]:  Pilot: 0
+[2019-06-28 20:52:15.887997][error]:  Time to Launch Seconds: 50
+[2019-06-28 20:52:15.888066][debug]:  Switching to:
+[2019-06-28 20:52:15.888135][debug]:  State change is: 3
+[2019-06-28 20:52:15.888205][debug]:  We are sending a Ack Message
+[2019-06-28 20:52:15.888357][debug]:  Sent: ID:101-State:3
+[2019-06-28 20:52:15.888470][debug]:  Starting run of Graphical Simulation
+[2019-06-28 20:52:15.888570][debug]:  Initialising

@@ -10,7 +10,7 @@ class Simulator
 public:
     Simulator() { };
     //
-    void CreateRocketSimulation(rocket_simulator::LauncherMissionParameters& launcher) { };
+    void CreateRocketSimulation(rocket_simulator::LauncherMissionParameters& launcher);
     //
 };
 
