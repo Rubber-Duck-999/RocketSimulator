@@ -52,7 +52,9 @@ target_link_libraries(${PROJECT_TEST_NAME}
                       gmock_main
                       config++
                       Algorithm
+                      Simulation
                       ${Boost_LIBRARIES} 
                       pthread
-                      Threads::Threads)
+                      Threads::Threads
+                      glut GLU GL)
 

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/../../common/logging.h
+string
+-
+boost/log/trivial.hpp
+../src/../../common/boost/log/trivial.hpp
+boost/log/utility/setup.hpp
+../src/../../common/boost/log/utility/setup.hpp
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Simulation/src/simulation.cc
+logging.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Simulation/src/logging.h
+stdio.h
+-
+GL/glut.h
+-
+math.h
+-
+

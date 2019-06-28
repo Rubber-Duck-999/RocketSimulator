@@ -39,7 +39,7 @@ set (SOURCE
     ${SRC_DIR}/config_reader.cc
 )
 
-link_directories(/usr/local/lib "../Algorithm/build/")
+link_directories(/usr/local/lib "../Algorithm/build/" "../Simulation/build")
 
 # Output folder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
@@ -50,9 +50,11 @@ add_executable(${PROJECT_NAME} ${SOURCE})
 target_link_libraries(${PROJECT_NAME}
                        config++
                        Algorithm
+                       Simulation
                        ${Boost_LIBRARIES} 
                        pthread
-                       Threads::Threads)
+                       Threads::Threads
+                       glut GLU GL)
 # Unit tests
 add_subdirectory(tests)
 
