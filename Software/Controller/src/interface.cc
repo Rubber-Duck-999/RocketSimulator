@@ -16,6 +16,7 @@ Interface::Interface()
     rocket.burn_time_ = 0.0;
     rocket.flow_rate_ = 0.0;
     rocket.angle_of_launch_ = 0.0;
+    pilot_set_ = false;
 }
 
 
@@ -25,13 +26,27 @@ void Interface::Loop()
     while(current_state_.state_ != rocket_simulator::kSHUTDOWN)
     {
         Receive(local_socket_.NetworkReceive());
-        if(current_state_.state_ == rocket_simulator::kREADY)
+        if(current_state_.state_ == rocket_simulator::kCONFIGURED)
         {
-            RunAlgo();
+            if(RunAlgo())
+            {
+                current_state_.state_ = rocket_simulator::kREADY;
+                std::string message = std::to_string(id_);
+                local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "2");
+            }
+            else
+            {
+                current_state_.state_ = rocket_simulator::kNON_CONFIGURED;
+                std::string message = std::to_string(id_);
+                local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "0");
+            }
         }
-        if(current_state_.state_ == rocket_simulator::kLAUNCH)
+        else if(current_state_.state_ == rocket_simulator::kLAUNCH)
         {
             RunSimulation();
+            SendState(5);
+            std::string message = std::to_string(id_);
+            local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "5");
         }
     }
 }
@@ -40,7 +55,7 @@ void Interface::Loop()
 bool Interface::RunSimulation()
 {
     BOOST_LOG_TRIVIAL(debug) << "Starting run of Graphical Simulation";
-    graphics.CreateRocketSimulation();
+    graphics.CreateRocketSimulation(launcher);
 }
 
 
@@ -133,27 +148,27 @@ void Interface::SetPilots(unsigned int pilot)
     { 
         case 0:
             current_pilot.pilots_ = data::kBOB;
-            BOOST_LOG_TRIVIAL(debug) << "State change is: " << current_pilot.pilots_;
+            BOOST_LOG_TRIVIAL(debug) << "Pilot is: " << current_pilot.pilots_;
             break;
         case 1:
             current_pilot.pilots_ = data::kFRED;
-            BOOST_LOG_TRIVIAL(debug) << "State change is: " << current_pilot.pilots_;
+            BOOST_LOG_TRIVIAL(debug) << "Pilot is: " << current_pilot.pilots_;
             break;
         case 2:
             current_pilot.pilots_ = data::kRYAN;
-            BOOST_LOG_TRIVIAL(debug) << "State change is: " << current_pilot.pilots_;
+            BOOST_LOG_TRIVIAL(debug) << "Pilot is: " << current_pilot.pilots_;
             break;
         case 3:
             current_pilot.pilots_ = data::kSARAH;
-            BOOST_LOG_TRIVIAL(debug) << "State change is: " << current_pilot.pilots_;
+            BOOST_LOG_TRIVIAL(debug) << "Pilot is: " << current_pilot.pilots_;
             break;
         case 4:
             current_pilot.pilots_ = data::kGRACE;
-            BOOST_LOG_TRIVIAL(debug) << "State change is: " << current_pilot.pilots_;
+            BOOST_LOG_TRIVIAL(debug) << "Pilot is: " << current_pilot.pilots_;
             break;
         default:
             current_pilot.pilots_ = data::kBOB;
-            BOOST_LOG_TRIVIAL(debug) << "State is back to: " << current_pilot.pilots_;
+            BOOST_LOG_TRIVIAL(debug) << "Pilot is: " << current_pilot.pilots_;
     }
     launcher.pilots_ = current_pilot.pilots_;
 }
@@ -172,13 +187,7 @@ void Interface::Receive(std::string message)
             vect[i].erase(start,kID.length());
             unsigned int number = std::atof(vect[i].c_str());
             BOOST_LOG_TRIVIAL(error) << "ID: " << number;
-        }
-        else if(vect[i].find(kState) != std::string::npos) 
-        {
-            BOOST_LOG_TRIVIAL(error) << "Current State is: " << current_state_.state_;
-            vect[i].erase(start, kState.length());
-            unsigned int val = std::atoi(vect[i].c_str());
-            SendState(val);
+            SetCorrect(number);
         }
         else if(vect[i].find(kDensity) != std::string::npos) 
         {
@@ -256,6 +265,7 @@ void Interface::Receive(std::string message)
             double number = std::atof(vect[i].c_str());
             rocket.angle_of_launch_ = number;
             BOOST_LOG_TRIVIAL(error) << "Launch angle: " << number;
+            SendState(1);
         }
         else if(vect[i].find(kPilots) != std::string::npos)
         {
@@ -270,6 +280,7 @@ void Interface::Receive(std::string message)
             unsigned int number = std::atoi(vect[i].c_str());
             launcher.time_to_launch_sec_ = number;
             BOOST_LOG_TRIVIAL(error) << "Time to Launch Seconds: " << number;
+            SendState(3);
         }
     }
 }

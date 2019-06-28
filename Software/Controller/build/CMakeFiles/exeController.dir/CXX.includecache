@@ -1,0 +1,210 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../Algorithm/include/algorithm.h
+cstdlib
+-
+stdio.h
+-
+math.h
+-
+rocket.h
+../../Algorithm/include/rocket.h
+world.h
+../../Algorithm/include/world.h
+thrust.h
+../../Algorithm/include/thrust.h
+data_structure.h
+../../Algorithm/include/data_structure.h
+logging.h
+../../Algorithm/include/logging.h
+fstream
+-
+
+../../Algorithm/include/rocket.h
+logging.h
+../../Algorithm/include/logging.h
+
+../../Algorithm/include/thrust.h
+stdio.h
+-
+rocket.h
+../../Algorithm/include/rocket.h
+world.h
+../../Algorithm/include/world.h
+math.h
+-
+data_structure.h
+../../Algorithm/include/data_structure.h
+logging.h
+../../Algorithm/include/logging.h
+fstream
+-
+
+../../Algorithm/include/world.h
+logging.h
+../../Algorithm/include/logging.h
+
+../../Simulation/include/simulation.h
+data_structure.h
+../../Simulation/include/data_structure.h
+string
+-
+logging.h
+../../Simulation/include/logging.h
+
+../include/config_reader.h
+iostream
+-
+iomanip
+-
+cstdlib
+-
+vector
+-
+libconfig.h++
+-
+logging.h
+../include/logging.h
+data_structure.h
+../include/data_structure.h
+
+../include/interface.h
+data_structure.h
+../include/data_structure.h
+string
+-
+logging.h
+../include/logging.h
+socket.h
+../include/socket.h
+config_reader.h
+../include/config_reader.h
+algorithm.h
+../include/algorithm.h
+boost/algorithm/string.hpp
+-
+ctime
+-
+simulation.h
+../include/simulation.h
+
+../src/../../common/data_structure.h
+string
+-
+
+../src/../../common/logging.h
+string
+-
+boost/log/trivial.hpp
+../src/../../common/boost/log/trivial.hpp
+boost/log/utility/setup.hpp
+../src/../../common/boost/log/utility/setup.hpp
+
+../src/../../common/socket.h
+arpa/inet.h
+-
+sstream
+-
+cstdlib
+-
+sys/socket.h
+-
+unistd.h
+-
+stdlib.h
+-
+stdio.h
+../src/../../common/stdio.h
+string.h
+-
+sys/types.h
+-
+netinet/in.h
+-
+netdb.h
+-
+stdio.h
+-
+algorithm
+-
+memory
+-
+data_structure.h
+../src/../../common/data_structure.h
+logging.h
+../src/../../common/logging.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.cc
+config_reader.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/config_reader.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/interface.cc
+interface.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/interface.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/main.cc
+iostream
+-
+logging.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/logging.h
+data_structure.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/data_structure.h
+interface.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Controller/src/interface.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/data_structure.h
+string
+-
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/logging.h
+string
+-
+boost/log/trivial.hpp
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/boost/log/trivial.hpp
+boost/log/utility/setup.hpp
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/boost/log/utility/setup.hpp
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/socket.cc
+socket.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/socket.h
+
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/socket.h
+arpa/inet.h
+-
+sstream
+-
+cstdlib
+-
+sys/socket.h
+-
+unistd.h
+-
+stdlib.h
+-
+stdio.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/stdio.h
+string.h
+-
+sys/types.h
+-
+netinet/in.h
+-
+netdb.h
+-
+stdio.h
+-
+algorithm
+-
+memory
+-
+data_structure.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/data_structure.h
+logging.h
+/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/common/logging.h
+

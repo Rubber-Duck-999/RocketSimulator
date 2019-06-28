@@ -23,6 +23,7 @@ std::string Socket::NetworkReceive()
     int received = recvfrom(network_socket_, buffer, 1024, 0, (struct sockaddr*)&network_serv_, (socklen_t *)&network_len_);
     if (received > 0)
     {
+        BOOST_LOG_TRIVIAL(debug) << "Message received is: " << buffer;
         std::string strbuffer = buffer;
         return strbuffer;
     }
@@ -39,10 +40,12 @@ void Socket::NetworkSend(std::string message)
 {
     BOOST_LOG_TRIVIAL(debug) << "We are sending a Ack Message";
     int send = 0;
+    int val = message.length();
     char message_send[message.length() + 1];
     strcpy(message_send, message.c_str());
     char* message_ptr_ = message_send;
-    send = sendto(network_socket_, message_ptr_, (sizeof(message_ptr_) + 2), 0, (struct sockaddr*)&network_serv_, sizeof(struct sockaddr_in));
+    BOOST_LOG_TRIVIAL(debug) << "Sent: " << message_send;
+    send = sendto(network_socket_, message_ptr_, (val), 0, (struct sockaddr*)&network_serv_, sizeof(struct sockaddr_in));
     if(send < 0)
     {
        BOOST_LOG_TRIVIAL(error) << "A severe error has occured on the simulator send";
