@@ -24,6 +24,8 @@ namespace rocket_simulator
     const std::string kLaunchAngle = "LaunchAngle:";
     const std::string kPilots = "Pilot:";
     const std::string kSec = "Sec:";
+    const std::string kStartup = "//mnt//c//Users//simon//Documents//Simulation";
+    const std::string kConfig = "/mnt/c/Users/simon/Documents/exeController.conf";
     /////////////////////////////////////////////
     
     

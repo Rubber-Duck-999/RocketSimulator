@@ -1,8 +1,8 @@
 cmake_minimum_required (VERSION 2.8)
 
 # Change project name
-set (PROJECT_NAME Simulation)
-set (PROJECT_TEST_NAME exe${PROJECT_NAME}-Test)
+set (PROJECT_NAME exeSimulation)
+set (PROJECT_TEST_NAME ${PROJECT_NAME}-Test)
 
 project (${PROJECT_NAME} C CXX)
 
@@ -46,7 +46,7 @@ target_link_libraries(${PROJECT_NAME}
                        ${Boost_LIBRARIES} 
                        pthread
                        Threads::Threads
-                       glut GLU GL)
+                       glut GLU GL glfw GLEW)
 # Unit tests
 #add_subdirectory(tests)
 

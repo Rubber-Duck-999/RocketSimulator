@@ -1,4 +1,5 @@
 #include "data_structure.h"
+#include "start_up_process.h"
 #include <string>
 #include "logging.h"
 #include "socket.h"
@@ -6,7 +7,7 @@
 #include "algorithm.h"
 #include <boost/algorithm/string.hpp> 
 #include <ctime>
-#include "simulation.h"
+
 
 #ifndef INTERFACE_h
 #define	INTERFACE_h
@@ -38,8 +39,6 @@ private:
     bool SetCorrect(int number);
     //
     Algorithm algo;
-    //
-    Simulator graphics;
     //
     bool RunAlgo();
     //

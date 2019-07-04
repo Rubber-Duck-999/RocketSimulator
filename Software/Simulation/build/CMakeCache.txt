@@ -199,7 +199,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Simulation
+CMAKE_PROJECT_NAME:STATIC=exeSimulation
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -253,11 +253,14 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Value Computed by CMake
 Simulation_BINARY_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Simulation/build
 
-//Dependencies for target
-Simulation_LIB_DEPENDS:STATIC=
-
 //Value Computed by CMake
 Simulation_SOURCE_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Simulation
+
+//Value Computed by CMake
+exeSimulation_BINARY_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Simulation/build
+
+//Value Computed by CMake
+exeSimulation_SOURCE_DIR:STATIC=/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Simulation
 
 
 ########################

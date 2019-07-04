@@ -153,6 +153,37 @@ void myDisplay(void)
     } 
 } 
 
+void secondDisplay(void)
+{
+    glClear(GL_COLOR_BUFFER_BIT); 
+    /*glBegin(GL_LINE_STRIP);
+    int y = 0;
+    for(int i = 0; i < 10000000; i++)
+    {
+        // equation for desired motion of ball 
+        glVertex2i(0, 0); 
+        y = y - 0.001;
+    } 
+    glEnd(); */
+    
+    // these four points draws outer rectangle which determines window 
+    glBegin(GL_LINES); 
+        glVertex2i(-600, -320); 
+        glVertex2i(-600, 320); 
+        glVertex2i(600, 320); 
+        glVertex2i(600, -320); 
+    glEnd();
+
+    glBegin(GL_LINES); 
+    left = -200; 
+    right = 200 + 200; 
+        glVertex2i(left, -315); 
+        glVertex2i(left, -295); 
+        glVertex2i(right, -295); 
+        glVertex2i(right, -315); 
+    glEnd();
+}
+
 
 // Driver Program 
 //void Simulator::CreateRocketSimulation(rocket_simulator::LauncherMissionParameters& launcher)
@@ -175,9 +206,10 @@ int main()
     // Name to window 
     glutCreateWindow("Game"); 
     // keyboard function 
-    glutKeyboardFunc(keyboard);
+    //glutKeyboardFunc(keyboard);
     // Call to myInit() 
     myInit(); 
-    glutDisplayFunc(myDisplay); 
+    //glutDisplayFunc(myDisplay); 
+    glutDisplayFunc(secondDisplay); 
     glutMainLoop(); 
 }

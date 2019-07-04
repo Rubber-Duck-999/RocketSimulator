@@ -55,7 +55,7 @@ void Interface::Loop()
 bool Interface::RunSimulation()
 {
     BOOST_LOG_TRIVIAL(debug) << "Starting run of Graphical Simulation";
-    graphics.CreateRocketSimulation(launcher);
+    //RunProcess(rocket_simulator::kStartup);
 }
 
 

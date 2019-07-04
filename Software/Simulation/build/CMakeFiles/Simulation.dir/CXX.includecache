@@ -19,8 +19,12 @@ logging.h
 /mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Simulation/src/logging.h
 stdio.h
 -
-GL/glut.h
+stdlib.h
 -
-math.h
+GL/glew.h
+-
+GLFW/glfw3.h
+-
+glm/glm.hpp
 -
 

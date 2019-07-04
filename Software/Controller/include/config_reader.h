@@ -18,6 +18,9 @@ public:
     ConfigurationReader() 
     {
         Config object_cfg_;
+        char message_send[rocket_simulator::kConfig.length() + 1];
+        strcpy(message_send, rocket_simulator::kConfig.c_str());
+        config_file_ = message_send;
     };
     
     ~ConfigurationReader() {};
@@ -32,13 +35,9 @@ private:
     
     void ReadConfig();
     
-    //rocket_simulator::states states_;
-    
-    const char* config_file_ = "/mnt/c/Users/simon/Documents/Config/use.conf";
+    const char* config_file_;
     
     std::string config_title_ = "title";
-    
-    //int internal
     
     std::string config_sub_title_ = "year";
     

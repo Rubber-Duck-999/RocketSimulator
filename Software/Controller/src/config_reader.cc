@@ -6,16 +6,14 @@ void ConfigurationReader::ReadConfig()
     {
         BOOST_LOG_TRIVIAL(debug) << "Config file is: " << config_file_;
         object_cfg_.readFile(config_file_);
-        //object_cfg_.readFile("../src/use.conf");
         // Read the file. 
         // If there is an error, report it and exit.
     }
     catch(const FileIOException &fioex)
     {
-         BOOST_LOG_TRIVIAL(error) << "I/O error while reading file.";
+        BOOST_LOG_TRIVIAL(error) << "I/O error while reading file.";
         config_available_ = false;
         return;
-        //return(EXIT_FAILURE);
     }
     catch(const ParseException &pex)
     {
@@ -23,10 +21,8 @@ void ConfigurationReader::ReadConfig()
                 << " - " << pex.getError() << std::endl;
         config_available_ = false;
         return;
-        //return(EXIT_FAILURE);
     }
     config_available_ = true;
-    //return(EXIT_SUCCESS);
 }
 
 void ConfigurationReader::SetConfigValues()
@@ -38,7 +34,7 @@ void ConfigurationReader::SetConfigValues()
         const Setting& root = object_cfg_.getRoot();
         try
         {
-            const Setting &albums = root["albums"];
+            const Setting &albums = root["settings"];
             for(int i = 0; i < albums.getLength(); ++i)
             {
               const Setting &album = albums[i];
@@ -63,7 +59,7 @@ void ConfigurationReader::SetConfigValues()
         }
         catch(const SettingNotFoundException &nfex)
         {
-        // Ignore.
+            BOOST_LOG_TRIVIAL(error) << "No settings found";
         }
     }
 }

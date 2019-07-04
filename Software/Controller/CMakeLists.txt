@@ -27,19 +27,19 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O3 -Wall")
 include_directories(${Boost_INCLUDE_DIRS} 
                     "${SRC_DIR}/../../common" 
                     ${PROJECT_SOURCE_DIR}/${INCL_DIR}
-                    "../Algorithm/include"
-                    "../Simulation/include")
+                    "../Algorithm/include")
                     
 link_directories(${Boost_LIBRARY_DIRS})
 # Important: Include all source files on this list
 set (SOURCE
     ${SRC_DIR}/main.cc
     ${SRC_DIR}/../../common/socket.cc
+    ${SRC_DIR}/../../common/start_up_process.cc
     ${SRC_DIR}/interface.cc
     ${SRC_DIR}/config_reader.cc
 )
 
-link_directories(/usr/local/lib "../Algorithm/build/" "../Simulation/build")
+link_directories(/usr/local/lib "../Algorithm/build/")
 
 # Output folder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
@@ -50,7 +50,6 @@ add_executable(${PROJECT_NAME} ${SOURCE})
 target_link_libraries(${PROJECT_NAME}
                        config++
                        Algorithm
-                       Simulation
                        ${Boost_LIBRARIES} 
                        pthread
                        Threads::Threads
