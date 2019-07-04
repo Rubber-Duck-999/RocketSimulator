@@ -1,3 +1,0 @@
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Simulation/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Simulation/build/CMakeFiles/exeSimulation.dir
-/mnt/c/Users/simon/Google Drive/Projects/RocketSimulator/Software/Simulation/build/CMakeFiles/edit_cache.dir
