@@ -1,0 +1,72 @@
+[2019-07-20 09:54:44.804219][debug]:  Creating Communications
+[2019-07-20 09:54:44.805439][debug]:  6111
+[2019-07-20 09:54:44.805683][trace]:  Your receive mode is: true
+[2019-07-20 09:55:07.724602][debug]:  Message received is: -Density:9.87-Gravity:1.22-Mass:80.0-DragX:10.0-DragY:0.3-Hori:0.3-Vert:1.0-Thrust:1.0-BurnTime:50.0-Flowrate:20.0-LaunchAngle:90.0
+ÿ
+[2019-07-20 09:55:07.726197][error]:  Density: 9.87
+[2019-07-20 09:55:07.726386][error]:  Gravity: 1.22
+[2019-07-20 09:55:07.727062][error]:  Mass: 80
+[2019-07-20 09:55:07.727562][error]:  Drag X Axis: 10
+[2019-07-20 09:55:07.727974][error]:  Drag Y Axis: 0.3
+[2019-07-20 09:55:07.728458][error]:  Horizontal: 0.3
+[2019-07-20 09:55:07.728826][error]:  Vertical: 1
+[2019-07-20 09:55:07.729273][error]:  Thrust: 1
+[2019-07-20 09:55:07.730268][error]:  Burn Time: 50
+[2019-07-20 09:55:07.730764][error]:  Flowrate: 20
+[2019-07-20 09:55:07.731290][error]:  Launch angle: 90
+[2019-07-20 09:55:07.731922][debug]:  Switching to:
+[2019-07-20 09:55:07.732351][debug]:  State change is: 1
+[2019-07-20 09:55:07.732939][debug]:  Starting call of Algo
+[2019-07-20 09:55:07.736980][info]:  Getting rocket data
+[2019-07-20 09:55:07.737702][info]:  Rocket mass: 80
+[2019-07-20 09:55:07.738469][info]:  Creating rocket
+[2019-07-20 09:55:07.739057][info]:  After Change = 80
+[2019-07-20 09:55:07.739671][info]:  Getting terrain data
+[2019-07-20 09:55:07.740380][info]:  Density: 9.87
+[2019-07-20 09:55:07.741659][debug]:  Density in world: 9.87
+[2019-07-20 09:55:07.742784][info]:  Rocket and terrain is set 
+[2019-07-20 09:55:07.743681][info]:  Calling algo 
+[2019-07-20 09:55:07.745099][info]:  Creating thrust 
+[2019-07-20 09:55:07.745293][trace]:  Running thrust function 
+[2019-07-20 09:55:07.748195][trace]:  Beginning Rocket Launch
+[2019-07-20 09:55:07.749889][info]:  X axis Pre Coast :2.80621e-08
+[2019-07-20 09:55:07.750159][info]:  Y axis Pre Coast :34.7083
+[2019-07-20 09:55:07.750996][trace]:  Mass Pre Coast:79.8
+[2019-07-20 09:55:07.751642][trace]:  Time Pre Coast:50.01
+[2019-07-20 09:55:07.752293][debug]:  Density: 9.87
+[2019-07-20 09:55:07.752944][debug]:  Density: 1.22
+[2019-07-20 09:55:07.753400][trace]:  Beginning Coast Function
+[2019-07-20 09:55:07.753984][trace]:  Velocity x axis pre coast: 1.12203e-09
+[2019-07-20 09:55:07.754604][trace]:  Velocity y axis pre coast: 1.38778
+[2019-07-20 09:55:07.755794][trace]:  Mass Post Coast:79.8
+[2019-07-20 09:55:07.759382][trace]:  Time Post Coast: 59.63
+[2019-07-20 09:55:07.760007][trace]:  Total record amount: 5963
+[2019-07-20 09:55:07.760519][trace]:  X axis Post Coast :3.88561e-08
+[2019-07-20 09:55:07.761143][trace]:  Y axis Post Coast :-0.0286971
+[2019-07-20 09:55:07.762284][info]:  Algo has finished 
+[2019-07-20 09:55:07.762528][debug]:  Passing algo data
+[2019-07-20 09:55:07.763062][debug]:  Size: 5963
+[2019-07-20 09:55:07.763869][debug]:  We are sending a Ack Message
+[2019-07-20 09:55:07.764167][debug]:  Sent: ID:101-State:2
+[2019-07-20 09:55:07.764850][trace]:  Your receive mode is: true
+[2019-07-20 09:55:14.486489][debug]:  Message received is: -Pilot:None-Sec:50.0
+
+[2019-07-20 09:55:14.488004][debug]:  Switching to this pilot:
+[2019-07-20 09:55:14.489075][debug]:  Pilot is: 0
+[2019-07-20 09:55:14.489620][error]:  Pilot: 0
+[2019-07-20 09:55:14.490484][error]:  Time to Launch Seconds: 50
+[2019-07-20 09:55:14.491075][debug]:  Switching to:
+[2019-07-20 09:55:14.491697][debug]:  State change is: 3
+[2019-07-20 09:55:14.492233][debug]:  We are sending a Ack Message
+[2019-07-20 09:55:14.492827][debug]:  Sent: ID:101-State:3
+[2019-07-20 09:55:14.493395][debug]:  Starting run of Graphical Simulation
+[2019-07-20 09:55:14.494042][debug]:  Switching to:
+[2019-07-20 09:55:14.495383][debug]:  State change is: 5
+[2019-07-20 09:55:14.498622][debug]:  We are sending a Ack Message
+[2019-07-20 09:55:14.510403][debug]:  Sent: ID:101-State:5
+[2019-07-20 09:55:14.511909][debug]:  We are sending a Ack Message
+[2019-07-20 09:55:14.513433][debug]:  Sent: ID:101-State:5
+[2019-07-20 09:55:14.516601][debug]:  Closing Network
+[2019-07-20 09:55:14.520204][info]:  The local date and time is: Sat Jul 20 09:55:14 2019
+
+

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export home_wd="$GIT"/Projects/RocketSimulator/Software
+export home_wd=$PROJECTS/RocketSimulator/Software
 echo "$home_wd"
 cd "$home_wd"
 ### Algo

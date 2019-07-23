@@ -1,0 +1,85 @@
+[2019-07-20 09:53:16.773566][info]:  Getting rocket data
+[2019-07-20 09:53:16.776571][info]:  Rocket mass: 0
+[2019-07-20 09:53:16.777856][info]:  Creating rocket
+[2019-07-20 09:53:16.778346][info]:  After Change = 0
+[2019-07-20 09:53:16.779676][info]:  Getting rocket data
+[2019-07-20 09:53:16.780180][info]:  Rocket mass: 0
+[2019-07-20 09:53:16.780563][info]:  Creating rocket
+[2019-07-20 09:53:16.781003][info]:  After Change = 0
+[2019-07-20 09:53:16.781435][info]:  Getting terrain data
+[2019-07-20 09:53:16.781841][info]:  Density: 1.22
+[2019-07-20 09:53:16.782306][debug]:  Density in world: 1.22
+[2019-07-20 09:53:16.782961][info]:  Rocket and terrain is set 
+[2019-07-20 09:53:16.783354][info]:  Calling algo 
+[2019-07-20 09:53:16.783807][info]:  Creating thrust 
+[2019-07-20 09:53:16.787160][trace]:  Running thrust function 
+[2019-07-20 09:53:16.789798][trace]:  Beginning Rocket Launch
+[2019-07-20 09:53:16.790285][info]:  X axis Pre Coast :-nan
+[2019-07-20 09:53:16.790987][info]:  Y axis Pre Coast :-nan
+[2019-07-20 09:53:16.791690][trace]:  Mass Pre Coast:0
+[2019-07-20 09:53:16.792523][trace]:  Time Pre Coast:0.01
+[2019-07-20 09:53:16.793240][debug]:  Density: 1.22
+[2019-07-20 09:53:16.794004][debug]:  Density: 9.81
+[2019-07-20 09:53:16.794330][trace]:  Beginning Coast Function
+[2019-07-20 09:53:16.794745][trace]:  Velocity x axis pre coast: -nan
+[2019-07-20 09:53:16.795247][trace]:  Velocity y axis pre coast: -nan
+[2019-07-20 09:53:16.795760][trace]:  Mass Post Coast:0
+[2019-07-20 09:53:16.799016][trace]:  Time Post Coast: 0.01
+[2019-07-20 09:53:16.799423][trace]:  Total record amount: 1
+[2019-07-20 09:53:16.799835][trace]:  X axis Post Coast :-nan
+[2019-07-20 09:53:16.800306][trace]:  Y axis Post Coast :-nan
+[2019-07-20 09:53:16.800753][info]:  Algo has finished 
+[2019-07-20 09:53:16.809950][info]:  Getting rocket data
+[2019-07-20 09:53:16.810887][info]:  Rocket mass: 0
+[2019-07-20 09:53:16.811526][info]:  Creating rocket
+[2019-07-20 09:53:16.812001][info]:  After Change = 0
+[2019-07-20 09:53:16.812545][info]:  Getting terrain data
+[2019-07-20 09:53:16.813250][info]:  Density: 1.22
+[2019-07-20 09:53:16.814069][debug]:  Density in world: 1.22
+[2019-07-20 09:53:16.814608][info]:  Rocket and terrain is set 
+[2019-07-20 09:53:16.815704][info]:  Calling algo 
+[2019-07-20 09:53:16.815994][info]:  Creating thrust 
+[2019-07-20 09:53:16.816446][trace]:  Running thrust function 
+[2019-07-20 09:53:16.817091][trace]:  Beginning Rocket Launch
+[2019-07-20 09:53:16.818136][info]:  X axis Pre Coast :-nan
+[2019-07-20 09:53:16.821273][info]:  Y axis Pre Coast :-nan
+[2019-07-20 09:53:16.822559][trace]:  Mass Pre Coast:0
+[2019-07-20 09:53:16.824391][trace]:  Time Pre Coast:0.01
+[2019-07-20 09:53:16.824761][debug]:  Density: 1.22
+[2019-07-20 09:53:16.826265][debug]:  Density: 9.81
+[2019-07-20 09:53:16.827474][trace]:  Beginning Coast Function
+[2019-07-20 09:53:16.828192][trace]:  Velocity x axis pre coast: -nan
+[2019-07-20 09:53:16.828677][trace]:  Velocity y axis pre coast: -nan
+[2019-07-20 09:53:16.829768][trace]:  Mass Post Coast:0
+[2019-07-20 09:53:16.832641][trace]:  Time Post Coast: 0.01
+[2019-07-20 09:53:16.833234][trace]:  Total record amount: 1
+[2019-07-20 09:53:16.833912][trace]:  X axis Post Coast :-nan
+[2019-07-20 09:53:16.835045][trace]:  Y axis Post Coast :-nan
+[2019-07-20 09:53:16.835405][info]:  Algo has finished 
+[2019-07-20 09:53:16.846655][info]:  Getting rocket data
+[2019-07-20 09:53:16.847016][info]:  Rocket mass: 80
+[2019-07-20 09:53:16.847604][info]:  Creating rocket
+[2019-07-20 09:53:16.848188][info]:  After Change = 80
+[2019-07-20 09:53:16.849195][info]:  Getting terrain data
+[2019-07-20 09:53:16.849633][info]:  Density: 1.22
+[2019-07-20 09:53:16.851017][debug]:  Density in world: 1.22
+[2019-07-20 09:53:16.851194][info]:  Rocket and terrain is set 
+[2019-07-20 09:53:16.851693][info]:  Calling algo 
+[2019-07-20 09:53:16.855114][info]:  Creating thrust 
+[2019-07-20 09:53:16.857340][trace]:  Running thrust function 
+[2019-07-20 09:53:16.860384][trace]:  Beginning Rocket Launch
+[2019-07-20 09:53:16.862305][info]:  X axis Pre Coast :832.485
+[2019-07-20 09:53:16.862763][info]:  Y axis Pre Coast :688.1
+[2019-07-20 09:53:16.863577][trace]:  Mass Pre Coast:79.8
+[2019-07-20 09:53:16.865641][trace]:  Time Pre Coast:50.01
+[2019-07-20 09:53:16.866075][debug]:  Density: 1.22
+[2019-07-20 09:53:16.866496][debug]:  Density: 9.81
+[2019-07-20 09:53:16.866917][trace]:  Beginning Coast Function
+[2019-07-20 09:53:16.867328][trace]:  Velocity x axis pre coast: 22.3969
+[2019-07-20 09:53:16.867754][trace]:  Velocity y axis pre coast: 27.513
+[2019-07-20 09:53:16.870537][trace]:  Mass Post Coast:79.8
+[2019-07-20 09:53:16.870770][trace]:  Time Post Coast: 68.3
+[2019-07-20 09:53:16.871415][trace]:  Total record amount: 6830
+[2019-07-20 09:53:16.871864][trace]:  X axis Post Coast :1121.35
+[2019-07-20 09:53:16.872348][trace]:  Y axis Post Coast :-0.509288
+[2019-07-20 09:53:16.873616][info]:  Algo has finished 
