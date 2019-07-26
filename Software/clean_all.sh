@@ -21,14 +21,7 @@ then
     echo "##############################################"
     cd $home_wd/Algorithm
 
-    mkdir build
-    cd build
-
-    cmake ..
-
-    make
-
-    ./exeAlgorithm-Test
+    rm -rf build
 
     echo "##############################################"
     echo "##############################################"
@@ -39,14 +32,8 @@ then
     echo "##############################################"
     cd  $home_wd/Controller
 
-    mkdir build
-    cd build
+    rm -rf build
 
-    cmake ..
-
-    make
-
-    ./exeController-Test
     echo "##############################################"
     echo "##############################################"
     ### Simulation
@@ -56,14 +43,7 @@ then
     echo "##############################################"
     cd  $home_wd/Simulation
 
-    mkdir build
-    cd build
-
-    cmake ..
-
-    make
-
-    ./exeSimulation-Test
+    rm -rf build
     echo "##############################################"
     echo "##############################################"
 fi

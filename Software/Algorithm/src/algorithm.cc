@@ -40,6 +40,7 @@ bool Algorithm::CreateRocketSimulation()
         BOOST_LOG_TRIVIAL(info) << "Calling algo ";
         Thrust thrust(rocket_, world_, algo_data_);
         BOOST_LOG_TRIVIAL(info) << "Algo has finished ";
+        bool finished = WriteToFile();
         algo_finished_ = true;
         return algo_finished_;
     }
