@@ -54,6 +54,5 @@ target_link_libraries(${PROJECT_TEST_NAME}
                       Algorithm
                       ${Boost_LIBRARIES} 
                       pthread
-                      Threads::Threads
-                      glut GLU GL)
+                      Threads::Threads)
 

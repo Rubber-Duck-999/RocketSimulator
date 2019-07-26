@@ -1,57 +1,60 @@
 #!/bin/bash
 
-export home_wd="$GIT"/Projects/RocketSimulator/Software
-echo "$home_wd"
-cd "$home_wd"
-### Algo
-echo "##############################################"
-echo "##### Algorithm                              #"
-echo "##############################################"
-cd "$home_wd"/Algorithm
+export home_wd=$CPP/RocketSimulator/Software
+echo $home_wd
+if [ -d $home_wd ];
+then
+    cd $home_wd
+    ### Algo
+    echo "##############################################"
+    echo "##### Algorithm                              #"
+    echo "##############################################"
+    cd $home_wd/Algorithm
 
-mkdir build
-cd build
+    mkdir build
+    cd build
 
-cmake ..
+    cmake ..
 
-make
+    make
 
-./exeAlgorithm-Test
+    ./exeAlgorithm-Test
 
-echo "##############################################"
-echo "##############################################"
-### Controller
-echo
-echo "##############################################"
-echo "##### Controller                             #"
-echo "##############################################"
+    echo "##############################################"
+    echo "##############################################"
+    ### Controller
+    echo
+    echo "##############################################"
+    echo "##### Controller                             #"
+    echo "##############################################"
 
-cd "$home_wd"/Controller
+    cd $home_wd/Controller
 
-mkdir build
-cd build
+    mkdir build
+    cd build
 
-cmake ..
+    cmake ..
 
-make
+    make
 
-./exeController-Test
-echo "##############################################"
-echo "##############################################"
-### Simulation
-echo
-echo "##############################################"
-echo "##### Simulation                             #"
-echo "##############################################"
-cd "$home_wd"/Simulation
+    ./exeController-Test
+    echo "##############################################"
+    echo "##############################################"
+    ### Simulation
+    echo
+    echo "##############################################"
+    echo "##### Simulation                             #"
+    echo "##############################################"
+    cd $home_wd/Simulation
 
-mkdir build
-cd build
+    mkdir build
+    cd build
 
-cmake ..
+    cmake ..
 
-make
+    make
 
-./exeSimulation-Test
-echo "##############################################"
-echo "##############################################"
+    ./exeSimulation-Test
+    echo "##############################################"
+    echo "##############################################"
+fi

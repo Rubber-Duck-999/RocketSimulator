@@ -1,0 +1,2 @@
+/usr/bin/ar qc libAlgorithm.a  CMakeFiles/Algorithm.dir/src/rocket.cc.o CMakeFiles/Algorithm.dir/src/thrust.cc.o CMakeFiles/Algorithm.dir/src/world.cc.o CMakeFiles/Algorithm.dir/src/algorithm.cc.o
+/usr/bin/ranlib libAlgorithm.a

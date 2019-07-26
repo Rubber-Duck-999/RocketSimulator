@@ -52,8 +52,7 @@ target_link_libraries(${PROJECT_NAME}
                        Algorithm
                        ${Boost_LIBRARIES} 
                        pthread
-                       Threads::Threads
-                       glut GLU GL)
+                       Threads::Threads)
 # Unit tests
 add_subdirectory(tests)
 
