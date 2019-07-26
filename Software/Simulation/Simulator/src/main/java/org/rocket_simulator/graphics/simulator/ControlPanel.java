@@ -1,6 +1,7 @@
 package org.rocket_simulator.graphics.simulator;
 
 import javax.swing.*;
+import java.awt.EventQueue;
 
 public class ControlPanel extends JFrame
 {
@@ -15,7 +16,7 @@ public class ControlPanel extends JFrame
 
         setTitle("Moving Rocket");
 
-        setSize(2048,1152);
+        setSize(640,480);
         setLocationRelativeTo(null);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,13 +26,13 @@ public class ControlPanel extends JFrame
     public static void main(String[] args)
     {
         System.out.println("Starting Control Panel");
-        CsvReader csv = new CsvReader();
+        /*CsvReader csv = new CsvReader();
         csv.run();
-        /*
+        */
         EventQueue.invokeLater(() -> {
             ControlPanel con = new ControlPanel();
             con.setVisible(true);
-        });*/
+        });
     }
 
 }

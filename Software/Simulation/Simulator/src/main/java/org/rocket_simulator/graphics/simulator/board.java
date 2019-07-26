@@ -58,7 +58,6 @@ public class board extends JPanel implements ActionListener {
     }
 
     private void step() {
-
         rocket.move_new();
 
         repaint(rocket.getX()-1, rocket.getY()-1,

@@ -1,6 +1,7 @@
 package org.rocket_simulator.graphics.simulator;
 
 import java.awt.Image;
+import java.io.File;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 
@@ -20,9 +21,14 @@ public class Rocket
         loadImage();
     }
 
-    private void loadImage() {
-
-        ImageIcon ii = new ImageIcon("src/resources/rocket.png");
+    private void loadImage() 
+    {
+        String file = "//mnt//c//Users//simon//Documents//Projects//C++//RocketSimulator//Software//Simulation//Simulator//src//resources//rocket.png";
+        ImageIcon ii = new ImageIcon(file);
+        File tempFile = new File(file);
+        boolean exists = tempFile.exists();
+        System.out.println("The file is this state: ");
+        System.out.println(exists);
         image = ii.getImage();
 
         w = image.getWidth(null);
