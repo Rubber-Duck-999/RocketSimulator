@@ -26,9 +26,14 @@ public class ControlPanel extends JFrame
     public static void main(String[] args)
     {
         System.out.println("Starting Control Panel");
-        /*CsvReader csv = new CsvReader();
-        csv.run();
-        */
+        try
+        {
+            CsvReader.readWithCsvBeanReader();
+        }
+        catch(Exception e)
+        {
+            System.out.println("Found exception");
+        }
         EventQueue.invokeLater(() -> {
             ControlPanel con = new ControlPanel();
             con.setVisible(true);

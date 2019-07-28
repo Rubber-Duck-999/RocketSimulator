@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: org.rocket_simulator.graphics.simulator.ControlPanel
+X-COMMENT: Main-Class will be added automatically by build
+

@@ -8,7 +8,7 @@ Component based architecture
   - Console - Python PySimpleGUI
   - Controller - C++
   - Algorithm - C++
-  - Simulation - C++/Opengl
+  - Simulation - Java
 All components will have interface designs and the data structures will be predefined to allow correct and suitable design.
 
 I am using Googletest framework, stubs for the socket interfaces to help separate testing. Valgrind to check for memory leaks.

@@ -33,19 +33,14 @@ public class Entry
         return time;
     }
 
-    public void Entry()
-    {
-
-    };
-
     @Override
     public String toString() {
         return "Entry{" +
-                "position_axis_x=" + position_axis_x +
-                ", position_axis_y=" + position_axis_y +
-                ", velocity_axis_x=" + velocity_axis_x +
-                ", velocity_axis_y=" + velocity_axis_y +
-                ", time=" + time +
+                "Position_Axis_X=" + position_axis_x +
+                ", Position_Axis_Y=" + position_axis_y +
+                ", Velocity_Axis_X=" + velocity_axis_x +
+                ", Velocity_Axis_Y=" + velocity_axis_y +
+                ", Time=" + time +
                 '}';
     }
 }

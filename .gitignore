@@ -1,2 +1,6 @@
-googletest-src/*
-build/*
+googletest-src/
+build/
+*.html
+
+
+.vscode

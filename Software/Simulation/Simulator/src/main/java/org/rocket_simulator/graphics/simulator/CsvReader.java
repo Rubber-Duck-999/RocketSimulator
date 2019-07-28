@@ -1,74 +1,69 @@
 package org.rocket_simulator.graphics.simulator;
 
-
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
 
-import com.opencsv.CSVReader;
-import com.opencsv.bean.ColumnPositionMappingStrategy;
-import com.opencsv.bean.CsvToBean;
+import org.supercsv.cellprocessor.Optional;
+import org.supercsv.cellprocessor.ParseDouble;
+import org.supercsv.cellprocessor.ift.CellProcessor;
+import org.supercsv.io.CsvBeanReader;
+import org.supercsv.io.ICsvBeanReader;
+import org.supercsv.prefs.CsvPreference;
 
 public class CsvReader
 {
-    public void run()
+    /**
+     * An example of reading using CsvBeanReader.
+     */
+
+    private static final String CSV_FILENAME = "//mnt//c//Users//simon//Documents//data.csv";
+
+    private static CellProcessor[] getProcessors() 
     {
-        CSVReader csvReader = null;
+        
+        final CellProcessor[] processors = new CellProcessor[] 
+        { 
+            new ParseDouble(),
+            new ParseDouble(),
+            new ParseDouble(), // lastName
+            new ParseDouble(), // birthDate
+            new ParseDouble() // mailingAddress
+        };
+        
+        return processors;
+}
 
-        String file = "C:\\Users\\simon\\Documents\\data.csv";
-
-        try
+    public static void readWithCsvBeanReader() throws Exception 
+    {
+            
+        ICsvBeanReader beanReader = null;
+        try 
         {
-            /**
-             * Reading the CSV File
-             * Delimiter is comma
-             * Default Quote character is double quote
-             * Start reading from line 1
-             */
-            csvReader = new CSVReader(new FileReader(file),',','"',1);
-            //mapping of columns with their positions
-            ColumnPositionMappingStrategy mappingStrategy =
-                    new ColumnPositionMappingStrategy();
-            //Set mappingStrategy type to Employee Type
-            mappingStrategy.setType(Entry.class);
-            //Fields in Employee Bean
-            String[] columns = new String[]{"position_axis_x", "position_axis_y", "velocity_axis_x", "velocity_axis_y", "time"};
-            //Setting the colums for mappingStrategy
-            mappingStrategy.setColumnMapping(columns);
-            //create instance for CsvToBean class
-            CsvToBean ctb = new CsvToBean();
-            //parsing csvReader(Employee.csv) with mappingStrategy
-            List<Entry> entList = ctb.parse(mappingStrategy,csvReader);
-            //Print the Employee Details
-
-            //List list = new ArrayList();
-            //Entry ent = new Entry();
-            for(Entry ent : entList)
-            {
-                System.out.println(ent.toString());
-            }
+                beanReader = new CsvBeanReader(new FileReader(CSV_FILENAME), CsvPreference.STANDARD_PREFERENCE);
+                File tempFile = new File(CSV_FILENAME);
+                if(tempFile.exists())
+                {
+                    System.out.println("Found file");
+                }
+                // the header elements are used to map the values to the bean (names must match)
+                final String[] header = beanReader.getHeader(true);
+                System.out.println(header[0]);
+                final CellProcessor[] processors = getProcessors();
+                
+                Entry value;
+                while( (value = beanReader.read(Entry.class, header, processors)) != null ) 
+                {
+                        System.out.println(String.format("lineNo=%d, rowNo=%d, entry=%d", beanReader.getLineNumber(),
+                                beanReader.getRowNumber(), value));
+                }
+                
         }
-        catch(FileNotFoundException e)
+        finally 
         {
-            System.out.println("Error: " + e);
-        }
-        catch(Exception ee)
-        {
-            ee.printStackTrace();
-        }
-
-        finally
-        {
-            try
-            {
-                //closing the reader
-                csvReader.close();
-            }
-            catch(Exception ee)
-            {
-                ee.printStackTrace();
-            }
+                if( beanReader != null ) 
+                {
+                        beanReader.close();
+                }
         }
     }
 }

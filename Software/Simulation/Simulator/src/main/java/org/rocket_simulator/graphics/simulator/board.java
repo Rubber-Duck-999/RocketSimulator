@@ -24,7 +24,7 @@ public class board extends JPanel implements ActionListener {
 
     private void initBoard() {
 
-        addKeyListener(new TAdapter());
+        //addKeyListener(new TAdapter());
         setBackground(Color.black);
         setFocusable(true);
 
@@ -62,18 +62,5 @@ public class board extends JPanel implements ActionListener {
 
         repaint(rocket.getX()-1, rocket.getY()-1,
                 rocket.getWidth()+2, rocket.getHeight()+2);
-    }
-
-    private class TAdapter extends KeyAdapter {
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-            rocket.keyReleased(e);
-        }
-
-        @Override
-        public void keyPressed(KeyEvent e) {
-            rocket.keyPressed(e);
-        }
     }
 }

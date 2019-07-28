@@ -1,7 +1,5 @@
-org/rocket_simulator/graphics/simulator/CsvReader.class
-org/rocket_simulator/graphics/simulator/Entry.class
-org/rocket_simulator/graphics/simulator/board$TAdapter.class
-org/rocket_simulator/graphics/simulator/board$1.class
 org/rocket_simulator/graphics/simulator/board.class
 org/rocket_simulator/graphics/simulator/ControlPanel.class
+org/rocket_simulator/graphics/simulator/CsvReader.class
+org/rocket_simulator/graphics/simulator/Entry.class
 org/rocket_simulator/graphics/simulator/Rocket.class
