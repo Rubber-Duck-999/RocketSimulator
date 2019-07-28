@@ -2,12 +2,15 @@ package org.rocket_simulator.graphics.simulator;
 
 import java.io.FileReader;
 import java.io.File;
+import java.io.*;
+import java.util.List;
 
-import org.supercsv.cellprocessor.Optional;
 import org.supercsv.cellprocessor.ParseDouble;
 import org.supercsv.cellprocessor.ift.CellProcessor;
 import org.supercsv.io.CsvBeanReader;
+import org.supercsv.io.CsvListReader;
 import org.supercsv.io.ICsvBeanReader;
+import org.supercsv.io.ICsvListReader;
 import org.supercsv.prefs.CsvPreference;
 
 public class CsvReader
@@ -36,22 +39,28 @@ public class CsvReader
     public static void readWithCsvBeanReader() throws Exception 
     {
             
-        ICsvBeanReader beanReader = null;
+        ICsvListReader beanReader = null;
         try 
         {
-                beanReader = new CsvBeanReader(new FileReader(CSV_FILENAME), CsvPreference.STANDARD_PREFERENCE);
+                beanReader = new CsvListReader(new FileReader(CSV_FILENAME), CsvPreference.STANDARD_PREFERENCE);
                 File tempFile = new File(CSV_FILENAME);
-                if(tempFile.exists())
+                BufferedReader br = new BufferedReader(new FileReader(tempFile)); 
+  
+                String st; 
+                while ((st = br.readLine()) != null) 
                 {
-                    System.out.println("Found file");
-                }
+                    //System.out.println(st); 
+                } 
                 // the header elements are used to map the values to the bean (names must match)
-                final String[] header = beanReader.getHeader(true);
-                System.out.println(header[0]);
+                //final String[] header = beanReader.getHeader(true);
+                //System.out.println(header[0]);
                 final CellProcessor[] processors = getProcessors();
                 
-                Entry value;
-                while( (value = beanReader.read(Entry.class, header, processors)) != null ) 
+                //System.out.println(beanReader.read(Entry.class, header, processors));
+
+                //Entry value;
+                List<Object> value;
+                while( (value = beanReader.read(processors)) != null ) 
                 {
                         System.out.println(String.format("lineNo=%d, rowNo=%d, entry=%d", beanReader.getLineNumber(),
                                 beanReader.getRowNumber(), value));

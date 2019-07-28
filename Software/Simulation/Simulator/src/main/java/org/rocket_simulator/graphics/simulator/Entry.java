@@ -1,7 +1,5 @@
 package org.rocket_simulator.graphics.simulator;
 
-import java.io.Serializable;
-
 public class Entry
 {
 
@@ -12,6 +10,15 @@ public class Entry
     public double velocity_axis_x;
     public double velocity_axis_y;
     public double time;
+
+    public Entry(final double position_axis_x, final double position_axis_y, final double velocity_axis_x, final double velocity_axis_y, final double time)
+    {
+        this.position_axis_x = position_axis_x;
+        this.position_axis_y = position_axis_y;
+        this.velocity_axis_x = velocity_axis_x;
+        this.velocity_axis_y = velocity_axis_y;
+        this.time = time;
+    }
 
     public double getPosition_axis_x() {
         return position_axis_x;
@@ -42,5 +49,25 @@ public class Entry
                 ", Velocity_Axis_Y=" + velocity_axis_y +
                 ", Time=" + time +
                 '}';
+    }
+
+    public void setPosition_axis_x(double position_axis_x) {
+        this.position_axis_x = position_axis_x;
+    }
+
+    public void setPosition_axis_y(double position_axis_y) {
+        this.position_axis_y = position_axis_y;
+    }
+
+    public void setVelocity_axis_x(double velocity_axis_x) {
+        this.velocity_axis_x = velocity_axis_x;
+    }
+
+    public void setVelocity_axis_y(double velocity_axis_y) {
+        this.velocity_axis_y = velocity_axis_y;
+    }
+
+    public void setTime(double time) {
+        this.time = time;
     }
 }
