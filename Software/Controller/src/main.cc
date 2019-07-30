@@ -3,9 +3,11 @@
 #include "data_structure.h"
 #include "interface.h"
 #include "config_reader.h"
+#include "graphics.h"
 
 int main()
 {
+    Graphics screen;
     ConfigurationReader cfg;
     cfg.SetConfigValues();
     Interface out;

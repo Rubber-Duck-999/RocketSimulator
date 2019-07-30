@@ -15,6 +15,23 @@ if [ -d $home_wd ];
 then
     echo  $home_wd
     cd  $home_wd
+    ### 2DMap
+    echo "##############################################"
+    echo "##### 2DMap                           #"
+    echo "##############################################"
+    cd $home_wd/2DMap
+
+    mkdir build
+    cd build
+
+    cmake ..
+
+    make
+
+    #./exe2DMap-Test
+
+    echo "##############################################"
+    echo "##############################################"
     ### Algo
     echo "##############################################"
     echo "##### Algorithm                              #"
@@ -28,8 +45,25 @@ then
 
     make
 
-    ./exeAlgorithm-Test
+    #./exeAlgorithm-Test
 
+    echo "##############################################"
+    echo "##############################################"
+    ### Simulation
+    echo
+    echo "##############################################"
+    echo "##### Simulation                             #"
+    echo "##############################################"
+    cd  $home_wd/Graphics
+
+    mkdir build
+    cd build
+
+    cmake ..
+
+    make
+
+    #./exeSimulation-Test
     echo "##############################################"
     echo "##############################################"
     ### Controller
@@ -46,24 +80,7 @@ then
 
     make
 
-    ./exeController-Test
-    echo "##############################################"
-    echo "##############################################"
-    ### Simulation
-    echo
-    echo "##############################################"
-    echo "##### Simulation                             #"
-    echo "##############################################"
-    cd  $home_wd/Simulation
-
-    mkdir build
-    cd build
-
-    cmake ..
-
-    make
-
-    ./exeSimulation-Test
+    #./exeController-Test
     echo "##############################################"
     echo "##############################################"
 fi
