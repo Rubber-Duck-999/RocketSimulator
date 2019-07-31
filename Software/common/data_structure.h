@@ -30,12 +30,13 @@ namespace rocket_simulator
     const std::string kWindowName = "2D Rocket Simulator";
     const int kWindowSizeHori = 640;
     const int kWindowSizeVert = 480;
-    const unsigned int kMaxXAxisLength = 10000000; // 10,000,000 m
-    const double kMinHeight = -200.0;
-    const double kMaxHeight = 500.0;
+    const unsigned int kMinXAxisLength = 0; // 10,000,000 m
+    const unsigned int kMaxXAxisLength = 10000; // 10,000,000 m
+    const double kMinHeight = -50.0;
+    const double kMaxHeight = 255.0;
     /////////////////////////////////////////////
-    
-    
+
+
     /////////////////////////////////////////////
     // Rocket Data
     /////////////////////////////////////////////
@@ -134,13 +135,6 @@ namespace rocket_simulator
         }
     };
     /////////////////////////////////////////////
-    
-    
-    template<typename T, typename R>
-    static inline auto Compare(T x, R y) -> decltype(x + y) const
-    {
-        return x < y ? y : x;
-    }
 }
 
 #endif

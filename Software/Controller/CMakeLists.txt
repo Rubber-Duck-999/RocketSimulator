@@ -26,6 +26,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O3 -Wall")
 
 include_directories(${Boost_INCLUDE_DIRS} 
                     "${SRC_DIR}/../../common" 
+                    "../2DMap/include"
                     ${PROJECT_SOURCE_DIR}/${INCL_DIR}
                     "../Algorithm/include",
                     "../Graphics/include")
@@ -40,7 +41,7 @@ set (SOURCE
     ${SRC_DIR}/config_reader.cc
 )
 
-link_directories(/usr/local/lib "../Algorithm/build/" "../Graphics/build")
+link_directories(/usr/local/lib "../Algorithm/build/" "../2DMap/build" "../Graphics/build")
 
 # Output folder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
@@ -52,6 +53,7 @@ target_link_libraries(${PROJECT_NAME}
                        config++
                        Algorithm
                        Graphics
+                       2DMap
                        sfml-graphics 
                        sfml-window 
                        sfml-system

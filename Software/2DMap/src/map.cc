@@ -2,18 +2,48 @@
 
 void Map::CreateInitialMap()
 {
-    unsigned int x_axis_start = 0;
-    unsigned int x_axis = 0;
-    double height = 0;
-
-    srand(time(0));
-    unsigned int random;
-
-    while(x_axis <= rocket_simulator::kMaxXAxisLength)
+    std::uniform_real_distribution<> distr_height_(rocket_simulator::kMinHeight, rocket_simulator::kMaxHeight);
+    std::mt19937 eng(random_obj_());
+    while(index_ <= rocket_simulator::kMaxXAxisLength)
     {
-        random = (rand() % 10) + 1;
-        BOOST_LOG_TRIVIAL(debug) << "Random number: " << random;
+        double loop_random = distr_height_(eng);
+        BOOST_LOG_TRIVIAL(trace) << "Random number Index: " << index_ << " Value: " << loop_random;
+        height_vector_.push_back(loop_random);
+        index_ = index_ + 1;
     }
+    index_ = 1;
+    BOOST_LOG_TRIVIAL(trace) << "Beginning reassign";
+    while(index_ < (height_vector_.size() - 1))
+    {
+        height_vector_[index_] = (height_vector_[index_ - 1] + 
+                              height_vector_[index_] + 
+                              height_vector_[index_ + 1]) / 3;
+        index_ = index_ + 1;
+        BOOST_LOG_TRIVIAL(trace) << "Height Index: " << index_ << ", Value: " << height_vector_[index_];
+    }
+    for(unsigned int i = 0; i < (height_vector_.size() - 1); i++)
+    {
+        BOOST_LOG_TRIVIAL(trace) << "Reworked Height Index: " << i << ", Value: " << height_vector_[i];
+        initial_terrain_map_.insert(std::pair<unsigned int, double>(i, height_vector_[i]));
+    }
+}
 
-    initial_terrain_map_.insert(std::pair<unsigned int, double>(x_axis, height));
+unsigned int Map::GetMapSize()
+{
+    return initial_terrain_map_.size();
+}
+
+
+//GetMap returns true if the map is invalid to merge
+bool Map::GetMap(std::map<unsigned int, double>& map)
+{
+    if(initial_terrain_map_.size() > 0)
+    {
+        map.merge(initial_terrain_map_);
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
