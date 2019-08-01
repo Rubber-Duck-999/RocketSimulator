@@ -57,12 +57,11 @@ bool Algorithm::WriteToFile()
     std::ofstream myfile;
     myfile.open ("data.csv");
     myfile << "Algorithm Data.\n";
-    myfile << "a,b,c,\n";
+    myfile << "Pos x, Pos y, Angle, Time\n";
     for(int i = 0; i < algo_data_.size(); i++)
     {
         myfile << algo_data_[i].position_axis_x_ << "," << algo_data_[i].position_axis_y_ << "," <<
-                  algo_data_[i].velocity_x_ << "," << algo_data_[i].velocity_y_ 
-                  << "," << algo_data_[i].time_milli_sec_ << "\n";
+                  algo_data_[i].angle_of_direction_ << "," << algo_data_[i].time_milli_sec_ << "\n";
     }
     myfile.close();  
     return true;

@@ -4,6 +4,7 @@
 #include <boost/algorithm/string.hpp> 
 #include <ctime>
 #include <SFML/Graphics.hpp>
+#include "ship.h"
 
 #ifndef Graphics_h
 #define	Graphics_h
@@ -11,9 +12,8 @@
 class Graphics
 {
 public:
-    Graphics();
-private:
-    void RunWindow();
+    Graphics() {};
+    void RunRocket(double launch_angle);
 };
 
 #endif

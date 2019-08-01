@@ -30,6 +30,10 @@ public:
     //
     unsigned int GetIdNumber() const { return id_; };
     //
+    double GetLaunchAngle()
+    {
+        return 45.0;
+    }
 private:
     //
     bool pilot_set_;

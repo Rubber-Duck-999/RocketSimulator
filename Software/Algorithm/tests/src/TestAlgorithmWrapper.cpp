@@ -40,7 +40,7 @@ TEST(Tests, TestAlgoRunFail)
     ASSERT_TRUE(algo.IsWorldSet());
     ASSERT_TRUE(algo.CreateRocketSimulation());
     ASSERT_EQ(algo.algo_data_.size(), 0);
-    EXPECT_NE(algo.algo_data_.at(0).velocity_x_, 0.0);
+    EXPECT_NE(algo.algo_data_.at(0).position_axis_x_, 0.0);
 }
 
 TEST(Tests, TestAlgoRunPass)
@@ -68,7 +68,7 @@ TEST(Tests, TestAlgoRunPass)
     ASSERT_TRUE(algo.IsWorldSet());
     ASSERT_TRUE(algo.CreateRocketSimulation());
     ASSERT_GT(algo.algo_data_.size(), 1);
-    EXPECT_GT(algo.algo_data_.at(0).velocity_x_, 0.0);
+    EXPECT_GT(algo.algo_data_.at(0).position_axis_x_, 0.0);
 }
 
 int main(int argc, char **argv)

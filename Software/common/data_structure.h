@@ -26,7 +26,7 @@ namespace rocket_simulator
     const std::string kSec = "Sec:";
     const std::string kStartup = "//mnt//c//Users//simon//Documents//Simulation";
     const std::string kConfig = "//mnt//c//Users//simon//Documents//exeController.conf";
-    const std::string kRocketImage = "//mnt//c/Users/simon/Documents/Projects//C++//RocketSimulator//Software//common//rocket.png";
+    const std::string kRocketImage = "/mnt/c/Users/simon/Documents/Projects/C++/RocketSimulator/Software/Graphics/build/Rocket.png";
     const std::string kWindowName = "2D Rocket Simulator";
     const int kWindowSizeHori = 640;
     const int kWindowSizeVert = 480;
@@ -34,6 +34,7 @@ namespace rocket_simulator
     const unsigned int kMaxXAxisLength = 10000; // 10,000,000 m
     const double kMinHeight = -50.0;
     const double kMaxHeight = 255.0;
+    const double kPI = 3.1415926;
     /////////////////////////////////////////////
 
 
@@ -116,21 +117,18 @@ namespace rocket_simulator
     {
         double position_axis_x_;
         double position_axis_y_;
-        double velocity_x_;
-        double velocity_y_;
+        double angle_of_direction_;
         double time_milli_sec_;
         AlgoData(double position_axis_x, double position_axis_y,
-                 double velocity_x, double velocity_y, 
-                 double time_milli_sec): position_axis_x_(position_axis_x), 
-                 position_axis_y_(position_axis_y), velocity_x_(velocity_x),
-                 velocity_y_(velocity_y), time_milli_sec_(time_milli_sec) { };
+                 double angle_of_direction, double time_milli_sec): position_axis_x_(position_axis_x), 
+                 position_axis_y_(position_axis_y), angle_of_direction_(angle_of_direction), 
+                 time_milli_sec_(time_milli_sec) { };
                  
         AlgoData()
         {
             position_axis_x_ = 0.0;
             position_axis_y_ = 0.0;
-            velocity_x_ = 0.0;
-            velocity_y_ = 0.0;
+            angle_of_direction_ = 0.0;
             time_milli_sec_ = 0.0;            
         }
     };

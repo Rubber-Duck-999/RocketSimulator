@@ -22,7 +22,7 @@ void Thrust::CoastFunction(double velocity_x_axis, double velocity_y_axis)
     double density = world_.GetDensity();
     double gravity = world_.GetGravity();
     BOOST_LOG_TRIVIAL(debug) << "Density: " << density;
-    BOOST_LOG_TRIVIAL(debug) << "Density: " << gravity;
+    BOOST_LOG_TRIVIAL(debug) << "Gravity: " << gravity;
     double acceleration_y_direction = 0.0;
     double acceleration_x_direction = 0.0;
     double angle_of_elevation, velocity_x_axis_post, velocity_y_axis_post, force_x_direction, force_y_direction;
@@ -50,7 +50,7 @@ void Thrust::CoastFunction(double velocity_x_axis, double velocity_y_axis)
         rocket_.SetDistanceY(rocket_.GetDistanceY() + (velocity_y_axis * t_step));
         rocket_.SetDistanceX(rocket_.GetDistanceX() + (velocity_x_axis * t_step));
         rocket_simulator::AlgoData algo_run(rocket_.GetDistanceX(), rocket_.GetDistanceY(), 
-                                            velocity_x_axis_post, velocity_y_axis_post, t_start);
+                                            angle_of_elevation, t_start);
         algo_data_.push_back(algo_run);
         t_start = t_start + t_step;
         velocity_x_axis = velocity_x_axis_post;
@@ -101,7 +101,7 @@ void Thrust::ThrustFunction()
         t_start = t_start + t_step;
         rocket_.SetMass(m - (rocket_.GetFlowRate() * t_step));
         rocket_simulator::AlgoData algo_run(rocket_.GetDistanceX(), rocket_.GetDistanceY(), 
-                                            velocity_x, velocity_y, t_start);
+                                            launch_angle, t_start);
         algo_data_.push_back(algo_run);
     }
     rocket_.SetTimeTaken(t_start);

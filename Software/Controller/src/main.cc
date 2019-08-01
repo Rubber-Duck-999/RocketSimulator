@@ -13,16 +13,13 @@ int main()
     std::map<unsigned int, double> map;
     bool map_correct = my_map.GetMap(map);
     BOOST_LOG_TRIVIAL(debug) << "Map is valid: " << map_correct << ", Creation Size: " << map.size();
-    Graphics screen;
     ConfigurationReader cfg;
     cfg.SetConfigValues();
     Interface out;
-    out.Loop();
-    out.Shutdown();
-    time_t nowLater = time(0);
-    // convert now to string form
-    char* dtLater = ctime(&nowLater);
-    BOOST_LOG_TRIVIAL(info) << "The local date and time is: " << dtLater << endl;     
+    //out.Loop();
+    Graphics screen;
+    screen.RunRocket(out.GetLaunchAngle());
+    out.Shutdown();  
     return 0;
 }
  
