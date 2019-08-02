@@ -8,6 +8,9 @@ public:
         Ship rocket;
         rocket.setPosition(400, 400);
 
+        float x_axis = 0.0;
+        float y_axis = 0.0;
+
         sf::Clock clock;
         while (window.isOpen())
         {
@@ -23,8 +26,9 @@ public:
             window.clear();
 
             sf::Vector2f mouse_position = sf::Vector2f(sf::Mouse::getPosition(window));
-            rocket.update(dt, launch_angle);
-
+            rocket.update(x_axis, y_axis, launch_angle);
+            x_axis = x_axis + 10;
+            y_axis = y_axis + 10;
             window.draw(rocket);
             window.display();
         }

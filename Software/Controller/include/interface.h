@@ -32,7 +32,7 @@ public:
     //
     double GetLaunchAngle()
     {
-        return 45.0;
+        return 85.0;
     }
 private:
     //
