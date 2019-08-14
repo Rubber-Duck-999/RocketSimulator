@@ -33,7 +33,7 @@ link_directories(${Boost_LIBRARY_DIRS})
 link_directories(/usr/local/lib)
 # Important: Include all source files on this list
 set (SOURCE
-	${SRC_DIR}/algorithm.cc
+	${SRC_DIR}/land_algorithm.cc
 )
 
 # Output folder

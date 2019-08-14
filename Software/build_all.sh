@@ -32,11 +32,11 @@ then
 
     echo "##############################################"
     echo "##############################################"
-    ### Algo
+    ### Flight Algo
     echo "##############################################"
-    echo "##### Algorithm                              #"
+    echo "##### Flight_Algorithm                       #"
     echo "##############################################"
-    cd $home_wd/Algorithm
+    cd $home_wd/Flight_Algorithm
 
     mkdir build
     cd build
@@ -45,16 +45,16 @@ then
 
     make
 
-    #./exeAlgorithm-Test
+    #./exeFlightAlgorithm-Test
 
     echo "##############################################"
     echo "##############################################"
-    ### Graphics
+    ### Land Algorithm
     echo
     echo "##############################################"
-    echo "##### Graphics                               #"
+    echo "##### Land Algorithm                            #"
     echo "##############################################"
-    cd  $home_wd/Graphics
+    cd  $home_wd/Land_Algorithm
 
     mkdir build
     cd build
@@ -63,7 +63,7 @@ then
 
     make
 
-    #./exeSimulation-Test
+    #./exeLand_Algorithm-Test
     echo "##############################################"
     echo "##############################################"
     ### Controller

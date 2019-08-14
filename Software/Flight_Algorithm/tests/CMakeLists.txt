@@ -35,7 +35,7 @@ set (MAIN_SOURCE
     ${MAIN_SRC_DIR}/rocket.cc
     ${MAIN_SRC_DIR}/thrust.cc
     ${MAIN_SRC_DIR}/world.cc
-    ${MAIN_SRC_DIR}/algorithm.cc
+    ${MAIN_SRC_DIR}/flight_algorithm.cc
 )
 
 add_executable (${PROJECT_TEST_NAME} ${PROY_UT_SRC} ${MAIN_SOURCE})

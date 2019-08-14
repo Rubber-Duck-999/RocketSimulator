@@ -4,7 +4,8 @@
 #include "logging.h"
 #include "socket.h"
 #include "config_reader.h"
-#include "algorithm.h"
+#include "flight_algorithm.h"
+#include "map.h"
 #include <boost/algorithm/string.hpp> 
 #include <ctime>
 

@@ -43,19 +43,17 @@ void Interface::Loop()
         }
         else if(current_state_.state_ == rocket_simulator::kLAUNCH)
         {
+            Map my_map;
+            my_map.CreateInitialMap();
+            rocket_simulator::2d_map map;
+            bool map_correct = my_map.GetMap(map);
+            BOOST_LOG_TRIVIAL(debug) << "Map is valid: " << map_correct << ", Creation Size: " << map.size();
             RunSimulation();
             SendState(5);
             std::string message = std::to_string(id_);
             local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "5");
         }
     }
-}
-
-
-bool Interface::RunSimulation()
-{
-    BOOST_LOG_TRIVIAL(debug) << "Starting run of Graphical Simulation";
-    //RunProcess(rocket_simulator::kStartup);
 }
 
 

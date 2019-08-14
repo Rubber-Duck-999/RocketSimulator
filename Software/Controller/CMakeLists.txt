@@ -28,8 +28,8 @@ include_directories(${Boost_INCLUDE_DIRS}
                     "${SRC_DIR}/../../common" 
                     "../2DMap/include"
                     ${PROJECT_SOURCE_DIR}/${INCL_DIR}
-                    "../Algorithm/include",
-                    "../Graphics/include")
+                    "../Land_Algorithm/include",
+                    "../Flight_Algorithm/include")
                     
 link_directories(${Boost_LIBRARY_DIRS})
 # Important: Include all source files on this list
@@ -51,12 +51,9 @@ add_executable(${PROJECT_NAME} ${SOURCE})
 
 target_link_libraries(${PROJECT_NAME}
                        config++
-                       Algorithm
-                       Graphics
+                       Flight_Algorithm
+                       Land_Algorithm
                        2DMap
-                       sfml-graphics 
-                       sfml-window 
-                       sfml-system
                        ${Boost_LIBRARIES} 
                        pthread
                        Threads::Threads)
