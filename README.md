@@ -8,8 +8,9 @@ Component based architecture
   - Console - Python PySimpleGUI data entry
   - 2DMap - Terrain creator C++
   - Controller - Manages what processes are called C++
-  - Algorithm - Calculates route based off data without terrain C++
-  - Simulator - Algorithm to calculate point of intercept and landing C++
+  - Flight Algorithm - Calculates route based off data without terrain C++
+  - Land algorithm - Algorithm to calculate point of intercept and landing C++
+
 All components will have interface designs and the data structures will be predefined to allow correct and suitable design.
 
 I am using Googletest framework, stubs for the socket interfaces to help separate testing. Valgrind to check for memory leaks.
