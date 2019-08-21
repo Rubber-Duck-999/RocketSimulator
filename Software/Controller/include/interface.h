@@ -5,6 +5,7 @@
 #include "socket.h"
 #include "config_reader.h"
 #include "flight_algorithm.h"
+#include "land_algorithm.h"
 #include "map.h"
 #include <boost/algorithm/string.hpp> 
 #include <ctime>
@@ -31,10 +32,6 @@ public:
     //
     unsigned int GetIdNumber() const { return id_; };
     //
-    double GetLaunchAngle()
-    {
-        return 85.0;
-    }
 private:
     //
     bool pilot_set_;
@@ -43,7 +40,9 @@ private:
     //
     bool SetCorrect(int number);
     //
-    Algorithm algo;
+    Flight_Algorithm algo_;
+    //
+    Land_Algorithm simulation_;
     //
     bool RunAlgo();
     //
@@ -59,7 +58,7 @@ private:
     //
     void SetPilots(unsigned int pilot);
     //
-    void GetAlgorithmData(std::vector<rocket_simulator::AlgoData>& data);
+    void GetAlgorithmData();
     //
     unsigned int id_;
     //Data Parameters

@@ -15,15 +15,23 @@ void Map::CreateInitialMap()
     BOOST_LOG_TRIVIAL(trace) << "Beginning reassign";
     while(index_ < (height_vector_.size() - 1))
     {
-        height_vector_[index_] = (height_vector_[index_ - 1] + 
-                              height_vector_[index_] + 
-                              height_vector_[index_ + 1]) / 3;
+        if(index_ <= rocket_simulator::kLaunchLength)
+        {
+            height_vector_[index_] = 0.0;
+            //BOOST_LOG_TRIVIAL(trace) << "Assign Height Index: " << index_ << ", Value: " << height_vector_[index_];
+        }
+        else
+        {
+            height_vector_[index_] = (height_vector_[index_ - 1] + 
+                                height_vector_[index_] + 
+                                height_vector_[index_ + 1]) / 3;
+        }
         index_ = index_ + 1;
         BOOST_LOG_TRIVIAL(trace) << "Height Index: " << index_ << ", Value: " << height_vector_[index_];
     }
     for(unsigned int i = 0; i < (height_vector_.size() - 1); i++)
     {
-        BOOST_LOG_TRIVIAL(trace) << "Reworked Height Index: " << i << ", Value: " << height_vector_[i];
+        BOOST_LOG_TRIVIAL(debug) << "Reworked Height Index: " << i << ", Value: " << height_vector_[i];
         initial_terrain_map_.insert(std::pair<unsigned int, double>(i, height_vector_[i]));
     }
 }

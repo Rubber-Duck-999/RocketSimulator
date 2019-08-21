@@ -25,16 +25,16 @@ namespace rocket_simulator
     const std::string kPilots = "Pilot:";
     const std::string kSec = "Sec:";
     const std::string kStartup = "//mnt//c//Users//simon//Documents//Simulation";
-    const std::string kConfig = "//mnt//c//Users//simon//Documents//exeController.conf";
-    const std::string kRocketImage = "/mnt/c/Users/simon/Documents/Projects/C++/RocketSimulator/Software/Graphics/build/Rocket.png";
+    const std::string kConfig = "//mnt//c//Users//simon//Documents//Projects/C++//RocketSimulator//Software//Controller//config//use.conf";
     const std::string kWindowName = "2D Rocket Simulator";
     const int kWindowSizeHori = 640;
     const int kWindowSizeVert = 480;
-    const unsigned int kMinXAxisLength = 0; // 10,000,000 m
-    const unsigned int kMaxXAxisLength = 10000; // 10,000,000 m
-    const double kMinHeight = -50.0;
-    const double kMaxHeight = 255.0;
+    const unsigned int kMinXAxisLength = 0; // 0 m
+    const unsigned int kMaxXAxisLength = 10000; // 10,000 m
+    const double kMinHeight = -50.0; // -50m
+    const double kMaxHeight = 255.0; // 255m
     const double kPI = 3.1415926;
+    const unsigned int kLaunchLength = 1000;
     /////////////////////////////////////////////
 
 

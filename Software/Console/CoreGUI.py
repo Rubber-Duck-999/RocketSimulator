@@ -29,14 +29,14 @@ class GUI():
         self.defaultGravity   = 9.87
         self.defaultDensity   = 1.22
         self.defaultMass      = 80.00
-        self.defaultThrust    = 10.00
+        self.defaultThrust    = 100.00
         self.defaultDragAxisX = 0.30
         self.defaultDragAxisY = 0.30
         self.defaultHoriCross = 1.00
         self.defaultVertCross = 1.00
         self.defaultBurnTime  = 50.00
         self.defaultFlowRate  = 20.00
-        self.defaultAngle     = 90.00
+        self.defaultAngle     = 20.00
         self.dataStructure    = [ self.defaultGravity, self.defaultDensity, self.defaultMass,      
                                   self.defaultThrust, self.defaultDragAxisX, self.defaultDragAxisY, 
                                   self.defaultHoriCross, self.defaultVertCross, self.defaultBurnTime,  
@@ -56,7 +56,7 @@ class GUI():
         MIN = 0.00
         output = True
         for name in self.dataStructure:
-            if not self.Validate(name, MIN, 100.0):
+            if not self.Validate(name, MIN, 200.0):
                 output = False
         return output
     

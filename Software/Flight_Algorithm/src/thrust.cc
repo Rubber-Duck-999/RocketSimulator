@@ -26,7 +26,7 @@ void Thrust::CoastFunction(double velocity_x_axis, double velocity_y_axis)
     double acceleration_y_direction = 0.0;
     double acceleration_x_direction = 0.0;
     double angle_of_elevation, velocity_x_axis_post, velocity_y_axis_post, force_x_direction, force_y_direction;
-    double t_start = 0.0;
+    double t_start = 0.0 + rocket_.GetTimeTaken();
     double t_step = 0.01;
     BOOST_LOG_TRIVIAL(trace) << "Beginning Coast Function";
     BOOST_LOG_TRIVIAL(trace) << "Velocity x axis pre coast: " << velocity_x_axis;
@@ -57,8 +57,7 @@ void Thrust::CoastFunction(double velocity_x_axis, double velocity_y_axis)
         velocity_y_axis = velocity_y_axis_post;
     }
     BOOST_LOG_TRIVIAL(trace) << "Mass Post Coast:" << rocket_.GetMass();
-    double time = rocket_.GetTimeTaken();
-    rocket_.SetTimeTaken(time + t_start);
+    rocket_.SetTimeTaken(t_start);
     BOOST_LOG_TRIVIAL(trace) << "Time Post Coast: " << rocket_.GetTimeTaken();
     BOOST_LOG_TRIVIAL(trace) << "Total record amount: " << algo_data_.size();
 }

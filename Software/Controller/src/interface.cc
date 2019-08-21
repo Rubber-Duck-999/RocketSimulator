@@ -45,13 +45,21 @@ void Interface::Loop()
         {
             Map my_map;
             my_map.CreateInitialMap();
-            rocket_simulator::2d_map map;
+            std::map<unsigned int, double> map;
             bool map_correct = my_map.GetMap(map);
             BOOST_LOG_TRIVIAL(debug) << "Map is valid: " << map_correct << ", Creation Size: " << map.size();
-            RunSimulation();
-            SendState(5);
-            std::string message = std::to_string(id_);
-            local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "5");
+            simulation_.Set2DMap(map);
+            simulation_.SetRocketAlgoData(algo_.algo_data_);
+            if(simulation_.RunAlgorithm())
+            {
+                SendState(5);
+                std::string message = std::to_string(id_);
+                local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "5");
+            }
+            else
+            {
+                BOOST_LOG_TRIVIAL(error) << "Simulation Failed";
+            }
         }
     }
 }
@@ -60,11 +68,11 @@ void Interface::Loop()
 bool Interface::RunAlgo()
 {
     BOOST_LOG_TRIVIAL(debug) << "Starting call of Algo";
-    algo.GetRocketDataParameters(rocket);
-    algo.GetTerrainMissionParameters(world);
-    if(algo.CreateRocketSimulation())
+    algo_.GetRocketDataParameters(rocket);
+    algo_.GetTerrainMissionParameters(world);
+    if(algo_.CreateRocketSimulation())
     {
-        GetAlgorithmData(algo_data_);
+        GetAlgorithmData();
         return true;
     }
     else
@@ -284,9 +292,10 @@ void Interface::Receive(std::string message)
 }
 
 
-void Interface::GetAlgorithmData(std::vector<rocket_simulator::AlgoData>& data)
+void Interface::GetAlgorithmData()
 {
     BOOST_LOG_TRIVIAL(debug) << "Passing algo data";
-    BOOST_LOG_TRIVIAL(debug) << "Size: " << algo.algo_data_.size();
-    data = algo.algo_data_;
+    BOOST_LOG_TRIVIAL(debug) << "Size: " << algo_.algo_data_.size();
+    algo_data_ = algo_.algo_data_;
+    BOOST_LOG_TRIVIAL(debug) << "Size After: " << algo_data_.size();
 }

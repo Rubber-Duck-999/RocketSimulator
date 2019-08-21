@@ -8,21 +8,21 @@
 #include "logging.h"
 #include <fstream>
 
-#ifndef ALGORITHM_h
-#define	ALGORITHM_h
+#ifndef FLIGHT_ALGORITHM_h
+#define	FLIGHT_ALGORITHM_h
 
 
-class Algorithm
+class Flight_Algorithm
 {
 private:
     Rocket rocket_;
     World world_;
+    bool WriteToFile();
     bool rocket_set_ = false;
     bool world_set_ = false;
     bool algo_finished_ = false;
-    bool WriteToFile();
 public:
-    Algorithm() {};
+    Flight_Algorithm() {};
     bool IsRocketSet() const { return rocket_set_; };
     bool IsWorldSet() const { return world_set_; };
     bool CreateRocketSimulation();

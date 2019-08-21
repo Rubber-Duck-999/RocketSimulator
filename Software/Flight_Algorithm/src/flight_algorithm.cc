@@ -1,6 +1,6 @@
 #include "flight_algorithm.h"
 
-void Algorithm::GetRocketDataParameters(rocket_simulator::RocketDataParameters& rocket_data)
+void Flight_Algorithm::GetRocketDataParameters(rocket_simulator::RocketDataParameters& rocket_data)
 {
     rocket_simulator::RocketDataParameters* ptr_rocket = &rocket_data;
     if(ptr_rocket)
@@ -16,7 +16,7 @@ void Algorithm::GetRocketDataParameters(rocket_simulator::RocketDataParameters& 
     }
 }
 
-void Algorithm::GetTerrainMissionParameters(rocket_simulator::TerrainMissionParameters& terrain_data)
+void Flight_Algorithm::GetTerrainMissionParameters(rocket_simulator::TerrainMissionParameters& terrain_data)
 {
     rocket_simulator::TerrainMissionParameters* ptr_terrain = &terrain_data;
     if(ptr_terrain)
@@ -32,7 +32,7 @@ void Algorithm::GetTerrainMissionParameters(rocket_simulator::TerrainMissionPara
     }
 }
 
-bool Algorithm::CreateRocketSimulation()
+bool Flight_Algorithm::CreateRocketSimulation()
 {
     if(rocket_set_ && world_set_)
     {
@@ -40,28 +40,27 @@ bool Algorithm::CreateRocketSimulation()
         BOOST_LOG_TRIVIAL(info) << "Calling algo ";
         Thrust thrust(rocket_, world_, algo_data_);
         BOOST_LOG_TRIVIAL(info) << "Algo has finished ";
-        bool finished = WriteToFile();
         algo_finished_ = true;
+        WriteToFile();
         return algo_finished_;
     }
     else
     {
         algo_finished_ = false;
-        return false;
+        return algo_finished_;
     }
 }
 
-
-bool Algorithm::WriteToFile()
+bool Flight_Algorithm::WriteToFile()
 {
     std::ofstream myfile;
     myfile.open ("data.csv");
     myfile << "Algorithm Data.\n";
-    myfile << "Pos x, Pos y, Angle, Time\n";
+    myfile << "a,b,c,\n";
     for(int i = 0; i < algo_data_.size(); i++)
     {
         myfile << algo_data_[i].position_axis_x_ << "," << algo_data_[i].position_axis_y_ << "," <<
-                  algo_data_[i].angle_of_direction_ << "," << algo_data_[i].time_milli_sec_ << "\n";
+                algo_data_[i].angle_of_direction_ << "," << algo_data_[i].time_milli_sec_ << "\n";
     }
     myfile.close();  
     return true;

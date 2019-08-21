@@ -10,7 +10,7 @@ int main()
     ConfigurationReader cfg;
     cfg.SetConfigValues();
     Interface out;
-    //out.Loop();
+    out.Loop();
     out.Shutdown();  
     return 0;
 }

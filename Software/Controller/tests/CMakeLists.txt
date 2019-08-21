@@ -44,7 +44,7 @@ set_target_properties(${PROJECT_TEST_NAME}
                       COMPILE_FLAGS "-std=c++11 -Wall"
 )
 
-link_directories(/usr/local/lib "../Algorithm/build/")
+link_directories(/usr/local/lib "../Land_Algorithm/build/")
 
 # Link libraries
 target_link_libraries(${PROJECT_TEST_NAME}
