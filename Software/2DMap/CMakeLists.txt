@@ -42,7 +42,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
 # Add the executable for the program
 add_library(${PROJECT_NAME} STATIC ${SOURCE})
 # Unit tests
-#add_subdirectory(tests)
+add_subdirectory(tests)
 
 # Code coverage
 # if (CMAKE_BUILD_TYPE STREQUAL "Coverage")

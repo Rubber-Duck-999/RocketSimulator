@@ -2,9 +2,9 @@
 
 void Map::CreateInitialMap()
 {
-    std::uniform_real_distribution<> distr_height_(rocket_simulator::kMinHeight, rocket_simulator::kMaxHeight);
+    std::uniform_real_distribution<> distr_height_(min_range_, max_range_);
     std::mt19937 eng(random_obj_());
-    while(index_ <= rocket_simulator::kMaxXAxisLength)
+    while(index_ <= max_x_axis_)
     {
         double loop_random = distr_height_(eng);
         BOOST_LOG_TRIVIAL(trace) << "Random number Index: " << index_ << " Value: " << loop_random;
@@ -18,7 +18,7 @@ void Map::CreateInitialMap()
         if(index_ <= rocket_simulator::kLaunchLength)
         {
             height_vector_[index_] = 0.0;
-            //BOOST_LOG_TRIVIAL(trace) << "Assign Height Index: " << index_ << ", Value: " << height_vector_[index_];
+            BOOST_LOG_TRIVIAL(trace) << "Assign Height Index: " << index_ << ", Value: " << height_vector_[index_];
         }
         else
         {
@@ -31,7 +31,7 @@ void Map::CreateInitialMap()
     }
     for(unsigned int i = 0; i < (height_vector_.size() - 1); i++)
     {
-        BOOST_LOG_TRIVIAL(debug) << "Reworked Height Index: " << i << ", Value: " << height_vector_[i];
+        BOOST_LOG_TRIVIAL(trace) << "Reworked Height Index: " << i << ", Value: " << height_vector_[i];
         initial_terrain_map_.insert(std::pair<unsigned int, double>(i, height_vector_[i]));
     }
 }

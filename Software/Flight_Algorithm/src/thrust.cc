@@ -85,7 +85,7 @@ void Thrust::ThrustFunction()
     double t_start = 0.0;
     double t_step = 0.01;
     BOOST_LOG_TRIVIAL(trace) << "Beginning Rocket Launch";
-    while (t_start <= rocket_.GetBurnTime())
+    while (t_start < rocket_.GetBurnTime())
     {
         velocity_x = velocity_x + ((thrust_axis_x / m) * t_step);
         velocity_y = velocity_y + (((thrust_axis_y + gravity) / m) * t_step);
