@@ -25,7 +25,7 @@ public:
 	Socket() 
     {
         receive_mode_ = false;
-        init_log();
+        //init_log();
     };
     //
     ~Socket() { };
@@ -49,6 +49,7 @@ private:
 	//Ports
 	int network_socket_;
 	//
+    std::string message_;
     //Sockets server structure - 
 	//required for creating the setup	
 	struct sockaddr_in network_serv_;

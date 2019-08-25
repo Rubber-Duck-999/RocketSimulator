@@ -38,7 +38,6 @@ set (SOURCE
     ${SRC_DIR}/../../common/socket.cc
     ${SRC_DIR}/../../common/start_up_process.cc
     ${SRC_DIR}/interface.cc
-    ${SRC_DIR}/config_reader.cc
 )
 
 link_directories(/usr/local/lib "../Flight_Algorithm/build/" "../2DMap/build" "../Land_Algorithm/build")
@@ -50,7 +49,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
 add_executable(${PROJECT_NAME} ${SOURCE})
 
 target_link_libraries(${PROJECT_NAME}
-                       config++
                        Flight_Algorithm
                        Land_Algorithm
                        2DMap
@@ -58,7 +56,7 @@ target_link_libraries(${PROJECT_NAME}
                        pthread
                        Threads::Threads)
 # Unit tests
-#add_subdirectory(tests)
+add_subdirectory(tests)
 
 # Code coverage
 # if (CMAKE_BUILD_TYPE STREQUAL "Coverage")

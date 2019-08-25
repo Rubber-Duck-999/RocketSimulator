@@ -26,7 +26,8 @@ include_directories (${PROJECT_SOURCE_DIR}/${TESTS_DIR}/${INCL_DIR}/${MOCKS_DIR}
 
 set (SRC_DIR src)
 set(PROY_UT_SRC
-    ${SRC_DIR}/TestControllerWrapper.cpp
+    ${SRC_DIR}/TestControllerWrapper.cc
+    ${SRC_DIR}/TestInterfaceWrapper.cc
 )
 
 set (MAIN_SRC_DIR ../src)
@@ -34,8 +35,7 @@ include_directories (${PROJECT_SOURCE_DIR}/${INCL_DIR})
 # Include all project source files here
 set (MAIN_SOURCE
     ${MAIN_SRC_DIR}/../../stubs/socket.cc
-    ${MAIN_SRC_DIR}/interface.cc
-    ${MAIN_SRC_DIR}/config_reader.cc)
+    ${MAIN_SRC_DIR}/interface.cc)
 
 add_executable (${PROJECT_TEST_NAME} ${PROY_UT_SRC} ${MAIN_SOURCE})
 
@@ -44,14 +44,17 @@ set_target_properties(${PROJECT_TEST_NAME}
                       COMPILE_FLAGS "-std=c++11 -Wall"
 )
 
-link_directories(/usr/local/lib "../Land_Algorithm/build/")
+link_directories(/usr/local/lib "../Land_Algorithm/build/" 
+"../Flight_Algorithm/build"
+"../2DMap/build")
 
 # Link libraries
 target_link_libraries(${PROJECT_TEST_NAME}
                       gtest
                       gmock_main
-                      config++
-                      Algorithm
+                      Land_Algorithm
+                      Flight_Algorithm
+                      2DMap
                       ${Boost_LIBRARIES} 
                       pthread
                       Threads::Threads)

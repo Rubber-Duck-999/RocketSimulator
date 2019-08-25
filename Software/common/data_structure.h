@@ -25,7 +25,6 @@ namespace rocket_simulator
     const std::string kPilots = "Pilot:";
     const std::string kSec = "Sec:";
     const std::string kStartup = "//mnt//c//Users//simon//Documents//Simulation";
-    const std::string kConfig = "//mnt//c//Users//simon//Documents//Projects/C++//RocketSimulator//Software//Controller//config//use.conf";
     const std::string kWindowName = "2D Rocket Simulator";
     const int kWindowSizeHori = 640;
     const int kWindowSizeVert = 480;

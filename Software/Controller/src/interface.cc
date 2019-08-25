@@ -23,7 +23,10 @@ Interface::Interface()
 void Interface::Loop()
 {
     local_socket_.SetReceive(true);
-    while(current_state_.state_ != rocket_simulator::kSHUTDOWN)
+    unsigned int x = 0;
+    unsigned int seconds = 1;
+    BOOST_LOG_TRIVIAL(fatal) << x;
+    while(current_state_.state_ != rocket_simulator::kSHUTDOWN && x < 30)
     {
         Receive(local_socket_.NetworkReceive());
         if(current_state_.state_ == rocket_simulator::kCONFIGURED)
@@ -43,7 +46,7 @@ void Interface::Loop()
         }
         else if(current_state_.state_ == rocket_simulator::kLAUNCH)
         {
-            Map my_map;
+            Map my_map(rocket_simulator::kMinHeight, rocket_simulator::kMaxHeight, rocket_simulator::kMaxXAxisLength);
             my_map.CreateInitialMap();
             std::map<unsigned int, double> map;
             bool map_correct = my_map.GetMap(map);
@@ -61,6 +64,9 @@ void Interface::Loop()
                 BOOST_LOG_TRIVIAL(error) << "Simulation Failed";
             }
         }
+        sleep(seconds);
+        x++;
+        BOOST_LOG_TRIVIAL(fatal) << x;
     }
 }
 

@@ -1,9 +1,8 @@
 #include "data_structure.h"
 #include "start_up_process.h"
 #include <string>
-#include "logging.h"
+#include <unistd.h>
 #include "socket.h"
-#include "config_reader.h"
 #include "flight_algorithm.h"
 #include "land_algorithm.h"
 #include "map.h"
@@ -18,6 +17,8 @@ class Interface
 {
 public:
     Interface();
+    //
+    ~Interface() { };
     //
     void Shutdown()
     {
@@ -49,8 +50,6 @@ private:
     bool socket_receive_state_;  
     //
     Socket local_socket_;
-    //
-    ConfigurationReader config_;
     //
     rocket_simulator::StateDataParameters current_state_;
     //

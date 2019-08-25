@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : TestAlgorithmWrapper.cpp
-// Author      : Simon Crowther
+// Author      : Rubber-Duck-999
 // Version     :
 // Copyright   : Your copyright notice
 //============================================================================
