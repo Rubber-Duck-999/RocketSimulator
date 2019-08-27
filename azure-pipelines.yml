@@ -16,5 +16,5 @@ steps:
       cd Software/
       pwd
       chmod -R 777 .
-      ./build_all.sh
+      ./build_all.sh Azure
     displayName: 'Run a multi-line script'
