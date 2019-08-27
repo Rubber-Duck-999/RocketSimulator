@@ -45,6 +45,8 @@ class GUI():
         self.messageID = 101 
         self.dataReady = False     
         self.defaultTimeToLaunchSec = 50.00
+        self.landingx = ''
+        self.landingy = ''
                       
     def Validate(self, value, MIN, MAX):
         if value < MIN or value > MAX:
@@ -146,10 +148,28 @@ class GUI():
                 while recv == 3:
                     self.Socket.receiveMessage()
                     recv = self.receiveData()
+                self.receiveData()
                 self.x = False
             elif event is Button_Restart:
                 print("Reset Selected")
                 self.resetValues()
+
+
+    def landingPoint(self):
+        print("Landing Point") 
+        sg.ChangeLookAndFeel(self.colour)
+        layout_lp = [
+            [sg.Text('Welcome to the Rocket Simulator Console (2D)', size=(40, 1), font=("Helvetica", 25))],
+            [sg.Text('Landing Point X' + self.landingx)],
+            [sg.Text('Landing Point Y' + self.landingy)]]
+        window_lp = sg.Window('Rocket Simulator Console', default_element_size=(40, 1), grab_anywhere=False)
+        window_lp.Layout(layout_lp)
+        timeFree = 0
+        while timeFree < 10:
+            event, entries = window_lp.ReadNonBlocking()
+            time.sleep(1)
+            timeFree += 1
+
             
     def sendMainData(self):
         terrain      = terrainDataParameters(self.messageID, self.dataStructure[0], self.dataStructure[1])
@@ -202,11 +222,16 @@ class GUI():
         elif "State:5" in self.Socket.currentMessage:
             print("We have been told to Shutdown and our shutdown was accepted")
             return 5
-     
+        elif "Landing_X:" in self.Socket.currentMessage:
+            current = self.Socket.currentMessage
+            id, hyphen, axis = current.partition('-')
+            self.landingx, hyphen, self.landingy = axis.partition('-')
+
     def run(self):
         print ("Starting GUI")
         self.x = True
         self.MainUI()
         print("Exiting GUI\n")
+        self.landingPoint()
         self.Socket.close()
         

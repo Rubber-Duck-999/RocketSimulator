@@ -55,9 +55,19 @@ void Interface::Loop()
             simulation_.SetRocketAlgoData(algo_.algo_data_);
             if(simulation_.RunAlgorithm())
             {
-                SendState(5);
-                std::string message = std::to_string(id_);
-                local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "5");
+                if(simulation_.DidTheRocketCrash())
+                {
+                    unsigned int x = simulation_.GetXAxisLandingPoint();
+                    double y = simulation_.GetYAxisLandingPoint();
+                    SendLandingPoint(x, y);
+                    SendState(5);
+                    std::string message = std::to_string(id_);
+                    local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "5");
+                }
+                else
+                {
+                    BOOST_LOG_TRIVIAL(error) << "The rocket didn't crash";
+                }
             }
             else
             {
@@ -102,7 +112,15 @@ bool Interface::SetCorrect(int number)
         BOOST_LOG_TRIVIAL(error) << "Id doesn't match, dismissing message";
         return false;
     }
-}        
+}   
+
+void Interface::SendLandingPoint(unsigned int x, double y)
+{
+    std::string message = std::to_string(id_);
+    std::string x_send = std::to_string(x);
+    std::string y_send = std::to_string(y);
+    local_socket_.NetworkSend("ID:" + message + "-" + "Landing_X:" + x_send + "-" + "Landing_Y:" + y_send);
+}
         
         
 void Interface::SendState(unsigned int statedata)

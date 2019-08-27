@@ -41,6 +41,8 @@ private:
     //
     bool SetCorrect(int number);
     //
+    void SendLandingPoint(unsigned int x, double y);
+    //
     Flight_Algorithm algo_;
     //
     Land_Algorithm simulation_;
