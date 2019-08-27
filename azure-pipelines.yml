@@ -15,5 +15,6 @@ steps:
       echo See https://aka.ms/yaml
       cd Software/
       pwd
+      chmod -R 777 .
       ./build_all.sh
     displayName: 'Run a multi-line script'
