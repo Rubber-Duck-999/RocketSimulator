@@ -1,16 +1,23 @@
 #!/bin/bash
 
+if [ $1 == "Azure" ];
+then
+    home_wd="$PWD"
+fi
+
 if [ ! -z $PROJECTS ];
 then
     current=$PROJECTS
+    export home_wd=$current/RocketSimulator/Software
 fi
 if [ ! -z $CPP ];
 then
     current=$CPP
+    export home_wd=$current/RocketSimulator/Software
 fi
 echo $current
 ps -$$
-export home_wd=$current/RocketSimulator/Software
+
 if [ -d $home_wd ];
 then
     echo  $home_wd
