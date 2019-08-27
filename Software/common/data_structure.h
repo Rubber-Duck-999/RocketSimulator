@@ -33,7 +33,7 @@ namespace rocket_simulator
     const double kMinHeight = -50.0; // -50m
     const double kMaxHeight = 255.0; // 255m
     const double kPI = 3.1415926;
-    const unsigned int kLaunchLength = 1000;
+    const unsigned int kLaunchLength = 200;
     /////////////////////////////////////////////
 
 
