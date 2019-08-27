@@ -13,17 +13,7 @@ steps:
   - script: |
       echo Add other tasks to build, test, and deploy your project.
       echo See https://aka.ms/yaml
-      cd Software/Algorithm
+      cd Software/
       pwd
+      ./build_all.sh
     displayName: 'Run a multi-line script'
-
-  - task: CMake@1
-    inputs:
-      workingDirectory: 'Software/Algorithm/build'
-      cmakeArgs: '..'
-
-  - script: |
-      echo Making algorithm tests
-      cd Software/Algorithm/build
-      make
-      ./exeAlgorithm-Test
