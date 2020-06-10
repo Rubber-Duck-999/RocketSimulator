@@ -16,7 +16,7 @@ jobs:
     - name: configure
       run: |
             ls
-            ./configure
+            sudo ./configure.sh
             cd Software/
             pwd
             chmod -R 777 .
