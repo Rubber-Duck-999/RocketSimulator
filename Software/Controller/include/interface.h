@@ -3,8 +3,8 @@
 #include <string>
 #include <unistd.h>
 #include "socket.h"
-#include "flight_algorithm.h"
-#include "land_algorithm.h"
+#include "Flight_Algorithm.h"
+#include "Land_Algorithm.h"
 #include "map.h"
 #include <boost/algorithm/string.hpp> 
 #include <ctime>

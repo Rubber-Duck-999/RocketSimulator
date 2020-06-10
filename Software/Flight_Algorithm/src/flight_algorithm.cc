@@ -1,4 +1,4 @@
-#include "flight_algorithm.h"
+#include "Flight_Algorithm.h"
 
 void Flight_Algorithm::GetRocketDataParameters(rocket_simulator::RocketDataParameters& rocket_data)
 {

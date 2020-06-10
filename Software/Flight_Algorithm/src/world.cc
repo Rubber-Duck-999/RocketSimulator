@@ -5,7 +5,7 @@
  * Created on May 5, 2016, 11:24 AM
  */
 
-#include "world.h"
+#include "World.h"
 
 double World::GetDensity() const
 {

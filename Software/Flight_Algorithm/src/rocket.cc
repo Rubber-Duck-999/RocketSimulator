@@ -3,7 +3,7 @@
  * Author: Simon
  */
 
-#include "rocket.h"
+#include "Rocket.h"
 
 Rocket::Rocket(double mass, double drag_axis_x, double drag_axis_y,
                double hori_cross_sect_area, double vert_cross_sect_area,

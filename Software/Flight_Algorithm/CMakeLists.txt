@@ -27,7 +27,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall")
 
 include_directories(${Boost_INCLUDE_DIRS}
                     ${SRC_DIR}/../../common
-                    ${PROJECT_SOURCE_DIR}/${INCL_DIR})
+                    ${SRC_DIR}/../${INCL_DIR})
 
 link_directories(${Boost_LIBRARY_DIRS})
 link_directories(/usr/local/lib)

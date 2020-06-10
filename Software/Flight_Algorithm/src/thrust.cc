@@ -1,4 +1,4 @@
-#include "thrust.h"
+#include "Thrust.h"
 
 //Calculates how far a projectile will tr_avel without thr_ust
 

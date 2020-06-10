@@ -1,9 +1,9 @@
 #include <cstdlib>
 #include <stdio.h>
 #include <math.h>
-#include "rocket.h"
-#include "world.h"
-#include "thrust.h"
+#include "Rocket.h"
+#include "World.h"
+#include "Thrust.h"
 #include "data_structure.h"
 #include "logging.h"
 #include <fstream>

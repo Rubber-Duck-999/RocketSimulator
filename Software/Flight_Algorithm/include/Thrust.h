@@ -4,8 +4,8 @@
  */
  
 #include <stdio.h>
-#include "rocket.h"
-#include "world.h"
+#include "Rocket.h"
+#include "World.h"
 #include <math.h>
 #include "data_structure.h"
 #include "logging.h"
