@@ -35,7 +35,7 @@ then
 
     make
 
-    #./exe2DMap-Test
+    ./exe2DMap-Test
 
     echo "##############################################"
     echo "##############################################"
@@ -52,7 +52,7 @@ then
 
     make
 
-    #./exeFlightAlgorithm-Test
+    ./exeFlightAlgorithm-Test
 
     echo "##############################################"
     echo "##############################################"
@@ -70,7 +70,7 @@ then
 
     make
 
-    #./exeLand_Algorithm-Test
+    ./exeLand_Algorithm-Test
     echo "##############################################"
     echo "##############################################"
     ### Controller
@@ -87,7 +87,7 @@ then
 
     make
 
-    #./exeController-Test
+    ./exeController-Test
     echo "##############################################"
     echo "##############################################"
 fi
