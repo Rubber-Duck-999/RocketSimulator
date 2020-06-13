@@ -8,6 +8,7 @@ if [ ! -z $CPP ];
 then
     current=$CPP
 fi
+echo $CPP
 echo $current
 ps -$$
 export home_wd=$current/RocketSimulator/Software

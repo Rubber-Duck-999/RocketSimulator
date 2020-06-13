@@ -52,7 +52,7 @@ then
 
     make
 
-    ./exeFlightAlgorithm-Test
+    ./exeFlight_Algorithm-Test
 
     echo "##############################################"
     echo "##############################################"

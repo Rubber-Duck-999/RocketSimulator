@@ -5,7 +5,7 @@
 // Copyright   : Your copyright notice
 //============================================================================
 
-#include "flight_algorithm.h"
+#include "Flight_Algorithm.h"
 #include <gtest/gtest.h>
 
 TEST(Tests, TestAlgoRocket)

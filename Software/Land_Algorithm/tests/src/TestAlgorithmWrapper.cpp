@@ -5,7 +5,7 @@
 // Copyright   : Your copyright notice
 //============================================================================
 
-#include "land_algorithm.h"
+#include "Land_Algorithm.h"
 #include <gtest/gtest.h>
 
 
