@@ -1,24 +1,10 @@
 #include "socket.h"
 
-void Socket::Split(std::string &message, std::string* subs)
-{
-    std::istringstream iss(message);
-    std::string sub;
-    int i = 0;
-    do
-    {
-        iss >> sub;
-        subs[i] = sub;
-        i++;
-    } 
-    while (iss);
-}
-
 
 std::string Socket::NetworkReceive()
 {
     char buffer[1024];
-    buffer[1024] = '\0';
+    buffer[1023] = '\0';
     BOOST_LOG_TRIVIAL(trace) << "Your receive mode is: " << receive_mode_;
     int received = recvfrom(network_socket_, buffer, 1024, 0, (struct sockaddr*)&network_serv_, (socklen_t *)&network_len_);
     if (received > 0)
@@ -70,10 +56,4 @@ void Socket::NetworkSetup()
        BOOST_LOG_TRIVIAL(error) << "Failed to Bind";
     }
     network_len_ = sizeof(network_serv_);
-}
-
-void Socket::NetworkShutdown()
-{
-    BOOST_LOG_TRIVIAL(debug) << "Closing Network";
-    close(network_socket_);
 }
