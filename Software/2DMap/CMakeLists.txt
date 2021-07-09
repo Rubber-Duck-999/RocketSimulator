@@ -9,7 +9,7 @@ project (${PROJECT_NAME} C CXX)
 set(Boost_USE_STATIC_LIBS ON)
 #ADD_DEFINITIONS(-DBOOST_LOG_DYN_LINK)
 # Boost::log required Boost version >= 1.54.0 
-find_package(Boost 1.54.0 REQUIRED COMPONENTS log)
+find_package(Boost 1.54.0 REQUIRED COMPONENTS log log_setup)
 find_package(Threads)
 
 
