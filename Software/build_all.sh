@@ -1,9 +1,6 @@
 #!/bin/bash
 
-if [ $1 == "Azure" ];
-then
-    home_wd="$PWD"
-fi
+home_wd="$PWD"
 
 if [ ! -z $PROJECTS ];
 then
