@@ -57,3 +57,9 @@ void Socket::NetworkSetup()
     }
     network_len_ = sizeof(network_serv_);
 }
+
+void Socket::NetworkShutdown()
+{
+    BOOST_LOG_TRIVIAL(debug) << "Closing Network";
+    close(network_socket_);
+}
