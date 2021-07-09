@@ -34,7 +34,7 @@ set (MAIN_SRC_DIR ../src)
 include_directories (${PROJECT_SOURCE_DIR}/${INCL_DIR})
 # Include all project source files here
 set (MAIN_SOURCE
-    ${MAIN_SRC_DIR}/../../stubs/socket.cc
+    ${MAIN_SRC_DIR}/../../Stubs/socket.cc
     ${MAIN_SRC_DIR}/interface.cc)
 
 add_executable (${PROJECT_TEST_NAME} ${PROY_UT_SRC} ${MAIN_SOURCE})
