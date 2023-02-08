@@ -10,6 +10,7 @@ Component based architecture
   - Controller - Manages what processes are called C++
   - Flight Algorithm - Calculates route based off data without terrain C++
   - Land algorithm - Algorithm to calculate point of intercept and landing C++
+  - Simulator - Pygame draws diagram of rocket
 
 All components will have interface designs and the data structures will be predefined to allow correct and suitable design.
 
