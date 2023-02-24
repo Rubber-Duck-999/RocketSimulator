@@ -49,3 +49,11 @@ jobs:
             cmake ..
             make
             ./exeFlight_Algorithm-Test
+    - name: Build Controller
+      run: |
+            cd Software/Controller
+            mkdir build
+            cd build
+            cmake ..
+            make
+            ./exeController-Test
