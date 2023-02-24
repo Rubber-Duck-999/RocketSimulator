@@ -41,3 +41,11 @@ jobs:
             cmake ..
             make
             ./exeLand_Algorithm-Test
+    - name: Build Flight Algorithm
+      run: |
+            cd Software/Flight_Algorithm
+            mkdir build
+            cd build
+            cmake ..
+            make
+            ./exeFlight_Algorithm-Test
