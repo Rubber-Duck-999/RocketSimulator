@@ -1,4 +1,7 @@
 # RocketSimulator
+
+[![C/C++ CI](https://github.com/Rubber-Duck-999/RocketSimulator/actions/workflows/c-cpp.yml/badge.svg?branch=master)](https://github.com/Rubber-Duck-999/RocketSimulator/actions/workflows/c-cpp.yml)
+
 Repository for the Rocket Simulator Software, it consists of multiple applications communicating over Sockets. 
 Architecture will be included and all components will be partitioned correctly
 
