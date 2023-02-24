@@ -20,6 +20,11 @@ jobs:
       run: |
             cd Software/
             chmod -R 777 .
+    - name: Linter
+      if: steps.filter.outputs.workflows == 'true'
+      run: |
+            cd Software
+            cppcheck *.cc --force
     - name: build 2D Map
       run: |
-            echo Build 2D Map 
+            echo Build 2D Map

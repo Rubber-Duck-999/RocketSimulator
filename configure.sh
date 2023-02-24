@@ -3,3 +3,5 @@
 apt-get update
 
 apt-get install libboost-all-dev
+
+apt-get install cppcheck
