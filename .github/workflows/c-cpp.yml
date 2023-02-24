@@ -27,4 +27,8 @@ jobs:
             cppcheck *.cc --force
     - name: build 2D Map
       run: |
-            echo Build 2D Map
+            cd 2DMap
+            mkdir build
+            cd build
+            cmake ..
+            make
