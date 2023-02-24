@@ -32,3 +32,12 @@ jobs:
             cd build
             cmake ..
             make
+            ./exe2DMap-Test
+    - name: Build Land Algorithm
+      run: |
+            cd Software/Land_Algorithm
+            mkdir build
+            cd build
+            cmake ..
+            make
+            ./exeLand_Algorithm-Test
