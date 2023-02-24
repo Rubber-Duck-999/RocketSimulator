@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.22)
 set (PROJECT_TEST_NAME ${PROJECT_NAME}-Test)
 
 enable_testing()
@@ -41,7 +41,7 @@ add_executable (${PROJECT_TEST_NAME} ${PROY_UT_SRC} ${MAIN_SOURCE})
 
 set_target_properties(${PROJECT_TEST_NAME}
                       PROPERTIES
-                      COMPILE_FLAGS "-std=c++11 -Wall"
+                      COMPILE_FLAGS "-std=c++17 -Wall"
 )
 
 link_directories(/usr/local/lib "../Land_Algorithm/build/" 

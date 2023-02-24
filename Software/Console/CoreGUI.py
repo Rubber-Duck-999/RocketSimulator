@@ -107,7 +107,7 @@ class GUI():
         window = sg.Window('Rocket Simulator Console', default_element_size=(40, 1), grab_anywhere=False)
         window.Layout(layout)
         while self.x:
-            event, entries = window.ReadNonBlocking()
+            event, entries = window._ReadNonBlocking()
             if event is self.buttonNext:
                 print("Next Selected")
                 self.assignUIEntries(entries)
@@ -139,7 +139,7 @@ class GUI():
         window = sg.Window('Rocket Simulator Console', default_element_size=(40, 1), grab_anywhere=False)
         window.Layout(layout)
         while self.x:
-            event, entries = window.ReadNonBlocking()
+            event, entries = window._ReadNonBlocking()
             if event is Button_Next:
                 self.defaultPilot = entries.get(Pilots)
                 self.sendLauncherData()
