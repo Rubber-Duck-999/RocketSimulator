@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: RocketSimulator CI
 
 on:
   push:
@@ -8,17 +8,18 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: configure
+    - name: configure dependencies
       run: |
             ls
             chmod 775 configure.sh
             sudo ./configure.sh
+    - name: Set Permissions
+      run: |
             cd Software/
-            pwd
             chmod -R 777 .
-            ./build_all.sh Azure
+    - name: build 2D Map
+      run: |
+            echo Build 2D Map 
