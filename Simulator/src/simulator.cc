@@ -9,10 +9,10 @@ void must_init(bool test, const char *description) {
     if(test) return;
 
     printf("couldn't initialize %s\n", description);
-    exit(1);
+    //exit(1);
 }
 
-int main() {
+void create() {
     must_init(al_init(), "allegro");
     must_init(al_install_keyboard(), "keyboard");
 
@@ -29,7 +29,7 @@ int main() {
     must_init(font, "font");
 
     must_init(al_init_image_addon(), "image addon");
-    ALLEGRO_BITMAP* milkyway = al_load_bitmap("../src/milkyway.jpg");
+    ALLEGRO_BITMAP* milkyway = al_load_bitmap("/home/simon/Documents/RocketSimulator/milkyway.jpg");
     must_init(milkyway, "milkyway");
 
     must_init(al_init_primitives_addon(), "primitives");
@@ -92,5 +92,5 @@ int main() {
     al_destroy_timer(timer);
     al_destroy_event_queue(queue);
 
-    return 0;
+    //return 0;
 }

@@ -2,5 +2,5 @@ googletest-src/
 build/
 *.html
 target/
-
+*.log
 .vscode

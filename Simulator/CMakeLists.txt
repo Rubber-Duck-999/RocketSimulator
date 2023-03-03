@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.22)
 
 # Change project name
-set (PROJECT_NAME Game)
+set (PROJECT_NAME Simulator)
 
 project (${PROJECT_NAME} C CXX)
 
@@ -16,11 +16,11 @@ set (SRC_DIR src)
 set (INCL_DIR include)
 
 # Compiler flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -lallegro -lallegro_font -lallegro_primitives -lallegro_ttf -lallegro_image")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall")
 
 set (SOURCE
     ${SRC_DIR}/rocket.cc
-    ${SRC_DIR}/main.cc
+    ${SRC_DIR}/simulator.cc
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/${INCL_DIR})
@@ -29,6 +29,11 @@ include_directories(${PROJECT_SOURCE_DIR}/${INCL_DIR})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
 
 # Add the executable for the program
-add_executable(${PROJECT_NAME} ${SOURCE})
+add_library(${PROJECT_NAME} STATIC ${SOURCE})
 
-target_link_libraries(${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME}
+                    allegro
+                    allegro_font
+                    allegro_primitives
+                    allegro_ttf
+                    allegro_image)

@@ -29,6 +29,10 @@ set_target_properties(${PROJECT_TEST_NAME}
                       PROPERTIES
                       COMPILE_FLAGS "-std=c++17 -Wall"
 )
+
+# Output folder
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
+
 # Link libraries
 target_link_libraries(${PROJECT_TEST_NAME}
                       gtest

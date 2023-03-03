@@ -31,6 +31,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O3 -Wall")
 include_directories(${Boost_INCLUDE_DIRS} 
                     "common" 
                     "2DMap/include"
+                    "Simulator/include"
                     ${INCL_DIR}
                     "Land_Algorithm/include",
                     "Flight_Algorithm/include")
@@ -44,7 +45,7 @@ set (SOURCE
     ${SRC_DIR}/interface.cc
 )
 
-link_directories(/usr/local/lib "Flight_Algorithm/build/" "2DMap/build" "Land_Algorithm/build")
+link_directories(/usr/local/lib "Simulator/build" "Flight_Algorithm/build/" "2DMap/build" "Land_Algorithm/build")
 
 # Output folder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
@@ -55,6 +56,7 @@ add_executable(${PROJECT_NAME} ${SOURCE})
 target_link_libraries(${PROJECT_NAME}
                        Flight_Algorithm
                        Land_Algorithm
+                       Simulator
                        2DMap
                        ${Boost_LIBRARIES} 
                        pthread
