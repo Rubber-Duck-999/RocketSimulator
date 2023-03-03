@@ -16,7 +16,7 @@ set (SRC_DIR src)
 set (INCL_DIR include)
 
 # Compiler flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -lallegro -lallegro_font -lallegro_primitives -lallegro_ttf")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -lallegro -lallegro_font -lallegro_primitives -lallegro_ttf -lallegro_image")
 
 set (SOURCE
     ${SRC_DIR}/main.cpp
