@@ -5,6 +5,18 @@
 Repository for the Rocket Simulator Software, it consists of multiple applications communicating over Sockets. 
 Architecture will be included and all components will be partitioned correctly
 
+## Design & Documents
+
+[Documents](./Documents/README.md)
+
+
+
+## How To use
+
+This executable is built using CMAK, Make and G++.
+
+
+
 Component based architecture
 
 5 separate components as of initial design structure
@@ -19,4 +31,8 @@ All components will have interface designs and the data structures will be prede
 
 I am using Googletest framework, stubs for the socket interfaces to help separate testing. Valgrind to check for memory leaks.
 
+## Demo
 
+![Form](./Documents/Form.png)
+
+![Simulation](./Documents/Simulation.gif)

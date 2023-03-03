@@ -9,6 +9,7 @@ project (${PROJECT_NAME} C CXX)
 add_subdirectory(2DMap)
 add_subdirectory(Flight_Algorithm)
 add_subdirectory(Land_Algorithm)
+add_subdirectory(Simulator)
 
 set(Boost_USE_STATIC_LIBS ON)
 
@@ -59,4 +60,4 @@ target_link_libraries(${PROJECT_NAME}
                        pthread
                        Threads::Threads)
 # Unit tests
-#add_subdirectory(tests)
+add_subdirectory(tests)

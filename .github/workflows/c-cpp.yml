@@ -18,42 +18,33 @@ jobs:
             sudo ./configure.sh
     - name: Set Permissions
       run: |
-            cd Software/
             chmod -R 777 .
     - name: Linter
       if: steps.filter.outputs.workflows == 'true'
       run: |
-            cd Software
             cppcheck *.cc --force
-    - name: Build 2D Map
+    - name: Build Controller and Libraries
       run: |
-            cd Software/2DMap
             mkdir build
             cd build
             cmake ..
             make
+    - name: 2DMap Tests
+      run: |
+            cd 2DMap
+            cd build
             ./exe2DMap-Test
-    - name: Build Land Algorithm
+    - name: Flight Algorithm Tests
       run: |
-            cd Software/Land_Algorithm
-            mkdir build
+            cd Flight_Algorithm
             cd build
-            cmake ..
-            make
-            ./exeLand_Algorithm-Test
-    - name: Build Flight Algorithm
-      run: |
-            cd Software/Flight_Algorithm
-            mkdir build
-            cd build
-            cmake ..
-            make
             ./exeFlight_Algorithm-Test
-    - name: Build Controller
+    - name: Land Algorithm Tests
       run: |
-            cd Software/Controller
-            mkdir build
+            cd Land_Algorithm
             cd build
-            cmake ..
-            make
+            ./exeLand_Algorithm-Test
+    - name: Controller Tests
+      run: |
+            cd build
             ./exeController-Test
