@@ -20,3 +20,6 @@ make
 make install
 
 apt install liballegro5-dev
+
+cd ../
+rm -rf googletest
