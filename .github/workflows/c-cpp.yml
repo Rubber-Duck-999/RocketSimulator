@@ -11,14 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: configure dependencies
+    - name: Ccahe dependencies
       run: |
             ls
             chmod 775 configure.sh
             sudo ./configure.sh
-    - name: Set Permissions
-      run: |
-            chmod -R 777 .
     - name: Linter
       if: steps.filter.outputs.workflows == 'true'
       run: |
