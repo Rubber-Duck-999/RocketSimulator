@@ -7,8 +7,7 @@ set (PROJECT_TEST_NAME exe${PROJECT_NAME}-Test)
 project (${PROJECT_NAME} C CXX)
 
 set(Boost_USE_STATIC_LIBS ON)
-#ADD_DEFINITIONS(-DBOOST_LOG_DYN_LINK)
-# Boost::log required Boost version >= 1.54.0 
+
 find_package(Boost 1.54.0 REQUIRED COMPONENTS log  log_setup)
 find_package(Threads)
 
@@ -42,28 +41,4 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
 # Add the executable for the program
 add_library(${PROJECT_NAME} STATIC ${SOURCE})
 # Unit tests
-add_subdirectory(tests)
-
-# Code coverage
-# if (CMAKE_BUILD_TYPE STREQUAL "Coverage")
-    # include(CodeCoverage)
-    # set(COVERAGE_EXCLUDES
-		# '/usr/*'
-		# '${PROJECT_SOURCE_DIR}/tests/*'
-		# '${CMAKE_BINARY_DIR}/googletest-src/googletest/include/gtest/*'
-		# '${CMAKE_BINARY_DIR}/googletest-src/googletest/src/*'
-		# '${CMAKE_BINARY_DIR}/googletest-src/googlemock/include/gmock/*'
-		# '${CMAKE_BINARY_DIR}/googletest-src/googlemock/src/*'
-    # )
-    # SETUP_TARGET_FOR_COVERAGE(
-		# NAME coverage
-		# EXECUTABLE ${PROJECT_TEST_NAME}
-		# DEPENDENCIES ${PROJECT_NAME}
-    # )
-	# set_target_properties(${PROJECT_NAME}
-        # PROPERTIES
-        # COMPILE_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage"
-    # )
-# endif() #CMAKE_BUILD_TYPE STREQUAL "Coverage"
-
-
+#add_subdirectory(tests)

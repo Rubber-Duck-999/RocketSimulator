@@ -19,7 +19,8 @@ set (INCL_DIR include)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -lallegro -lallegro_font -lallegro_primitives -lallegro_ttf -lallegro_image")
 
 set (SOURCE
-    ${SRC_DIR}/main.cpp
+    ${SRC_DIR}/rocket.cc
+    ${SRC_DIR}/main.cc
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/${INCL_DIR})

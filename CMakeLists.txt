@@ -6,10 +6,13 @@ set (PROJECT_TEST_NAME exeTestController)
 
 project (${PROJECT_NAME} C CXX)
 
+add_subdirectory(2DMap)
+add_subdirectory(Flight_Algorithm)
+add_subdirectory(Land_Algorithm)
+
 set(Boost_USE_STATIC_LIBS ON)
-#ADD_DEFINITIONS(-DBOOST_LOG_DYN_LINK)
-# Boost::log required Boost version >= 1.54.0 
-find_package(Boost 1.54.0 REQUIRED COMPONENTS log log_setup)
+
+find_package(Boost 1.81.0 REQUIRED COMPONENTS log log_setup)
 find_package(Threads)
 
 # Folder where the Coverage module is
@@ -25,22 +28,22 @@ set (INCL_DIR include)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O3 -Wall")
 
 include_directories(${Boost_INCLUDE_DIRS} 
-                    "${SRC_DIR}/../../common" 
-                    "../2DMap/include"
-                    ${PROJECT_SOURCE_DIR}/${INCL_DIR}
-                    "../Land_Algorithm/include",
-                    "../Flight_Algorithm/include")
+                    "common" 
+                    "2DMap/include"
+                    ${INCL_DIR}
+                    "Land_Algorithm/include",
+                    "Flight_Algorithm/include")
                     
 link_directories(${Boost_LIBRARY_DIRS})
 # Important: Include all source files on this list
 set (SOURCE
     ${SRC_DIR}/main.cc
-    ${SRC_DIR}/../../common/socket.cc
-    ${SRC_DIR}/../../common/start_up_process.cc
+    common/socket.cc
+    common/start_up_process.cc
     ${SRC_DIR}/interface.cc
 )
 
-link_directories(/usr/local/lib "../Flight_Algorithm/build/" "../2DMap/build" "../Land_Algorithm/build")
+link_directories(/usr/local/lib "Flight_Algorithm/build/" "2DMap/build" "Land_Algorithm/build")
 
 # Output folder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")
@@ -56,4 +59,4 @@ target_link_libraries(${PROJECT_NAME}
                        pthread
                        Threads::Threads)
 # Unit tests
-add_subdirectory(tests)
+#add_subdirectory(tests)

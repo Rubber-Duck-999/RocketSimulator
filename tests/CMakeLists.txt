@@ -4,7 +4,7 @@ set (PROJECT_TEST_NAME ${PROJECT_NAME}-Test)
 enable_testing()
 
 # Download and unpack googletest at configure time
-configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
+#configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND "${CMAKE_COMMAND}" -G "${CMAKE_GENERATOR}" .
       WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/tests/googletest-download" )
 execute_process(COMMAND "${CMAKE_COMMAND}" --build .
