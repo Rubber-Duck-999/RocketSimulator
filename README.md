@@ -13,19 +13,15 @@ Architecture will be included and all components will be partitioned correctly
 
 ## How To use
 
-This executable is built using CMAK, Make and G++.
+This executable is built using CMake, Make and G++.
 
-
-
-Component based architecture
-
-5 separate components as of initial design structure
-  - Console - Python PySimpleGUI data entry
-  - 2DMap - Terrain creator C++
-  - Controller - Manages what processes are called C++
-  - Flight Algorithm - Calculates route based off data without terrain C++
-  - Land algorithm - Algorithm to calculate point of intercept and landing C++
-  - Simulator - Pygame draws diagram of rocket
+One executable made up of a few C++ Libraries:
+  - Form - Qt Form
+  - 2DMap - Terrain creator
+  - Controller - Manages what processes are called
+  - Flight Algorithm - Calculates route based off data without terrain
+  - Land algorithm - Algorithm to calculate point of intercept and landing
+  - Simulator - Allegro game 
 
 All components will have interface designs and the data structures will be predefined to allow correct and suitable design.
 
