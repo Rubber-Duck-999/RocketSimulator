@@ -2,8 +2,6 @@
 
 Interface::Interface()
 {
-    local_socket_.NetworkSetup();
-    current_state_.state_ = rocket_simulator::kNON_CONFIGURED;    
     id_ = 101;
     world.density_ = 0.0;
     world.acceleration_due_to_gravity_ = 0.0;
@@ -16,67 +14,38 @@ Interface::Interface()
     rocket.burn_time_ = 0.0;
     rocket.flow_rate_ = 0.0;
     rocket.angle_of_launch_ = 0.0;
-    pilot_set_ = false;
 }
 
 
-void Interface::Loop()
+void Interface::RunSimulation()
 {
-    local_socket_.SetReceive(true);
     unsigned int x = 0;
     unsigned int seconds = 1;
     BOOST_LOG_TRIVIAL(fatal) << x;
-    while(current_state_.state_ != rocket_simulator::kSHUTDOWN && x < 30)
+    RunAlgo();
+    Map my_map(rocket_simulator::kMinHeight, rocket_simulator::kMaxHeight, rocket_simulator::kMaxXAxisLength);
+    my_map.CreateInitialMap();
+    std::map<unsigned int, double> map;
+    bool map_correct = my_map.GetMap(map);
+    BOOST_LOG_TRIVIAL(debug) << "Map is valid: " << map_correct << ", Creation Size: " << map.size();
+    simulation_.Set2DMap(map);
+    simulation_.SetRocketAlgoData(algo_.algo_data_);
+    if(simulation_.RunAlgorithm())
     {
-        Receive(local_socket_.NetworkReceive());
-        if(current_state_.state_ == rocket_simulator::kCONFIGURED)
+        if(simulation_.DidTheRocketCrash())
         {
-            if(RunAlgo())
-            {
-                current_state_.state_ = rocket_simulator::kREADY;
-                std::string message = std::to_string(id_);
-                local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "2");
-            }
-            else
-            {
-                current_state_.state_ = rocket_simulator::kNON_CONFIGURED;
-                std::string message = std::to_string(id_);
-                local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "0");
-            }
+            unsigned int x = simulation_.GetXAxisLandingPoint();
+            double y = simulation_.GetYAxisLandingPoint();
+            std::string message = std::to_string(id_);
         }
-        else if(current_state_.state_ == rocket_simulator::kLAUNCH)
+        else
         {
-            Map my_map(rocket_simulator::kMinHeight, rocket_simulator::kMaxHeight, rocket_simulator::kMaxXAxisLength);
-            my_map.CreateInitialMap();
-            std::map<unsigned int, double> map;
-            bool map_correct = my_map.GetMap(map);
-            BOOST_LOG_TRIVIAL(debug) << "Map is valid: " << map_correct << ", Creation Size: " << map.size();
-            simulation_.Set2DMap(map);
-            simulation_.SetRocketAlgoData(algo_.algo_data_);
-            if(simulation_.RunAlgorithm())
-            {
-                if(simulation_.DidTheRocketCrash())
-                {
-                    unsigned int x = simulation_.GetXAxisLandingPoint();
-                    double y = simulation_.GetYAxisLandingPoint();
-                    SendLandingPoint(x, y);
-                    SendState(5);
-                    std::string message = std::to_string(id_);
-                    local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "5");
-                }
-                else
-                {
-                    BOOST_LOG_TRIVIAL(error) << "The rocket didn't crash";
-                }
-            }
-            else
-            {
-                BOOST_LOG_TRIVIAL(error) << "Simulation Failed";
-            }
+            BOOST_LOG_TRIVIAL(error) << "The rocket didn't crash";
         }
-        sleep(seconds);
-        x++;
-        BOOST_LOG_TRIVIAL(fatal) << x;
+    }
+    else
+    {
+        BOOST_LOG_TRIVIAL(error) << "Simulation Failed";
     }
 }
 
@@ -94,224 +63,6 @@ bool Interface::RunAlgo()
     else
     {
         return false;
-    }
-}
-
-
-bool Interface::SetCorrect(int number)
-{
-    if(id_ == number)
-    {
-        id_++;
-        BOOST_LOG_TRIVIAL(trace) << "Id matches message id, "
-                                 << "updating number";
-        return true;
-    }
-    else
-    {
-        BOOST_LOG_TRIVIAL(error) << "Id doesn't match, dismissing message";
-        return false;
-    }
-}   
-
-void Interface::SendLandingPoint(unsigned int x, double y)
-{
-    std::string message = std::to_string(id_);
-    std::string x_send = std::to_string(x);
-    std::string y_send = std::to_string(y);
-    local_socket_.NetworkSend("ID:" + message + "-" + "Landing_X:" + x_send + "-" + "Landing_Y:" + y_send);
-}
-        
-        
-void Interface::SendState(unsigned int statedata)
-{
-    namespace data = rocket_simulator;
-    data::StateDataParameters sendingstate;
-    std::string message = std::to_string(id_);
-    BOOST_LOG_TRIVIAL(debug) << "Switching to:";
-    switch(statedata)
-    { 
-        case 1:
-            sendingstate.state_ = data::kCONFIGURED;
-            BOOST_LOG_TRIVIAL(debug) << "State change is: " << sendingstate.state_;
-            break;
-        case 2:
-            sendingstate.state_ = data::kREADY;
-            BOOST_LOG_TRIVIAL(debug) << "State change is: " << sendingstate.state_;
-            break;
-        case 3:
-            sendingstate.state_ = data::kLAUNCH;
-            BOOST_LOG_TRIVIAL(debug) << "State change is: " << sendingstate.state_;
-            local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "3");
-            break;
-        case 4:
-            sendingstate.state_ = data::kRETURN;
-            BOOST_LOG_TRIVIAL(debug) << "State change is: " << sendingstate.state_;
-            if(current_state_.state_ == data::kREADY)
-            {
-                local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "2");
-            }
-            else
-            {
-                local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "1");
-            }
-            break;
-        case 5:
-            sendingstate.state_ = data::kSHUTDOWN;
-            BOOST_LOG_TRIVIAL(debug) << "State change is: " << sendingstate.state_;
-            local_socket_.NetworkSend("ID:" + message + "-" + "State:" + "5"); 
-            break;
-        default:
-            sendingstate.state_ = data::kNON_CONFIGURED;
-            BOOST_LOG_TRIVIAL(debug) << "State is back to: " << sendingstate.state_;
-    }
-    current_state_ = sendingstate;
-}
-
-
-void Interface::SetPilots(unsigned int pilot)
-{
-    namespace data = rocket_simulator;
-    data::LauncherMissionParameters current_pilot;
-    BOOST_LOG_TRIVIAL(debug) << "Switching to this pilot:";
-    switch(pilot)
-    { 
-        case 0:
-            current_pilot.pilots_ = data::kBOB;
-            BOOST_LOG_TRIVIAL(debug) << "Pilot is: " << current_pilot.pilots_;
-            break;
-        case 1:
-            current_pilot.pilots_ = data::kFRED;
-            BOOST_LOG_TRIVIAL(debug) << "Pilot is: " << current_pilot.pilots_;
-            break;
-        case 2:
-            current_pilot.pilots_ = data::kRYAN;
-            BOOST_LOG_TRIVIAL(debug) << "Pilot is: " << current_pilot.pilots_;
-            break;
-        case 3:
-            current_pilot.pilots_ = data::kSARAH;
-            BOOST_LOG_TRIVIAL(debug) << "Pilot is: " << current_pilot.pilots_;
-            break;
-        case 4:
-            current_pilot.pilots_ = data::kGRACE;
-            BOOST_LOG_TRIVIAL(debug) << "Pilot is: " << current_pilot.pilots_;
-            break;
-        default:
-            current_pilot.pilots_ = data::kBOB;
-            BOOST_LOG_TRIVIAL(debug) << "Pilot is: " << current_pilot.pilots_;
-    }
-    launcher.pilots_ = current_pilot.pilots_;
-}
-
-
-void Interface::Receive(std::string message)
-{
-    using namespace rocket_simulator;
-    std::vector<std::string> vect;
-    boost::split(vect, message, boost::is_any_of("-"));
-    const unsigned int start = 0;
-    for (unsigned int i = 0; i < vect.size(); i++) 
-    {
-        if(vect[i].find(kID) != std::string::npos) 
-        {
-            vect[i].erase(start,kID.length());
-            unsigned int number = std::atof(vect[i].c_str());
-            BOOST_LOG_TRIVIAL(error) << "ID: " << number;
-            SetCorrect(number);
-        }
-        else if(vect[i].find(kDensity) != std::string::npos) 
-        {
-            vect[i].erase(start,kDensity.length());
-            double number = std::atof(vect[i].c_str());
-            world.density_ = number;
-            BOOST_LOG_TRIVIAL(error) << "Density: " << number;
-        }
-        else if(vect[i].find(kGravity) != std::string::npos) 
-        {
-            vect[i].erase(start,kGravity.length());
-            double number = std::atof(vect[i].c_str());
-            world.acceleration_due_to_gravity_ = number;
-            BOOST_LOG_TRIVIAL(error) << "Gravity: " << number;
-        }
-        else if(vect[i].find(kMass) != std::string::npos) 
-        {
-            vect[i].erase(start,kMass.length());
-            double number = std::atof(vect[i].c_str());
-            rocket.mass_ = number;
-            BOOST_LOG_TRIVIAL(error) << "Mass: " << number;
-        }  
-        else if(vect[i].find(kDragXAxis) != std::string::npos) 
-        {
-            vect[i].erase(start,kDragXAxis.length());
-            double number = std::atof(vect[i].c_str());
-            rocket.drag_axis_x_ = number;
-            BOOST_LOG_TRIVIAL(error) << "Drag X Axis: " << number;
-        }    
-        else if(vect[i].find(kDragYAxis) != std::string::npos) 
-        {
-            vect[i].erase(start,kDragYAxis.length());
-            double number = std::atof(vect[i].c_str());
-            rocket.drag_axis_y_ = number;
-            BOOST_LOG_TRIVIAL(error) << "Drag Y Axis: " << number;
-        }   
-        else if(vect[i].find(kHori) != std::string::npos) 
-        {
-            vect[i].erase(start,kHori.length());
-            double number = std::atof(vect[i].c_str());
-            rocket.hori_cross_sect_area_ = number;
-            BOOST_LOG_TRIVIAL(error) << "Horizontal: " << number;
-        }       
-        else if(vect[i].find(kVert) != std::string::npos) 
-        {
-            vect[i].erase(start,kVert.length());
-            double number = std::atof(vect[i].c_str());
-            rocket.vert_cross_sect_area_ = number;
-            BOOST_LOG_TRIVIAL(error) << "Vertical: " << number;
-        }   
-        else if(vect[i].find(kThrust) != std::string::npos) 
-        {
-            vect[i].erase(start,kThrust.length());
-            double number = std::atof(vect[i].c_str());
-            rocket.thrust_ = number;
-            BOOST_LOG_TRIVIAL(error) << "Thrust: " << number;
-        }     
-        else if(vect[i].find(kBurnTime) != std::string::npos) 
-        {
-            vect[i].erase(start,kBurnTime.length());
-            double number = std::atof(vect[i].c_str());
-            rocket.burn_time_ = number;
-            BOOST_LOG_TRIVIAL(error) << "Burn Time: " << number;
-        } 
-        else if(vect[i].find(kFlowrate) != std::string::npos) 
-        {
-            vect[i].erase(start,kFlowrate.length());
-            double number = std::atof(vect[i].c_str());
-            rocket.flow_rate_ = number;
-            BOOST_LOG_TRIVIAL(error) << "Flowrate: " << number;
-        }
-        else if(vect[i].find(kLaunchAngle) != std::string::npos) 
-        {
-            vect[i].erase(start,kLaunchAngle.length());
-            double number = std::atof(vect[i].c_str());
-            rocket.angle_of_launch_ = number;
-            BOOST_LOG_TRIVIAL(error) << "Launch angle: " << number;
-            SendState(1);
-        }
-        else if(vect[i].find(kPilots) != std::string::npos)
-        {
-            vect[i].erase(start,kPilots.length());
-            unsigned int number = std::atoi(vect[i].c_str());
-            SetPilots(number);
-            BOOST_LOG_TRIVIAL(error) << "Pilot: " << number;
-        }
-        else if(vect[i].find(kSec) != std::string::npos)
-        {
-            vect[i].erase(start,kSec.length());
-            unsigned int number = std::atoi(vect[i].c_str());
-            launcher.time_to_launch_sec_ = number;
-            BOOST_LOG_TRIVIAL(error) << "Time to Launch Seconds: " << number;
-            SendState(3);
-        }
     }
 }
 

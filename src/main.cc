@@ -8,8 +8,7 @@ int main()
     init_log();
     Interface out;
     create();
-    out.Loop();
-    out.Shutdown();
+    out.RunSimulation();
     return 0;
 }
  

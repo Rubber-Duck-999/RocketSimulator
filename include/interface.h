@@ -1,8 +1,6 @@
 #include "data_structure.h"
-#include "start_up_process.h"
 #include <string>
 #include <unistd.h>
-#include "socket.h"
 #include "Flight_Algorithm.h"
 #include "Land_Algorithm.h"
 #include "map.h"
@@ -20,44 +18,15 @@ public:
     //
     ~Interface() { };
     //
-    void Shutdown()
-    {
-        local_socket_.NetworkShutdown();
-    };
-    //
-    void Loop();
-    //
-    rocket_simulator::StateDataParameters GetCurrentState() const { return current_state_; } ;
-    //
-    void Receive(std::string message);
-    //
-    unsigned int GetIdNumber() const { return id_; };
+    void RunSimulation();
     //
 private:
-    //
-    bool pilot_set_;
-    //
-    bool RunSimulation();
-    //
-    bool SetCorrect(int number);
-    //
-    void SendLandingPoint(unsigned int x, double y);
     //
     Flight_Algorithm algo_;
     //
     Land_Algorithm simulation_;
     //
     bool RunAlgo();
-    //
-    bool socket_receive_state_;  
-    //
-    Socket local_socket_;
-    //
-    rocket_simulator::StateDataParameters current_state_;
-    //
-    void SendState(unsigned int statedata);
-    //
-    void SetPilots(unsigned int pilot);
     //
     void GetAlgorithmData();
     //

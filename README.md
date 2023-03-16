@@ -9,14 +9,11 @@ Architecture will be included and all components will be partitioned correctly
 
 [Documents](./Documents/README.md)
 
-
-
 ## How To use
 
 This executable is built using CMake, Make and G++.
 
 One executable made up of a few C++ Libraries:
-  - Form - Qt Form
   - 2DMap - Terrain creator
   - Controller - Manages what processes are called
   - Flight Algorithm - Calculates route based off data without terrain

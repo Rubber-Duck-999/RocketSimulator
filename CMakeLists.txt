@@ -40,8 +40,6 @@ link_directories(${Boost_LIBRARY_DIRS})
 # Important: Include all source files on this list
 set (SOURCE
     ${SRC_DIR}/main.cc
-    common/socket.cc
-    common/start_up_process.cc
     ${SRC_DIR}/interface.cc
 )
 

@@ -14,15 +14,13 @@ include_directories (${PROJECT_SOURCE_DIR}/${TESTS_DIR}/${INCL_DIR}/${MOCKS_DIR}
 
 set (SRC_DIR src)
 set(PROY_UT_SRC
-    ${SRC_DIR}/TestControllerWrapper.cc
-    ${SRC_DIR}/TestInterfaceWrapper.cc
+    ${SRC_DIR}/TestInterface.cc
 )
 
 set (MAIN_SRC_DIR ../src)
 include_directories (${PROJECT_SOURCE_DIR}/${INCL_DIR})
 # Include all project source files here
 set (MAIN_SOURCE
-    ${MAIN_SRC_DIR}/../../Stubs/socket.cc
     ${MAIN_SRC_DIR}/interface.cc)
 
 add_executable (${PROJECT_TEST_NAME} ${PROY_UT_SRC} ${MAIN_SOURCE})

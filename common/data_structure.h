@@ -98,18 +98,6 @@ namespace rocket_simulator
     
     
     /////////////////////////////////////////////
-    // State Data
-    /////////////////////////////////////////////
-    typedef enum {kNON_CONFIGURED, kCONFIGURED, kREADY, kLAUNCH, kRETURN, kSHUTDOWN} STATE;
-    
-    typedef struct StateDataParameters
-    {
-        STATE state_;
-    }StateData;
-    /////////////////////////////////////////////
-    
-    
-    /////////////////////////////////////////////
     // Algo Data
     /////////////////////////////////////////////
     struct AlgoData
