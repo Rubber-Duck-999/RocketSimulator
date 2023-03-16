@@ -29,6 +29,4 @@ I am using Googletest framework, stubs for the socket interfaces to help separat
 
 ## Demo
 
-![Form](./Documents/Form.png)
-
 ![Simulation](./Documents/Simulation.gif)
