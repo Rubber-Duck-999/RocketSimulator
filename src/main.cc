@@ -1,13 +1,13 @@
 #include "logging.h"
 #include "interface.h"
-#include "simulator.h"
+#include "init.h"
 
 
 int main()
 {
     init_log();
     Interface out;
-    create();
+    InitAllegro();
     out.RunSimulation();
     return 0;
 }

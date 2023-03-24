@@ -21,7 +21,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall")
 set (SOURCE
     ${SRC_DIR}/rocket.cc
     ${SRC_DIR}/config.cc
-    ${SRC_DIR}/simulator.cc
+    ${SRC_DIR}/engine.cc
+    ${SRC_DIR}/init.cc
 )
 
 include_directories(${PROJECT_SOURCE_DIR}/${INCL_DIR})
