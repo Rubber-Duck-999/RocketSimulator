@@ -59,5 +59,8 @@ target_link_libraries(${PROJECT_NAME}
                        ${Boost_LIBRARIES} 
                        pthread
                        Threads::Threads)
+
 # Unit tests
 add_subdirectory(tests)
+
+install(TARGETS ${PROJECT_NAME} DESTINATION /usr/local/bin)

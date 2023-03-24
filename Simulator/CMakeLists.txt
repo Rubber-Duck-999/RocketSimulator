@@ -20,6 +20,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall")
 
 set (SOURCE
     ${SRC_DIR}/rocket.cc
+    ${SRC_DIR}/config.cc
     ${SRC_DIR}/simulator.cc
 )
 

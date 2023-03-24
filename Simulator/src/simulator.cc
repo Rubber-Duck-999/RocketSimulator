@@ -9,7 +9,6 @@ void must_init(bool test, const char *description) {
     if(test) return;
 
     printf("couldn't initialize %s\n", description);
-    //exit(1);
 }
 
 void create() {
@@ -42,7 +41,7 @@ void create() {
     bool redraw = true;
     ALLEGRO_EVENT event;
 
-    Rocket* rocket = new Rocket(0.1);
+    Rocket* rocket = new Rocket(1, 1, 10.0);
     rocket->Draw();
 
     al_start_timer(timer);
@@ -91,6 +90,4 @@ void create() {
     al_destroy_display(disp);
     al_destroy_timer(timer);
     al_destroy_event_queue(queue);
-
-    //return 0;
 }
