@@ -13,26 +13,26 @@ ALLEGRO_FONT *font = NULL;
 
 using namespace std;
 
-bool InitAllegro( float FPS,  int SCREEN_W,  int SCREEN_H) {
+bool InitAllegro(float FPS, int SCREEN_W, int SCREEN_H) {
     if(!al_init()) {
-      fprintf(stderr, "failed to initialize allegro!\n");
+      BOOST_LOG_TRIVIAL(info) << "init.cc:18 "<< stderr;
       return false;
    }
  
    if(!al_install_keyboard()) {
-      fprintf(stderr, "failed to initialize the keyboard!\n");
+      BOOST_LOG_TRIVIAL(info) << "init.cc:23 "<< stderr;
       return false;
    }
 
    timer = al_create_timer(1.0 / FPS);
    if(!timer) {
-      fprintf(stderr, "failed to create timer!\n");
+      BOOST_LOG_TRIVIAL(info) << "init.cc:29 "<< stderr;
       return false;
    }
 
    display = al_create_display(SCREEN_W, SCREEN_H);
    if(!display) {
-      fprintf(stderr, "failed to create display!\n");
+      BOOST_LOG_TRIVIAL(info) << "init.cc:35 "<< stderr;
       al_destroy_timer(timer);
       return false;
    }
@@ -41,8 +41,8 @@ bool InitAllegro( float FPS,  int SCREEN_W,  int SCREEN_H) {
    al_init_ttf_addon();
    font = al_load_ttf_font("/usr/local/bin/comicsans.ttf", 16, 0);
 
-   if (!font){
-      fprintf(stderr, "Could not load font.\n");
+   if (!font) {
+      BOOST_LOG_TRIVIAL(info) << "init.cc:45 "<< stderr;
       al_destroy_display(display);
       al_destroy_timer(timer);
       al_destroy_font(font);
@@ -50,8 +50,8 @@ bool InitAllegro( float FPS,  int SCREEN_W,  int SCREEN_H) {
    }
  
    event_queue = al_create_event_queue(); 
-      if(!event_queue) {
-      fprintf(stderr, "failed to create event_queue!\n");
+   if (!event_queue) {
+      BOOST_LOG_TRIVIAL(info) << "init.cc:54 "<< stderr;
       al_destroy_display(display);
       al_destroy_timer(timer);
       al_destroy_font(font);

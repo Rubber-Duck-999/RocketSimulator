@@ -1,6 +1,6 @@
 #include "engine.h"
 #include "config.h"
-#include "rocket.h"
+#include "spaceship.h"
 #include "init.h"
 #include <vector>
 #include <iostream>
@@ -14,7 +14,7 @@
 
 using namespace std;
 
-Rocket* rocket;
+Spaceship* spaceship;
 
 enum MYKEYS {
     KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_ESCAPE, KEY_SPACE
@@ -25,19 +25,19 @@ bool pressedKeys[6] = { false, false, false, false, false, false };
 void UpdateObjects() {
     bool restart = false;
 
-    bool lives = rocket->Update();
+    bool lives = spaceship->Update();
 }
 
-void Repositionrockets() {
-        rocket->x = 300;
-        rocket->y = 600;
-        rocket->speed = 0;
-        rocket->age = 0;
+void RepositionSpaceships() {
+        spaceship->x = 300;
+        spaceship->y = 600;
+        spaceship->speed = 0;
+        spaceship->age = 0;
 }
 
 void Redraw() {
     al_clear_to_color(al_map_rgb(0,0,0));
-    rocket->Draw();
+    spaceship->Draw();
     DrawPoints();
     DrawLives();
     al_flip_display();
@@ -51,7 +51,7 @@ void DrawPoints() {
     al_use_transform(&transform);
     int bufferSize = 40;
     char buffer[bufferSize];
-    sprintf(buffer, "Points: %d", rocket->points);
+    sprintf(buffer, "Points: %d", spaceship->points);
     al_draw_text(
                  font, 
                  al_map_rgb(0, 0, 255), 
@@ -76,19 +76,19 @@ void DrawLives() {
 
 void DispatchKeys() {
     if(pressedKeys[KEY_UP]) {
-        rocket->accelerate();
+        spaceship->accelerate();
     }
  
     if(pressedKeys[KEY_DOWN]) {
-        rocket->decelerate();
+        spaceship->decelerate();
     }
 
     if(pressedKeys[KEY_LEFT]) {
-        rocket->moveLeft();
+        spaceship->moveLeft();
     }
 
     if(pressedKeys[KEY_RIGHT]) {
-        rocket->moveRight();
+        spaceship->moveRight();
     }
 
     if(pressedKeys[KEY_SPACE]) {
@@ -125,7 +125,7 @@ bool KeyUp(ALLEGRO_EVENT event) {
     switch(event.keyboard.keycode) {
         case ALLEGRO_KEY_UP:
             pressedKeys[KEY_UP] = false;
-            rocket->acceleration = 0;
+            spaceship->acceleration = 0;
             return false;
             break;
 
@@ -157,7 +157,7 @@ bool KeyUp(ALLEGRO_EVENT event) {
 }
 
 void InitGame() {
-    Rocket* rocket = new Rocket(300,300, rocketStartSpeed);
+    Spaceship* spaceship = new Spaceship(300,300, rocketStartSpeed);
 }
 
 void PrintWinner() {
@@ -169,7 +169,7 @@ void PrintWinner() {
     al_use_transform(&transform);
     int bufferSize = 40;
     char buffer[bufferSize];
-    sprintf(buffer, "Total points: %d", rocket->points);
+    sprintf(buffer, "Total points: %d", spaceship->points);
     al_draw_text(
                  font,
                  al_map_rgb(120,120,120),

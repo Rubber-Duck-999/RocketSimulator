@@ -10,10 +10,10 @@
 const float deltaSpeed = .5;
 const float deltaDegree = .09;
 
-class Rocket {
+class Spaceship {
 public:
-    Rocket(int x, int y, float speed);
-    ~Rocket();
+    Spaceship(int x, int y, float speed);
+    ~Spaceship();
     void Draw();
     void moveLeft(const float delta = deltaDegree);
     void moveRight(const float delta = deltaDegree);

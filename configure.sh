@@ -21,5 +21,5 @@ make install
 
 apt install liballegro5-dev
 
-cd ../
+cd ../../
 rm -rf googletest

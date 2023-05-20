@@ -2,7 +2,7 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/transformations.h>
-#include "rocket.h"
+#include "spaceship.h"
 #include <iostream>
 #include <math.h>
 #include "init.h"
@@ -11,15 +11,15 @@
 
 using namespace std;
 
-void Rocket::DebugPrint() {
-	cout << "The follwing is a Rocket!" << endl;
+void Spaceship::DebugPrint() {
+	cout << "The follwing is a Spaceship!" << endl;
 	cout << "X is :" << x << endl;
 	cout << "Y is :" << y << endl;
 	cout << "Direction is :" << direction << endl;
 	cout << "Speed is :" << speed << endl;
 }
 
-Rocket::Rocket(int x, int y, float speed) {
+Spaceship::Spaceship(int x, int y, float speed) {
 	this->x = x;
 	this->y = y;
 	this->direction = 0;
@@ -32,11 +32,11 @@ Rocket::Rocket(int x, int y, float speed) {
 	this->age = 0;
 }
 
-Rocket::~Rocket() {
+Spaceship::~Spaceship() {
 
 }
 
-void Rocket::Draw() {
+void Spaceship::Draw() {
 	if (age > 120 || age % 2 == 0) {
 		ALLEGRO_COLOR color = this->color;
 		ALLEGRO_TRANSFORM transform; 
@@ -63,22 +63,22 @@ void Rocket::Draw() {
 
 }
 
-void Rocket::moveLeft(const float delta) {
+void Spaceship::moveLeft(const float delta) {
 	this->direction -= delta;
 }
 
-void Rocket::moveRight(const float delta) {
+void Spaceship::moveRight(const float delta) {
 	this->direction += delta;
 }
 
-void Rocket::accelerate(const float delta) {
+void Spaceship::accelerate(const float delta) {
 	acceleration += delta;
 	if (acceleration > maxAcceleration) {
 		acceleration = maxAcceleration;
 	}
 }
 
-void Rocket::decelerate(const float delta) {
+void Spaceship::decelerate(const float delta) {
 	if (speed == 0) {
 		return;
 	}
@@ -88,7 +88,7 @@ void Rocket::decelerate(const float delta) {
 	}
 }
 
-bool Rocket::Update() {
+bool Spaceship::Update() {
 	speed += acceleration;
 	if (speed > maxSpeed) {
 		speed = maxSpeed;

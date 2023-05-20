@@ -19,13 +19,15 @@ set (INCL_DIR include)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -Wall")
 
 set (SOURCE
-    ${SRC_DIR}/rocket.cc
+    ${SRC_DIR}/spaceship.cc
     ${SRC_DIR}/config.cc
     ${SRC_DIR}/engine.cc
     ${SRC_DIR}/init.cc
 )
 
-include_directories(${PROJECT_SOURCE_DIR}/${INCL_DIR})
+include_directories(${Boost_INCLUDE_DIRS}
+                    ${SRC_DIR}/../../common
+                    ${PROJECT_SOURCE_DIR}/${INCL_DIR})
 
 # Output folder
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/build")

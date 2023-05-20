@@ -21,7 +21,6 @@ void Interface::RunSimulation()
 {
     unsigned int x = 0;
     unsigned int seconds = 1;
-    BOOST_LOG_TRIVIAL(fatal) << x;
     RunAlgo();
     Map my_map(rocket_simulator::kMinHeight, rocket_simulator::kMaxHeight, rocket_simulator::kMaxXAxisLength);
     my_map.CreateInitialMap();

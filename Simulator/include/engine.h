@@ -1,7 +1,7 @@
 #ifndef ENGINE_FILE
 #define ENGINE_FILE
 #include <vector>
-#include "rocket.h"
+#include "spaceship.h"
 #include "init.h"
 
 //Allegro
