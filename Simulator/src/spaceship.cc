@@ -30,6 +30,8 @@ Spaceship::Spaceship(int x, int y, float speed) {
 	this->direction = 0;
 	this->lives = startingLives;
 	this->age = 0;
+	this->points = 0;
+	this->acceleration = 0;
 }
 
 Spaceship::~Spaceship() {
@@ -89,22 +91,6 @@ void Spaceship::decelerate(const float delta) {
 }
 
 bool Spaceship::Update() {
-	speed += acceleration;
-	if (speed > maxSpeed) {
-		speed = maxSpeed;
-	}
-	if (speed < 0) {
-		speed = 0;
-	}
-	if (cylinder) {
-		x = (x % SCREEN_W + SCREEN_W) % SCREEN_W;
-	}
-	if (torus) {
-		y = (y % SCREEN_H + SCREEN_H) % SCREEN_H;
-	}
-	if (age <= secondsOfInvincibility * FPS) {
-		age += 1;
-	}
-	// check for collisions is on engine.cpp
+	BOOST_LOG_TRIVIAL(info) << "spaceship.cc:93 Spaceship Updating";
 	return true;
 }

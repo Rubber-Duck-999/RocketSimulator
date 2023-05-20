@@ -17,10 +17,6 @@ void DrawPoints();
 void DrawLives();
 void GameOver();
 
-void DispatchKeys();
-void KeyDown(ALLEGRO_EVENT);
-bool KeyUp(ALLEGRO_EVENT);
-
 bool GameContinues();
 void PrintWinner();
 void InitGame();

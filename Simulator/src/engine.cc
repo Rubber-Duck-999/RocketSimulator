@@ -29,10 +29,10 @@ void UpdateObjects() {
 }
 
 void RepositionSpaceships() {
-        spaceship->x = 300;
-        spaceship->y = 600;
-        spaceship->speed = 0;
-        spaceship->age = 0;
+    spaceship->x = 300;
+    spaceship->y = 600;
+    spaceship->speed = 0;
+    spaceship->age = 0;
 }
 
 void Redraw() {
@@ -49,14 +49,11 @@ void DrawPoints() {
     al_rotate_transform(&transform, 0); 
     al_translate_transform(&transform, 0, 0); 
     al_use_transform(&transform);
-    int bufferSize = 40;
-    char buffer[bufferSize];
-    sprintf(buffer, "Points: %d", spaceship->points);
     al_draw_text(
                  font, 
                  al_map_rgb(0, 0, 255), 
                  SCREEN_W - 40, 20, ALLEGRO_ALIGN_RIGHT, 
-                 buffer); 
+                 "Hello"); 
     // In case of multiplayer, draw points here
 }
 
@@ -74,113 +71,39 @@ void DrawLives() {
     al_draw_line(6, 4, 1, 4, color, 3.0f);
 }
 
-void DispatchKeys() {
-    if(pressedKeys[KEY_UP]) {
-        spaceship->accelerate();
-    }
- 
-    if(pressedKeys[KEY_DOWN]) {
-        spaceship->decelerate();
-    }
-
-    if(pressedKeys[KEY_LEFT]) {
-        spaceship->moveLeft();
-    }
-
-    if(pressedKeys[KEY_RIGHT]) {
-        spaceship->moveRight();
-    }
-
-    if(pressedKeys[KEY_SPACE]) {
-        cout << "Move" << endl;
-    }
+void InitGame() {
+    Spaceship* spaceship = new Spaceship(300, 300, rocketStartSpeed);
+    BOOST_LOG_TRIVIAL(info) << "engine.cc:160 Points " << spaceship->points;
 }
 
-void KeyDown(ALLEGRO_EVENT event) {
-    switch(event.keyboard.keycode) {
-        case ALLEGRO_KEY_UP:
-            pressedKeys[KEY_UP] = true;
-            break;
-
-        case ALLEGRO_KEY_DOWN:
-            pressedKeys[KEY_DOWN] = true;
-            break;
-
-        case ALLEGRO_KEY_LEFT: 
-            pressedKeys[KEY_LEFT] = true;
-            break;
-
-        case ALLEGRO_KEY_RIGHT:
-            pressedKeys[KEY_RIGHT] = true;
-            break;
-
-        case ALLEGRO_KEY_SPACE:
-            pressedKeys[KEY_SPACE] = true;
-            break;
-    }
-}
-
-
-bool KeyUp(ALLEGRO_EVENT event) {
-    switch(event.keyboard.keycode) {
-        case ALLEGRO_KEY_UP:
-            pressedKeys[KEY_UP] = false;
-            spaceship->acceleration = 0;
-            return false;
-            break;
-
-        case ALLEGRO_KEY_DOWN:
-            pressedKeys[KEY_DOWN] = false;
-            return false;
-            break;
-
-        case ALLEGRO_KEY_LEFT: 
-            pressedKeys[KEY_LEFT] = false;
-            return false;
-            break;
-
-        case ALLEGRO_KEY_RIGHT:
-            pressedKeys[KEY_RIGHT] = false;
-            return false;
-            break;
-
-        case ALLEGRO_KEY_SPACE:
-            pressedKeys[KEY_SPACE] = false;
-            return false;
-            break;
-
-        case ALLEGRO_KEY_ESCAPE:
-            return true;
-            break;
-    }
+bool GameContinues() {
+    PrintWinner();
     return true;
 }
 
-void InitGame() {
-    Spaceship* spaceship = new Spaceship(300,300, rocketStartSpeed);
-}
-
 void PrintWinner() {
+    BOOST_LOG_TRIVIAL(info) << "engine.cc:169 Print Winner";
     al_clear_to_color(al_map_rgb(0, 0, 0 ));
     ALLEGRO_TRANSFORM transform;
     al_identity_transform(&transform);
     al_rotate_transform(&transform, 0);
     al_translate_transform(&transform, 0, 0);
     al_use_transform(&transform);
-    int bufferSize = 40;
-    char buffer[bufferSize];
-    sprintf(buffer, "Total points: %d", spaceship->points);
+    BOOST_LOG_TRIVIAL(info) << "engine.cc:176 Transform";
+    //int bufferSize = 40;
+    //char buffer[bufferSize];
+    BOOST_LOG_TRIVIAL(info) << "engine.cc:179 Points";
+    //sprintf(buffer, "Total points: %d", spaceship->points);
     al_draw_text(
                  font,
                  al_map_rgb(120,120,120),
                  400, 200, ALLEGRO_ALIGN_RIGHT,
                  "A winner is you!");
-    al_draw_text(
+    /*al_draw_text(
                  font,
                  al_map_rgb(120,120,120),
                  400, 250, ALLEGRO_ALIGN_RIGHT,
-                 buffer);
-
+                 buffer);*/
     al_draw_text(
              font,
              al_map_rgb(0,255,0),
