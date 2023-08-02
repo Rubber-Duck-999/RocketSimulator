@@ -16,35 +16,24 @@ Interface::Interface()
     rocket.angle_of_launch_ = 0.0;
 }
 
+std::map<double, double> Interface::GetCoordinates() 
+{ 
+    return coordinates_; 
+}
 
 void Interface::RunSimulation()
 {
-    unsigned int x = 0;
-    unsigned int seconds = 1;
-    RunAlgo();
-    Map my_map(rocket_simulator::kMinHeight, rocket_simulator::kMaxHeight, rocket_simulator::kMaxXAxisLength);
-    my_map.CreateInitialMap();
-    std::map<unsigned int, double> map;
-    bool map_correct = my_map.GetMap(map);
-    BOOST_LOG_TRIVIAL(debug) << "Map is valid: " << map_correct << ", Creation Size: " << map.size();
-    simulation_.Set2DMap(map);
-    simulation_.SetRocketAlgoData(algo_.algo_data_);
-    if(simulation_.RunAlgorithm())
-    {
-        if(simulation_.DidTheRocketCrash())
-        {
-            unsigned int x = simulation_.GetXAxisLandingPoint();
-            double y = simulation_.GetYAxisLandingPoint();
-            std::string message = std::to_string(id_);
-        }
-        else
-        {
-            BOOST_LOG_TRIVIAL(error) << "The rocket didn't crash";
-        }
-    }
-    else
-    {
-        BOOST_LOG_TRIVIAL(error) << "Simulation Failed";
+    if (RunAlgo()) {
+        Map my_map(rocket_simulator::kMinHeight, rocket_simulator::kMaxHeight, rocket_simulator::kMaxXAxisLength);
+        my_map.CreateInitialMap();
+        std::map<unsigned int, double> map;
+        bool map_correct = my_map.GetMap(map);
+        BOOST_LOG_TRIVIAL(debug) << "Map is valid: " << map_correct << ", Creation Size: " << map.size();
+        simulation_.Set2DMap(map);
+        simulation_.SetRocketAlgoData(algo_.algo_data_);
+        simulation_.RunAlgorithm();
+        coordinates_.clear();
+        coordinates_ = simulation_.GetCoordinates();
     }
 }
 

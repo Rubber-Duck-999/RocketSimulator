@@ -99,11 +99,6 @@ void PrintWinner() {
                  al_map_rgb(120,120,120),
                  400, 200, ALLEGRO_ALIGN_RIGHT,
                  "A winner is you!");
-    /*al_draw_text(
-                 font,
-                 al_map_rgb(120,120,120),
-                 400, 250, ALLEGRO_ALIGN_RIGHT,
-                 buffer);*/
     al_draw_text(
              font,
              al_map_rgb(0,255,0),

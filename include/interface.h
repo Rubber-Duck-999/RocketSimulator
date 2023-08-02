@@ -20,6 +20,7 @@ public:
     //
     void RunSimulation();
     //
+    std::map<double, double> GetCoordinates();
 private:
     //
     Flight_Algorithm algo_;
@@ -35,6 +36,7 @@ private:
     rocket_simulator::RocketDataParameters rocket;
     rocket_simulator::TerrainMissionParameters world;
     rocket_simulator::LauncherMissionParameters launcher;
+    std::map<double, double> coordinates_;
     std::vector<rocket_simulator::AlgoData> algo_data_;
     //
 };

@@ -10,6 +10,7 @@ void Land_Algorithm::CompareData()
     {
         std::map<unsigned int, double>::iterator local_iterator;
         unsigned int index = 0;
+        coordinates_.clear();
         for(local_iterator = map_.begin(); local_iterator != map_.end(); local_iterator++)
         {
             if(index == (algo_data_.size()-1))
@@ -32,11 +33,12 @@ void Land_Algorithm::CompareData()
                     BOOST_LOG_TRIVIAL(debug) << "Map Y Axis: " << local_iterator->second;
                     BOOST_LOG_TRIVIAL(debug) << "We have crashed at Y axis: " << algo_data_[index].position_axis_y_ 
                     << " due to terrain height: " << local_iterator->second;
-                    x_axis_landing_point_ = local_iterator->first;
-                    y_axis_landing_point_ = local_iterator->second;
-                    rocket_crashed_ = true;
                     return;
                 }
+            } 
+            else 
+            {
+                coordinates_.insert({algo_data_[index].position_axis_x_, algo_data_[index].position_axis_y_});
             }
             index++;
         }
