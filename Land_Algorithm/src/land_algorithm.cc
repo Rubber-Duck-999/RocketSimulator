@@ -13,6 +13,7 @@ void Land_Algorithm::CompareData()
         coordinates_.clear();
         for(local_iterator = map_.begin(); local_iterator != map_.end(); local_iterator++)
         {
+            coordinates_.insert({algo_data_[index].position_axis_x_, algo_data_[index].position_axis_y_});
             if(index == (algo_data_.size()-1))
             {
                 BOOST_LOG_TRIVIAL(debug) << "Hit the end of the loop";
@@ -35,10 +36,6 @@ void Land_Algorithm::CompareData()
                     << " due to terrain height: " << local_iterator->second;
                     return;
                 }
-            } 
-            else 
-            {
-                coordinates_.insert({algo_data_[index].position_axis_x_, algo_data_[index].position_axis_y_});
             }
             index++;
         }
@@ -69,4 +66,9 @@ void Land_Algorithm::SetRocketAlgoData(std::vector<rocket_simulator::AlgoData>& 
     algo_data_ = algo_data;
     algo_data_set_ = true;
     BOOST_LOG_TRIVIAL(debug) << "Set Algo Data";
+}
+
+std::map<double, double> Land_Algorithm::GetCoordinates() 
+{ 
+    return coordinates_; 
 }

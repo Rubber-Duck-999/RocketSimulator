@@ -104,11 +104,11 @@ void Thrust::ThrustFunction()
         algo_data_.push_back(algo_run);
     }
     rocket_.SetTimeTaken(t_start);
-    BOOST_LOG_TRIVIAL(info) << "X axis Pre Coast :" << rocket_.GetDistanceX();
-    BOOST_LOG_TRIVIAL(info) << "Y axis Pre Coast :" << rocket_.GetDistanceY();
-    BOOST_LOG_TRIVIAL(trace) << "Mass Pre Coast:" << rocket_.GetMass();
-    BOOST_LOG_TRIVIAL(trace) << "Time Pre Coast:" << rocket_.GetTimeTaken();
+    BOOST_LOG_TRIVIAL(info) << "X axis Pre Coast : " << rocket_.GetDistanceX();
+    BOOST_LOG_TRIVIAL(info) << "Y axis Pre Coast : " << rocket_.GetDistanceY();
+    BOOST_LOG_TRIVIAL(trace) << "Mass Pre Coast: " << rocket_.GetMass();
+    BOOST_LOG_TRIVIAL(trace) << "Time Pre Coast: " << rocket_.GetTimeTaken();
     Thrust::CoastFunction(velocity_x, velocity_y);
-    BOOST_LOG_TRIVIAL(trace) << "X axis Post Coast :" << rocket_.GetDistanceX();
-    BOOST_LOG_TRIVIAL(trace) << "Y axis Post Coast :" << rocket_.GetDistanceY();
+    BOOST_LOG_TRIVIAL(trace) << "X axis Post Coast : " << rocket_.GetDistanceX();
+    BOOST_LOG_TRIVIAL(trace) << "Y axis Post Coast : " << rocket_.GetDistanceY();
 }

@@ -3,17 +3,17 @@
 Interface::Interface()
 {
     id_ = 101;
-    world.density_ = 0.0;
-    world.acceleration_due_to_gravity_ = 0.0;
-    rocket.mass_ = 0.0;
-    rocket.drag_axis_x_ = 0.0;
-    rocket.drag_axis_y_ = 0.0;
-    rocket.hori_cross_sect_area_ = 0.0;
-    rocket.vert_cross_sect_area_ = 0.0;
-    rocket.thrust_ = 0.0;
-    rocket.burn_time_ = 0.0;
-    rocket.flow_rate_ = 0.0;
-    rocket.angle_of_launch_ = 0.0;
+    world.density_ = 1.22;
+    world.acceleration_due_to_gravity_ = 9.87;
+    rocket.mass_ = 80.0;
+    rocket.drag_axis_x_ = 0.30;
+    rocket.drag_axis_y_ = 0.30;
+    rocket.hori_cross_sect_area_ = 1.0;
+    rocket.vert_cross_sect_area_ = 1.0;
+    rocket.thrust_ = 100.0;
+    rocket.burn_time_ = 50.0;
+    rocket.flow_rate_ = 20.0;
+    rocket.angle_of_launch_ = 60.0;
 }
 
 std::map<double, double> Interface::GetCoordinates() 

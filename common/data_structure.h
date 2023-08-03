@@ -31,7 +31,7 @@ namespace rocket_simulator
     const unsigned int kMinXAxisLength = 0; // 0 m
     const unsigned int kMaxXAxisLength = 10000; // 10,000 m
     const double kMinHeight = -50.0; // -50m
-    const double kMaxHeight = 255.0; // 255m
+    const double kMaxHeight = 0.0; // 255m
     const double kPI = 3.1415926;
     const unsigned int kLaunchLength = 200;
     /////////////////////////////////////////////
