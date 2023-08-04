@@ -21,6 +21,8 @@ public:
     void RunSimulation();
     //
     std::map<double, double> GetCoordinates();
+    //
+    std::list<double> GetAngles();
 private:
     //
     Flight_Algorithm algo_;
@@ -38,6 +40,7 @@ private:
     rocket_simulator::LauncherMissionParameters launcher;
     std::map<double, double> coordinates_;
     std::vector<rocket_simulator::AlgoData> algo_data_;
+    std::list<double> angles_;
     //
 };
 

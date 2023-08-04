@@ -11,9 +11,11 @@ void Land_Algorithm::CompareData()
         std::map<unsigned int, double>::iterator local_iterator;
         unsigned int index = 0;
         coordinates_.clear();
+        angles_.clear();
         for(local_iterator = map_.begin(); local_iterator != map_.end(); local_iterator++)
         {
             coordinates_.insert({algo_data_[index].position_axis_x_, algo_data_[index].position_axis_y_});
+            angles_.push_back(algo_data_[index].angle_of_direction_);
             if(index == (algo_data_.size()-1))
             {
                 BOOST_LOG_TRIVIAL(debug) << "Hit the end of the loop";
@@ -71,4 +73,9 @@ void Land_Algorithm::SetRocketAlgoData(std::vector<rocket_simulator::AlgoData>& 
 std::map<double, double> Land_Algorithm::GetCoordinates() 
 { 
     return coordinates_; 
+}
+
+std::list<double> Land_Algorithm::GetAngles() 
+{ 
+    return angles_; 
 }

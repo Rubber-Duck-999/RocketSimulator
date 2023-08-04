@@ -18,6 +18,7 @@ private:
     bool WriteToFile();
     void CompareData();
     std::map<double, double> coordinates_;
+    std::list<double> angles_;
 public:
     Land_Algorithm() 
     {
@@ -29,6 +30,7 @@ public:
     void Set2DMap(std::map<unsigned int, double>& map);
     void SetRocketAlgoData(std::vector<rocket_simulator::AlgoData>& algo_data);
     std::map<double, double> GetCoordinates();
+    std::list<double> GetAngles();
 };
 
 #endif

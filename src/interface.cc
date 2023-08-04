@@ -21,6 +21,12 @@ std::map<double, double> Interface::GetCoordinates()
     return coordinates_; 
 }
 
+
+std::list<double> Interface::GetAngles() 
+{ 
+    return angles_; 
+}
+
 void Interface::RunSimulation()
 {
     if (RunAlgo()) {
